@@ -25,7 +25,8 @@ public class DeveloperGuidService {
 
     public List<Map<String, Object>> parseJavaScriptFiles(String locationPattern) {
         List<Map<String, Object>> guidList = new ArrayList<>();
-        System.out.println(">>> [DeveloperGuide] Parsing Start. Pattern: " + locationPattern);
+        // System.out.println(">>> [DeveloperGuide] Parsing Start. Pattern: " +
+        // locationPattern);
 
         try {
             if (locationPattern.startsWith("file:") && !locationPattern.contains("*")) {
@@ -39,7 +40,8 @@ public class DeveloperGuidService {
             e.printStackTrace();
         }
 
-        System.out.println(">>> [DeveloperGuide] Parsing Finished. Total files found: " + guidList.size());
+        // System.out.println(">>> [DeveloperGuide] Parsing Finished. Total files found:
+        // " + guidList.size());
         return guidList;
     }
 
@@ -57,7 +59,7 @@ public class DeveloperGuidService {
             } else {
                 String path = file.getAbsolutePath().replace("\\", "/");
                 if (path.endsWith(".js") && path.contains("/common/js/common")) {
-                    System.out.println(">>> [DeveloperGuide] Found JS File: " + path);
+                    // System.out.println(">>> [DeveloperGuide] Found JS File: " + path);
                     FileSystemResource resource = new FileSystemResource(file);
                     processResource(resource, guidList);
                 }

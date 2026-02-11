@@ -294,7 +294,7 @@ public class SysUserService extends AbstractCommonService<SysUser> {
         try {
             // FMS 서비스의 엑셀 업로드 API 호출
             ExcelDataResponse excelData = fmsExcelClient.uploadExcel(file, fmsInternalApiKey);
-            System.out.println("excelData::::" + excelData);
+            // System.out.println("excelData::::" + excelData);
             // 엑셀 데이터 검증
             if (excelData == null || excelData.getDataRows() == null || excelData.getDataRows().isEmpty()) {
                 throw new CustomException(getMessage("EXCEPTION.FMS.NO_DATA"));

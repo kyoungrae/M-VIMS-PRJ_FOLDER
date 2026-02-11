@@ -77,7 +77,7 @@ public class DeveloperGuidController {
             userDir = userDir.replace("\\", "/");
             String targetPath = userDir + "/vims-login/src/main/resources/static/common/js/common";
 
-            System.out.println(">>> [DeveloperGuide] Search Target Path: " + targetPath);
+            // System.out.println(">>> [DeveloperGuide] Search Target Path: " + targetPath);
             String rootPath = "file:" + targetPath;
 
             List<Map<String, Object>> guidList = developerGuidService.parseJavaScriptFiles(rootPath);
@@ -107,7 +107,8 @@ public class DeveloperGuidController {
             userDir = userDir.replace("\\", "/");
             String targetPath = userDir + "/vims-login/src/main/resources/static/common/css/common";
 
-            System.out.println(">>> [DeveloperGuide] CSS Search Target Path: " + targetPath);
+            // System.out.println(">>> [DeveloperGuide] CSS Search Target Path: " +
+            // targetPath);
             File dir = new File(targetPath);
 
             List<Map<String, Object>> fileList;

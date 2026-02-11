@@ -38,7 +38,8 @@ public class MessageService {
 
         // 로컬에 파일이 없으면 기본 메시지 파일 목록 사용 (Gateway를 통해 로드하기 위해)
         if (jsFiles.isEmpty()) {
-            System.out.println("⚠️  로컬 리소스에서 JS 파일을 찾을 수 없습니다. Gateway를 통해 기본 메시지 파일들을 시도합니다.");
+            // System.out.println("⚠️ 로컬 리소스에서 JS 파일을 찾을 수 없습니다. Gateway를 통해 기본 메시지 파일들을
+            // 시도합니다.");
             jsFiles = getDefaultMessageFiles();
         }
 
@@ -65,19 +66,19 @@ public class MessageService {
 
     // 기본 메시지 파일 목록 (Gateway 또는 로컬 messageConfig.js에서 동적으로 로드)
     private List<String> getDefaultMessageFiles() {
-        System.out.println("🔍 messageConfig.js에서 메시지 파일 목록을 동적으로 조회를 시도합니다.");
+        // System.out.println("🔍 messageConfig.js에서 메시지 파일 목록을 동적으로 조회를 시도합니다.");
         List<String> dynamicFiles = loadFilesFromConfig();
 
         if (dynamicFiles != null && !dynamicFiles.isEmpty()) {
             if (!dynamicFiles.contains("Message")) {
                 dynamicFiles.add(0, "Message");
             }
-            System.out.println("✅ 메시지 파일 목록 (" + dynamicFiles.size() + "개)을 구성했습니다.");
+            // System.out.println("✅ 메시지 파일 목록 (" + dynamicFiles.size() + "개)을 구성했습니다.");
             return dynamicFiles;
         }
 
         // 최후의 보루: 최소한의 기본 파일만 반환 (혹은 로그 출력)
-        System.err.println("⚠️  messageConfig.js 로드 실패. 최소한의 기본 설정으로 진행합니다.");
+        // System.err.println("⚠️ messageConfig.js 로드 실패. 최소한의 기본 설정으로 진행합니다.");
         List<String> fallback = new ArrayList<>();
         fallback.add("Message");
         return fallback;
@@ -92,10 +93,10 @@ public class MessageService {
         try (InputStream is = getClass().getClassLoader().getResourceAsStream(configPath)) {
             if (is != null) {
                 content = new String(is.readAllBytes(), StandardCharsets.UTF_8);
-                System.out.println("  ✓ 로컬에서 messageConfig.js를 발견했습니다.");
+                // System.out.println(" ✓ 로컬에서 messageConfig.js를 발견했습니다.");
             }
         } catch (IOException e) {
-            System.err.println("  ✗ 로컬 messageConfig.js 읽기 오류");
+            // System.err.println(" ✗ 로컬 messageConfig.js 읽기 오류");
         }
 
         // 2. 로컬에 없으면 Gateway에서 시도
@@ -107,11 +108,11 @@ public class MessageService {
                 if (conn.getResponseCode() == 200) {
                     try (InputStream is = conn.getInputStream()) {
                         content = new String(is.readAllBytes(), StandardCharsets.UTF_8);
-                        System.out.println("  ✓ Gateway에서 messageConfig.js를 로드했습니다.");
+                        // System.out.println(" ✓ Gateway에서 messageConfig.js를 로드했습니다.");
                     }
                 }
             } catch (Exception e) {
-                System.err.println("  ✗ Gateway에서 messageConfig.js 로드 실패: " + fullUrl);
+                // System.err.println(" ✗ Gateway에서 messageConfig.js 로드 실패: " + fullUrl);
             }
         }
 
@@ -141,11 +142,11 @@ public class MessageService {
         addJsFilesFromResources(jsFiles, resolver, "classpath*:/static/common/js/common/*.js");
         addJsFilesFromResources(jsFiles, resolver, "classpath*:/static/common/js/message/**/*.js");
 
-        System.out.println("=== MessageService: 로드된 JS 파일 목록 ===");
-        for (String file : jsFiles) {
-            System.out.println(" - " + file);
-        }
-        System.out.println("=== 총 " + jsFiles.size() + "개 파일 발견 ===");
+        // System.out.println("=== MessageService: 로드된 JS 파일 목록 ===");
+        // for (String file : jsFiles) {
+        // System.out.println(" - " + file);
+        // }
+        // System.out.println("=== 총 " + jsFiles.size() + "개 파일 발견 ===");
 
         return jsFiles;
     }
@@ -154,9 +155,9 @@ public class MessageService {
     private static void addJsFilesFromResources(List<String> jsFiles, PathMatchingResourcePatternResolver resolver,
             String path) {
         try {
-            System.out.println("JS 파일 경로 탐색: " + path);
+            // System.out.println("JS 파일 경로 탐색: " + path);
             Resource[] resources = resolver.getResources(path);
-            System.out.println("발견된 리소스 수: " + resources.length);
+            // System.out.println("발견된 리소스 수: " + resources.length);
 
             for (Resource resource : resources) {
                 try {
@@ -181,7 +182,8 @@ public class MessageService {
                         } else {
                             jsFiles.add(baseName);
                         }
-                        System.out.println("  ✓ 추가: " + fileName + " (URI: " + resource.getURI() + ")");
+                        // System.out.println(" ✓ 추가: " + fileName + " (URI: " + resource.getURI() +
+                        // ")");
                     }
                 } catch (Exception e) {
                     String fileName = resource.getFilename();
@@ -191,9 +193,9 @@ public class MessageService {
                 }
             }
         } catch (FileNotFoundException e) {
-            System.err.println("파일 경로가 없습니다: " + path);
+            // System.err.println("파일 경로가 없습니다: " + path);
         } catch (IOException e) {
-            System.err.println("파일 로드 오류: " + path);
+            // System.err.println("파일 로드 오류: " + path);
             e.printStackTrace();
         }
     }
@@ -202,34 +204,35 @@ public class MessageService {
     private void loadMessagesFromFile(String fileName, String locale) {
         // 두 경로에서 파일을 찾는다
         List<String> resourcePaths = getResourcePaths(fileName);
-        System.out.println("메시지 파일 로드 시도: " + fileName + " (locale: " + locale + ")");
+        // System.out.println("메시지 파일 로드 시도: " + fileName + " (locale: " + locale +
+        // ")");
 
         // 두 경로 중 하나라도 존재하면 파일을 로드
         for (String resourcePath : resourcePaths) {
             try (InputStream inputStream = getClass().getClassLoader().getResourceAsStream(resourcePath)) {
                 if (inputStream == null) {
-                    System.err.println("  ✗ 파일을 찾을 수 없음: " + resourcePath);
+                    // System.err.println(" ✗ 파일을 찾을 수 없음: " + resourcePath);
                     continue; // 다음 경로로 시도
                 }
-                System.out.println("  ✓ 파일 로드 성공: " + resourcePath);
+                // System.out.println(" ✓ 파일 로드 성공: " + resourcePath);
                 parseAndCacheMessages(inputStream, locale);
                 return; // 첫 번째 파일을 찾으면 더 이상 검색하지 않음
             } catch (IOException e) {
-                System.err.println("  ✗ 파일 로드 중 오류: " + resourcePath);
+                // System.err.println(" ✗ 파일 로드 중 오류: " + resourcePath);
                 e.printStackTrace();
             }
         }
 
         // 로컬에서 찾지 못하면 Gateway URL을 통해 시도
         if (gatewayUrl != null && !gatewayUrl.isEmpty()) {
-            System.out.println("  → Gateway를 통해 메시지 로드 시도: " + fileName);
+            // System.out.println(" → Gateway를 통해 메시지 로드 시도: " + fileName);
             if (loadMessagesFromGateway(fileName, locale)) {
                 return;
             }
         }
 
         // 파일을 찾을 수 없으면 경고 메시지 출력
-        System.err.println("  ✗ 경고: " + fileName + " 파일을 어떤 경로에서도 찾을 수 없습니다.");
+        // System.err.println(" ✗ 경고: " + fileName + " 파일을 어떤 경로에서도 찾을 수 없습니다.");
     }
 
     // Gateway URL을 통해 메시지를 로드하는 함수
@@ -246,7 +249,7 @@ public class MessageService {
         for (String path : gatewayPaths) {
             String fullUrl = gatewayUrl + path;
             try {
-                System.out.println("    Gateway URL 시도: " + fullUrl);
+                // System.out.println(" Gateway URL 시도: " + fullUrl);
                 URL url = new URL(fullUrl);
                 HttpURLConnection conn = (HttpURLConnection) url.openConnection();
                 conn.setRequestMethod("GET");
@@ -256,12 +259,12 @@ public class MessageService {
                 int responseCode = conn.getResponseCode();
                 if (responseCode == 200) {
                     try (InputStream inputStream = conn.getInputStream()) {
-                        System.out.println("  ✓ Gateway에서 파일 로드 성공: " + fullUrl);
+                        // System.out.println(" ✓ Gateway에서 파일 로드 성공: " + fullUrl);
                         parseAndCacheMessages(inputStream, locale);
                         return true;
                     }
                 } else {
-                    System.err.println("    ✗ HTTP " + responseCode + ": " + fullUrl);
+                    // System.err.println(" ✗ HTTP " + responseCode + ": " + fullUrl);
                 }
             } catch (Exception e) {
                 System.err.println("    ✗ Gateway 로드 실패: " + fullUrl + " - " + e.getMessage());
@@ -288,7 +291,7 @@ public class MessageService {
         for (String searchPath : searchPaths) {
             if (getClass().getClassLoader().getResource(searchPath) != null) {
                 paths.add(searchPath);
-                System.out.println("    찾은 경로: " + searchPath);
+                // System.out.println(" 찾은 경로: " + searchPath);
             }
         }
 
@@ -312,9 +315,9 @@ public class MessageService {
                 localeMessages.put(key, value);
                 messageCount++;
             }
-            System.out.println("    → 파싱된 메시지 수: " + messageCount);
+            // System.out.println(" → 파싱된 메시지 수: " + messageCount);
         } catch (IOException e) {
-            System.err.println("    ✗ 파싱 중 오류 발생");
+            // System.err.println(" ✗ 파싱 중 오류 발생");
             e.printStackTrace();
         }
     }

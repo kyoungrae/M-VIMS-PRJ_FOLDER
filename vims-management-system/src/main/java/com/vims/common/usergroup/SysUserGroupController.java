@@ -22,7 +22,7 @@ public class SysUserGroupController extends AbstractCommonController<SysUserGrou
 
     @PostMapping("/findPage")
     public Map<String, List<?>> findPage(@RequestBody SysUserGroup reqeust) throws Exception {
-        System.out.println(reqeust);
+        // System.out.println(reqeust);
         return sysUserGroupService.findPage(reqeust);
     }
 
