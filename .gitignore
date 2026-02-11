@@ -1,0 +1,24 @@
+# Build artifacts
+**/target/
+**/out/
+**/deploy-output/
+*.jar
+*.war
+*.ear
+*.zip
+*.tar.gz
+
+# IDE and System files
+.idea/
+*.iml
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Logs
+**/logs/
+*.log
+
+# Temp files
+temp/
+tmp/

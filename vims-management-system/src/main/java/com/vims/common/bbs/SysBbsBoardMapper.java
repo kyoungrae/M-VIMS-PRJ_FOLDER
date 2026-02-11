@@ -1,0 +1,11 @@
+package com.vims.common.bbs;
+
+import com.system.common.base.CommonMapper;
+import org.apache.ibatis.annotations.Mapper;
+
+@Mapper
+public interface SysBbsBoardMapper extends CommonMapper<SysBbsBoard> {
+    int INCREMENT_HIT_COUNT(SysBbsBoard request);
+
+    int SELECT_TOTAL_COUNT(SysBbsBoard request);
+}

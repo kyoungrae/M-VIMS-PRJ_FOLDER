@@ -1,0 +1,135 @@
+<article id="bbsLayoutBasicPage" class="gi-article-content gi-col-95 gi-row-100">
+    <section class="gi-col-100 gi-row-100 gi-overflow-scroll">
+
+        <!-- 페이지 헤더 -->
+        <header class="gi-margin-bottom-40px gi-padding-left-20px gi-padding-top-20px">
+            <h1 id="basic-page-title" class="gi-page-title">[Page.Message].Message.Label.Array["SYS_LAYOUT.TITLE"]</h1>
+            <p class="gi-subtitle-main">[Page.Message].Message.Label.Array["SYS_LAYOUT.SUBTITLE"]</p>
+        </header>
+
+        <article>
+            <!-- 검색기능 영역 -->
+            <div id="search-area" class="gi-padding-left-right-20px gi-margin-bottom-30px">
+                <div class="gi-flex gi-flex-align-items-center gi-grid-gap-20px">
+                    <div class="gi-input-container gi-flex-1">
+                        <label for="searchDesc1" class="gi-input-label"
+                            data-focus-label="true">[Page.Message].Message.Label.Array["SYS_LAYOUT.TITLE"]</label>
+                        <input class="gi-input" type="text" id="searchDesc1" name="searchDesc1" autocomplete="off" />
+                    </div>
+                    <div class="gi-flex gi-grid-gap-10px">
+                        <button id="search-btn" class="gi-btn-blue"
+                            type="button">[Page.Message].Message.Label.Array["SEARCH_BTN"]</button>
+                        <button id="bbsLayoutBasicPage-reset-btn" class="gi-btn"
+                            type="button">[Page.Message].Message.Label.Array["RESET_BTN"]</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 그리드 영역 -->
+            <div class="gi-row-100 gi-padding-left-right-20px gi-flex gi-grid-gap-20px">
+                <div id="bbs_gi-Grid" class="gi-Grid gi-col-100"></div>
+            </div>
+
+            <!-- 등록버튼 영역 -->
+            <div class="gi-row-100">
+                <div class="gi-btn-section gi-row-30 gi-float-right gi-padding-left-right-20px">
+                    <button id="bbs-write-btn" class="gi-btn-blue gi-float-right"
+                        type="button">[Page.Message].Message.Label.Array["WRITE_BTN"]</button>
+                </div>
+            </div>
+        </article>
+    </section>
+</article>
+
+<script type="text/javascript">
+    var bbsSessionData = JSON.parse(sessionStorage.getItem("DATA"));
+    var bbsId = bbsSessionData ? bbsSessionData.bbs_id : 'default_id';
+    var bbsNm = bbsSessionData ? bbsSessionData.bbs_nm : Message.Label.Array["SYS_BBS.TITLE"];
+    var replyEnabled = false; // 댓글 기능 활성화 여부
+
+    init();
+
+    async function init() {
+        new PageInit();
+
+        // 페이지 타이틀 설정
+        $("#basic-page-title").text(bbsNm);
+
+        // BBS 설정 조회 (reply_yn 확인)
+        await checkBbsConfiguration();
+
+        findByBoardList();
+        clickEvent();
+    }
+
+    async function checkBbsConfiguration() {
+        let url = "/cms/common/sysBbs/find";
+        try {
+            const response = await axios.post(url, { bbs_id: bbsId });
+            if (response.status === 200 && response.data.length > 0) {
+                let bbsInfo = response.data[0];
+                if (bbsInfo.reply_yn === '1') {
+                    replyEnabled = true;
+                }
+            }
+        } catch (e) {
+            console.error("BBS Config fetch failed", e);
+        }
+    }
+
+    function clickEvent() {
+        $("#bbs-write-btn").on("click", function () {
+            formUtil.apiLoadContent("cms", "/bbs/sysBbsBoardWrite", { bbs_id: bbsId });
+        });
+
+        $("#search-btn").on("click", function () {
+            findByBoardList();
+        })
+        $("#bbsLayoutBasicPage-reset-btn").on("click", function () {
+            $("#searchDesc1").val("");
+            findByBoardList();
+        })
+    }
+
+    function findByBoardList(page, range) {
+        if (!page) page = 1;
+        if (!range) range = 10;
+
+        let url = "/cms/common/sysBbsBoard/findPage";
+        let param = {
+            bbs_id: bbsId,
+            page_no: page,
+            row_range: range,
+            offset: (page - 1) * range
+        };
+        let cont1 = $("#searchDesc1").val();
+        if (formUtil.checkEmptyValue(cont1)) param._title = cont1;
+
+        axios.post(url, param).then(response => {
+            if (response.status === 200) {
+                let data = response.data.DATA;
+                let paging = response.data.TOTAL_PAGING[0];
+
+                let grid_header = {
+                    title: bbsNm,
+                    list: [
+                        { HEADER: 'No', ID: 'no', WIDTH: '10', TYPE: 'text', TEXT_ALIGN: 'center', FONT_SIZE: '12px', HIDDEN: false },
+                        { HEADER: Message.Label.Array["SYS_LAYOUT.TITLE"], ID: 'title', WIDTH: replyEnabled ? '45' : '50', TYPE: 'text', TEXT_ALIGN: 'center', FONT_SIZE: '12px', HIDDEN: false },
+                        { HEADER: Message.Label.Array["SYS_BBS_REPLY.REPLY_COUNT"] || '댓글', ID: 'reply_count', WIDTH: '8', TYPE: 'text', TEXT_ALIGN: 'center', FONT_SIZE: '12px', HIDDEN: !replyEnabled },
+                        { HEADER: Message.Label.Array["SYS_LAYOUT.WRITER_NAME"], ID: 'writer_name', WIDTH: '12', TYPE: 'text', TEXT_ALIGN: 'center', FONT_SIZE: '12px', HIDDEN: false },
+                        { HEADER: Message.Label.Array["SYS_LAYOUT.HIT_COUNT"], ID: 'hit_count', WIDTH: '10', TYPE: 'text', TEXT_ALIGN: 'center', FONT_SIZE: '12px', HIDDEN: false },
+                        { HEADER: Message.Label.Array["SYS_LAYOUT.CREATE_DATE"], ID: 'system_create_date', WIDTH: '15', TYPE: 'date', TEXT_ALIGN: 'center', FONT_SIZE: '12px', HIDDEN: false },
+                        { HEADER: 'ID', ID: 'board_id', WIDTH: '0', TYPE: 'text', HIDDEN: true }
+                    ]
+                };
+
+                let grid = formUtil.giGrid(grid_header, paging, page, "bbs_gi-Grid");
+                grid.DataSet(data);
+                grid.pagingSet(findByBoardList);
+                grid.rowClick(function (rowData) {
+                    formUtil.apiLoadContent("cms", "/bbs/sysBbsBoardDetail", { board_id: rowData.board_id, bbs_id: bbsId });
+                });
+            }
+        });
+    }
+</script>

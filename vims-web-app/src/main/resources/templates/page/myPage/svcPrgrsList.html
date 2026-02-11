@@ -1,0 +1,1467 @@
+<!-- Service Progress List Page -->
+<div class="svc-progress-wrapper">
+    <div class="container">
+        <!-- Page Header -->
+        <div class="page-header">
+            <h2 class="page-title">[Page.Message].Message.Label.Array["SVCPRGRS.PAGE_TITLE"]</h2>
+            <p class="page-subtitle">[Page.Message].Message.Label.Array["SVCPRGRS.PAGE_SUBTITLE"]</p>
+        </div>
+
+        <!-- Progress Flow Guide -->
+        <div class="progress-flow-guide">
+            <div class="flow-header">
+                <i class="fa-solid fa-circle-info"></i>
+                <span>[Page.Message].Message.Label.Array["SVCPRGRS.FLOW.GUIDE_TITLE"]</span>
+            </div>
+            <div class="flow-steps">
+                <div class="flow-step">
+                    <div class="step-icon draft">
+                        <i class="fa-solid fa-file-pen"></i>
+                    </div>
+                    <div class="step-info">
+                        <span class="step-label">[Page.Message].Message.Label.Array["SVCPRGRS.STATUS.DRAFT"]</span>
+                        <p class="step-desc">[Page.Message].Message.Label.Array["SVCPRGRS.FLOW.DRAFT_DESC"]</p>
+                    </div>
+                </div>
+                <div class="flow-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+                <div class="flow-step">
+                    <div class="step-icon submitted">
+                        <i class="fa-solid fa-paper-plane"></i>
+                    </div>
+                    <div class="step-info">
+                        <span class="step-label">[Page.Message].Message.Label.Array["SVCPRGRS.STATUS.SUBMITTED"]</span>
+                        <p class="step-desc">[Page.Message].Message.Label.Array["SVCPRGRS.FLOW.SUBMITTED_DESC"]</p>
+                    </div>
+                </div>
+                <div class="flow-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+                <div class="flow-step">
+                    <div class="step-icon review">
+                        <i class="fa-solid fa-magnifying-glass-chart"></i>
+                    </div>
+                    <div class="step-info">
+                        <span class="step-label">[Page.Message].Message.Label.Array["SVCPRGRS.STATUS.REVIEW"]</span>
+                        <p class="step-desc">[Page.Message].Message.Label.Array["SVCPRGRS.FLOW.REVIEW_DESC"]</p>
+                    </div>
+                </div>
+                <div class="flow-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+                <div class="flow-step final">
+                    <div class="step-icon approved">
+                        <i class="fa-solid fa-circle-check"></i>
+                    </div>
+                    <div class="step-info">
+                        <span class="step-label">[Page.Message].Message.Label.Array["SVCPRGRS.STATUS.APPROVED"]</span>
+                        <p class="step-desc">[Page.Message].Message.Label.Array["SVCPRGRS.FLOW.APPROVED_DESC"]</p>
+                    </div>
+                    <span class="or-divider">/</span>
+                    <div class="step-icon rejected">
+                        <i class="fa-solid fa-circle-xmark"></i>
+                    </div>
+                    <div class="step-info">
+                        <span class="step-label">[Page.Message].Message.Label.Array["SVCPRGRS.STATUS.REJECTED"]</span>
+                        <p class="step-desc">[Page.Message].Message.Label.Array["SVCPRGRS.FLOW.REJECTED_DESC"]</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Filter Section -->
+        <div class="filter-section">
+            <div class="filter-tabs">
+                <button type="button" class="filter-tab active" data-filter="all">
+                    [Page.Message].Message.Label.Array["SVCPRGRS.FILTER.ALL"]
+                    <span class="count" id="countAll">0</span>
+                </button>
+                <button type="button" class="filter-tab" data-filter="draft">
+                    [Page.Message].Message.Label.Array["SVCPRGRS.STATUS.DRAFT"]
+                    <span class="count" id="countDraft">0</span>
+                </button>
+                <button type="button" class="filter-tab" data-filter="submitted">
+                    [Page.Message].Message.Label.Array["SVCPRGRS.STATUS.SUBMITTED"]
+                    <span class="count" id="countSubmitted">0</span>
+                </button>
+                <button type="button" class="filter-tab" data-filter="review">
+                    [Page.Message].Message.Label.Array["SVCPRGRS.STATUS.REVIEW"]
+                    <span class="count" id="countReview">0</span>
+                </button>
+                <button type="button" class="filter-tab" data-filter="approved">
+                    [Page.Message].Message.Label.Array["SVCPRGRS.STATUS.APPROVED"]
+                    <span class="count" id="countApproved">0</span>
+                </button>
+                <button type="button" class="filter-tab" data-filter="rejected">
+                    [Page.Message].Message.Label.Array["SVCPRGRS.STATUS.REJECTED"]
+                    <span class="count" id="countRejected">0</span>
+                </button>
+            </div>
+            <div class="search-box">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" id="searchInput"
+                    placeholder='[Page.Message].Message.Label.Array["SVCPRGRS.SEARCH_PLACEHOLDER"]'>
+            </div>
+        </div>
+
+        <!-- Progress List by Category (Tab Style) -->
+        <div class="progress-tabs-container">
+            <!-- Tabs -->
+            <div class="category-tabs">
+                <button type="button" class="category-tab active" data-tab="car-reg">
+                    <i class="fa-solid fa-car-side"></i>
+                    [Page.Message].Message.Label.Array["SVCPRGRS.CAT.CAR_REG"]
+                    <span class="tab-count" id="count-car-reg">0</span>
+                </button>
+                <button type="button" class="category-tab" data-tab="car-inspect">
+                    <i class="fa-solid fa-microscope"></i>
+                    [Page.Message].Message.Label.Array["SVCPRGRS.CAT.CAR_INSPECT"]
+                    <span class="tab-count" id="count-car-inspect">0</span>
+                </button>
+                <button type="button" class="category-tab" data-tab="car-info">
+                    <i class="fa-solid fa-file-import"></i>
+                    [Page.Message].Message.Label.Array["SVCPRGRS.CAT.CAR_INFO_REG"]
+                    <span class="tab-count" id="count-car-info">0</span>
+                </button>
+            </div>
+
+            <!-- Tab Contents -->
+            <div class="tab-content-wrapper">
+                <!-- 자동차 등록 -->
+                <div id="tab-car-reg" class="tab-pane active" data-category="car-reg">
+                    <!-- 등록 신청 -->
+                    <div class="subcategory">
+                        <h4 class="subcategory-title">[Page.Message].Message.Label.Array["SVCPRGRS.SUB.REG_APPLY"]</h4>
+                        <div class="progress-list" id="list-reg-apply">
+                            <!-- Sample Items -->
+                            <div class="progress-item" data-status="submitted">
+                                <div class="item-left">
+                                    <div class="info-row">
+                                        <span
+                                            class="label-app-no">[Page.Message].Message.Label.Array["SVCPRGRS.LABEL.APP_NO"]</span>
+                                        <span class="item-app-no">No. 20260201-0089</span>
+                                    </div>
+                                    <div class="info-row">
+                                        <span
+                                            class="item-badge new-reg">[Page.Message].Message.Label.Array["SVCPRGRS.ITEM.NEW_REG"]</span>
+                                        <div class="item-detail">
+                                            <span class="item-title">12가 3456</span>
+                                            <span class="item-date">2026-02-01 14:30</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item-right">
+                                    <div class="mini-steps">
+                                        <div class="mini-step completed">
+                                            <span class="step-idx">1</span>
+                                            <span
+                                                class="step-name">[Page.Message].Message.Label.Array["SVCPRGRS.STATUS.DRAFT"]</span>
+                                        </div>
+                                        <div class="mini-step active">
+                                            <span class="step-idx">2</span>
+                                            <span
+                                                class="step-name">[Page.Message].Message.Label.Array["SVCPRGRS.STATUS.SUBMITTED"]</span>
+                                        </div>
+                                        <div class="mini-step">
+                                            <span class="step-idx">3</span>
+                                            <span
+                                                class="step-name">[Page.Message].Message.Label.Array["SVCPRGRS.STATUS.REVIEW"]</span>
+                                        </div>
+                                        <div class="mini-step">
+                                            <span class="step-idx">4</span>
+                                            <span
+                                                class="step-name">[Page.Message].Message.Label.Array["SVCPRGRS.STATUS.APPROVED"]</span>
+                                        </div>
+                                    </div>
+                                    <div class="item-actions">
+                                        <button type="button" class="action-btn cancel" onclick="cancelRequest(this)">
+                                            [Page.Message].Message.Label.Array["SVCPRGRS.BTN.CANCEL"]
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="progress-item" data-status="review">
+                                <div class="item-left">
+                                    <div class="info-row">
+                                        <span
+                                            class="label-app-no">[Page.Message].Message.Label.Array["SVCPRGRS.LABEL.APP_NO"]</span>
+                                        <span class="item-app-no">No. 20260128-0156</span>
+                                    </div>
+                                    <div class="info-row">
+                                        <span
+                                            class="item-badge transfer-reg">[Page.Message].Message.Label.Array["SVCPRGRS.ITEM.TRANSFER_REG"]</span>
+                                        <div class="item-detail">
+                                            <span class="item-title">34나 7890</span>
+                                            <span class="item-date">2026-01-28 10:15</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item-right">
+                                    <div class="mini-steps">
+                                        <div class="mini-step completed">
+                                            <span class="step-idx">1</span>
+                                            <span
+                                                class="step-name">[Page.Message].Message.Label.Array["SVCPRGRS.STATUS.DRAFT"]</span>
+                                        </div>
+                                        <div class="mini-step completed">
+                                            <span class="step-idx">2</span>
+                                            <span
+                                                class="step-name">[Page.Message].Message.Label.Array["SVCPRGRS.STATUS.SUBMITTED"]</span>
+                                        </div>
+                                        <div class="mini-step active">
+                                            <span class="step-idx">3</span>
+                                            <span
+                                                class="step-name">[Page.Message].Message.Label.Array["SVCPRGRS.STATUS.REVIEW"]</span>
+                                        </div>
+                                        <div class="mini-step">
+                                            <span class="step-idx">4</span>
+                                            <span
+                                                class="step-name">[Page.Message].Message.Label.Array["SVCPRGRS.STATUS.APPROVED"]</span>
+                                        </div>
+                                    </div>
+                                    <div class="item-actions">
+                                        <!-- No actions for review state -->
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="progress-item" data-status="approved">
+                                <div class="item-left">
+                                    <div class="info-row">
+                                        <span
+                                            class="label-app-no">[Page.Message].Message.Label.Array["SVCPRGRS.LABEL.APP_NO"]</span>
+                                        <span class="item-app-no">No. 20260120-0992</span>
+                                    </div>
+                                    <div class="info-row">
+                                        <span
+                                            class="item-badge cancel-reg">[Page.Message].Message.Label.Array["SVCPRGRS.ITEM.CANCEL_REG"]</span>
+                                        <div class="item-detail">
+                                            <span class="item-title">56다 1234</span>
+                                            <span class="item-date">2026-01-20 09:00</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item-right">
+                                    <div class="mini-steps">
+                                        <div class="mini-step completed">
+                                            <span class="step-idx">1</span>
+                                            <span
+                                                class="step-name">[Page.Message].Message.Label.Array["SVCPRGRS.STATUS.DRAFT"]</span>
+                                        </div>
+                                        <div class="mini-step completed">
+                                            <span class="step-idx">2</span>
+                                            <span
+                                                class="step-name">[Page.Message].Message.Label.Array["SVCPRGRS.STATUS.SUBMITTED"]</span>
+                                        </div>
+                                        <div class="mini-step completed">
+                                            <span class="step-idx">3</span>
+                                            <span
+                                                class="step-name">[Page.Message].Message.Label.Array["SVCPRGRS.STATUS.REVIEW"]</span>
+                                        </div>
+                                        <div class="mini-step active">
+                                            <span class="step-idx">4</span>
+                                            <span
+                                                class="step-name">[Page.Message].Message.Label.Array["SVCPRGRS.STATUS.APPROVED"]</span>
+                                        </div>
+                                    </div>
+                                    <div class="item-actions">
+                                        <button type="button" class="action-btn view" onclick="viewDetail(this)">
+                                            [Page.Message].Message.Label.Array["SVCPRGRS.BTN.VIEW"]
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 서비스 업무 신청 -->
+                    <div class="subcategory">
+                        <h4 class="subcategory-title">[Page.Message].Message.Label.Array["SVCPRGRS.SUB.SVC_APPLY"]</h4>
+                        <div class="progress-list" id="list-svc-apply">
+                            <div class="progress-item" data-status="draft">
+                                <div class="item-left">
+                                    <div class="info-row">
+                                        <span
+                                            class="label-app-no">[Page.Message].Message.Label.Array["SVCPRGRS.LABEL.APP_NO"]</span>
+                                        <span class="item-app-no">No. 20260204-0001</span>
+                                    </div>
+                                    <div class="info-row">
+                                        <span
+                                            class="item-badge change-num">[Page.Message].Message.Label.Array["SVCPRGRS.ITEM.CHANGE_NUM"]</span>
+                                        <div class="item-detail">
+                                            <span class="item-title">78라 5678</span>
+                                            <span class="item-date">2026-02-04 08:45</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item-right">
+                                    <div class="mini-steps">
+                                        <div class="mini-step active">
+                                            <span class="step-idx">1</span>
+                                            <span
+                                                class="step-name">[Page.Message].Message.Label.Array["SVCPRGRS.STATUS.DRAFT"]</span>
+                                        </div>
+                                        <div class="mini-step">
+                                            <span class="step-idx">2</span>
+                                            <span
+                                                class="step-name">[Page.Message].Message.Label.Array["SVCPRGRS.STATUS.SUBMITTED"]</span>
+                                        </div>
+                                        <div class="mini-step">
+                                            <span class="step-idx">3</span>
+                                            <span
+                                                class="step-name">[Page.Message].Message.Label.Array["SVCPRGRS.STATUS.REVIEW"]</span>
+                                        </div>
+                                        <div class="mini-step">
+                                            <span class="step-idx">4</span>
+                                            <span
+                                                class="step-name">[Page.Message].Message.Label.Array["SVCPRGRS.STATUS.APPROVED"]</span>
+                                        </div>
+                                    </div>
+                                    <div class="item-actions">
+                                        <button type="button" class="action-btn edit" onclick="editRequest(this)">
+                                            [Page.Message].Message.Label.Array["SVCPRGRS.BTN.EDIT"]
+                                        </button>
+                                        <button type="button" class="action-btn submit" onclick="submitRequest(this)">
+                                            [Page.Message].Message.Label.Array["SVCPRGRS.BTN.SUBMIT"]
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="progress-item" data-status="rejected">
+                                <div class="item-left">
+                                    <div class="info-row">
+                                        <span
+                                            class="label-app-no">[Page.Message].Message.Label.Array["SVCPRGRS.LABEL.APP_NO"]</span>
+                                        <span class="item-app-no">No. 20260115-0342</span>
+                                    </div>
+                                    <div class="info-row">
+                                        <span
+                                            class="item-badge reissue-plate">[Page.Message].Message.Label.Array["SVCPRGRS.ITEM.REISSUE_PLATE"]</span>
+                                        <div class="item-detail">
+                                            <span class="item-title">90마 9012</span>
+                                            <span class="item-date">2026-01-15 16:20</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item-right">
+                                    <div class="mini-steps">
+                                        <div class="mini-step completed">
+                                            <span class="step-idx">1</span>
+                                            <span
+                                                class="step-name">[Page.Message].Message.Label.Array["SVCPRGRS.STATUS.DRAFT"]</span>
+                                        </div>
+                                        <div class="mini-step completed">
+                                            <span class="step-idx">2</span>
+                                            <span
+                                                class="step-name">[Page.Message].Message.Label.Array["SVCPRGRS.STATUS.SUBMITTED"]</span>
+                                        </div>
+                                        <div class="mini-step completed">
+                                            <span class="step-idx">3</span>
+                                            <span
+                                                class="step-name">[Page.Message].Message.Label.Array["SVCPRGRS.STATUS.REVIEW"]</span>
+                                        </div>
+                                        <div class="mini-step rejected">
+                                            <span class="step-idx">5</span>
+                                            <span
+                                                class="step-name">[Page.Message].Message.Label.Array["SVCPRGRS.STATUS.REJECTED"]</span>
+                                        </div>
+                                    </div>
+                                    <div class="item-actions">
+                                        <button type="button" class="action-btn view" onclick="viewReason(this)">
+                                            [Page.Message].Message.Label.Array["SVCPRGRS.BTN.VIEW_REASON"]
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 자동차 -->
+                    <div class="subcategory">
+                        <h4 class="subcategory-title">[Page.Message].Message.Label.Array["SVCPRGRS.SUB.CAR"]</h4>
+                        <div class="progress-list" id="list-car">
+                            <!-- Sample 1: 구조변경 신청 (Review) -->
+                            <div class="progress-item" data-status="review">
+                                <div class="item-left">
+                                    <div class="info-row">
+                                        <span
+                                            class="label-app-no">[Page.Message].Message.Label.Array["SVCPRGRS.LABEL.APP_NO"]</span>
+                                        <span class="item-app-no">No. 20260203-0222</span>
+                                    </div>
+                                    <div class="info-row">
+                                        <span
+                                            class="item-badge structure-change">[Page.Message].Message.Label.Array["SVCPRGRS.ITEM.STRUCTURE_CHANGE"]</span>
+                                        <div class="item-detail">
+                                            <span class="item-title">12가 3456</span>
+                                            <span class="item-date">2026-02-03 11:20</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item-right">
+                                    <div class="mini-steps">
+                                        <div class="mini-step completed">
+                                            <span class="step-idx">1</span>
+                                            <span
+                                                class="step-name">[Page.Message].Message.Label.Array["SVCPRGRS.STATUS.DRAFT"]</span>
+                                        </div>
+                                        <div class="mini-step completed">
+                                            <span class="step-idx">2</span>
+                                            <span
+                                                class="step-name">[Page.Message].Message.Label.Array["SVCPRGRS.STATUS.SUBMITTED"]</span>
+                                        </div>
+                                        <div class="mini-step active">
+                                            <span class="step-idx">3</span>
+                                            <span
+                                                class="step-name">[Page.Message].Message.Label.Array["SVCPRGRS.STATUS.REVIEW"]</span>
+                                        </div>
+                                        <div class="mini-step">
+                                            <span class="step-idx">4</span>
+                                            <span
+                                                class="step-name">[Page.Message].Message.Label.Array["SVCPRGRS.STATUS.APPROVED"]</span>
+                                        </div>
+                                    </div>
+                                    <div class="item-actions">
+                                        <!-- No actions for review status -->
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Sample 2: 등록원부 발급 (Approved) -->
+                            <div class="progress-item" data-status="approved">
+                                <div class="item-left">
+                                    <div class="info-row">
+                                        <span
+                                            class="label-app-no">[Page.Message].Message.Label.Array["SVCPRGRS.LABEL.APP_NO"]</span>
+                                        <span class="item-app-no">No. 20260201-0118</span>
+                                    </div>
+                                    <div class="info-row">
+                                        <span
+                                            class="item-badge cert-issue">[Page.Message].Message.Label.Array["SVCPRGRS.ITEM.CERT_ISSUE"]</span>
+                                        <div class="item-detail">
+                                            <span class="item-title">34나 7890</span>
+                                            <span class="item-date">2026-02-01 09:15</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item-right">
+                                    <div class="mini-steps">
+                                        <div class="mini-step completed">
+                                            <span class="step-idx">1</span>
+                                            <span
+                                                class="step-name">[Page.Message].Message.Label.Array["SVCPRGRS.STATUS.DRAFT"]</span>
+                                        </div>
+                                        <div class="mini-step completed">
+                                            <span class="step-idx">2</span>
+                                            <span
+                                                class="step-name">[Page.Message].Message.Label.Array["SVCPRGRS.STATUS.SUBMITTED"]</span>
+                                        </div>
+                                        <div class="mini-step completed">
+                                            <span class="step-idx">3</span>
+                                            <span
+                                                class="step-name">[Page.Message].Message.Label.Array["SVCPRGRS.STATUS.REVIEW"]</span>
+                                        </div>
+                                        <div class="mini-step active">
+                                            <span class="step-idx">4</span>
+                                            <span
+                                                class="step-name">[Page.Message].Message.Label.Array["SVCPRGRS.STATUS.APPROVED"]</span>
+                                        </div>
+                                    </div>
+                                    <div class="item-actions">
+                                        <button type="button" class="action-btn view" onclick="viewDetail(this)">
+                                            [Page.Message].Message.Label.Array["SVCPRGRS.BTN.VIEW"]
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 자동차 검사 -->
+                <div id="tab-car-inspect" class="tab-pane" data-category="car-inspect">
+                    <!-- 검사예약 -->
+                    <div class="subcategory">
+                        <h4 class="subcategory-title">[Page.Message].Message.Label.Array["SVCPRGRS.SUB.INSPECT_RESERVE"]
+                        </h4>
+                        <div class="progress-list" id="list-inspect-reserve">
+                            <div class="progress-item" data-status="submitted">
+                                <div class="item-left">
+                                    <div class="info-row">
+                                        <span
+                                            class="label-app-no">[Page.Message].Message.Label.Array["SVCPRGRS.LABEL.APP_NO"]</span>
+                                        <span class="item-app-no">No. 20260210-0055</span>
+                                    </div>
+                                    <div class="info-row">
+                                        <span
+                                            class="item-badge regular-inspect">[Page.Message].Message.Label.Array["SVCPRGRS.ITEM.REGULAR_INSPECT"]</span>
+                                        <div class="item-detail">
+                                            <span class="item-title">12가 3456 - Hyundai Sonata</span>
+                                            <span class="item-date">2026-02-10 09:30</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item-right">
+                                    <div class="mini-steps">
+                                        <div class="mini-step completed">
+                                            <span class="step-idx">1</span>
+                                            <span
+                                                class="step-name">[Page.Message].Message.Label.Array["SVCPRGRS.STATUS.DRAFT"]</span>
+                                        </div>
+                                        <div class="mini-step active">
+                                            <span class="step-idx">2</span>
+                                            <span
+                                                class="step-name">[Page.Message].Message.Label.Array["SVCPRGRS.STATUS.SUBMITTED"]</span>
+                                        </div>
+                                        <div class="mini-step">
+                                            <span class="step-idx">3</span>
+                                            <span
+                                                class="step-name">[Page.Message].Message.Label.Array["SVCPRGRS.STATUS.REVIEW"]</span>
+                                        </div>
+                                        <div class="mini-step">
+                                            <span class="step-idx">4</span>
+                                            <span
+                                                class="step-name">[Page.Message].Message.Label.Array["SVCPRGRS.STATUS.APPROVED"]</span>
+                                        </div>
+                                    </div>
+                                    <div class="item-actions">
+                                        <button type="button" class="action-btn cancel" onclick="cancelRequest(this)">
+                                            [Page.Message].Message.Label.Array["SVCPRGRS.BTN.CANCEL"]
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 튜닝 승인 신청 -->
+                    <div class="subcategory">
+                        <h4 class="subcategory-title">[Page.Message].Message.Label.Array["SVCPRGRS.SUB.TUNING_APPLY"]
+                        </h4>
+                        <div class="progress-list" id="list-tuning">
+                            <div class="empty-list">
+                                <i class="fa-solid fa-inbox"></i>
+                                <p>[Page.Message].Message.Label.Array["SVCPRGRS.MSG.NO_ITEMS"]</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 차대번호 표기 신청 -->
+                    <div class="subcategory">
+                        <h4 class="subcategory-title">[Page.Message].Message.Label.Array["SVCPRGRS.SUB.CHASSIS_APPLY"]
+                        </h4>
+                        <div class="progress-list" id="list-chassis">
+                            <div class="progress-item" data-status="approved">
+                                <div class="item-left">
+                                    <div class="info-row">
+                                        <span
+                                            class="label-app-no">[Page.Message].Message.Label.Array["SVCPRGRS.LABEL.APP_NO"]</span>
+                                        <span class="item-app-no">No. 20260125-0771</span>
+                                    </div>
+                                    <div class="info-row">
+                                        <span
+                                            class="item-badge new-chassis">[Page.Message].Message.Label.Array["SVCPRGRS.ITEM.NEW_CHASSIS"]</span>
+                                        <div class="item-detail">
+                                            <span class="item-title">KMHXX00XXXX000001</span>
+                                            <span class="item-date">2026-01-25 11:00</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item-right">
+                                    <div class="mini-steps">
+                                        <div class="mini-step completed">
+                                            <span class="step-idx">1</span>
+                                            <span
+                                                class="step-name">[Page.Message].Message.Label.Array["SVCPRGRS.STATUS.DRAFT"]</span>
+                                        </div>
+                                        <div class="mini-step completed">
+                                            <span class="step-idx">2</span>
+                                            <span
+                                                class="step-name">[Page.Message].Message.Label.Array["SVCPRGRS.STATUS.SUBMITTED"]</span>
+                                        </div>
+                                        <div class="mini-step completed">
+                                            <span class="step-idx">3</span>
+                                            <span
+                                                class="step-name">[Page.Message].Message.Label.Array["SVCPRGRS.STATUS.REVIEW"]</span>
+                                        </div>
+                                        <div class="mini-step active">
+                                            <span class="step-idx">4</span>
+                                            <span
+                                                class="step-name">[Page.Message].Message.Label.Array["SVCPRGRS.STATUS.APPROVED"]</span>
+                                        </div>
+                                    </div>
+                                    <div class="item-actions">
+                                        <button type="button" class="action-btn view" onclick="viewDetail(this)">
+                                            [Page.Message].Message.Label.Array["SVCPRGRS.BTN.VIEW"]
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 자동차 정보 등록 -->
+                <div id="tab-car-info" class="tab-pane" data-category="car-info">
+                    <!-- 수입차량 정보 등록 -->
+                    <div class="subcategory">
+                        <h4 class="subcategory-title">[Page.Message].Message.Label.Array["SVCPRGRS.SUB.IMPORT_REG"]</h4>
+                        <div class="progress-list" id="list-import">
+                            <div class="progress-item" data-status="review">
+                                <div class="item-left">
+                                    <div class="info-row">
+                                        <span
+                                            class="label-app-no">[Page.Message].Message.Label.Array["SVCPRGRS.LABEL.APP_NO"]</span>
+                                        <span class="item-app-no">No. 20260202-0445</span>
+                                    </div>
+                                    <div class="info-row">
+                                        <span
+                                            class="item-badge import-reg">[Page.Message].Message.Label.Array["SVCPRGRS.ITEM.IMPORT_REG"]</span>
+                                        <div class="item-detail">
+                                            <span class="item-title">BMW 520d - WBAPH5C55BA000001</span>
+                                            <span class="item-date">2026-02-02 15:45</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item-right">
+                                    <div class="mini-steps">
+                                        <div class="mini-step completed">
+                                            <span class="step-idx">1</span>
+                                            <span
+                                                class="step-name">[Page.Message].Message.Label.Array["SVCPRGRS.STATUS.DRAFT"]</span>
+                                        </div>
+                                        <div class="mini-step completed">
+                                            <span class="step-idx">2</span>
+                                            <span
+                                                class="step-name">[Page.Message].Message.Label.Array["SVCPRGRS.STATUS.SUBMITTED"]</span>
+                                        </div>
+                                        <div class="mini-step active">
+                                            <span class="step-idx">3</span>
+                                            <span
+                                                class="step-name">[Page.Message].Message.Label.Array["SVCPRGRS.STATUS.REVIEW"]</span>
+                                        </div>
+                                        <div class="mini-step">
+                                            <span class="step-idx">4</span>
+                                            <span
+                                                class="step-name">[Page.Message].Message.Label.Array["SVCPRGRS.STATUS.APPROVED"]</span>
+                                        </div>
+                                    </div>
+                                    <div class="item-actions">
+                                        <!-- No actions for review state -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    /* Service Progress List Page Styles */
+    .svc-progress-wrapper {
+        background: var(--bg-main);
+        padding: 100px 0 60px 0;
+        margin-top: var(--header-height);
+        min-height: calc(100vh - var(--header-height) - 200px);
+    }
+
+    .page-header {
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    .page-title {
+        font-size: 32px;
+        font-weight: 800;
+        color: var(--text-main);
+        margin-bottom: 12px;
+    }
+
+    .page-subtitle {
+        font-size: 16px;
+        color: var(--text-muted);
+    }
+
+    /* Progress Flow Guide */
+    .progress-flow-guide {
+        background: white;
+        border-radius: var(--border-radius-lg);
+        box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+        padding: 24px 20px;
+        margin-bottom: 32px;
+    }
+
+    .flow-header {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 16px;
+        font-weight: 700;
+        color: var(--text-main);
+        margin-bottom: 24px;
+    }
+
+    .flow-header i {
+        color: var(--primary-color);
+        font-size: 20px;
+    }
+
+    .flow-steps {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 8px;
+        flex-wrap: wrap;
+    }
+
+    .flow-step {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+    }
+
+    .flow-step.final {
+        gap: 4px;
+    }
+
+    .step-icon {
+        width: 42px;
+        height: 42px;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 18px;
+        flex-shrink: 0;
+    }
+
+    .step-icon.draft {
+        background: #f3f4f6;
+        color: #6b7280;
+    }
+
+    .step-icon.submitted {
+        background: #dbeafe;
+        color: #2563eb;
+    }
+
+    .step-icon.review {
+        background: #fef3c7;
+        color: #d97706;
+    }
+
+    .step-icon.approved {
+        background: #d1fae5;
+        color: #059669;
+    }
+
+    .step-icon.rejected {
+        background: #fee2e2;
+        color: #dc2626;
+    }
+
+    .step-info {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .step-label {
+        font-size: 13px;
+        font-weight: 700;
+        color: var(--text-main);
+    }
+
+    .step-desc {
+        font-size: 11px;
+        color: var(--text-muted);
+        margin: 0;
+        white-space: nowrap;
+        word-break: keep-all;
+    }
+
+    .flow-arrow {
+        color: #d1d5db;
+        font-size: 16px;
+        flex-shrink: 0;
+    }
+
+    .or-divider {
+        font-size: 16px;
+        color: #9ca3af;
+        font-weight: 600;
+        margin: 0 4px;
+    }
+
+    /* Filter Section */
+    .filter-section {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+        margin-bottom: 24px;
+        flex-wrap: wrap;
+    }
+
+    .filter-tabs {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+    }
+
+    .filter-tab {
+        padding: 10px 16px;
+        border: 1px solid #e5e7eb;
+        border-radius: 20px;
+        background: white;
+        font-size: 13px;
+        font-weight: 600;
+        color: var(--text-muted);
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        transition: all 0.2s ease;
+    }
+
+    .filter-tab:hover {
+        border-color: var(--primary-color);
+        color: var(--primary-color);
+    }
+
+    .filter-tab.active {
+        background: var(--primary-color);
+        border-color: var(--primary-color);
+        color: white;
+    }
+
+    .filter-tab .count {
+        background: rgba(0, 0, 0, 0.1);
+        padding: 2px 8px;
+        border-radius: 10px;
+        font-size: 11px;
+    }
+
+    .filter-tab.active .count {
+        background: rgba(255, 255, 255, 0.2);
+    }
+
+    .search-box {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        background: white;
+        border: 1px solid #e5e7eb;
+        border-radius: 10px;
+        padding: 10px 16px;
+        min-width: 280px;
+    }
+
+    .search-box i {
+        color: #9ca3af;
+    }
+
+    .search-box input {
+        border: none;
+        outline: none;
+        flex: 1;
+        font-size: 14px;
+        color: var(--text-main);
+    }
+
+    /* Tab Styles (New) */
+    .category-tabs {
+        display: flex;
+        gap: 12px;
+        margin-bottom: 24px;
+        border-bottom: 1px solid #e5e7eb;
+        padding-bottom: 1px;
+    }
+
+    .category-tab {
+        padding: 12px 20px;
+        background: transparent;
+        border: none;
+        border-bottom: 2px solid transparent;
+        margin-bottom: -2px;
+        font-size: 15px;
+        font-weight: 600;
+        color: var(--text-muted);
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        transition: all 0.2s ease;
+    }
+
+    .category-tab:hover {
+        color: var(--primary-color);
+    }
+
+    .category-tab.active {
+        color: var(--primary-color);
+        border-bottom-color: var(--primary-color);
+    }
+
+    .category-tab .tab-count {
+        background: #f3f4f6;
+        color: #6b7280;
+        padding: 2px 8px;
+        border-radius: 10px;
+        font-size: 11px;
+    }
+
+    .category-tab.active .tab-count {
+        background: rgba(0, 118, 255, 0.1);
+        color: var(--primary-color);
+    }
+
+    .tab-content-wrapper {
+        min-height: 300px;
+    }
+
+    .tab-pane {
+        display: none;
+        background: white;
+        border-radius: var(--border-radius-lg);
+        box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+        padding: 32px;
+    }
+
+    .tab-pane.active {
+        display: block;
+        animation: fadeIn 0.3s ease-out;
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(10px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* Subcategory */
+    .subcategory {
+        margin-bottom: 24px;
+    }
+
+    .subcategory:last-child {
+        margin-bottom: 0;
+    }
+
+    .subcategory-title {
+        font-size: 14px;
+        font-weight: 700;
+        color: var(--text-muted);
+        margin: 0 0 12px 0;
+        padding-left: 12px;
+        border-left: 3px solid var(--primary-color);
+    }
+
+    /* Progress List */
+    .progress-list {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .progress-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 16px 20px;
+        background: #fafbfc;
+        border: 1px solid #e5e7eb;
+        border-radius: 10px;
+        transition: all 0.2s ease;
+    }
+
+    .progress-item:hover {
+        border-color: var(--primary-color);
+        box-shadow: 0 2px 8px rgba(0, 118, 255, 0.08);
+    }
+
+    .item-left {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .info-row {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+    }
+
+    .label-app-no {
+        display: inline-flex;
+        justify-content: center;
+        min-width: 120px;
+        /* Aligned with badge */
+        font-size: 12px;
+        color: var(--text-muted);
+        font-weight: 600;
+    }
+
+    .item-badge {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        min-width: 130px;
+        /* 120px에서 상향 */
+        width: auto;
+        /* 고정 너비 해제 */
+        padding: 6px 16px;
+        /* 좌우 여백 확대 */
+        border-radius: 6px;
+        font-size: 12px;
+        font-weight: 700;
+        white-space: nowrap;
+    }
+
+    .item-badge.new-reg {
+        background: #dbeafe;
+        color: #1d4ed8;
+    }
+
+    .item-badge.transfer-reg {
+        background: #d1fae5;
+        color: #059669;
+    }
+
+    .item-badge.cancel-reg {
+        background: #fee2e2;
+        color: #dc2626;
+    }
+
+    .item-badge.change-num {
+        background: #fef3c7;
+        color: #d97706;
+    }
+
+    .item-badge.reissue-plate {
+        background: #e0e7ff;
+        color: #4f46e5;
+    }
+
+    .item-badge.regular-inspect {
+        background: #dbeafe;
+        color: #2563eb;
+    }
+
+    .item-badge.new-chassis {
+        background: #d1fae5;
+        color: #059669;
+    }
+
+    .item-badge.import-reg {
+        background: #fce7f3;
+        color: #db2777;
+    }
+
+    .item-badge.structure-change {
+        background: #f3e8ff;
+        color: #7e22ce;
+    }
+
+    .item-badge.cert-issue {
+        background: #ecfccb;
+        color: #4d7c0f;
+    }
+
+    .item-detail {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+    }
+
+    .item-app-no {
+        font-size: 12px;
+        color: #6b7280;
+        font-family: 'Courier New', Courier, monospace;
+        letter-spacing: -0.5px;
+    }
+
+    .item-title {
+        font-size: 15px;
+        font-weight: 600;
+        color: var(--text-main);
+    }
+
+    .item-date {
+        font-size: 12px;
+        color: var(--text-muted);
+    }
+
+    .item-right {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        /* Removed flex: 1 to prevent excessive stretching, letting margin-left: auto on container do the work if needed. 
+           But actually, we want item-left to take space and item-right to be fixed/shrink properly.
+           Let's keep flex-shrink: 0 for item-right */
+        margin-left: auto;
+        /* Push to right */
+    }
+
+    .item-actions {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        min-width: 130px;
+        /* Reserve space for up to 2 buttons */
+        justify-content: flex-end;
+    }
+
+    /* Mini Progress Steps */
+    .mini-steps {
+        display: flex;
+        align-items: center;
+        gap: 0;
+        /* Gap handled by fixed width */
+    }
+
+    .mini-step {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        /* 아이콘 위치를 왼쪽에 고정하여 수직 정렬 보장 */
+        gap: 8px;
+        color: var(--text-muted);
+        font-size: 13px;
+        position: relative;
+        width: 140px;
+        /* 몽골어 대응을 위한 충분한 고정 너비 */
+        flex-shrink: 0;
+        white-space: nowrap;
+        /* 줄바꿈 방지 */
+    }
+
+    /* Separator dots for all except last step */
+    .mini-step:not(:last-child)::after {
+        content: '•••';
+        color: #e5e7eb;
+        position: absolute;
+        right: 20px;
+        /* 고정 너비 내에서 우측 적정 위치에 배치 */
+        font-size: 8px;
+        letter-spacing: 1px;
+    }
+
+    /* Hide separator for completed steps if next is completed or active? 
+       Actually user wants dots always visible but maybe colored? 
+       User req: "❶ 작성중 ••• ②접수완료"
+       Let's keep dots gray or color them if prev step is completed. 
+    */
+
+    .mini-step .step-idx {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        background: #f3f4f6;
+        color: #9ca3af;
+        font-size: 11px;
+        font-weight: 700;
+        border: 1px solid #e5e7eb;
+    }
+
+    .mini-step .step-name {
+        font-weight: 500;
+    }
+
+    /* Active Step */
+    .mini-step.active {
+        color: var(--primary-color);
+    }
+
+    .mini-step.active .step-idx {
+        background: var(--primary-color);
+        color: white;
+        border-color: var(--primary-color);
+        box-shadow: 0 0 0 rgba(0, 118, 255, 0.4);
+        animation: activePulse 2s infinite;
+        /* 반짝거리는 애니메이션 추가 */
+    }
+
+    .mini-step.active .step-name {
+        font-weight: 700;
+        animation: textSoftBlink 2s infinite;
+        /* 텍스트도 부드럽게 강조 */
+    }
+
+    @keyframes activePulse {
+        0% {
+            box-shadow: 0 0 0 0 rgba(0, 118, 255, 0.4);
+        }
+
+        70% {
+            box-shadow: 0 0 0 8px rgba(0, 118, 255, 0);
+        }
+
+        100% {
+            box-shadow: 0 0 0 0 rgba(0, 118, 255, 0);
+        }
+    }
+
+    @keyframes textSoftBlink {
+
+        0%,
+        100% {
+            opacity: 1;
+        }
+
+        50% {
+            opacity: 0.8;
+        }
+    }
+
+    /* Completed Step */
+    .mini-step.completed .step-idx {
+        background: #dbeafe;
+        color: var(--primary-color);
+        border-color: #bfdbfe;
+    }
+
+    /* Rejected Step */
+    .mini-step.rejected {
+        color: #dc2626;
+    }
+
+    .mini-step.rejected .step-idx {
+        background: #fee2e2;
+        color: #dc2626;
+        border-color: #fecaca;
+    }
+
+    .mini-step.rejected .step-name {
+        font-weight: 700;
+    }
+
+    /* Responsive adjustment */
+    @media (max-width: 992px) {
+        .mini-steps {
+            display: none;
+            /* Hide detailed steps on smaller screens if too cramped */
+        }
+    }
+
+    .action-btn {
+        padding: 8px 16px;
+        border-radius: 6px;
+        font-size: 12px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        border: none;
+    }
+
+    .action-btn.cancel {
+        background: #fee2e2;
+        color: #dc2626;
+    }
+
+    .action-btn.cancel:hover {
+        background: #dc2626;
+        color: white;
+    }
+
+    .action-btn.edit {
+        background: #fef3c7;
+        color: #d97706;
+    }
+
+    .action-btn.edit:hover {
+        background: #d97706;
+        color: white;
+    }
+
+    .action-btn.submit {
+        background: var(--primary-color);
+        color: white;
+    }
+
+    .action-btn.submit:hover {
+        background: var(--primary-dark);
+    }
+
+    .action-btn.view {
+        background: #e0e7ff;
+        color: #4f46e5;
+    }
+
+    .action-btn.view:hover {
+        background: #4f46e5;
+        color: white;
+    }
+
+    /* Empty List */
+    .empty-list {
+        text-align: center;
+        padding: 40px 20px;
+        color: var(--text-muted);
+    }
+
+    .empty-list i {
+        font-size: 32px;
+        margin-bottom: 12px;
+        opacity: 0.5;
+    }
+
+    .empty-list p {
+        margin: 0;
+        font-size: 14px;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+        .flow-steps {
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .flow-arrow {
+            transform: rotate(90deg);
+            align-self: center;
+        }
+
+
+
+        .filter-section {
+            flex-direction: column;
+            align-items: stretch;
+        }
+
+        .filter-tabs {
+            overflow-x: auto;
+            padding-bottom: 8px;
+        }
+
+        .search-box {
+            min-width: 100%;
+        }
+
+        .progress-item {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .item-right {
+            width: 100%;
+            justify-content: flex-end;
+        }
+    }
+</style>
+
+<script>
+    $(document).ready(function () {
+        initCategoryTabs();
+        initFilterTabs();
+        updateCounts();
+    });
+
+    function initCategoryTabs() {
+        $('.category-tab').on('click', function () {
+            $('.category-tab').removeClass('active');
+            $(this).addClass('active');
+
+            const tab = $(this).data('tab');
+            $('.tab-pane').removeClass('active');
+            $('#tab-' + tab).addClass('active');
+        });
+    }
+
+    function initFilterTabs() {
+        $('.filter-tab').on('click', function () {
+            $('.filter-tab').removeClass('active');
+            $(this).addClass('active');
+
+            const filter = $(this).data('filter');
+            filterItems(filter);
+        });
+    }
+
+    function filterItems(status) {
+        if (status === 'all') {
+            $('.progress-item').show();
+        } else {
+            $('.progress-item').hide();
+            $(`.progress-item[data-status="${status}"]`).show();
+        }
+        updateCounts();
+    }
+
+    function updateCounts() {
+        const counts = {
+            all: $('.progress-item').length,
+            draft: $('.progress-item[data-status="draft"]').length,
+            submitted: $('.progress-item[data-status="submitted"]').length,
+            review: $('.progress-item[data-status="review"]').length,
+            approved: $('.progress-item[data-status="approved"]').length,
+            rejected: $('.progress-item[data-status="rejected"]').length
+        };
+
+        $('#countAll').text(counts.all);
+        $('#countDraft').text(counts.draft);
+        $('#countSubmitted').text(counts.submitted);
+        $('#countReview').text(counts.review);
+        $('#countApproved').text(counts.approved);
+        $('#countRejected').text(counts.rejected);
+
+        // Update category counts
+        $('.tab-pane').each(function () {
+            const category = $(this).data('category');
+            const count = $(this).find('.progress-item:visible').length;
+            $('#count-' + category).text(count);
+        });
+    }
+
+    async function cancelRequest(btn) {
+        if (await formUtil.confirm('[Page.Message].Message.Label.Array["SVCPRGRS.MSG.CONFIRM_CANCEL"]')) {
+            // TODO: Call cancel API
+            $(btn).closest('.progress-item').fadeOut(300, function () {
+                $(this).remove();
+                updateCounts();
+            });
+        }
+    }
+
+    function editRequest(btn) {
+        // TODO: Navigate to edit page
+        formUtil.toast('Edit page will be opened', 'info');
+    }
+
+    async function submitRequest(btn) {
+        if (await formUtil.confirm('[Page.Message].Message.Label.Array["SVCPRGRS.MSG.CONFIRM_SUBMIT"]')) {
+            // TODO: Call submit API
+            const $item = $(btn).closest('.progress-item');
+            $item.attr('data-status', 'submitted');
+
+            // Update Steps: Draft(0) -> Completed, Submitted(1) -> Active
+            const $steps = $item.find('.mini-step');
+            $steps.eq(0).removeClass('active').addClass('completed');
+            $steps.eq(1).addClass('active');
+
+            $item.find('.action-btn.edit, .action-btn.submit').remove();
+            $item.find('.item-actions').append('<button type="button" class="action-btn cancel" onclick="cancelRequest(this)">[Page.Message].Message.Label.Array["SVCPRGRS.BTN.CANCEL"]</button>');
+
+            updateCounts();
+            formUtil.toast('[Page.Message].Message.Label.Array["MYINFO.MSG.SAVE_SUCCESS"]', 'success');
+        }
+    }
+
+    function viewDetail(btn) {
+        // TODO: Navigate to detail page
+        formUtil.toast('Detail page will be opened', 'info');
+    }
+
+    function viewReason(btn) {
+        // [수정] 반려 사유 팝업 표시
+        // formUtil.alertPopup을 사용하여 반려 사유를 사용자에게 알림 (확인 버튼 제공)
+        formUtil.alertPopup('반려 사유 : 제출된 서류(차대번호 사진) 식별 불가로 인해 반려되었습니다.<br><br>재촬영 후 다시 신청해 주세요.');
+    }
+</script>

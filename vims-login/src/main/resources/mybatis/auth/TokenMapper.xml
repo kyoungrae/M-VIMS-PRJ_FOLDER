@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.system.auth.token.TokenMapper">
+    <resultMap id="TokenResult" type="com.system.auth.domain.Token">
+        <id property="id" column="id" />
+        <result property="token" column="token" />
+        <result property="token_type" column="token_type" />
+        <result property="revoked" column="revoked" />
+        <result property="expired" column="expired" />
+        <association property="auth_user" javaType="com.system.auth.authuser.AuthUser">
+            <id property="id" column="user_id" />
+            <result property="user_id" column="user_id_string" />
+            <result property="email" column="email" />
+        </association>
+    </resultMap>
+
+    <select id="SELECT_TOKEN" resultMap="TokenResult">
+        SELECT
+            T.*,
+            U.user_id as user_id_string,
+            U.email as email
+        FROM
+            TOKEN T
+        LEFT JOIN SYS_USER U ON T.user_id = U.id
+        WHERE T.token = #{token}
+    </select>
+
+    <select id="SELECT_ALL_TOKEN" parameterType="com.system.auth.domain.Token" resultType="com.system.auth.domain.Token">
+        SELECT *
+        FROM TOKEN
+        WHERE user_id = #{auth_user.id}
+          AND expired = #{expired}
+          AND revoked = #{revoked}
+    </select>
+    <insert id="INSERT_TOKEN" parameterType="com.system.auth.domain.Token">
+        INSERT INTO TOKEN(
+            id,
+            expired,
+            revoked,
+            user_id,
+            token,
+            token_type
+        )VALUES(
+            #{id},
+            #{expired},
+            #{revoked},
+            #{auth_user.id},
+            #{token},
+            #{token_type}
+        )
+    </insert>
+    <update id="UPDATE_TOKEN" parameterType="com.system.auth.domain.Token">
+        UPDATE TOKEN
+        SET expired = #{expired}, revoked = #{revoked}
+        WHERE token = #{token}
+    </update>
+
+    <delete id="DELETE_EXPIRED_TOKEN_BY_USER_ID" parameterType="int">
+        DELETE FROM TOKEN
+        WHERE user_id = #{userId} AND (expired = 1 OR revoked = 1)
+    </delete>
+    
+    <update id="REVOKE_ALL_USER_TOKENS" parameterType="int">
+        UPDATE TOKEN
+        SET expired = 1, revoked = 1
+        WHERE user_id = #{userId} AND expired = 0 AND revoked = 0
+    </update>
+</mapper>

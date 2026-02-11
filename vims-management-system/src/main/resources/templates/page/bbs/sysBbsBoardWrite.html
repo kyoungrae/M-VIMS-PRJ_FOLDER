@@ -1,0 +1,478 @@
+<article id="sysBbsBoardWritePage" class="gi-article-content gi-col-95 gi-row-100 gi-overflow-scroll"
+    style="background: #f8fafc; border: none; box-shadow: none;">
+    <style>
+        .gi-thumbnail-btn {
+            background: #fff;
+            border: 1px solid #e2e8f0;
+            color: #64748b;
+            padding: 4px 8px;
+            border-radius: 6px;
+            font-size: 11px;
+            cursor: pointer;
+            margin-right: 8px;
+            transition: all 0.2s;
+        }
+
+        .gi-thumbnail-btn:hover {
+            border-color: var(--background-color-btn-blue);
+            color: var(--background-color-btn-blue);
+        }
+
+        .gi-thumbnail-btn.active {
+            background: var(--background-color-btn-blue);
+            color: #fff;
+            border-color: var(--background-color-btn-blue);
+        }
+
+        .gi-file-item-card:hover .gi-thumbnail-btn {
+            opacity: 1;
+        }
+    </style>
+    <div class="gi-padding-left-right-20px">
+        <!-- 헤더 영역 (카드 외부) -->
+        <header class="gi-margin-bottom-30px gi-padding-left-10px">
+            <h1 class="gi-page-title" id="write-page-title">[Page.Message].Message.Label.Array["SYS_BBS_BOARD.WRITE"]
+            </h1>
+            <p class="gi-subtitle-main">[Page.Message].Message.Label.Array["SYS_BBS_BOARD.SUB_TITLE_WRITE"]</p>
+        </header>
+
+        <!-- 메인 카드 -->
+        <div class="gi-form-card">
+            <form id="bbsBoardWriteForm">
+                <div class="gi-flex gi-flex-column gi-grid-gap-30px">
+
+                    <!-- 섹션 1: 기본 정보 -->
+                    <div class="gi-form-section">
+                        <h3 class="gi-form-section-title">
+                            [Page.Message].Message.Label.Array["SYS_BBS_BOARD.SECTION.BASIC"]</h3>
+                        <div class="gi-flex gi-grid-gap-20px">
+                            <!-- 제목 입력 -->
+                            <div class="gi-input-container gi-flex-1">
+                                <label for="board_title" class="gi-input-label" data-focus-label="true"
+                                    data-required="true">[Page.Message].Message.Label.Array["SYS_BBS_BOARD.TITLE"]</label>
+                                <input data-field="title" id="board_title" name="title" class="gi-input"
+                                    data-required="true" autocomplete="off" maxlength="50" />
+                            </div>
+
+                            <!-- 작성자명 -->
+                            <div class="gi-input-container gi-flex-1">
+                                <label for="board_writer" class="gi-input-label"
+                                    data-focus-label="true">[Page.Message].Message.Label.Array["SYS_BBS_BOARD.WRITER_NAME"]</label>
+                                <input data-disabled data-field="writer_name" id="board_writer" name="writer_name"
+                                    class="gi-input" autocomplete="off" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 섹션: 썸네일 (갤러리형만 표시) -->
+                    <div id="thumbnail-section-container" class="gi-form-section gi-hidden">
+                        <h3 class="gi-form-section-title">
+                            [Page.Message].Message.Label.Array["SYS_BBS_BOARD.SECTION.THUMBNAIL"]</h3>
+                        <div class="gi-flex gi-flex-column gi-grid-gap-10px">
+                            <div class="gi-flex gi-grid-gap-10px gi-align-center">
+                                <div id="thumbnail-preview-area" class="gi-hidden"
+                                    style="width: 200px; height: 150px; border: 1px solid #e2e8f0; padding: 4px; background: #fff; border-radius: 4px;">
+                                    <img id="thumbnail-preview-img" src=""
+                                        style="width: 100%; height: 100%; object-fit: contain;">
+                                </div>
+                                <div class="gi-input-container" style="width: 300px;">
+                                    <label for="thumbnail_preview_name" class="gi-input-label"
+                                        data-focus-label="true">[Page.Message].Message.Label.Array["SYS_BBS_BOARD.THUMBNAIL"]</label>
+                                    <input type="text" class="gi-input" id="thumbnail_preview_name" data-disabled
+                                        data-field="thumbnail_name" autocomplete="off" />
+                                </div>
+                                <button type="button" class="gi-btn"
+                                    onclick="document.getElementById('thumbnail-upload-input').click()">
+                                    [Page.Message].Message.Label.Array["FILE_REGISTER_BTN"]
+                                </button>
+                                <input type="file" id="thumbnail-upload-input" style="display: none;" accept="image/*"
+                                    onchange="uploadThumbnail(this)">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 섹션 2: 내용 작성 -->
+                    <div class="gi-form-section">
+                        <h3 class="gi-form-section-title">
+                            [Page.Message].Message.Label.Array["SYS_BBS_BOARD.SECTION.CONTENT"]</h3>
+                        <div class="gi-editor-wrapper">
+                            <div id="editor-container"></div>
+                        </div>
+                        <input type="hidden" data-field="content" id="board_content" name="content" />
+                        <input type="hidden" data-field="thumbnail" id="board_thumbnail" name="thumbnail" />
+                    </div>
+
+                    <!-- 섹션 3: 첨부 파일 -->
+                    <div id="file-section-container" class="gi-form-section gi-hidden">
+                        <h3 class="gi-form-section-title">
+                            [Page.Message].Message.Label.Array["SYS_BBS_BOARD.SECTION.FILE"]</h3>
+                        <div id="file-attachment-section" data-file-card data-input-id="board_file_uuid"
+                            data-folder-name="bbs_attachments1" data-api-path="/fms/common/file/sysFileDetail"
+                            data-read-only="false">
+                        </div>
+                    </div>
+
+                    <!-- 액션 버튼 -->
+                    <div class="gi-form-actions">
+                        <button id="bbs-cancel-btn" class="gi-btn" type="button"
+                            style="min-width: 120px; height: 42px;">
+                            <span>[Page.Message].Message.Label.Array["CANCEL_BTN"]</span>
+                        </button>
+                        <button id="bbs-save-btn" class="gi-btn-blue gi-flex gi-flex-center gi-grid-gap-8px"
+                            type="button" style="min-width: 120px; height: 42px;">
+                            <img src="/common/img/save-white.png" style="width: 18px;"
+                                alt="[Page.Message].Message.Label.Array['SAVE_BTN']">
+                            <span id="bbs-save-btn-text">[Page.Message].Message.Label.Array["SAVE_BTN"]</span>
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</article>
+
+<script type="text/javascript">
+    var quill;
+    var writeSessionData = JSON.parse(sessionStorage.getItem("DATA"));
+    var targetBbsId = writeSessionData.bbs_id;
+    var boardId = writeSessionData.board_id; // 수정 모드일 때 존재
+    var mode = writeSessionData.mode || 'register';
+
+    init();
+
+    async function init() {
+        new PageInit();
+
+        // 1. BBS 설정 확인 (파일 첨부 가능 여부 등)
+        await checkBbsConfiguration();
+        // 2. 페이지 헤더/타이틀 설정
+        if (mode === 'modify') {
+            $("#write-page-title").text(Message.Label.Array["SYS_BBS_BOARD.TITLE_UPDATE"]);
+            $("#bbs-save-btn-text").text(Message.Label.Array["UPDATE_BTN"]);
+        }
+
+        // 3. 에디터 초기화
+        quill = new Quill('#editor-container', {
+            theme: 'snow',
+            modules: {
+                toolbar: {
+                    container: [
+                        [{ 'header': [1, 2, 3, false] }],
+                        ['bold', 'italic', 'underline', 'strike'],
+                        ['image', 'link', 'code-block'],
+                        [{ 'list': 'ordered' }, { 'list': 'bullet' }],
+                        ['clean']
+                    ],
+                    handlers: {
+                        image: imageHandler
+                    }
+                }
+            }
+        });
+
+        // 에디터 이미지 업로드용 hidden input 추가
+        if ($("#quill-image-input").length === 0) {
+            $("body").append('<input type="file" id="quill-image-input" style="display: none;" accept="image/*">');
+        }
+
+        // 4. 데이터 로드 (수정 모드)
+        if (mode === 'modify' && boardId) {
+            fetchBoardData();
+        } else {
+            // 작성자 이름 기본값 세팅
+            $("#board_writer").val(JwtUtils.getUserEmailFromJWT().split('@')[0]);
+        }
+
+        // 5. 버튼 이벤트
+        clickEvent();
+
+        commonTag.inputTagReset($(".gi-input"));
+    }
+
+    /**
+     * @title 썸네일 정보 복원
+     */
+    async function restoreThumbnail(fileUuid) {
+        if (!fileUuid) return;
+        try {
+            // FileUtils의 조회 API 활용하거나 직접 호출
+            var response = await axios.post("/fms/common/file/sysFileDetail/find", { file_uuid: fileUuid });
+            if (response.status === 200 && response.data.length > 0) {
+                var file = response.data[0];
+                $("#thumbnail_preview_name").val(file.file_name);
+                const imageUrl = `/fms/fileManager/download?fileId=${encodeURIComponent(file.file_id)}`;
+                $("#thumbnail-preview-img").attr("src", imageUrl);
+                $("#thumbnail-preview-area").removeClass("gi-hidden");
+                commonTag.inputTagReset($(".gi-input"));
+            }
+        } catch (e) {
+            console.error("Thumbnail restore failed", e);
+        }
+    }
+
+    async function checkBbsConfiguration() {
+        let url = "/cms/common/sysBbs/find";
+        try {
+            const response = await axios.post(url, { bbs_id: targetBbsId });
+            if (response.status === 200 && response.data.length > 0) {
+                let bbsInfo = response.data[0];
+                if (bbsInfo.file_yn === '1') {
+                    // 조건 충족 시 파일 첨부 영역 활성화
+                    $("#file-section-container").removeClass("gi-hidden");
+                    await fileUtil.activateFileCard("file-attachment-section");
+                }
+
+                // 갤러리 게시판인 경우 썸네일 섹션 표시
+                if (bbsInfo.bbs_type === 'GALLERY') {
+                    $("#thumbnail-section-container").removeClass("gi-hidden");
+                }
+            }
+        } catch (e) {
+            console.error("BBS Config fetch failed", e);
+        }
+    }
+
+    /**
+     * @title 썸네일 업로드 처리
+     */
+    window.uploadThumbnail = async function (input) {
+        const file = input.files[0];
+        if (!file) return;
+
+        if (!/^image\//.test(file.type)) {
+            formUtil.toast(Message.Label.Array["CHECK.FILE_TYPE"], "warn"); // 이미지 파일만 가능합니다.
+            return;
+        }
+
+        const formData = new FormData();
+        formData.append('files', file);
+        formData.append('folder_name', 'bbs_thumbnails');
+
+        // 기존 썸네일 UUID가 있어도, 썸네일은 단일 파일이므로 새로 업로드하고 UUID를 교체하는 방식이 단순함.
+        // 혹은 같은 그룹으로 묶고 싶다면 UUID 사용. 여기서는 독립적으로 관리.
+
+        try {
+            const uploadResponse = await axios.post('/fms/fileManager/upload', formData, {
+                headers: { 'Content-Type': 'multipart/form-data' }
+            });
+
+            if (uploadResponse.status === 200 && uploadResponse.data.length > 0) {
+                const fileInfo = uploadResponse.data[0];
+
+                // 파일 등록 (SYS_FILE_DETAIL)
+                const registerResponse = await axios.post('/fms/common/file/sysFileDetail/register', uploadResponse.data);
+
+                if (registerResponse.status === 200) {
+                    // UI 업데이트
+                    $("#thumbnail_preview_name").val(fileInfo.file_name);
+                    const imageUrl = `/fms/fileManager/download?fileId=${encodeURIComponent(fileInfo.file_id)}`;
+                    $("#thumbnail-preview-img").attr("src", imageUrl);
+                    $("#thumbnail-preview-area").removeClass("gi-hidden");
+
+                    // Hidden Input 설정 (DB 저장용)
+                    $("#board_thumbnail").val(fileInfo.file_uuid);
+                    formUtil.toast(Message.Label.Array["SYS_BBS_BOARD.COMPLETE.THUMBNAIL_UPLOAD"]);
+                }
+            }
+        } catch (error) {
+            console.error("Thumbnail upload failed:", error);
+            if (error.response && error.response.status === 413) {
+                formUtil.toast(Message.Label.Array["FAIL.UPLOAD.SIZE_EXCEEDED"], "error");
+            } else {
+                formUtil.toast(Message.Label.Array["FAIL.UPLOAD"], "error");
+            }
+        }
+
+        input.value = ''; // 초기화
+    };
+
+    /**
+     * @title 파일 렌더링 훅 (썸네일 버튼 추가)
+     */
+    fileUtil.onRenderFileItem = function (file) {
+        const extension = (file.file_extension || '').toLowerCase();
+        const isImage = ['jpg', 'jpeg', 'png', 'gif', 'svg'].includes(extension);
+
+        if (!isImage) return '';
+
+        const currentThumbnailUuid = $("#board_thumbnail").val();
+        const isActive = currentThumbnailUuid === file.file_uuid;
+        const btnText = isActive ? Message.Label.Array["SYS_BBS_BOARD.THUMBNAIL.ACTIVE"] : Message.Label.Array["SYS_BBS_BOARD.THUMBNAIL.SET"];
+        const activeClass = isActive ? 'active' : '';
+
+        return `
+            <button type="button" class="gi-thumbnail-btn ${activeClass}" 
+                data-file-uuid="${file.file_uuid}" 
+                onclick="setAsThumbnail(this, '${file.file_uuid}')">
+                ${btnText}
+            </button>
+        `;
+    };
+
+    /**
+     * @title 썸네일 설정 처리
+     */
+    window.setAsThumbnail = function (btn, uuid) {
+        const $btn = $(btn);
+
+        // 시각적 상태 업데이트
+        $(".gi-thumbnail-btn").removeClass("active").text(Message.Label.Array["SYS_BBS_BOARD.THUMBNAIL.SET"]);
+        $btn.addClass("active").text(Message.Label.Array["SYS_BBS_BOARD.THUMBNAIL.ACTIVE"]);
+
+        // 값 바인딩
+        $("#board_thumbnail").val(uuid);
+        formUtil.toast(Message.Label.Array["SYS_BBS_BOARD.COMPLETE.THUMBNAIL_SET"]);
+    };
+
+    /**
+     * @title 에디터에 이미지 삽입
+     */
+    window.insertImageToEditor = function (fileId) {
+        const imageUrl = `/fms/fileManager/download?fileId=${encodeURIComponent(fileId)}`;
+        const range = quill.getSelection(true);
+        quill.insertEmbed(range.index, 'image', imageUrl);
+        quill.setSelection(range.index + 1);
+    };
+
+    /**
+     * @title Quill 이미지 핸들러
+     */
+    function imageHandler() {
+        const input = document.getElementById('quill-image-input');
+        input.click();
+
+        input.onchange = async () => {
+            const file = input.files[0];
+            if (!file) return;
+
+            // 이미지가 아닌 경우 체크
+            if (!/^image\//.test(file.type)) {
+                formUtil.toast(Message.Label.Array["SYS_BBS_BOARD.CHECK.IMAGE_ONLY"], "warn");
+                return;
+            }
+
+            const formData = new FormData();
+            formData.append('files', file);
+            formData.append('folder_name', 'bbs_attachments'); // 폴더명 지정
+
+            // 기존 UUID가 있으면 함께 전송
+            let currentUuid = $("#board_file_uuid").val();
+            if (currentUuid) {
+                formData.append('file_uuid', currentUuid);
+            }
+
+            try {
+                // 1. 파일 업로드
+                const uploadResponse = await axios.post('/fms/fileManager/upload', formData, {
+                    headers: { 'Content-Type': 'multipart/form-data' }
+                });
+
+                if (uploadResponse.status === 200 && uploadResponse.data.length > 0) {
+                    let fileList = uploadResponse.data;
+                    let fileUuid = fileList[0].file_uuid; // 업로드된 파일 그룹 UUID
+
+                    // 만약 기존 UUID가 있었다면, 서버 로직에 따라 동일하게 유지되었을 것임.
+                    // 만약 없었다면 새로 생성된 UUID를 사용.
+
+                    // 2. 파일 정보 등록 (SYS_FILE_DETAIL)
+                    // FileUtils.js의 로직에 따르면 업로드 후 register를 호출해야 파일이 정식 등록됨
+                    const registerResponse = await axios.post('/fms/common/file/sysFileDetail/register', fileList);
+
+                    if (registerResponse.status === 200) {
+                        // 3. UUID 업데이트 및 파일 목록 갱신
+                        $("#board_file_uuid").val(fileUuid); // input 값 업데이트
+                        // fileUtil이 input change 이벤트를 바인딩하고 있으므로 트리거
+                        $("#board_file_uuid").trigger('change');
+
+                        // 4. 에디터에 이미지 삽입 (새로 등록된 파일 ID 사용)
+                        // fileList[0].file_id 사용
+                        const fileId = fileList[0].file_id;
+                        insertImageToEditor(fileId);
+                    }
+                }
+            } catch (error) {
+                console.error("Image upload failed:", error);
+                if (error.response && error.response.status === 413) {
+                    formUtil.toast(Message.Label.Array["FAIL.UPLOAD.SIZE_EXCEEDED"], "error");
+                } else {
+                    formUtil.toast(Message.Label.Array["SYS_BBS_BOARD.FAIL.IMAGE_UPLOAD"], "error");
+                }
+            }
+
+            // input 초기화 (동일 파일 재선택 가능하도록)
+            input.value = '';
+        };
+    }
+
+    function fetchBoardData() {
+        let url = "/cms/common/sysBbsBoard/find";
+        axios.post(url, { board_id: boardId }).then(response => {
+            if (response.status === 200 && response.data.length > 0) {
+                let data = response.data[0];
+                $("#board_title").val(data.title);
+                $("#board_writer").val(data.writer_name);
+                $("#board_file_uuid").val(data.file_uuid).trigger('change');
+
+                // 썸네일 복원
+                if (data.thumbnail) {
+                    $("#board_thumbnail").val(data.thumbnail);
+                    // 썸네일 이미지 정보를 가져오기 위해 FMS 호출 필요, 하지만 UUID만으로는 파일명/ID를 바로 알기 어려울 수 있음.
+                    // 간단히 미리보기만 복원하려면 UUID로 다운로드 URL을 구성하거나, 추가 조회가 필요함.
+                    // 여기서는 썸네일 UUID를 통해 파일 상세 정보를 조회하여 미리보기를 설정하는 로직을 추가.
+                    restoreThumbnail(data.thumbnail);
+                }
+
+                commonTag.inputTagReset($(".gi-input"));
+                quill.root.innerHTML = data.content;
+            }
+        });
+    }
+
+    function clickEvent() {
+        // 저장/수정 버튼
+        $("#bbs-save-btn").on("click", function () {
+            saveBoard();
+        });
+
+        // 취소 버튼
+        $("#bbs-cancel-btn").on("click", async function () {
+            if (await formUtil.confirm(Message.Label.Array["CONFIRM.CANCEL"])) {
+                formUtil.apiLoadContent("cms", "/bbs/view", { bbs_id: targetBbsId });
+            }
+        });
+    }
+
+    function saveBoard() {
+        if (!formUtil.validationCheck("bbsBoardWriteForm", "SYS_BBS_BOARD.CHECK.")) return;
+
+        // 에디터 내용 추출
+        let content = quill.root.innerHTML;
+        if (quill.getText().trim().length === 0) {
+            formUtil.toast(Message.Label.Array["SYS_BBS_BOARD.CHECK.CONTENT"], "warn");
+            return;
+        }
+
+        let isUpdate = (mode === 'modify' && boardId);
+        let url = isUpdate ? "/cms/common/sysBbsBoard/update" : "/cms/common/sysBbsBoard/register";
+
+        let param = {
+            bbs_id: targetBbsId,
+            title: $("#board_title").val(),
+            content: content,
+            writer_name: $("#board_writer").val(),
+            file_uuid: $("#board_file_uuid").val(),
+            thumbnail: $("#board_thumbnail").val()
+        };
+
+        if (isUpdate) param.board_id = boardId;
+
+        axios.post(url, param).then(response => {
+            if (response.status === 200) {
+                formUtil.toast(isUpdate ? Message.Label.Array["COMPLETE.UPDATE"] : Message.Label.Array["COMPLETE.INSERT"], "success");
+                formUtil.apiLoadContent("cms", "/bbs/view", { bbs_id: targetBbsId });
+            }
+        }).catch(error => {
+            formUtil.toast(Message.Label.Array["FAIL.UPDATE"], "error");
+        });
+    }
+</script>

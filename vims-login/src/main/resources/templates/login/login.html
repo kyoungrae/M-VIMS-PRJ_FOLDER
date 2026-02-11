@@ -1,0 +1,620 @@
+<style>
+    #remember_email_label,
+    #find-pw-btn {
+        font-size: 0.8rem;
+        color: #888888;
+    }
+</style>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="#">
+
+    <!--  공통으로 묶어야 하는 부분  -->
+    <link rel="stylesheet" href="/common/css/common/FormUtility.css">
+    <link rel="stylesheet" href="/common/css/common/index.css">
+    <script type="text/javascript" src="/common/js/jquery/jquery3.6.0.js"></script>
+    <script type="text/javascript" src="/common/js/common/FormUtility.js"></script>
+    <script type="text/javascript" src="/common/js/common/utils/GridSortManager.js"></script>
+    <script type="text/javascript" src="/common/js/common/utils/GridUtils.js"></script>
+    <script type="text/javascript" src="/common/js/common/utils/CommonUtils.js"></script>
+    <script type="text/javascript" src="/common/js/common/utils/ValidationUtils.js"></script>
+    <script type="text/javascript" src="/common/js/common/utils/PopupUtils.js"></script>
+    <script type="text/javascript" src="/common/js/common/utils/FormatUtils.js"></script>
+    <script type="text/javascript" src="/common/js/common/FileUtils.js"></script>
+    <script type="text/javascript" src="/common/js/common/utils/PageUtils.js"></script>
+    <script type="text/javascript" src="/common/js/common/utils/CalendarUtils.js"></script>
+    <script type="text/javascript" src="/common/js/common/utils/ChartUtils.js"></script>
+    <script type="text/javascript" src="/common/js/common/utils/TabUtils.js"></script>
+    <script type="text/javascript" src="/common/js/common/utils/KeyPadUtils.js"></script>
+    <script type="text/javascript" src="/common/js/common/CommonTag.js"></script>
+    <script type="text/javascript" src="/common/js/common/utils/InputTagUtils.js"></script>
+    <script type="text/javascript" src="/common/js/common/utils/InputMaskUtils.js"></script>
+    <script type="text/javascript" src="/common/js/common/utils/DateTagUtils.js"></script>
+    <script type="text/javascript" src="/common/js/common/utils/SelectTagUtils.js"></script>
+    <script type="text/javascript" src="/common/js/common/utils/AddressTagUtils.js"></script>
+    <script type="text/javascript" src="/common/js/common/utils/TagValidationUtils.js"></script>
+    <script type="text/javascript" src="/common/js/common/utils/SliderUtils.js"></script>
+    <script type="text/javascript" src="/common/js/axios/axios.js"></script>
+    <script type="text/javascript" src="/common/js/common/Common.js"></script>
+    <script type="text/javascript" src="/common/js/common/Api.js"></script>
+    <script type="text/javascript" src="/common/js/messageConfig.js"></script>
+    <title>Login</title>
+    <!--  공통으로 묶어야 하는 부분  -->
+
+</head>
+
+<body>
+    <div class="gi-main-body gi-flex-column gi-flex-center">
+        <main class="gi-login-main gi-flex gi-flex-center">
+            <section class="gi-login-form-section gi-flex gi-flex-column gi-flex-center">
+                <nav class="gi-login-nav gi-flex gi-flex-center">
+                    <header>
+                        <img src="common/img/nrtclogo.png" width="150">
+                    </header>
+                </nav>
+                <form id="loginForm" class="gi-row-100 gi-col-80 gi-flex gi-flex-column gi-flex-center">
+                    <div class="gi-col-25 gi-row-100">
+                        <div class="gi-input-container" data-focus-line="false">
+                            <label class="gi-input-label" data-focus-label="false" data-required="true"
+                                for="email">[Page.Message].Message.Label.Array["EMAIL"]</label>
+                            <input class="gi-input" data-required="true" type="text" id="email" name="email"
+                                autocomplete="off" />
+                        </div>
+                    </div>
+                    <div class="gi-col-25 gi-row-100">
+                        <div class="gi-input-container" data-focus-line="false">
+                            <label class="gi-input-label" data-focus-label="false" data-required="true"
+                                for="password">[Page.Message].Message.Label.Array["PASSWORD"]</label>
+                            <input class="gi-input" data-required="true" type="password" id="password" name="password"
+                                autocomplete="off" />
+                        </div>
+                    </div>
+                    <!-- <div class="gi-flex gi-flex-column gi-grid-gap-20px">
+                        <div class="gi-flex gi-grid-gap-20px">
+                            <div class="gi-input-container gi-flex-1">
+                                <input type="checkbox" id="remember_email" name="remember_email"
+                                    class="gi-margin-left-4 gi-input gi-cursor-pointer" data-required="false"
+                                    autocomplete="off" />
+                                <label id="remember_email_label" for="remember_email"
+                                    class="gi-row-50 gi-margin-left-2 gi-cursor-pointer">[Page.Message].Message.Label.Array["LOGIN.KEEP_LOGGED_IN"]</label>
+                            </div>
+                            <div class="gi-span-container gi-flex-1">
+                                <span class="gi-margin-right-3">
+                                    <a id="find-pw-btn" class="gi-row-50 gi-login-forgot-password  gi-cursor-pointer"
+                                        gi-popup-open-id="gi-popup2">[Page.Message].Message.Label.Array["LOGIN.FORGOT_PASSWORD"]</a>
+                                </span>
+                            </div>
+                        </div>
+                    </div> -->
+                    <div class="gi-flex gi-grid-gap-20px gi-row-100">
+                        <div class="gi-input-container gi-flex-1" style="border:unset;">
+                            <input type="checkbox" id="remember_email" name="remember_email"
+                                class="gi-input gi-cursor-pointer gi-margin-5px" data-required="false"
+                                autocomplete="off" />
+                            <label id="remember_email_label" for="remember_email"
+                                class="gi-cursor-pointer">[Page.Message].Message.Label.Array["LOGIN.KEEP_LOGGED_IN"]</label>
+                        </div>
+                        <div class="gi-span-container gi-flex-1" style="border:unset;">
+                            <span class="gi-margin-right-3">
+                                <a id="find-pw-btn" class="gi-row-50 gi-login-forgot-password  gi-cursor-pointer"
+                                    gi-popup-open-id="gi-popup2">[Page.Message].Message.Label.Array["LOGIN.FORGOT_PASSWORD"]</a>
+                            </span>
+                        </div>
+                    </div>
+                </form>
+                <div class="gi-col-20 gi-row-100">
+                    <div class="gi-btn-section gi-flex gi-flex-space-around gi-col-60">
+                        <button class="gi-btn gi-row-15 gi-col-100" id="checkLogin"
+                            type="button">[Page.Message].Message.Label.Array["LOGIN"]</button>
+                        <!--                        <button class="gi-btn gi-row-15 gi-col-100" id="add_userInfo" type="button">쿠키등록</button>-->
+                    </div>
+                </div>
+            </section>
+            <section class="gi-login-nav2 gi-flex gi-flex-center">
+                <div class="gi-language-trigger" id="languageTrigger"
+                    style="position: absolute; top: 20px; right: 20px; color: #888;">
+                    <i class="fa-solid fa-globe"></i>
+                    <span class="gi-current-lang" id="currentLangCode">KO</span>
+                    <article class="gi-home-setting-article lang-panel-closed" style="right: 0; left: auto;">
+                        <div class="gi-language-selector">
+                            <div class="gi-language-label">
+                                <i class="fa-solid fa-earth-asia"></i>
+                                <span>Language</span>
+                            </div>
+                            <div class="gi-language-toggle" id="languageToggle">
+                                <div class="gi-language-slider" id="languageSlider"></div>
+                                <button type="button" class="gi-language-option active" data-lang="ko">
+                                    <span class="gi-lang-flag">🇰🇷</span>
+                                    <span class="gi-lang-text">한국어</span>
+                                </button>
+                                <button type="button" class="gi-language-option" data-lang="mn">
+                                    <span class="gi-lang-flag">🇲🇳</span>
+                                    <span class="gi-lang-text">Монгол</span>
+                                </button>
+                                <button type="button" class="gi-language-option" data-lang="en">
+                                    <span class="gi-lang-flag">🇺🇸</span>
+                                    <span class="gi-lang-text">English</span>
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+<article id="gi-popup2" class="gi-popup login-page" data-popup-open="false">
+    <div class="gi-popup-body login-page">
+        <div class="gi-popup-header">
+            <span>[Page.Message].Message.Label.Array["LOGIN.RESET_PASSWORD_TITLE"]</span>
+        </div>
+        <div class="gi-popup-contents">
+            <!--      팝업내용 삽입 영역      -->
+            <div class="gi-row-100 gi-col-100 gi-flex gi-flex-center">
+                <form id="loginPagePasswordInitializeForm" class="gi-row-100">
+                    <div class="gi-article-content gi-margin-bottom-30px">
+                        <div class="gi-flex gi-flex-column gi-grid-gap-20px">
+                            <div class="gi-flex gi-grid-gap-20px">
+                                <div class="gi-input-container gi-flex-1">
+                                    <label for="" class="gi-input-label" data-focus-label="true"
+                                        data-required="true">[]</label>
+                                    <input data-field="" id="" name="" class="gi-input"
+                                        data-focus-span-text-align="center" data-required="true" autocomplete="off" />
+                                </div>
+                            </div>
+                            <div class="gi-flex gi-grid-gap-20px">
+                                <div class="gi-input-container gi-flex-1">
+                                    <label for="" class="gi-input-label" data-focus-label="true"
+                                        data-required="true">[]</label>
+                                    <input data-field="" id="" name="" class="gi-input"
+                                        data-focus-span-text-align="center" data-required="true" autocomplete="off" />
+                                </div>
+                            </div>
+                            <div class="gi-flex gi-grid-gap-20px">
+                                <div class="gi-input-container gi-flex-1">
+                                    <label for="" class="gi-input-label" data-focus-label="true"
+                                        data-required="true">[]</label>
+                                    <input data-field="" id="" name="" class="gi-input"
+                                        data-focus-span-text-align="center" data-required="true" autocomplete="off" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <!--/      팝업내용 삽입 영역      -->
+        </div>
+        <div class="gi-flex gi-flex-justify-content-center gi-grid-gap-16px gi-margin-top-40px">
+            <button id="popup-close-btn" class="gi-popup-close-btn"
+                type="button">[Page.Message].Message.Label.Array["CLOSE_BTN"]</button>
+        </div>
+    </div>
+</article>
+<!-- 공통 footer 로 묶어야 하는 부분 -->
+<article id="commonTag">
+    <div class="confirm"></div>
+    <div class="alertPopupBody"></div>
+    <div class="showMessage"></div>
+    <div id="loadingScreenBody" class="">
+        <div id="screenBody" class=""></div>
+    </div>
+    <div id="formUtil_fileUpload"></div>
+    <div id="formUtil_uncutFileUpload"></div>
+</article>
+<!-- 공통 footer 로 묶어야 하는 부분 -->
+
+</html>
+<script>
+    let formUtil = new FormUtility();
+    let commonTag = new CommonTag();
+    let authenticationNumber = null;
+    let authenticationTimer = null;
+    init();
+    function init() {
+        new loadToScript();
+        new PageInit();
+        initLanguageSelector();
+        clickEvent();
+        $("body").addClass('animate-content-end');
+        getEmailCookie();
+
+        // [New Feature] Move Popup Content to Main Container for Sliding Animation
+        // [New Feature] Move Popup Content to Main Container for Sliding Animation
+        if ($("#sliding-reset-container").length === 0) {
+            const originalPopup = $("#gi-popup2");
+            const popupContent = originalPopup.find(".gi-popup-body").html();
+
+            const resetContainer = $("<div>", {
+                id: "sliding-reset-container",
+                class: "gi-login-form-section gi-login-sliding-panel gi-hidden",
+                html: popupContent
+            });
+
+            $(".gi-login-main").prepend(resetContainer);
+            originalPopup.remove();
+        }
+
+        // Background Animation is handled via CSS in Login.css
+    }
+    function clickEvent() {
+        $("#add_userInfo").click(function () {
+            addUser();
+        });
+        $("#checkLogin").click(function () {
+            if (formUtil.validationCheck("loginForm", "CHECK.")) {
+                login();
+            }
+        });
+        $("#send-number-btn").on("click", function () {
+            sendAuthenticationEmail();
+        });
+        $("#find-pw-btn").on("click", function (e) {
+            // Prevent any default popup handlers
+            e.preventDefault();
+            e.stopPropagation();
+
+            $(".gi-login-main").addClass("right-panel-active");
+            // Show the reset form container which we moved in init()
+            $("#sliding-reset-container").removeClass("gi-hidden");
+        });
+
+        // Close/Back button logic for the sliding panel
+        $(document).on("click", "#popup-close-btn", function () {
+            $(".gi-login-main").removeClass("right-panel-active");
+            setTimeout(() => {
+                $("#sliding-reset-container").addClass("gi-hidden");
+                popupInit(); // Reset form state
+            }, 600); // Matches CSS transition duration
+        });
+
+
+        // $("#number-check-btn").on("click", function (){
+        //     let timeRemaining = parseInt($(".authentication-timer").text().replaceAll(":", ""));
+        //     let disabledTag = ['authenticationNumber', 'number-check-btn'];
+        //     let checkResult = $("#authentication-check-message");
+        //
+        //     if(formUtil.checkEmptyValue(authenticationNumber)){
+        //         if(timeRemaining === 0){
+        //             $(".authentication-check-message").text("인증시간이 만료되었습니다.");
+        //         }else{
+        //             checkResult.removeClass("gi-hidden");
+        //             if(authenticationNumber === $("#authenticationNumber").val()){
+        //                 $(".authentication-check-message").text("인증되었습니다.");
+        //                 $(".authentication-check-message").addClass("success");
+        //                 $(".authentication-timer").addClass("hidden");
+        //                 clearInterval(authenticationTimer);
+        //                 commonTag.tagDisabled(true, disabledTag);
+        //                 $("#initialize-btn").removeClass("gi-hidden");
+        //             }else{
+        //                 $(".authentication-check-message").text("잘못된 인증번호입니다.");
+        //             }
+        //         }
+        //     } else {
+        //         $(".authentication-check-message").text("인증번호가 전송되지 않았습니다.");
+        //     }
+        // });
+
+        $("#popup-close-btn").on("click", function () {
+            popupInit();
+        });
+
+        $("#initialize-btn").on("click", function () {
+            $("#loginPageAuthenticationForm").addClass("invisible");
+            $("#loginPagePasswordInitializeForm").addClass("visible");
+
+            $(".authentication-timer").text("");
+            $(".authentication-check-message").removeClass("success").text("");
+            $("initialize-btn").addClass("gi-hidden")
+
+            // 버튼 enable/disbled
+            $(this).addClass("gi-hidden");
+            $("#confirm-btn").removeClass("gi-hidden");
+        });
+
+        $("#confirm-btn").on("click", async function () {
+            let validateUrl = "/common/common/sysUser/validatePasswordPolicy";
+            let initializeUrl = "/common/common/sysUser/initializePassword";
+            let newPassword = $("#changePassword").val();
+            let newPasswordCheck = $("#changePasswordCheck").val();
+
+            if (!formUtil.checkEmptyValue(newPassword)) {
+                const message = Message.Label.Array["CHECK.INPUT.PASSWORD"];
+                formUtil.showMessage(message);
+                return false;
+            }
+
+            if (!formUtil.checkEmptyValue(newPasswordCheck)) {
+                const message = Message.Label.Array["CHECK.INPUT.PASSWORD_CHECK"];
+                formUtil.showMessage(message);
+                return false;
+            }
+
+            if (newPassword !== newPasswordCheck) {
+                const message = Message.Label.Array["FAIL.COMPARE.PASSWORD"];
+                formUtil.showMessage(message);
+                return false;
+            }
+
+            if (!await validatePassword(validateUrl, newPassword)) return false;
+
+            let param = {
+                email: $("#authenticationTarget").val(),
+                password: newPassword
+            };
+
+            try {
+                const response = await axios.post(initializeUrl, param);
+                if (response.status === 200) {
+                    const message = Message.Label.Array["COMPLETE.UPDATE"]
+                    formUtil.showMessage(message);
+
+                    // 팝업 초기화 처리
+                    $("#popup-close-btn").trigger("click");
+                }
+            } catch (error) {
+                const errorData = error.response?.data;
+                console.log(error);
+                formUtil.toast(errorData || error.message || error);
+            }
+        });
+    }
+    function addUser() {
+        let cont = {
+            user_id: "go66go66",
+            email: "go66go66@giens.co.kr",
+            password: "1234"
+        }
+        let url = "/api/v1/auth/register";
+        axios.post(url, cont).then(response => {
+            let data = response.data;
+            formUtil.toast(Message.Label.Array["LOGIN.COMPLETE_REGISTER"], "success");
+        }).catch(error => {
+            formUtil.toast(error, "error");
+        })
+    }
+    // 로그인 함수
+    function login() {
+        let email = document.getElementById("email").value;
+        let password = document.getElementById("password").value;
+        let cont = {
+            email: email,
+            password: password
+        };
+        let url = "/login";
+
+        axios.post(url, cont).then(response => {
+            let userName = response.data.userName || ""; // 사용자 이름 가져오기
+            new Session().setItem("userInfo", {
+                email: email,
+                userName: userName // userName 저장
+            });
+            new Session().setItem("recentPage", { url: '/index/index' }); //main으로 연결
+            let redirectUrl = response.data.redirectUrl;
+            setEmailCookie();
+            requestPageRedirect(redirectUrl);
+        }).catch(error => {
+            formUtil.toast(Message.Label.Array["FAIL.IDPWD"], "error");
+        })
+    }
+
+    // 페이지 리디렉션 함수
+    function requestPageRedirect(redirectUrl) {
+        $("body").removeClass('animate-content-end');
+        setTimeout(function () {
+            $("body").addClass('animate-content-start');
+            window.location.href = redirectUrl;
+        }, 100);
+    }
+
+    function setEmailCookie() {
+        let url = "/common/setEmailCookie";
+        let email = $("#email").val();
+        let rememberMe = $("#remember_email").prop("checked");
+        let requestParam = {
+            email: email,
+            isChecked: rememberMe
+        }
+
+        axios.post(url, requestParam).then(response => {
+        }).catch(error => {
+            console.error("이메일 저장 실패:", error.response?.data?.error || error.message);
+        });
+    }
+
+    function getEmailCookie() {
+        let url = "/common/getEmailCookie";
+        axios.get(url).then(response => {
+            let email = response.data.email;
+            if (formUtil.checkEmptyValue(email)) {
+                $("#email").val(email);
+                $("#email").siblings("label").attr("data-focus-label", true);
+                $("#remember_email").prop("checked", true);
+            }
+        });
+    }
+
+    function generateRandomNumber() {
+        let number = Math.floor(Math.random() * 1000000).toString();
+        return number.padStart(6, "0");
+    }
+
+    function sendAuthenticationEmail() {
+        let url = "/common/mail/sendMail";
+        let targetEmail = [$("#authenticationTarget").val()];
+        let timer = $(".authentication-timer");
+
+        $(".authentication-check-message").text("");
+        authenticationNumber = generateRandomNumber();
+        let content = authenticationMailTemplate();
+        let authenticationInfo = {
+            title: Message.Label.Array["LOGIN.MAIL_TITLE_VERIFICATION"],
+            content: content,
+            email_list: targetEmail
+        }
+        let disabledTag = ['authenticationTarget', 'send-number-btn'];
+
+        timer.removeClass("hidden");
+        startCountdownTimer(180, timer, expiredMessage);
+
+        commonTag.tagDisabled(true, disabledTag);
+
+        axios.post(url, authenticationInfo).then(response => {
+            let status = response.status;
+            console.log(status);
+            if (status === 200) {
+            } else {
+                // custom alert 적용 필요
+                formUtil.showMessage(Message.Label.Array["LOGIN.FAIL_SEND_VERIFICATION_CODE"]);
+                commonTag.tagDisabled(true, disabledTag);
+            }
+        });
+    }
+
+    function expiredMessage() {
+        let target = $(".authentication-check-message");
+        let enableTags = ['authenticationTarget', 'send-number-btn'];
+        target.removeClass("gi-hidden");
+        target.text(Message.Label.Array["LOGIN.EXPIRED_VERIFICATION_CODE"]);
+        commonTag.tagDisabled(false, enableTags);
+    }
+
+    function startCountdownTimer(second, element, callback) {
+        let timeLeft = second;
+        let timerElement = element;
+        element.empty();
+
+        authenticationTimer = setInterval(() => {
+            let minutes = Math.floor(timeLeft / 60);
+            let seconds = timeLeft % 60;
+            let time = `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
+            let elementType = element.prop("tagName") === "SPAN";
+
+            elementType ? timerElement.text(time) : timerElement.val(time);
+
+            if (timeLeft === 0) {
+                clearInterval(authenticationTimer);
+                if (typeof callback === "function") {
+                    callback();
+                }
+            }
+            timeLeft--;
+        }, 1000);
+    }
+
+    function popupInit() {
+        let loginPageAuthenticationFormInputs = $("#loginPageAuthenticationForm input");
+        let loginPagePasswordInitializeFormInputs = $("#loginPagePasswordInitializeForm input");
+        let initializeBtn = $("#initialize-btn");
+
+        // 인증번호 초기화
+        authenticationNumber = null;
+
+        // 인증 타이머 초기화
+        clearInterval(authenticationTimer);
+
+        // 비활성화 버튼/input 활성화
+        let enableTags = ['authenticationTarget', 'send-number-btn', 'authenticationNumber', 'number-check-btn'];
+        commonTag.tagDisabled(false, enableTags);
+
+        // 인증 관련 메시지 초기화
+        $(".authentication-timer").text("");
+        $(".authentication-check-message").removeClass("success").text("");
+
+        // 입력된 인증정보 초기화
+        $("#authenticationTarget").val("");
+        $("#authenticationNumber").val("");
+
+        // 비밀번호 초기화 폼 버튼 비활성화
+        if (!initializeBtn.hasClass("gi-hidden")) initializeBtn.addClass("gi-hidden");
+
+        // 팝업 폼 초기화(default : loginPageAuthenticationForm)
+        $("#loginPageAuthenticationForm").removeClass("invisible");
+        $("#loginPagePasswordInitializeForm").removeClass("visible");
+
+        // 폼 별 input 입력 초기화
+        loginPageAuthenticationFormInputs.each(function () {
+            $(this).val("");
+        })
+
+        loginPagePasswordInitializeFormInputs.each(function () {
+            $(this).val("");
+        })
+
+        // 적용 버튼 비활성화
+        $("#confirm-btn").addClass("gi-hidden");
+    }
+
+    function authenticationMailTemplate() {
+        let html = "";
+
+        html += "<div class='gi-row-100 gi-col-100'>"
+            + "<div class='gi-row-100 gi-mail-logo-area'>"
+            + "<a class='gi-mail-logo'></a>"
+            + "</div>"
+            + "<div class='gi-row-100 gi-mail-content-area'>"
+            + "<div class='gi-row-100 gi-mail-content'>"
+            + Message.Label.Array["LOGIN.MAIL_CONTENT_HEADER"] + "<br>"
+            + Message.Label.Array["LOGIN.MAIL_CONTENT_BODY1"] + "<br>"
+            + Message.Label.Array["LOGIN.MAIL_CONTENT_BODY2"] + "<br>"
+            + "<span>" + authenticationNumber + "</span>"
+            + "</div>"
+            + "</div>";
+
+        return html;
+    }
+
+    function initLanguageSelector() {
+        const $languageToggle = $("#languageToggle");
+        const $slider = $("#languageSlider");
+        const $options = $(".gi-language-option");
+        const $currentLangCode = $("#currentLangCode");
+
+        const langCodeMap = {
+            ko: "KO",
+            mn: "MN",
+            en: "EN"
+        };
+
+        const savedLang = localStorage.getItem("selectedLanguage") || "ko";
+        setActiveLanguage(savedLang);
+
+        $options.on("click", function () {
+            const $this = $(this);
+            const lang = $this.data("lang");
+
+            setActiveLanguage(lang);
+            localStorage.setItem("selectedLanguage", lang);
+
+            $(document).trigger("languageChanged", [lang]);
+
+            setTimeout(() => location.reload(), 300);
+        });
+
+        $("#languageTrigger").on("click", function (e) {
+            e.stopPropagation();
+            $(".gi-home-setting-article").toggleClass("lang-panel-closed");
+        });
+
+        $(document).on("click", function (e) {
+            if (!$(e.target).closest("#languageTrigger, .gi-home-setting-article").length) {
+                $(".gi-home-setting-article").addClass("lang-panel-closed");
+            }
+        });
+
+        function setActiveLanguage(lang) {
+            const $targetOption = $options.filter(`[data-lang="${lang}"]`);
+            const index = $options.index($targetOption);
+
+            $options.removeClass("active");
+            $targetOption.addClass("active");
+
+            $slider.removeClass("position-0 position-1 position-2");
+            $slider.addClass(`position-${index}`);
+
+            $currentLangCode.text(langCodeMap[lang] || "KO");
+        }
+    }
+</script>
