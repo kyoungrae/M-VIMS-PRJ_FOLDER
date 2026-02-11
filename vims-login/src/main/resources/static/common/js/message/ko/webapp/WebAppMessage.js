@@ -119,7 +119,7 @@ Message.Label.Array["MYINFO.SECTION.VEHICLE"] = "보유 차량";
 Message.Label.Array["MYINFO.LABEL.NAME"] = "이름";
 Message.Label.Array["MYINFO.LABEL.GENDER"] = "성별";
 Message.Label.Array["MYINFO.LABEL.PHONE"] = "전화번호";
-Message.Label.Array["MYINFO.LABEL.ADDRESS"] = "주소";
+Message.Label.Array["MYINFO.LABEL.ADDR"] = "주소";
 Message.Label.Array["MYINFO.LABEL.LAST_INSPECT"] = "최종 검사일";
 Message.Label.Array["MYINFO.LABEL.NEXT_INSPECT"] = "다음 검사 예정일";
 
@@ -127,8 +127,8 @@ Message.Label.Array["MYINFO.GENDER.MALE"] = "남성";
 Message.Label.Array["MYINFO.GENDER.FEMALE"] = "여성";
 
 Message.Label.Array["MYINFO.PLACEHOLDER.POSTCODE"] = "우편번호";
-Message.Label.Array["MYINFO.PLACEHOLDER.ADDRESS"] = "주소";
-Message.Label.Array["MYINFO.PLACEHOLDER.ADDRESS_DETAIL"] = "상세주소를 입력하세요";
+Message.Label.Array["MYINFO.PLACEHOLDER.ADDR"] = "주소";
+Message.Label.Array["MYINFO.PLACEHOLDER.ADDR_DTL"] = "상세주소를 입력하세요";
 
 Message.Label.Array["MYINFO.BTN.SEARCH"] = "검색";
 Message.Label.Array["MYINFO.BTN.SAVE"] = "저장";
@@ -136,7 +136,7 @@ Message.Label.Array["MYINFO.BTN.CANCEL"] = "취소";
 
 Message.Label.Array["MYINFO.STATUS.VALID"] = "유효";
 Message.Label.Array["MYINFO.STATUS.UPCOMING"] = "검사예정";
-Message.Label.Array["MYINFO.STATUS.EXPIRED"] = "만료";
+Message.Label.Array["MYINFO.STATUS.EXP"] = "만료";
 
 Message.Label.Array["MYINFO.MSG.NO_VEHICLE"] = "등록된 차량이 없습니다.";
 Message.Label.Array["MYINFO.MSG.CONFIRM_CANCEL"] = "변경사항을 취소하시겠습니까?";
@@ -288,7 +288,7 @@ Message.Label.Array["INSRNC.LABEL.PERIOD"] = "가입 기간";
 Message.Label.Array["INSRNC.LABEL.TYPE"] = "가입 종류";
 Message.Label.Array["INSRNC.LABEL.STATUS"] = "상태";
 Message.Label.Array["INSRNC.STATUS.ACTIVE"] = "유효";
-Message.Label.Array["INSRNC.STATUS.EXPIRED"] = "만료";
+Message.Label.Array["INSRNC.STATUS.EXP"] = "만료";
 
 // Customs inquiry Page
 Message.Label.Array["CSTM.PAGE_TITLE"] = "세관 정보 조회";

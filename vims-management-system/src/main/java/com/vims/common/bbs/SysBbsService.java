@@ -68,7 +68,7 @@ public class SysBbsService extends AbstractCommonService<SysBbs> {
             // 1. 해당 게시판(메뉴 코드 겸용)에 연결된 권한 그룹 데이터가 있는지 확인
             com.vims.common.accessgroupmenu.SysAccsGroupMenu accessParam = com.vims.common.accessgroupmenu.SysAccsGroupMenu
                     .builder()
-                    .menu_code(request.getBbs_id())
+                    .menu_cd(request.getBbs_id())
                     .build();
             List<com.vims.common.accessgroupmenu.SysAccsGroupMenu> acList = sysAccsGroupMenuMapper.SELECT(accessParam);
 
@@ -90,7 +90,7 @@ public class SysBbsService extends AbstractCommonService<SysBbs> {
 
             // 2. 게시판 삭제 시 관련 메뉴도 삭제 시도 (종속 관계)
             com.vims.common.menu.SysMenu menu = com.vims.common.menu.SysMenu.builder()
-                    .menu_code(request.getBbs_id())
+                    .menu_cd(request.getBbs_id())
                     .build();
             try {
                 sysMenuService.remove(menu);
@@ -115,9 +115,9 @@ public class SysBbsService extends AbstractCommonService<SysBbs> {
             if (result > 0) {
                 // 게시판 수정 시 관련 메뉴도 업데이트 시도
                 com.vims.common.menu.SysMenu menu = com.vims.common.menu.SysMenu.builder()
-                        .menu_code(request.getBbs_id())
-                        .menu_name_kr(request.getBbs_nm())
-                        .top_menu_code(request.getP_menu_code())
+                        .menu_cd(request.getBbs_id())
+                        .menu_nm_kr(request.getBbs_nm())
+                        .top_menu_cd(request.getP_menu_cd())
                         .url("/bbs/view?bbsId=" + request.getBbs_id())
                         .build();
                 try {
@@ -144,16 +144,16 @@ public class SysBbsService extends AbstractCommonService<SysBbs> {
             int result = sysBbsMapper.INSERT(request);
 
             // 3. 게시판 등록 성공 시에만 메뉴 테이블(SYS_MENU)에 등록
-            if (result > 0 && request.getP_menu_code() != null && !request.getP_menu_code().isEmpty()) {
+            if (result > 0 && request.getP_menu_cd() != null && !request.getP_menu_cd().isEmpty()) {
                 com.vims.common.menu.SysMenu menu = com.vims.common.menu.SysMenu.builder()
-                        .menu_code(request.getBbs_id()) // 게시판 ID를 메뉴 코드로 사용
-                        .menu_name_kr(request.getBbs_nm())
-                        .top_menu_code(request.getP_menu_code())
+                        .menu_cd(request.getBbs_id()) // 게시판 ID를 메뉴 코드로 사용
+                        .menu_nm_kr(request.getBbs_nm())
+                        .top_menu_cd(request.getP_menu_cd())
                         .url("/bbs/view")
                         .prgm_url("cms") // Gateway용 prefix 추가
                         .use_yn("1") // 기본 사용
-                        .menu_level("2") // 게시판은 2레벨
-                        .menu_number("1")
+                        .menu_lvl("2") // 게시판은 2레벨
+                        .menu_no("1")
                         .build();
                 try {
                     sysMenuService.register(menu);

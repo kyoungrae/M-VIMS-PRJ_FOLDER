@@ -21,7 +21,7 @@ public interface FileProcessManagerImpl {
     // Exception;
     // void deleteFiles(List<File> fileList) throws Exception;
     // void downloadZipFile(List<File> param, HttpServletResponse response,String
-    // zip_file_name) throws Exception;
+    // zip_file_nm) throws Exception;
     // String loadProperty(String propertyFileName,String propertyName) throws
     // IOException;
     // Long fileSizeDefinition(String size , String unit );

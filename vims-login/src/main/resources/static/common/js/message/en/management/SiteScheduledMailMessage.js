@@ -10,10 +10,10 @@ Message.Label.Array["SITE_SCHEDULED_MAIL.CHECK.SCHEDULED_YMD"] = "Please enter s
 Message.Label.Array["SITE_SCHEDULED_MAIL.CHECK.SCHEDULED_TIME"] = "Please enter scheduled time";
 Message.Label.Array["SITE_SCHEDULED_MAIL.CHECK.STATE_CODE"] = "Please enter status code";
 Message.Label.Array["SITE_SCHEDULED_MAIL.CHECK.FAILURE_REASON_CODE"] = "Please enter failure reason code";
-Message.Label.Array["SITE_SCHEDULED_MAIL.CHECK.SYSTEM_CREATE_USERID"] = "Please enter creator ID";
-Message.Label.Array["SITE_SCHEDULED_MAIL.CHECK.SYSTEM_CREATE_DATE"] = "Please enter creation date";
-Message.Label.Array["SITE_SCHEDULED_MAIL.CHECK.SYSTEM_UPDATE_USERID"] = "Please enter modifier ID";
-Message.Label.Array["SITE_SCHEDULED_MAIL.CHECK.SYSTEM_UPDATE_DATE"] = "Please enter modification date";
+Message.Label.Array["SITE_SCHEDULED_MAIL.CHECK.SYS_CRT_USR_ID"] = "Please enter creator ID";
+Message.Label.Array["SITE_SCHEDULED_MAIL.CHECK.SYS_CRT_DT"] = "Please enter creation date";
+Message.Label.Array["SITE_SCHEDULED_MAIL.CHECK.SYS_UPD_USR_ID"] = "Please enter modifier ID";
+Message.Label.Array["SITE_SCHEDULED_MAIL.CHECK.SYS_UPD_DT"] = "Please enter modification date";
 
 
 Message.Label.Array["SITE_SCHEDULED_MAIL.MAIL_ID"] = "Mail ID (SEQ)";
@@ -24,7 +24,7 @@ Message.Label.Array["SITE_SCHEDULED_MAIL.SCHEDULED_YMD"] = "Scheduled Date";
 Message.Label.Array["SITE_SCHEDULED_MAIL.SCHEDULED_TIME"] = "Scheduled Time";
 Message.Label.Array["SITE_SCHEDULED_MAIL.STATE_CODE"] = "Status Code";
 Message.Label.Array["SITE_SCHEDULED_MAIL.FAILURE_REASON_CODE"] = "Failure Reason Code";
-Message.Label.Array["SITE_SCHEDULED_MAIL.SYSTEM_CREATE_USERID"] = "Creator ID";
-Message.Label.Array["SITE_SCHEDULED_MAIL.SYSTEM_CREATE_DATE"] = "Creation Date";
-Message.Label.Array["SITE_SCHEDULED_MAIL.SYSTEM_UPDATE_USERID"] = "Modifier ID";
-Message.Label.Array["SITE_SCHEDULED_MAIL.SYSTEM_UPDATE_DATE"] = "Modification Date";
+Message.Label.Array["SITE_SCHEDULED_MAIL.SYS_CRT_USR_ID"] = "Creator ID";
+Message.Label.Array["SITE_SCHEDULED_MAIL.SYS_CRT_DT"] = "Creation Date";
+Message.Label.Array["SITE_SCHEDULED_MAIL.SYS_UPD_USR_ID"] = "Modifier ID";
+Message.Label.Array["SITE_SCHEDULED_MAIL.SYS_UPD_DT"] = "Modification Date";

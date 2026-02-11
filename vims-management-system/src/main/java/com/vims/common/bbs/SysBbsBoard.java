@@ -26,15 +26,15 @@ public class SysBbsBoard extends Common {
     private String bbs_id; // 소속 게시판 ID
     private String title; // 제목
     private String content; // 내용
-    private String writer_name; // 작성자 이름
-    private int hit_count; // 조회수
+    private String wrtr_nm; // 작성자 이름
+    private int hit_cnt; // 조회수
     private String file_uuid; // 파일 UUID
-    private String thumbnail; // 썸네일 UUID or Path
+    private String thmbnl; // 썸네일 UUID or Path
 
-    private String system_create_userid;
-    private Date system_create_date;
-    private String system_update_userid;
-    private Date system_update_date;
+    private String sys_crt_usr_id;
+    private Date sys_crt_dt;
+    private String sys_upd_usr_id;
+    private Date sys_upd_dt;
 
     // 댓글 갯수 (서브쿼리로 조회)
     @Transient

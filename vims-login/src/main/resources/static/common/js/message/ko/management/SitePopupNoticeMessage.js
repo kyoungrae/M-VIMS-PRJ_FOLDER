@@ -21,10 +21,10 @@ Message.Label.Array["SITE_POPUP_NOTICE.CHECK.TOP"] = "수직위치(을)를 입�
 Message.Label.Array["SITE_POPUP_NOTICE.CHECK.WIDTH"] = "너비(을)를 입력해 주세요";
 Message.Label.Array["SITE_POPUP_NOTICE.CHECK.HEIGHT"] = "높이(을)를 입력해 주세요";
 Message.Label.Array["SITE_POPUP_NOTICE.CHECK.USE_YN"] = "사용여부(을)를 입력해 주세요";
-Message.Label.Array["SITE_POPUP_NOTICE.CHECK.SYSTEM_CREATE_DATE"] = "작성일자(을)를 입력해 주세요";
-Message.Label.Array["SITE_POPUP_NOTICE.CHECK.SYSTEM_CREATE_USERID"] = "작성자ID(을)를 입력해 주세요";
-Message.Label.Array["SITE_POPUP_NOTICE.CHECK.SYSTEM_UPDATE_DATE"] = "수정일자(을)를 입력해 주세요";
-Message.Label.Array["SITE_POPUP_NOTICE.CHECK.SYSTEM_UPDATE_USERID"] = "수정자ID(을)를 입력해 주세요";
+Message.Label.Array["SITE_POPUP_NOTICE.CHECK.SYS_CRT_DT"] = "작성일자(을)를 입력해 주세요";
+Message.Label.Array["SITE_POPUP_NOTICE.CHECK.SYS_CRT_USR_ID"] = "작성자ID(을)를 입력해 주세요";
+Message.Label.Array["SITE_POPUP_NOTICE.CHECK.SYS_UPD_DT"] = "수정일자(을)를 입력해 주세요";
+Message.Label.Array["SITE_POPUP_NOTICE.CHECK.SYS_UPD_USR_ID"] = "수정자ID(을)를 입력해 주세요";
 
 
 Message.Label.Array["SITE_POPUP_NOTICE.NOTICE_ID"] = "그룹ID";
@@ -39,7 +39,7 @@ Message.Label.Array["SITE_POPUP_NOTICE.TOP"] = "수직위치";
 Message.Label.Array["SITE_POPUP_NOTICE.WIDTH"] = "너비";
 Message.Label.Array["SITE_POPUP_NOTICE.HEIGHT"] = "높이";
 Message.Label.Array["SITE_POPUP_NOTICE.USE_YN"] = "사용여부";
-Message.Label.Array["SITE_POPUP_NOTICE.SYSTEM_CREATE_DATE"] = "작성일자";
-Message.Label.Array["SITE_POPUP_NOTICE.SYSTEM_CREATE_USERID"] = "작성자ID";
-Message.Label.Array["SITE_POPUP_NOTICE.SYSTEM_UPDATE_DATE"] = "수정일자";
-Message.Label.Array["SITE_POPUP_NOTICE.SYSTEM_UPDATE_USERID"] = "수정자ID";
+Message.Label.Array["SITE_POPUP_NOTICE.SYS_CRT_DT"] = "작성일자";
+Message.Label.Array["SITE_POPUP_NOTICE.SYS_CRT_USR_ID"] = "작성자ID";
+Message.Label.Array["SITE_POPUP_NOTICE.SYS_UPD_DT"] = "수정일자";
+Message.Label.Array["SITE_POPUP_NOTICE.SYS_UPD_USR_ID"] = "수정자ID";

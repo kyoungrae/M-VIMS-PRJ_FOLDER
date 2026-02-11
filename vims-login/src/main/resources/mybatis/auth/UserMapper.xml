@@ -4,7 +4,7 @@
 <mapper namespace="com.system.auth.authuser.AuthUserMapper">
     <select id="SELECT_USER_INFO" resultType="com.system.auth.authuser.AuthUser">
         SELECT
-           id, email, password, role, user_id, office_code, system_create_userid, system_create_date, system_update_date, system_update_userid, user_name, tel, address, address_detail, postal_code, uuid
+           id, email, pwd, role, user_id, offc_cd, sys_crt_usr_id, sys_crt_dt, sys_upd_dt, sys_upd_usr_id, user_nm, tel, addr, addr_dtl, post_cd, uuid
         FROM SYS_USER
         where email = #{email}
     </select>
@@ -15,36 +15,36 @@
         INSERT INTO SYS_USER (
             id,
             user_id,
-            password,
+            pwd,
             email,
-            system_create_date,
+            sys_crt_dt,
         <trim prefixOverrides=",">
-            <if test="user_name != null">, user_name</if>
+            <if test="user_nm != null">, user_nm</if>
             <if test="tel != null">, tel</if>
-            <if test="address != null">, address</if>
-            <if test="address_detail != null">, address_detail</if>
-            <if test="postal_code != null">, postal_code</if>
+            <if test="addr != null">, addr</if>
+            <if test="addr_dtl != null">, addr_dtl</if>
+            <if test="post_cd != null">, post_cd</if>
             <if test="uuid != null">, uuid</if>
             <if test="role != null">, role</if>
-            <if test="office_code != null">, office_code</if>
-            <if test="system_create_userid != null">, system_create_userid</if>
+            <if test="offc_cd != null">, offc_cd</if>
+            <if test="sys_crt_usr_id != null">, sys_crt_usr_id</if>
         </trim>
         ) VALUES (
             #{id},
             #{user_id},
-            #{password},
+            #{pwd},
             #{email},
             NOW(),
         <trim prefixOverrides=",">
-            <if test="user_name != null">, #{user_name}</if>
+            <if test="user_nm != null">, #{user_nm}</if>
             <if test="tel != null">, #{tel}</if>
-            <if test="address != null">, #{address}</if>
-            <if test="address_detail != null">, #{address_detail}</if>
-            <if test="postal_code != null">, #{postal_code}</if>
+            <if test="addr != null">, #{addr}</if>
+            <if test="addr_dtl != null">, #{addr_dtl}</if>
+            <if test="post_cd != null">, #{post_cd}</if>
             <if test="uuid != null">, #{uuid}</if>
             <if test="role != null">, #{role}</if>
-            <if test="office_code != null">, #{office_code}</if>
-            <if test="system_create_userid != null">, #{system_create_userid}</if>
+            <if test="offc_cd != null">, #{offc_cd}</if>
+            <if test="sys_crt_usr_id != null">, #{sys_crt_usr_id}</if>
         </trim>
         )
     </insert>

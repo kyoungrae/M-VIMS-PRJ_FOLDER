@@ -5,8 +5,8 @@
         <!-- 헤더 영역 (카드 외부) -->
         <header class="gi-margin-bottom-30px gi-padding-left-10px">
             <h1 class="gi-page-title" id="detail-board-title-header">
-                [Page.Message].Message.Label.Array["SYS_BBS_BOARD.DETAIL"]</h1>
-            <p class="gi-subtitle-main">[Page.Message].Message.Label.Array["SYS_BBS_BOARD.SUB_TITLE_DETAIL"]</p>
+                [Page.Message].Message.Label.Array["SYS_BBS_BRD.DETAIL"]</h1>
+            <p class="gi-subtitle-main">[Page.Message].Message.Label.Array["SYS_BBS_BRD.SUB_TITLE_DETAIL"]</p>
         </header>
 
         <!-- 메인 카드 -->
@@ -15,7 +15,7 @@
 
                 <!-- 섹션 1: 게시글 정보 -->
                 <div class="gi-form-section">
-                    <h3 class="gi-form-section-title">[Page.Message].Message.Label.Array["SYS_BBS_BOARD.SECTION.BASIC"]
+                    <h3 class="gi-form-section-title">[Page.Message].Message.Label.Array["SYS_BBS_BRD.SECTION.BASIC"]
                     </h3>
                     <div class="gi-flex gi-flex-column gi-grid-gap-15px-15px gi-padding-20px"
                         style="background: #f8fafc; border-radius: 12px; border: 1px solid #f1f5f9; gap: 10px;">
@@ -24,24 +24,24 @@
                                 style="font-size: 20px; font-weight: 700; color: #1e293b; margin: 0;"></h2>
                         </div>
                         <div class="gi-flex gi-grid-gap-20px gi-text-secondary" style="font-size: 14px;">
-                            <span>[Page.Message].Message.Label.Array["SYS_BBS_BOARD.WRITER"]: <b id="detail-writer"
+                            <span>[Page.Message].Message.Label.Array["SYS_BBS_BRD.WRITER"]: <b id="detail-writer"
                                     class="gi-color-black"></b></span>
-                            <span>[Page.Message].Message.Label.Array["SYS_BBS_BOARD.DATE"]: <b id="detail-date"
+                            <span>[Page.Message].Message.Label.Array["SYS_BBS_BRD.DATE"]: <b id="detail-date"
                                     class="gi-color-black"></b></span>
-                            <span>[Page.Message].Message.Label.Array["SYS_BBS_BOARD.HIT"]: <b id="detail-hit"
+                            <span>[Page.Message].Message.Label.Array["SYS_BBS_BRD.HIT"]: <b id="detail-hit"
                                     class="gi-color-black">0</b></span>
                         </div>
                     </div>
                 </div>
                 <!-- 섹션: 썸네일 (갤러리용) -->
-                <div id="thumbnail-section-container" class="gi-form-section gi-hidden">
+                <div id="thmbnl-section-container" class="gi-form-section gi-hidden">
                     <h3 class="gi-form-section-title">
-                        [Page.Message].Message.Label.Array["SYS_BBS_BOARD.SECTION.THUMBNAIL"]</h3>
+                        [Page.Message].Message.Label.Array["SYS_BBS_BRD.SECTION.THMBNL"]</h3>
                     <div class="gi-flex gi-flex-column gi-grid-gap-10px">
                         <div class="gi-flex gi-grid-gap-10px gi-align-center">
-                            <div id="detail-thumbnail-area"
+                            <div id="detail-thmbnl-area"
                                 style="width: 200px; height: 150px; border: 1px solid #e2e8f0; padding: 4px; background: #fff; border-radius: 4px;">
-                                <img id="detail-thumbnail-img" src="/common/img/noImage.png"
+                                <img id="detail-thmbnl-img" src="/common/img/noImage.png"
                                     style="width: 100%; height: 100%; object-fit: contain;" alt="Thumbnail">
                             </div>
                         </div>
@@ -51,7 +51,7 @@
                 <!-- 섹션 2: 상세 내용 -->
                 <div class="gi-form-section">
                     <h3 class="gi-form-section-title">
-                        [Page.Message].Message.Label.Array["SYS_BBS_BOARD.SECTION.CONTENT"]</h3>
+                        [Page.Message].Message.Label.Array["SYS_BBS_BRD.SECTION.CONTENT"]</h3>
                     <div class="gi-editor-wrapper" style="border: 1px solid #e2e8f0; background: #fff;">
                         <div class="ql-container ql-snow" style="border: none;">
                             <div id="detail-content" class="gi-padding-30px ql-editor"
@@ -64,7 +64,7 @@
 
                 <!-- 섹션 3: 첨부 파일 -->
                 <div id="file-section-container" class="gi-form-section gi-hidden">
-                    <h3 class="gi-form-section-title">[Page.Message].Message.Label.Array["SYS_BBS_BOARD.SECTION.FILE"]
+                    <h3 class="gi-form-section-title">[Page.Message].Message.Label.Array["SYS_BBS_BRD.SECTION.FILE"]
                     </h3>
                     <div id="detail-file-section" data-file-card data-input-id="board_file_uuid" data-read-only="true">
                     </div>
@@ -73,7 +73,7 @@
                 <!-- 섹션 4: 댓글 -->
                 <div id="reply-section-container" class="gi-form-section gi-hidden">
                     <h3 class="gi-form-section-title">
-                        [Page.Message].Message.Label.Array["SYS_BBS_REPLY.SECTION.TITLE"]
+                        [Page.Message].Message.Label.Array["SYS_BBS_RPLY.SECTION.TITLE"]
                         <span id="reply-count-badge" class="gi-badge gi-badge-blue gi-margin-left-10px">0</span>
                     </h3>
                     <div class="gi-flex gi-flex-column gi-grid-gap-15px-15px">
@@ -92,7 +92,7 @@
                             <div class="gi-flex gi-flex gi-flex-justify-content-flex-end">
                                 <button id="reply-submit-btn" class="gi-btn-blue" type="button"
                                     style="min-width: 100px;">
-                                    [Page.Message].Message.Label.Array["SYS_BBS_REPLY.SUBMIT"]
+                                    [Page.Message].Message.Label.Array["SYS_BBS_RPLY.SUBMIT"]
                                 </button>
                             </div>
                         </div>
@@ -157,7 +157,7 @@
             if (response.status === 200 && response.data.length > 0) {
                 let bbsInfo = response.data[0];
                 if (bbsInfo.bbs_type === 'GALLERY') {
-                    $("#thumbnail-section-container").removeClass("gi-hidden");
+                    $("#thmbnl-section-container").removeClass("gi-hidden");
                 }
                 if (bbsInfo.file_yn === '1') {
                     $("#file-section-container").removeClass("gi-hidden");
@@ -192,7 +192,7 @@
     // ========== 댓글 관련 함수 ==========
     function replyClickEvent() {
         // placeholder 동적 설정
-        $("#reply-content-input").attr("placeholder", Message.Label.Array["SYS_BBS_REPLY.PLACEHOLDER"] || "댓글을 입력해주세요");
+        $("#reply-content-input").attr("placeholder", Message.Label.Array["SYS_BBS_RPLY.PLACEHOLDER"] || "댓글을 입력해주세요");
 
         // 댓글 등록 버튼 클릭
         $("#reply-submit-btn").on("click", function () {
@@ -240,7 +240,7 @@
         container.empty();
 
         if (!replyList || replyList.length === 0) {
-            container.html('<div class="gi-text-align-center gi-padding-20px" style="color: #94a3b8;">' + (Message.Label.Array["SYS_BBS_REPLY.NO_REPLY"] || '댓글이 없습니다.') + '</div>');
+            container.html('<div class="gi-text-align-center gi-padding-20px" style="color: #94a3b8;">' + (Message.Label.Array["SYS_BBS_RPLY.NO_REPLY"] || '댓글이 없습니다.') + '</div>');
             return;
         }
 
@@ -265,13 +265,13 @@
 
         // 2. 카드 생성 헬퍼 함수
         function createReplyElement(reply, isChild) {
-            let isMine = currentUserEmail && (currentUserEmail === reply.system_create_userid);
+            let isMine = currentUserEmail && (currentUserEmail === reply.sys_crt_usr_id);
             let buttonsHtml = '<div class="gi-flex gi-grid-gap-5px-5px">';
 
             // 답글 버튼 (대댓글이 아닐 경우에만 표시)
             if (!isChild) {
                 buttonsHtml += `
-                    <button class="gi-btn-icon reply-toggle-btn gi-reply-action-btn reply-toggle" style="padding:10px;" data-reply-id="${reply.reply_id}" title="${Message.Label.Array["SYS_BBS_BOARD.REPLY_BTN"]}">
+                    <button class="gi-btn-icon reply-toggle-btn gi-reply-action-btn reply-toggle" style="padding:10px;" data-reply-id="${reply.reply_id}" title="${Message.Label.Array["SYS_BBS_BRD.REPLY_BTN"]}">
                         <i class="fa-solid fa-reply"></i>
                     </button>`;
             }
@@ -289,8 +289,8 @@
                 <div class="gi-reply-card ${isChild ? 'gi-reply-child' : ''}" data-reply-id="${reply.reply_id}">
                     <div class="gi-reply-header gi-flex gi-flex-justify-content-between gi-flex-align-items-center">
                         <div class="gi-flex gi-grid-gap-10px gi-flex-align-items-center">
-                            <span class="gi-reply-writer">${reply.writer_name || (Message.Label.Array["SYS_BBS_BOARD.ANONYMOUS"])}</span>
-                            <span class="gi-reply-date">${reply.system_create_date}</span>
+                            <span class="gi-reply-writer">${reply.wrtr_nm || (Message.Label.Array["SYS_BBS_BRD.ANONYMOUS"])}</span>
+                            <span class="gi-reply-date">${reply.sys_crt_dt}</span>
                         </div>
                         ${buttonsHtml}
                     </div>
@@ -302,11 +302,11 @@
                         <div class="gi-flex gi-flex-column gi-grid-gap-10px">
                             <div class="gi-child-reply-label gi-margin-bottom-5px">
                                 <i class="fa-solid fa-turn-up fa-rotate-90 gi-margin-right-5px"></i>
-                                <span>${Message.Label.Array["SYS_BBS_BOARD.REPLY_WRITE"]}</span>
+                                <span>${Message.Label.Array["SYS_BBS_BRD.REPLY_WRITE"]}</span>
                             </div>
-                            <textarea class="child-reply-input gi-textarea gi-child-reply-input gi-reply-container" placeholder="${Message.Label.Array["SYS_BBS_REPLY.PLACEHOLDER"]}"></textarea>
+                            <textarea class="child-reply-input gi-textarea gi-child-reply-input gi-reply-container" placeholder="${Message.Label.Array["SYS_BBS_RPLY.PLACEHOLDER"]}"></textarea>
                              <div class="gi-flex gi-flex-justify-content-flex-end">
-                                <button class="gi-btn-blue child-reply-submit-btn" data-parent-id="${reply.reply_id}">${Message.Label.Array["SYS_BBS_BOARD.REG_BTN"]}</button>
+                                <button class="gi-btn-blue child-reply-submit-btn" data-parent-id="${reply.reply_id}">${Message.Label.Array["SYS_BBS_BRD.REG_BTN"]}</button>
                              </div>
                         </div>
                     </div>
@@ -336,7 +336,7 @@
                 let toggleBtn = $(`
                     <div class="gi-text-right gi-margin-top-10px">
                         <button class="gi-btn-text" style="padding:10px; font-size: 13px; color: #64748b; font-weight: 500; cursor: pointer;">
-                            ${Message.Label.Array["SYS_BBS_BOARD.VIEW_MORE_REPLY"]} <i class="fa-solid fa-chevron-down gi-margin-left-5px"></i>
+                            ${Message.Label.Array["SYS_BBS_BRD.VIEW_MORE_REPLY"]} <i class="fa-solid fa-chevron-down gi-margin-left-5px"></i>
                         </button>
                     </div>`);
 
@@ -364,9 +364,9 @@
                     let btn = $(this);
                     childrenContainer.slideToggle(300, function () {
                         if ($(this).is(':visible')) {
-                            btn.html(`${Message.Label.Array["SYS_BBS_BOARD.HIDE_REPLY"]} <i class="fa-solid fa-chevron-up gi-margin-left-5px"></i>`);
+                            btn.html(`${Message.Label.Array["SYS_BBS_BRD.HIDE_REPLY"]} <i class="fa-solid fa-chevron-up gi-margin-left-5px"></i>`);
                         } else {
-                            btn.html(`${Message.Label.Array["SYS_BBS_BOARD.VIEW_MORE_REPLY"]} <i class="fa-solid fa-chevron-down gi-margin-left-5px"></i>`);
+                            btn.html(`${Message.Label.Array["SYS_BBS_BRD.VIEW_MORE_REPLY"]} <i class="fa-solid fa-chevron-down gi-margin-left-5px"></i>`);
                         }
                     });
                 });
@@ -382,7 +382,7 @@
         let content = contentInput.val().trim();
 
         if (!content) {
-            formUtil.toast(Message.Label.Array["SYS_BBS_REPLY.CONTENT_REQUIRED"], "warning");
+            formUtil.toast(Message.Label.Array["SYS_BBS_RPLY.CONTENT_REQUIRED"], "warning");
             return;
         }
 
@@ -392,7 +392,7 @@
             board_id: boardId,
             content: content,
             parent_reply_id: parentId,
-            writer_name: (userInfo && userInfo.userName) ? userInfo.userName : (Message.Label.Array["SYS_BBS_BOARD.ANONYMOUS"])
+            wrtr_nm: (userInfo && userInfo.userName) ? userInfo.userName : (Message.Label.Array["SYS_BBS_BRD.ANONYMOUS"])
         };
 
         try {
@@ -440,9 +440,9 @@
         if (response.status === 200 && response.data && response.data.length > 0) {
             let data = response.data[0];
             $("#detail-board-title").text(data.title || Page.Message.Message.Label.Array["NO_TITLE"]);
-            $("#detail-writer").text(data.writer_name || Page.Message.Message.Label.Array["UNKNOWN"]);
-            $("#detail-date").text(data.system_create_date || "-");
-            $("#detail-hit").text(data.hit_count || 0);
+            $("#detail-writer").text(data.wrtr_nm || Page.Message.Message.Label.Array["UNKNOWN"]);
+            $("#detail-date").text(data.sys_crt_dt || "-");
+            $("#detail-hit").text(data.hit_cnt || 0);
 
             if (data.content && data.content.trim() !== "") {
                 $("#detail-content").html(data.content).css("color", "#333");
@@ -456,8 +456,8 @@
             }
 
             // 썸네일 노드 업데이트
-            if (data.thumbnail) {
-                $("#detail-thumbnail-img").attr("src", '/fms/fileManager/downloadByUuid?fileUuid=' + data.thumbnail);
+            if (data.thmbnl) {
+                $("#detail-thmbnl-img").attr("src", '/fms/fileManager/downloadByUuid?fileUuid=' + data.thmbnl);
             }
         } else {
             formUtil.toast(Message.Label.Array["FAIL.SELECT_NO_DATA"], "error");

@@ -18,9 +18,9 @@ public class Token {
 
     public TokenType token_type = TokenType.AUTHORIZATION;
 
-    public boolean revoked;
+    public boolean revok;
 
-    public boolean expired;
+    public boolean exp;
 
     public AuthUser auth_user;
 }

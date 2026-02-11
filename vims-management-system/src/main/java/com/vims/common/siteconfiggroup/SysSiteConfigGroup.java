@@ -18,59 +18,59 @@ import java.util.Date;
 @SuperBuilder
 public class SysSiteConfigGroup extends Common {
     @Transient
-	private String keys = Arrays.toString(new String[]{"config_group_id"});
+	private String keys = Arrays.toString(new String[]{"cfg_grp_id"});
 
     @Id
-    /***<pre> config_group_id : 설정그룹아이디 </pre> */
-	private String config_group_id;
+    /***<pre> cfg_grp_id : 설정그룹아이디 </pre> */
+	private String cfg_grp_id;
 
-    /***<pre> config_group_name : 설정그룹이름 </pre> */
-	private String config_group_name;
+    /***<pre> cfg_grp_nm : 설정그룹이름 </pre> */
+	private String cfg_grp_nm;
 
     /***<pre> use_yn : 사용여부 </pre> */
 	private String use_yn;
 
-    /***<pre> system_create_date : 등록일자 </pre> */
-	private Date system_create_date;
+    /***<pre> sys_crt_dt : 등록일자 </pre> */
+	private Date sys_crt_dt;
 
-    /***<pre> system_create_userid : 작성자ID </pre> */
-	private String system_create_userid;
+    /***<pre> sys_crt_usr_id : 작성자ID </pre> */
+	private String sys_crt_usr_id;
 
-    /***<pre> system_update_date : 수정일자 </pre> */
-	private Date system_update_date;
+    /***<pre> sys_upd_dt : 수정일자 </pre> */
+	private Date sys_upd_dt;
 
-    /***<pre> system_update_userid : 수정자ID </pre> */
-	private String system_update_userid;
+    /***<pre> sys_upd_usr_id : 수정자ID </pre> */
+	private String sys_upd_usr_id;
 
 
 
-    /***<pre> config_group_id : 설정그룹아이디 </pre> */
+    /***<pre> cfg_grp_id : 설정그룹아이디 </pre> */
     @Transient
-	private String _config_group_id;
+	private String _cfg_grp_id;
 
-    /***<pre> config_group_name : 설정그룹이름 </pre> */
+    /***<pre> cfg_grp_nm : 설정그룹이름 </pre> */
     @Transient
-	private String _config_group_name;
+	private String _cfg_grp_nm;
 
     /***<pre> use_yn : 사용여부 </pre> */
     @Transient
 	private String _use_yn;
 
-    /***<pre> system_create_date : 등록일자 </pre> */
+    /***<pre> sys_crt_dt : 등록일자 </pre> */
     @Transient
-	private Date _system_create_date;
+	private Date _sys_crt_dt;
 
-    /***<pre> system_create_userid : 작성자ID </pre> */
+    /***<pre> sys_crt_usr_id : 작성자ID </pre> */
     @Transient
-	private String _system_create_userid;
+	private String _sys_crt_usr_id;
 
-    /***<pre> system_update_date : 수정일자 </pre> */
+    /***<pre> sys_upd_dt : 수정일자 </pre> */
     @Transient
-	private Date _system_update_date;
+	private Date _sys_upd_dt;
 
-    /***<pre> system_update_userid : 수정자ID </pre> */
+    /***<pre> sys_upd_usr_id : 수정자ID </pre> */
     @Transient
-	private String _system_update_userid;
+	private String _sys_upd_usr_id;
 
 
 }

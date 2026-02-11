@@ -2,24 +2,24 @@
 //Message.Label = {};
 //Message.Label.Array = {};
 
-Message.Label.Array["SYS_USER_GROUP.CHECK.GROUP_ID"] = "그룹아이디(을)를 입력해 주세요";
-Message.Label.Array["SYS_USER_GROUP.CHECK.USER_EMAIL"] = "사용자 email(을)를 입력해 주세요";
-Message.Label.Array["SYS_USER_GROUP.CHECK.USER_ID"] = "사용자 ID(을)를 입력해 주세요";
-Message.Label.Array["SYS_USER_GROUP.CHECK.OFFICE_CODE"] = "소속코드(을)를 입력해 주세요";
-Message.Label.Array["SYS_USER_GROUP.CHECK.SYSTEM_CREATE_DATE"] = "작성일자(을)를 입력해 주세요";
-Message.Label.Array["SYS_USER_GROUP.CHECK.SYSTEM_CREATE_USERID"] = "작성자ID(을)를 입력해 주세요";
-Message.Label.Array["SYS_USER_GROUP.CHECK.SYSTEM_UPDATE_DATE"] = "수정일자(을)를 입력해 주세요";
-Message.Label.Array["SYS_USER_GROUP.CHECK.SYSTEM_UPDATE_USERID"] = "수정자ID(을)를 입력해 주세요";
+Message.Label.Array["SYS_USER_GRP.CHECK.GRP_ID"] = "그룹아이디(을)를 입력해 주세요";
+Message.Label.Array["SYS_USER_GRP.CHECK.USER_EMAIL"] = "사용자 email(을)를 입력해 주세요";
+Message.Label.Array["SYS_USER_GRP.CHECK.USER_ID"] = "사용자 ID(을)를 입력해 주세요";
+Message.Label.Array["SYS_USER_GRP.CHECK.OFFC_CD"] = "소속코드(을)를 입력해 주세요";
+Message.Label.Array["SYS_USER_GRP.CHECK.SYS_CRT_DT"] = "작성일자(을)를 입력해 주세요";
+Message.Label.Array["SYS_USER_GRP.CHECK.SYS_CRT_USR_ID"] = "작성자ID(을)를 입력해 주세요";
+Message.Label.Array["SYS_USER_GRP.CHECK.SYS_UPD_DT"] = "수정일자(을)를 입력해 주세요";
+Message.Label.Array["SYS_USER_GRP.CHECK.SYS_UPD_USR_ID"] = "수정자ID(을)를 입력해 주세요";
 
 
-Message.Label.Array["SYS_USER_GROUP.GROUP_ID"] = "그룹아이디";
-Message.Label.Array["SYS_USER_GROUP.USER_EMAIL"] = "사용자 email";
-Message.Label.Array["SYS_USER_GROUP.USER_ID"] = "사용자 ID";
-Message.Label.Array["SYS_USER_GROUP.OFFICE_CODE"] = "소속코드";
-Message.Label.Array["SYS_USER_GROUP.SYSTEM_CREATE_DATE"] = "작성일자";
-Message.Label.Array["SYS_USER_GROUP.SYSTEM_CREATE_USERID"] = "작성자ID";
-Message.Label.Array["SYS_USER_GROUP.SYSTEM_UPDATE_DATE"] = "수정일자";
-Message.Label.Array["SYS_USER_GROUP.SYSTEM_UPDATE_USERID"] = "수정자ID";
+Message.Label.Array["SYS_USER_GRP.GRP_ID"] = "그룹아이디";
+Message.Label.Array["SYS_USER_GRP.USER_EMAIL"] = "사용자 email";
+Message.Label.Array["SYS_USER_GRP.USER_ID"] = "사용자 ID";
+Message.Label.Array["SYS_USER_GRP.OFFC_CD"] = "소속코드";
+Message.Label.Array["SYS_USER_GRP.SYS_CRT_DT"] = "작성일자";
+Message.Label.Array["SYS_USER_GRP.SYS_CRT_USR_ID"] = "작성자ID";
+Message.Label.Array["SYS_USER_GRP.SYS_UPD_DT"] = "수정일자";
+Message.Label.Array["SYS_USER_GRP.SYS_UPD_USR_ID"] = "수정자ID";
 
-Message.Label.Array["SYS_USER_GROUP.REGISTER_GROUP_USER_BTN"] = "사용자등록";
+Message.Label.Array["SYS_USER_GRP.REGISTER_GROUP_USER_BTN"] = "사용자등록";
 

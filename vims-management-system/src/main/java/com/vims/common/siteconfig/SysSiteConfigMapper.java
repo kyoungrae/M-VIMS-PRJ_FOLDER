@@ -11,5 +11,5 @@ import java.util.Map;
 public interface SysSiteConfigMapper extends CommonMapper<SysSiteConfig> {
     String[] SELECT_GROUP();
 
-    PasswordPolicy SELECT_PASSWORD_POLICY();
+    PasswordPolicy SELECT_PWD_POLICY();
 }

@@ -58,9 +58,6 @@ public class LogoutService implements LogoutHandler {
                 e.printStackTrace();
             }
 
-            // storedToken.setExpired(true);
-            // storedToken.setRevoked(true);
-            // tokenService.update(storedToken);
             SecurityContextHolder.clearContext();
         }
     }

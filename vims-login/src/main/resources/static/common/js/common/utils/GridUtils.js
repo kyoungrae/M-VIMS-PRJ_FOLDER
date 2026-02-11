@@ -56,7 +56,7 @@ FormUtility.prototype.giGrid = function (layout, paging, page, gridId) {
             FONT_SIZE: item.FONT_SIZE,
             TYPE: item.TYPE,
             HEADER: item.HEADER,
-            SYS_CODE_GROUP_ID: item.SYS_CODE_GROUP_ID,
+            SYS_CD_GRP_ID: item.SYS_CD_GRP_ID,
             TARGET: item.TARGET,
             HIDDEN: item.HIDDEN,
             VISIBLE_OPTION_BTN: item.VISIBLE_OPTION_BTN
@@ -223,8 +223,8 @@ FormUtility.prototype.giGrid = function (layout, paging, page, gridId) {
                         let sysCodeName = "";
                         let sysCodeValue = "";
                         let hidden = "";
-                        if (formUtil.checkEmptyValue(item.SYS_CODE_GROUP_ID)) {
-                            sysCodeName = await checkSameCode(sysCodeGroupIdArray, item.SYS_CODE_GROUP_ID, data[i]);
+                        if (formUtil.checkEmptyValue(item.SYS_CD_GRP_ID)) {
+                            sysCodeName = await checkSameCode(sysCodeGroupIdArray, item.SYS_CD_GRP_ID, data[i]);
                             sysCodeValue = data[i][item.ID];
                         } else {
                             sysCodeName = data[i][item.ID];
@@ -373,7 +373,7 @@ FormUtility.prototype.giGrid = function (layout, paging, page, gridId) {
 
             function unUsedMenuUISettings(e) {
                 let flag = $(e).find("li[data-field='use_yn']").not(".hidden").find("span[data-grid-value]").length === 0;
-                let a = ""; //NOTE: 그리드 내부에 SYS_CODE_GROUP_ID 함수로 인해 값이 동적으로 변화 하는걸 대비(공통코드 적용시 text, 미적용시 interger)
+                let a = ""; //NOTE: 그리드 내부에 SYS_CD_GRP_ID 함수로 인해 값이 동적으로 변화 하는걸 대비(공통코드 적용시 text, 미적용시 interger)
                 let b = "";
                 let c = "";
 
@@ -1161,18 +1161,18 @@ FormUtility.prototype.giGrid = function (layout, paging, page, gridId) {
 
 //NOTE: 불필요한 SYS_CODE 조회 차단 로직
 async function checkSameCode(sysCodeGroupIdArray, sysDeptGroupCodeId, cont) {
-    let param = { group_id: sysDeptGroupCodeId };
+    let param = { grp_id: sysDeptGroupCodeId };
     let sysCodeArray = [];
-    //NOTE: 공통코드 Array에 그리드 SYS_CODE_GROUP_ID 값과 일치하는 값이 있는지 여부
+    //NOTE: 공통코드 Array에 그리드 SYS_CD_GRP_ID 값과 일치하는 값이 있는지 여부
     let isExist = sysCodeGroupIdArray.some(item => {
         return Object.keys(item)[0] === sysDeptGroupCodeId;
     });
 
-    //NOTE : 그리드 DataSet 호출 시 그리드 내의 SYS_CODE_GROUP_ID로 SYS_CODE 조회 후 sysCodeGroupIdArray 배열에 추가
+    //NOTE : 그리드 DataSet 호출 시 그리드 내의 SYS_CD_GRP_ID로 SYS_CODE 조회 후 sysCodeGroupIdArray 배열에 추가
     if (!isExist) {
         let sysCodeList = await findSysCode(param);
         sysCodeList.map(item => {
-            sysCodeArray.push({ [item.code_id]: item.code_name });
+            sysCodeArray.push({ [item.cd_id]: item.cd_nm });
         })
         sysCodeGroupIdArray.push({ [sysDeptGroupCodeId]: sysCodeArray });
     }
@@ -1180,9 +1180,9 @@ async function checkSameCode(sysCodeGroupIdArray, sysDeptGroupCodeId, cont) {
     for (let key in cont) {
         let returnVALUE = "";
         let lowerKey = sysDeptGroupCodeId.toLowerCase();
-        //NOTE : 그리드 row의 키가 SYS_CODE_GROUP_ID와 일치 하는지 여부 파악
+        //NOTE : 그리드 row의 키가 SYS_CD_GRP_ID와 일치 하는지 여부 파악
         if (key.toLowerCase() === lowerKey) {
-            //NOTE: sysCodeGroupIdArray 배열안의 키:값과 일치 하면 CODE_NAME 리턴
+            //NOTE: sysCodeGroupIdArray 배열안의 키:값과 일치 하면 CD_NM 리턴
             sysCodeGroupIdArray.find(item => {
                 if (formUtil.checkEmptyValue(item[sysDeptGroupCodeId])) {
                     item[sysDeptGroupCodeId].find(valueItem => {
@@ -1241,7 +1241,7 @@ FormUtility.prototype.giGridHierarchy = function (layout, paging, page, gridId) 
             FONT_SIZE: item.FONT_SIZE,
             TYPE: item.TYPE,
             HEADER: item.HEADER,
-            SYS_CODE_GROUP_ID: item.SYS_CODE_GROUP_ID,
+            SYS_CD_GRP_ID: item.SYS_CD_GRP_ID,
             TARGET: item.TARGET,
             HIDDEN: item.HIDDEN,
             VISIBLE_OPTION_BTN: item.VISIBLE_OPTION_BTN
@@ -1403,8 +1403,8 @@ FormUtility.prototype.giGridHierarchy = function (layout, paging, page, gridId) 
                         let sysCodeValue = "";
                         let hidden = true;
 
-                        if (formUtil.checkEmptyValue(item.SYS_CODE_GROUP_ID)) {
-                            sysCodeName = await checkSameCode(sysCodeGroupIdArray, item.SYS_CODE_GROUP_ID, data[i]);
+                        if (formUtil.checkEmptyValue(item.SYS_CD_GRP_ID)) {
+                            sysCodeName = await checkSameCode(sysCodeGroupIdArray, item.SYS_CD_GRP_ID, data[i]);
                             sysCodeValue = data[i][item.ID];
                         } else {
                             sysCodeName = data[i][item.ID];
@@ -1419,7 +1419,7 @@ FormUtility.prototype.giGridHierarchy = function (layout, paging, page, gridId) 
 
                         //NOTE: rows BTN 노출 이벤트 함수 호출
                         visibleOptionArray.map(visibleOptionKeys => {
-                            //NOTE: VISIBLE_OPTION_BTN:[{"menu_level":"0"},{"menu_level":"1"}] 조건이 배열일때 적용 합수
+                            //NOTE: VISIBLE_OPTION_BTN:[{"menu_lvl":"0"},{"menu_lvl":"1"}] 조건이 배열일때 적용 합수
                             if (formUtil.checkEmptyValue(visibleOptionKeys.length)) {
                                 visibleOptionKeys.map(ArrItem => {
                                     if (Object.keys(ArrItem)[0] === item.ID) {
@@ -1429,7 +1429,7 @@ FormUtility.prototype.giGridHierarchy = function (layout, paging, page, gridId) 
                                     }
                                 })
                             } else {
-                                //NOTE: VISIBLE_OPTION_BTN:{"menu_level":"0"} 조건이 하나 일때
+                                //NOTE: VISIBLE_OPTION_BTN:{"menu_lvl":"0"} 조건이 하나 일때
                                 if (Object.keys(visibleOptionKeys)[0] === item.ID) {
                                     if (visibleOptionKeys[item.ID] === sysCodeName + "") {
                                         originalDataForVisibleOption[visibleOptionKeys.BTN_ID] = "true";
@@ -1595,7 +1595,7 @@ FormUtility.prototype.giGridHierarchy = function (layout, paging, page, gridId) 
                     function unUsedMenuUISettings(e) {
                         //NOTE: 미사용시 메뉴 비활성화
                         let flag = e.$row.find("li[data-field='use_yn']").not(".hidden").find("span[data-grid-value]").length === 0;
-                        let a = ""; //NOTE: 그리드 내부에 SYS_CODE_GROUP_ID 함수로 인해 값이 동적으로 변화 하는걸 대비(공통코드 적용시 text, 미적용시 interger)
+                        let a = ""; //NOTE: 그리드 내부에 SYS_CD_GRP_ID 함수로 인해 값이 동적으로 변화 하는걸 대비(공통코드 적용시 text, 미적용시 interger)
                         let b = "";
                         let c = "";
 
@@ -1616,7 +1616,7 @@ FormUtility.prototype.giGridHierarchy = function (layout, paging, page, gridId) 
                             rows.forEach(item => {
                                 if (item.subVal === parentValue) {
                                     $(item.$row).addClass("unused-menu")
-                                    dept2CodeName = $(item.$row).find("li[data-field='menu_code']").find("span").text();
+                                    dept2CodeName = $(item.$row).find("li[data-field='menu_cd']").find("span").text();
                                 }
                                 if (item.subVal === dept2CodeName) {
                                     $(item.$row).addClass("unused-menu")

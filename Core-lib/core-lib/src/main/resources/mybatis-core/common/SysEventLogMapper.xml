@@ -17,59 +17,59 @@
     <select id="SELECT_PAGE" resultType="com.system.common.eventlog.SysEventLog">
         SELECT * FROM (
             SELECT
-                row_number() over (ORDER BY system_create_date DESC )AS no,
+                row_number() over (ORDER BY sys_crt_dt DESC )AS no,
                 
                 id, 
                 user_id, 
                 email, 
                 role, 
-                action_type, 
-                target_table, 
-                target_id, 
-                before_data, 
-                after_data, 
-                ip_address, 
-                system_create_date 
-            FROM SYS_EVENT_LOG
+                act_type, 
+                tgt_tbl, 
+                tgt_id, 
+                bfr_data, 
+                aft_data, 
+                ip_addr, 
+                sys_crt_dt 
+            FROM SYS_EVT_LOG
             <where>
                 
                 <if test="id != null and id != ''">AND id = #{id}</if>
                 <if test="user_id != null and user_id != ''">AND user_id = #{user_id}</if>
                 <if test="email != null and email != ''">AND email = #{email}</if>
                 <if test="role != null and role != ''">AND role = #{role}</if>
-                <if test="action_type != null and action_type != ''">AND action_type = #{action_type}</if>
-                <if test="target_table != null and target_table != ''">AND target_table = #{target_table}</if>
-                <if test="target_id != null and target_id != ''">AND target_id = #{target_id}</if>
-                <if test="before_data != null and before_data != ''">AND before_data = #{before_data}</if>
-                <if test="after_data != null and after_data != ''">AND after_data = #{after_data}</if>
-                <if test="ip_address != null and ip_address != ''">AND ip_address = #{ip_address}</if>
-                <if test="system_create_date != null">AND system_create_date = #{system_create_date}</if>
+                <if test="act_type != null and act_type != ''">AND act_type = #{act_type}</if>
+                <if test="tgt_tbl != null and tgt_tbl != ''">AND tgt_tbl = #{tgt_tbl}</if>
+                <if test="tgt_id != null and tgt_id != ''">AND tgt_id = #{tgt_id}</if>
+                <if test="bfr_data != null and bfr_data != ''">AND bfr_data = #{bfr_data}</if>
+                <if test="aft_data != null and aft_data != ''">AND aft_data = #{aft_data}</if>
+                <if test="ip_addr != null and ip_addr != ''">AND ip_addr = #{ip_addr}</if>
+                <if test="sys_crt_dt != null">AND sys_crt_dt = #{sys_crt_dt}</if>
                 
                 <if test="_id != null and _id != ''">AND id LIKE CONCAT('%', #{_id}, '%')</if>
                 <if test="_user_id != null and _user_id != ''">AND user_id LIKE CONCAT('%', #{_user_id}, '%')</if>
                 <if test="_email != null and _email != ''">AND email LIKE CONCAT('%', #{_email}, '%')</if>
                 <if test="_role != null and _role != ''">AND role LIKE CONCAT('%', #{_role}, '%')</if>
-                <if test="_action_type != null and _action_type != ''">AND action_type LIKE CONCAT('%', #{_action_type}, '%')</if>
-                <if test="_target_table != null and _target_table != ''">AND target_table LIKE CONCAT('%', #{_target_table}, '%')</if>
-                <if test="_target_id != null and _target_id != ''">AND target_id LIKE CONCAT('%', #{_target_id}, '%')</if>
-                <if test="_before_data != null and _before_data != ''">AND before_data LIKE CONCAT('%', #{_before_data}, '%')</if>
-                <if test="_after_data != null and _after_data != ''">AND after_data LIKE CONCAT('%', #{_after_data}, '%')</if>
-                <if test="_ip_address != null and _ip_address != ''">AND ip_address LIKE CONCAT('%', #{_ip_address}, '%')</if>
-                <if test="_system_create_date != null and _system_create_date != ''">AND system_create_date LIKE CONCAT('%', #{_system_create_date}, '%')</if>
+                <if test="_act_type != null and _act_type != ''">AND act_type LIKE CONCAT('%', #{_act_type}, '%')</if>
+                <if test="_tgt_tbl != null and _tgt_tbl != ''">AND tgt_tbl LIKE CONCAT('%', #{_tgt_tbl}, '%')</if>
+                <if test="_tgt_id != null and _tgt_id != ''">AND tgt_id LIKE CONCAT('%', #{_tgt_id}, '%')</if>
+                <if test="_bfr_data != null and _bfr_data != ''">AND bfr_data LIKE CONCAT('%', #{_bfr_data}, '%')</if>
+                <if test="_aft_data != null and _aft_data != ''">AND aft_data LIKE CONCAT('%', #{_aft_data}, '%')</if>
+                <if test="_ip_addr != null and _ip_addr != ''">AND ip_addr LIKE CONCAT('%', #{_ip_addr}, '%')</if>
+                <if test="_sys_crt_dt != null and _sys_crt_dt != ''">AND sys_crt_dt LIKE CONCAT('%', #{_sys_crt_dt}, '%')</if>
 
                 <if test="from_date != null and from_date != '' and to_date != null and to_date != ''">
-                    AND system_create_date &gt;= STR_TO_DATE(#{from_date}, '%Y%m%d')
-                    AND system_create_date &lt; DATE_ADD(STR_TO_DATE(#{to_date}, '%Y%m%d'), INTERVAL 1 DAY)
+                    AND sys_crt_dt &gt;= STR_TO_DATE(#{from_date}, '%Y%m%d')
+                    AND sys_crt_dt &lt; DATE_ADD(STR_TO_DATE(#{to_date}, '%Y%m%d'), INTERVAL 1 DAY)
                 </if>
 
                 <if test="from_date != null and from_date != '' and (to_date == null or to_date == '')">
-                    AND system_create_date &gt;= STR_TO_DATE(#{from_date}, '%Y%m%d')
-                    AND system_create_date &lt; DATE_ADD(STR_TO_DATE(#{from_date}, '%Y%m%d'), INTERVAL 1 DAY)
+                    AND sys_crt_dt &gt;= STR_TO_DATE(#{from_date}, '%Y%m%d')
+                    AND sys_crt_dt &lt; DATE_ADD(STR_TO_DATE(#{from_date}, '%Y%m%d'), INTERVAL 1 DAY)
                 </if>
 
                 <if test="(from_date == null or from_date == '') and to_date != null and to_date != ''">
-                    AND system_create_date &gt;= STR_TO_DATE(#{to_date}, '%Y%m%d')
-                    AND system_create_date &lt; DATE_ADD(STR_TO_DATE(#{to_date}, '%Y%m%d'), INTERVAL 1 DAY)
+                    AND sys_crt_dt &gt;= STR_TO_DATE(#{to_date}, '%Y%m%d')
+                    AND sys_crt_dt &lt; DATE_ADD(STR_TO_DATE(#{to_date}, '%Y%m%d'), INTERVAL 1 DAY)
                 </if>
             </where>
         ) AS sub
@@ -78,45 +78,45 @@
     </select>
 
     <select id="SELECT_PAGING_TOTAL_NUMBER" resultType="int">
-        SELECT CEIL(COUNT(*) / #{row_range}) FROM SYS_EVENT_LOG
+        SELECT CEIL(COUNT(*) / #{row_range}) FROM SYS_EVT_LOG
         <where>
             
             <if test="id != null and id != ''">AND id = #{id}</if>
             <if test="user_id != null and user_id != ''">AND user_id = #{user_id}</if>
             <if test="email != null and email != ''">AND email = #{email}</if>
             <if test="role != null and role != ''">AND role = #{role}</if>
-            <if test="action_type != null and action_type != ''">AND action_type = #{action_type}</if>
-            <if test="target_table != null and target_table != ''">AND target_table = #{target_table}</if>
-            <if test="target_id != null and target_id != ''">AND target_id = #{target_id}</if>
-            <if test="before_data != null and before_data != ''">AND before_data = #{before_data}</if>
-            <if test="after_data != null and after_data != ''">AND after_data = #{after_data}</if>
-            <if test="ip_address != null and ip_address != ''">AND ip_address = #{ip_address}</if>
-            <if test="system_create_date != null">AND system_create_date = #{system_create_date}</if>
+            <if test="act_type != null and act_type != ''">AND act_type = #{act_type}</if>
+            <if test="tgt_tbl != null and tgt_tbl != ''">AND tgt_tbl = #{tgt_tbl}</if>
+            <if test="tgt_id != null and tgt_id != ''">AND tgt_id = #{tgt_id}</if>
+            <if test="bfr_data != null and bfr_data != ''">AND bfr_data = #{bfr_data}</if>
+            <if test="aft_data != null and aft_data != ''">AND aft_data = #{aft_data}</if>
+            <if test="ip_addr != null and ip_addr != ''">AND ip_addr = #{ip_addr}</if>
+            <if test="sys_crt_dt != null">AND sys_crt_dt = #{sys_crt_dt}</if>
             
             <if test="_id != null and _id != ''">AND id LIKE CONCAT('%', #{_id}, '%')</if>
             <if test="_user_id != null and _user_id != ''">AND user_id LIKE CONCAT('%', #{_user_id}, '%')</if>
             <if test="_email != null and _email != ''">AND email LIKE CONCAT('%', #{_email}, '%')</if>
             <if test="_role != null and _role != ''">AND role LIKE CONCAT('%', #{_role}, '%')</if>
-            <if test="_action_type != null and _action_type != ''">AND action_type LIKE CONCAT('%', #{_action_type}, '%')</if>
-            <if test="_target_table != null and _target_table != ''">AND target_table LIKE CONCAT('%', #{_target_table}, '%')</if>
-            <if test="_target_id != null and _target_id != ''">AND target_id LIKE CONCAT('%', #{_target_id}, '%')</if>
-            <if test="_before_data != null and _before_data != ''">AND before_data LIKE CONCAT('%', #{_before_data}, '%')</if>
-            <if test="_after_data != null and _after_data != ''">AND after_data LIKE CONCAT('%', #{_after_data}, '%')</if>
-            <if test="_ip_address != null and _ip_address != ''">AND ip_address LIKE CONCAT('%', #{_ip_address}, '%')</if>
-            <if test="_system_create_date != null and _system_create_date != ''">AND system_create_date LIKE CONCAT('%', #{_system_create_date}, '%')</if>
+            <if test="_act_type != null and _act_type != ''">AND act_type LIKE CONCAT('%', #{_act_type}, '%')</if>
+            <if test="_tgt_tbl != null and _tgt_tbl != ''">AND tgt_tbl LIKE CONCAT('%', #{_tgt_tbl}, '%')</if>
+            <if test="_tgt_id != null and _tgt_id != ''">AND tgt_id LIKE CONCAT('%', #{_tgt_id}, '%')</if>
+            <if test="_bfr_data != null and _bfr_data != ''">AND bfr_data LIKE CONCAT('%', #{_bfr_data}, '%')</if>
+            <if test="_aft_data != null and _aft_data != ''">AND aft_data LIKE CONCAT('%', #{_aft_data}, '%')</if>
+            <if test="_ip_addr != null and _ip_addr != ''">AND ip_addr LIKE CONCAT('%', #{_ip_addr}, '%')</if>
+            <if test="_sys_crt_dt != null and _sys_crt_dt != ''">AND sys_crt_dt LIKE CONCAT('%', #{_sys_crt_dt}, '%')</if>
             <if test="from_date != null and from_date != '' and to_date != null and to_date != ''">
-                AND system_create_date &gt;= STR_TO_DATE(#{from_date}, '%Y%m%d')
-                AND system_create_date &lt; DATE_ADD(STR_TO_DATE(#{to_date}, '%Y%m%d'), INTERVAL 1 DAY)
+                AND sys_crt_dt &gt;= STR_TO_DATE(#{from_date}, '%Y%m%d')
+                AND sys_crt_dt &lt; DATE_ADD(STR_TO_DATE(#{to_date}, '%Y%m%d'), INTERVAL 1 DAY)
             </if>
 
             <if test="from_date != null and from_date != '' and (to_date == null or to_date == '')">
-                AND system_create_date &gt;= STR_TO_DATE(#{from_date}, '%Y%m%d')
-                AND system_create_date &lt; DATE_ADD(STR_TO_DATE(#{from_date}, '%Y%m%d'), INTERVAL 1 DAY)
+                AND sys_crt_dt &gt;= STR_TO_DATE(#{from_date}, '%Y%m%d')
+                AND sys_crt_dt &lt; DATE_ADD(STR_TO_DATE(#{from_date}, '%Y%m%d'), INTERVAL 1 DAY)
             </if>
 
             <if test="(from_date == null or from_date == '') and to_date != null and to_date != ''">
-                AND system_create_date &gt;= STR_TO_DATE(#{to_date}, '%Y%m%d')
-                AND system_create_date &lt; DATE_ADD(STR_TO_DATE(#{to_date}, '%Y%m%d'), INTERVAL 1 DAY)
+                AND sys_crt_dt &gt;= STR_TO_DATE(#{to_date}, '%Y%m%d')
+                AND sys_crt_dt &lt; DATE_ADD(STR_TO_DATE(#{to_date}, '%Y%m%d'), INTERVAL 1 DAY)
             </if>
         </where>
     </select>
@@ -128,57 +128,57 @@
             user_id,
             email,
             role,
-            action_type,
-            target_table,
-            target_id,
-            before_data,
-            after_data,
-            ip_address,
-            system_create_date
-        FROM SYS_EVENT_LOG
+            act_type,
+            tgt_tbl,
+            tgt_id,
+            bfr_data,
+            aft_data,
+            ip_addr,
+            sys_crt_dt
+        FROM SYS_EVT_LOG
         <where>
             
             <if test="id != null and id != ''">AND id = #{id}</if>
             <if test="user_id != null and user_id != ''">AND user_id = #{user_id}</if>
             <if test="email != null and email != ''">AND email = #{email}</if>
             <if test="role != null and role != ''">AND role = #{role}</if>
-            <if test="action_type != null and action_type != ''">AND action_type = #{action_type}</if>
-            <if test="target_table != null and target_table != ''">AND target_table = #{target_table}</if>
-            <if test="target_id != null and target_id != ''">AND target_id = #{target_id}</if>
-            <if test="before_data != null and before_data != ''">AND before_data = #{before_data}</if>
-            <if test="after_data != null and after_data != ''">AND after_data = #{after_data}</if>
-            <if test="ip_address != null and ip_address != ''">AND ip_address = #{ip_address}</if>
-            <if test="system_create_date != null">AND system_create_date = #{system_create_date}</if>
+            <if test="act_type != null and act_type != ''">AND act_type = #{act_type}</if>
+            <if test="tgt_tbl != null and tgt_tbl != ''">AND tgt_tbl = #{tgt_tbl}</if>
+            <if test="tgt_id != null and tgt_id != ''">AND tgt_id = #{tgt_id}</if>
+            <if test="bfr_data != null and bfr_data != ''">AND bfr_data = #{bfr_data}</if>
+            <if test="aft_data != null and aft_data != ''">AND aft_data = #{aft_data}</if>
+            <if test="ip_addr != null and ip_addr != ''">AND ip_addr = #{ip_addr}</if>
+            <if test="sys_crt_dt != null">AND sys_crt_dt = #{sys_crt_dt}</if>
             
             <if test="_id != null and _id != ''">AND id LIKE CONCAT('%', #{_id}, '%')</if>
             <if test="_user_id != null and _user_id != ''">AND user_id LIKE CONCAT('%', #{_user_id}, '%')</if>
             <if test="_email != null and _email != ''">AND email LIKE CONCAT('%', #{_email}, '%')</if>
             <if test="_role != null and _role != ''">AND role LIKE CONCAT('%', #{_role}, '%')</if>
-            <if test="_action_type != null and _action_type != ''">AND action_type LIKE CONCAT('%', #{_action_type}, '%')</if>
-            <if test="_target_table != null and _target_table != ''">AND target_table LIKE CONCAT('%', #{_target_table}, '%')</if>
-            <if test="_target_id != null and _target_id != ''">AND target_id LIKE CONCAT('%', #{_target_id}, '%')</if>
-            <if test="_before_data != null and _before_data != ''">AND before_data LIKE CONCAT('%', #{_before_data}, '%')</if>
-            <if test="_after_data != null and _after_data != ''">AND after_data LIKE CONCAT('%', #{_after_data}, '%')</if>
-            <if test="_ip_address != null and _ip_address != ''">AND ip_address LIKE CONCAT('%', #{_ip_address}, '%')</if>
-            <if test="_system_create_date != null and _system_create_date != ''">AND system_create_date LIKE CONCAT('%', #{_system_create_date}, '%')</if>
+            <if test="_act_type != null and _act_type != ''">AND act_type LIKE CONCAT('%', #{_act_type}, '%')</if>
+            <if test="_tgt_tbl != null and _tgt_tbl != ''">AND tgt_tbl LIKE CONCAT('%', #{_tgt_tbl}, '%')</if>
+            <if test="_tgt_id != null and _tgt_id != ''">AND tgt_id LIKE CONCAT('%', #{_tgt_id}, '%')</if>
+            <if test="_bfr_data != null and _bfr_data != ''">AND bfr_data LIKE CONCAT('%', #{_bfr_data}, '%')</if>
+            <if test="_aft_data != null and _aft_data != ''">AND aft_data LIKE CONCAT('%', #{_aft_data}, '%')</if>
+            <if test="_ip_addr != null and _ip_addr != ''">AND ip_addr LIKE CONCAT('%', #{_ip_addr}, '%')</if>
+            <if test="_sys_crt_dt != null and _sys_crt_dt != ''">AND sys_crt_dt LIKE CONCAT('%', #{_sys_crt_dt}, '%')</if>
         </where>
     </select>
 
     <insert id="INSERT">
-        INSERT INTO SYS_EVENT_LOG(
+        INSERT INTO SYS_EVT_LOG(
             
              id 
             , user_id 
             , email 
             , role 
-            , action_type 
-            , target_table 
-            , ip_address 
+            , act_type 
+            , tgt_tbl 
+            , ip_addr 
             
-            <if test="target_id != null">, target_id</if>
-            <if test="before_data != null">, before_data</if>
-            <if test="after_data != null">, after_data</if>
-            , system_create_date
+            <if test="tgt_id != null">, tgt_id</if>
+            <if test="bfr_data != null">, bfr_data</if>
+            <if test="aft_data != null">, aft_data</if>
+            , sys_crt_dt
         )
         VALUES(
             
@@ -186,54 +186,54 @@
             , #{user_id}
             , #{email}
             , #{role}
-            , #{action_type}
-            , #{target_table}
-            , #{ip_address}
+            , #{act_type}
+            , #{tgt_tbl}
+            , #{ip_addr}
             
-            <if test="target_id != null">, #{target_id}</if>
-            <if test="before_data != null">, #{before_data}</if>
-            <if test="after_data != null">, #{after_data}</if>
-            , #{system_create_date}
+            <if test="tgt_id != null">, #{tgt_id}</if>
+            <if test="bfr_data != null">, #{bfr_data}</if>
+            <if test="aft_data != null">, #{aft_data}</if>
+            , #{sys_crt_dt}
         )
     </insert>
 
     <delete id="DELETE">
-        DELETE FROM SYS_EVENT_LOG
+        DELETE FROM SYS_EVT_LOG
         <where>
             
              id = #{id}
              user_id = #{user_id}
-             action_type = #{action_type}
-            AND system_create_date = #{system_create_date}
+             act_type = #{act_type}
+            AND sys_crt_dt = #{sys_crt_dt}
             
             <if test="email != null">AND email = #{email}</if>
             <if test="role != null">AND role = #{role}</if>
-            <if test="target_table != null">AND target_table = #{target_table}</if>
-            <if test="target_id != null">AND target_id = #{target_id}</if>
-            <if test="before_data != null">AND before_data = #{before_data}</if>
-            <if test="after_data != null">AND after_data = #{after_data}</if>
-            <if test="ip_address != null">AND ip_address = #{ip_address}</if>
+            <if test="tgt_tbl != null">AND tgt_tbl = #{tgt_tbl}</if>
+            <if test="tgt_id != null">AND tgt_id = #{tgt_id}</if>
+            <if test="bfr_data != null">AND bfr_data = #{bfr_data}</if>
+            <if test="aft_data != null">AND aft_data = #{aft_data}</if>
+            <if test="ip_addr != null">AND ip_addr = #{ip_addr}</if>
         </where>
     </delete>
 
     <update id="UPDATE">
-        UPDATE SYS_EVENT_LOG
+        UPDATE SYS_EVT_LOG
         <set>
             
             <if test="email != null and email != '' ">,email = #{email}</if>
             <if test="role != null and role != '' ">,role = #{role}</if>
-            <if test="target_table != null and target_table != '' ">,target_table = #{target_table}</if>
-            <if test="target_id != null and target_id != '' ">,target_id = #{target_id}</if>
-            <if test="before_data != null and before_data != '' ">,before_data = #{before_data}</if>
-            <if test="after_data != null and after_data != '' ">,after_data = #{after_data}</if>
-            <if test="ip_address != null and ip_address != '' ">,ip_address = #{ip_address}</if>
+            <if test="tgt_tbl != null and tgt_tbl != '' ">,tgt_tbl = #{tgt_tbl}</if>
+            <if test="tgt_id != null and tgt_id != '' ">,tgt_id = #{tgt_id}</if>
+            <if test="bfr_data != null and bfr_data != '' ">,bfr_data = #{bfr_data}</if>
+            <if test="aft_data != null and aft_data != '' ">,aft_data = #{aft_data}</if>
+            <if test="ip_addr != null and ip_addr != '' ">,ip_addr = #{ip_addr}</if>
         </set>
         <where>
             
              id = #{id}
              user_id = #{user_id}
-             action_type = #{action_type}
-            AND system_create_date = #{system_create_date}
+             act_type = #{act_type}
+            AND sys_crt_dt = #{sys_crt_dt}
         </where>
     </update>
 </mapper>

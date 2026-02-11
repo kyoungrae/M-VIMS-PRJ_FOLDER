@@ -41,7 +41,7 @@ public class DbPartitionService {
         log.info("Starting database partition maintenance...");
 
         // 대상 테이블 목록
-        String[] tables = { "SYS_EVENT_LOG", "SYS_ACCS_LOG" };
+        String[] tables = { "SYS_EVT_LOG", "SYS_ACS_LOG" };
 
         for (String table : tables) {
             try {

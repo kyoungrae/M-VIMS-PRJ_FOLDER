@@ -2,17 +2,17 @@
 //Message.Label = {};
 //Message.Label.Array = {};
 
-Message.Label.Array["SYS_ACCS_GROUP_MENU_LIST.CHECK.MENU_CODE"] = "Please enter menu code";
-Message.Label.Array["SYS_ACCS_GROUP_MENU_LIST.CHECK.ACCESS_RIGHTS_GROUP_ID"] = "Please enter access rights group ID";
-Message.Label.Array["SYS_ACCS_GROUP_MENU_LIST.CHECK.SYSTEM_CREATE_DATE"] = "Please enter creation date";
-Message.Label.Array["SYS_ACCS_GROUP_MENU_LIST.CHECK.SYSTEM_CREATE_USERID"] = "Please enter creator ID";
-Message.Label.Array["SYS_ACCS_GROUP_MENU_LIST.CHECK.SYSTEM_UPDATE_DATE"] = "Please enter modification date";
-Message.Label.Array["SYS_ACCS_GROUP_MENU_LIST.CHECK.SYSTEM_UPDATE_USERID"] = "Please enter modifier ID";
+Message.Label.Array["SYS_ACS_GRP_MENU_LIST.CHECK.MENU_CD"] = "Please enter menu code";
+Message.Label.Array["SYS_ACS_GRP_MENU_LIST.CHECK.ACS_RTS_GRP_ID"] = "Please enter access rights group ID";
+Message.Label.Array["SYS_ACS_GRP_MENU_LIST.CHECK.SYS_CRT_DT"] = "Please enter creation date";
+Message.Label.Array["SYS_ACS_GRP_MENU_LIST.CHECK.SYS_CRT_USR_ID"] = "Please enter creator ID";
+Message.Label.Array["SYS_ACS_GRP_MENU_LIST.CHECK.SYS_UPD_DT"] = "Please enter modification date";
+Message.Label.Array["SYS_ACS_GRP_MENU_LIST.CHECK.SYS_UPD_USR_ID"] = "Please enter modifier ID";
 
 
-Message.Label.Array["SYS_ACCS_GROUP_MENU_LIST.MENU_CODE"] = "Menu Code";
-Message.Label.Array["SYS_ACCS_GROUP_MENU_LIST.ACCESS_RIGHTS_GROUP_ID"] = "Access Rights Group ID";
-Message.Label.Array["SYS_ACCS_GROUP_MENU_LIST.SYSTEM_CREATE_DATE"] = "Creation Date";
-Message.Label.Array["SYS_ACCS_GROUP_MENU_LIST.SYSTEM_CREATE_USERID"] = "Creator ID";
-Message.Label.Array["SYS_ACCS_GROUP_MENU_LIST.SYSTEM_UPDATE_DATE"] = "Modification Date";
-Message.Label.Array["SYS_ACCS_GROUP_MENU_LIST.SYSTEM_UPDATE_USERID"] = "Modifier ID";
+Message.Label.Array["SYS_ACS_GRP_MENU_LIST.MENU_CD"] = "Menu Code";
+Message.Label.Array["SYS_ACS_GRP_MENU_LIST.ACS_RTS_GRP_ID"] = "Access Rights Group ID";
+Message.Label.Array["SYS_ACS_GRP_MENU_LIST.SYS_CRT_DT"] = "Creation Date";
+Message.Label.Array["SYS_ACS_GRP_MENU_LIST.SYS_CRT_USR_ID"] = "Creator ID";
+Message.Label.Array["SYS_ACS_GRP_MENU_LIST.SYS_UPD_DT"] = "Modification Date";
+Message.Label.Array["SYS_ACS_GRP_MENU_LIST.SYS_UPD_USR_ID"] = "Modifier ID";

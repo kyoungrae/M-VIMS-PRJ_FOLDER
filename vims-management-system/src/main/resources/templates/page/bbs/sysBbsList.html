@@ -165,9 +165,9 @@
           <div class="gi-flex gi-grid-gap-16px">
             <div class="gi-input-container gi-flex-1">
               <div class="gi-flex gi-grid-gap-5px">
-                <label for="register_p_menu_code" class="gi-input-label" data-focus-label="true"
-                  data-required="true">[Page.Message].Message.Label.Array["SYS_BBS.P_MENU_CODE"]</label>
-                <input data-disabled data-field="p_menu_code" id="register_p_menu_code" name="p_menu_code"
+                <label for="register_p_menu_cd" class="gi-input-label" data-focus-label="true"
+                  data-required="true">[Page.Message].Message.Label.Array["SYS_BBS.P_MENU_CD"]</label>
+                <input data-disabled data-field="p_menu_cd" id="register_p_menu_cd" name="p_menu_cd"
                   class="gi-input gi-flex-1" data-required="true" autocomplete="off" />
               </div>
             </div>
@@ -267,9 +267,9 @@
           <div class="gi-flex gi-grid-gap-16px">
             <div class="gi-input-container gi-flex-1">
               <div class="gi-flex gi-grid-gap-5px">
-                <label for="update_p_menu_code" class="gi-input-label" data-focus-label="true"
-                  data-required="true">[Page.Message].Message.Label.Array["SYS_MENU.TOP_MENU_CODE"]</label>
-                <input data-disabled data-field="p_menu_code" id="update_p_menu_code" name="p_menu_code"
+                <label for="update_p_menu_cd" class="gi-input-label" data-focus-label="true"
+                  data-required="true">[Page.Message].Message.Label.Array["SYS_MENU.TOP_MENU_CD"]</label>
+                <input data-disabled data-field="p_menu_cd" id="update_p_menu_cd" name="p_menu_cd"
                   class="gi-input gi-flex-1" data-required="true" readonly autocomplete="off" />
               </div>
             </div>
@@ -347,7 +347,7 @@
         <!-- 왼쪽: 그룹 목록 -->
         <div class="gi-flex-1 gi-flex gi-flex-column">
           <span class="gi-text-align-center gi-margin-bottom-10px" style="font-weight: 600; color: #334155;">
-            [ [Page.Message].Message.Label.Array["SYS_DEPT_GROUP.TITLE_LIST"] ]
+            [ [Page.Message].Message.Label.Array["SYS_DEPT_GRP.TITLE_LIST"] ]
           </span>
           <div id="manager_group_list_grid" class="gi-Grid" style="height: 100% !important;"></div>
         </div>
@@ -490,13 +490,13 @@
 
     // 메뉴 검색 버튼 클릭 (등록)
     $("#register-menu-search-btn").click(function () {
-      targetMenuInputId = "register_p_menu_code";
+      targetMenuInputId = "register_p_menu_cd";
       openMenuTreePopup();
     });
 
     // 메뉴 검색 버튼 클릭 (수정)
     $("#update-menu-search-btn").click(function () {
-      targetMenuInputId = "update_p_menu_code";
+      targetMenuInputId = "update_p_menu_cd";
       openMenuTreePopup();
     });
 
@@ -564,12 +564,12 @@
             { HEADER: Message.Label.Array["SYS_BBS.BBS_MANAGER"], ID: 'bbs_manager', WIDTH: '40', TYPE: 'text', FONT_SIZE: '12px', TEXT_ALIGN: 'center', HIDDEN: true },
             { HEADER: Message.Label.Array["SYS_BBS.FILE_YN"], ID: 'file_yn', WIDTH: '40', TYPE: 'text', FONT_SIZE: '12px', TEXT_ALIGN: 'center', HIDDEN: true },
             { HEADER: Message.Label.Array["SYS_BBS.REPLY_YN"], ID: 'reply_yn', WIDTH: '40', TYPE: 'text', FONT_SIZE: '12px', TEXT_ALIGN: 'center', HIDDEN: true },
-            { HEADER: Message.Label.Array["SYS_BBS.P_MENU_CODE"], ID: 'p_menu_code', WIDTH: '40', TYPE: 'text', FONT_SIZE: '12px', TEXT_ALIGN: 'center', HIDDEN: true },
+            { HEADER: Message.Label.Array["SYS_BBS.P_MENU_CD"], ID: 'p_menu_cd', WIDTH: '40', TYPE: 'text', FONT_SIZE: '12px', TEXT_ALIGN: 'center', HIDDEN: true },
             { HEADER: Message.Label.Array["SYS_BBS.BBS_TYPE"], ID: 'bbs_type', WIDTH: '40', TYPE: 'text', FONT_SIZE: '12px', TEXT_ALIGN: 'center', HIDDEN: true },
-            { HEADER: Message.Label.Array["SYS_BBS.SYSTEM_CREATE_USERID"], ID: 'system_create_userid', WIDTH: '40', TYPE: 'text', FONT_SIZE: '12px', TEXT_ALIGN: 'center', HIDDEN: true },
-            { HEADER: Message.Label.Array["SYS_BBS.SYSTEM_CREATE_DATE"], ID: 'system_create_date', WIDTH: '40', TYPE: 'text', FONT_SIZE: '12px', TEXT_ALIGN: 'center', HIDDEN: true },
-            { HEADER: Message.Label.Array["SYS_BBS.SYSTEM_UPDATE_USERID"], ID: 'system_update_userid', WIDTH: '40', TYPE: 'text', FONT_SIZE: '12px', TEXT_ALIGN: 'center', HIDDEN: true },
-            { HEADER: Message.Label.Array["SYS_BBS.SYSTEM_UPDATE_DATE"], ID: 'system_update_date', WIDTH: '40', TYPE: 'text', FONT_SIZE: '12px', TEXT_ALIGN: 'center', HIDDEN: true },
+            { HEADER: Message.Label.Array["SYS_BBS.SYS_CRT_USR_ID"], ID: 'sys_crt_usr_id', WIDTH: '40', TYPE: 'text', FONT_SIZE: '12px', TEXT_ALIGN: 'center', HIDDEN: true },
+            { HEADER: Message.Label.Array["SYS_BBS.SYS_CRT_DT"], ID: 'sys_crt_dt', WIDTH: '40', TYPE: 'text', FONT_SIZE: '12px', TEXT_ALIGN: 'center', HIDDEN: true },
+            { HEADER: Message.Label.Array["SYS_BBS.SYS_UPD_USR_ID"], ID: 'sys_upd_usr_id', WIDTH: '40', TYPE: 'text', FONT_SIZE: '12px', TEXT_ALIGN: 'center', HIDDEN: true },
+            { HEADER: Message.Label.Array["SYS_BBS.SYS_UPD_DT"], ID: 'sys_upd_dt', WIDTH: '40', TYPE: 'text', FONT_SIZE: '12px', TEXT_ALIGN: 'center', HIDDEN: true },
             { HEADER: Message.Label.Array["DETAIL_BTN"], ID: 'detail_btn', WIDTH: '15', TYPE: 'button', FONT_SIZE: '12px', TEXT_ALIGN: 'center', HIDDEN: true },
             { HEADER: Message.Label.Array["UPDATE_BTN"], ID: 'update_btn', WIDTH: '15', TYPE: 'button', FONT_SIZE: '12px', TEXT_ALIGN: 'center', HIDDEN: true },
             { HEADER: Message.Label.Array["DELETE_BTN"], ID: 'delete_btn', WIDTH: '15', TYPE: 'button', FONT_SIZE: '12px', TEXT_ALIGN: 'center', HIDDEN: true },
@@ -659,7 +659,7 @@
         bbs_manager: data.bbs_manager,
         file_yn: data.file_yn,
         reply_yn: data.reply_yn,
-        p_menu_code: data.p_menu_code
+        p_menu_cd: data.p_menu_cd
       };
       axios.post(url, param).then(response => {
         let status = response.status;
@@ -697,7 +697,7 @@
         bbs_manager: data.bbs_manager,
         file_yn: data.file_yn,
         reply_yn: data.reply_yn,
-        p_menu_code: data.p_menu_code
+        p_menu_cd: data.p_menu_cd
       };
       axios.post(url, param).then(response => {
         let status = response.status;
@@ -751,7 +751,7 @@
   function findBySysHierarchyMenuList() {
     let url = "/cms/common/sysMenu/findHierarchy";
     let param = {};
-    param.sort_id = "menu_level, menu_number";
+    param.sort_id = "menu_lvl, menu_no";
     param.sort_order = "ASC";
 
     axios.post(url, param).then(response => {
@@ -764,23 +764,23 @@
         let menuGrid = {
           title: Message.Label.Array["SYS_LAYOUT.MENU_LIST"],
           list: [
-            { HEADER: Message.Label.Array["SYS_LAYOUT.MENU_NAME"], ID: "menu_name_kr", WIDTH: "60", TYPE: "text", TEXT_ALIGN: "left" },
-            { HEADER: Message.Label.Array["SYS_LAYOUT.MENU_CODE"], ID: "menu_code", WIDTH: "40", TYPE: "text", TEXT_ALIGN: "center" },
-            { HEADER: '레벨', ID: "menu_level", WIDTH: "10", TYPE: "text", TEXT_ALIGN: "center", HIDDEN: true },
-            { HEADER: '상위코드', ID: "top_menu_code", WIDTH: "10", TYPE: "text", TEXT_ALIGN: "center", HIDDEN: true },
-            { HEADER: Message.Label.Array["SELECT_BTN"], ID: 'select_btn', WIDTH: '15', TYPE: 'img', FONT_SIZE: '12px', TEXT_ALIGN: 'center', VISIBLE_OPTION_BTN: [{ "menu_level": "0" }, { "menu_level": "2" }], HIDDEN: false },
+            { HEADER: Message.Label.Array["SYS_LAYOUT.MENU_NAME"], ID: "menu_nm_kr", WIDTH: "60", TYPE: "text", TEXT_ALIGN: "left" },
+            { HEADER: Message.Label.Array["SYS_LAYOUT.MENU_CD"], ID: "menu_cd", WIDTH: "40", TYPE: "text", TEXT_ALIGN: "center" },
+            { HEADER: '레벨', ID: "menu_lvl", WIDTH: "10", TYPE: "text", TEXT_ALIGN: "center", HIDDEN: true },
+            { HEADER: '상위코드', ID: "top_menu_cd", WIDTH: "10", TYPE: "text", TEXT_ALIGN: "center", HIDDEN: true },
+            { HEADER: Message.Label.Array["SELECT_BTN"], ID: 'select_btn', WIDTH: '15', TYPE: 'img', FONT_SIZE: '12px', TEXT_ALIGN: 'center', VISIBLE_OPTION_BTN: [{ "menu_lvl": "0" }, { "menu_lvl": "2" }], HIDDEN: false },
           ]
         }
 
         let grid = formUtil.giGridHierarchy(menuGrid, "", "", MENU_TREE_GRID_ID);
-        grid.HierarchyOption({ level_column: "menu_level", parent_depth_column: "menu_code", child_depth_column: "top_menu_code" });
+        grid.HierarchyOption({ level_column: "menu_lvl", parent_depth_column: "menu_cd", child_depth_column: "top_menu_cd" });
         grid.DataSet(activeMenus);
 
         grid.detailBtnClick(selectBtnClick, "select_btn");
 
         function selectBtnClick(row) {
           if (targetMenuInputId) {
-            $("#" + targetMenuInputId).val(row.menu_code).trigger("change");
+            $("#" + targetMenuInputId).val(row.menu_cd).trigger("change");
             popup.close(MENU_TREE_POPUP_ID);
           }
         };
@@ -817,23 +817,23 @@
    * [상단] 전체 그룹 목록 그리드 렌더링
    */
   function renderManagerGroupTotalGrid(data) {
-    // 그리드 헤더 설정 (ID: group_level, top_group_id 필수 - 계층형 로직용)
+    // 그리드 헤더 설정 (ID: grp_lvl, top_grp_id 필수 - 계층형 로직용)
     let header = {
-      title: Message.Label.Array["SYS_DEPT_GROUP.TITLE"],
+      title: Message.Label.Array["SYS_DEPT_GRP.TITLE"],
       list: [
         { HEADER: 'No', ID: 'no', WIDTH: '7', TYPE: 'text', FONT_SIZE: '11px', TEXT_ALIGN: 'center', HIDDEN: true },
-        { HEADER: Message.Label.Array["SYS_DEPT_GROUP.GROUP_NAME"], ID: "group_name", WIDTH: "40", TYPE: "text", FONT_SIZE: "11px", TEXT_ALIGN: "left" },
-        { HEADER: Message.Label.Array["SYS_DEPT_GROUP.TOP_GROUP_ID"], ID: "top_group_id", WIDTH: "20", TYPE: "text", FONT_SIZE: "11px", TEXT_ALIGN: "center", HIDDEN: false },
-        { HEADER: Message.Label.Array["SYS_DEPT_GROUP.GROUP_ID"], ID: "group_id", WIDTH: "30", TYPE: "text", FONT_SIZE: "11px", TEXT_ALIGN: "center" },
-        { HEADER: Message.Label.Array["SYS_DEPT_GROUP.USE_YN"], ID: "use_yn", WIDTH: "20", TYPE: "text", FONT_SIZE: "11px", TEXT_ALIGN: "center", SYS_CODE_GROUP_ID: "USE_YN", HIDDEN: false },
-        { HEADER: Message.Label.Array["SYS_DEPT_GROUP.GROUP_LEVEL"], ID: "group_level", WIDTH: "5", TYPE: "text", FONT_SIZE: "11px", TEXT_ALIGN: "center", HIDDEN: true },
-        { HEADER: Message.Label.Array["REGISTER_BTN"], ID: "register_btn", WIDTH: "10", TYPE: "button", FONT_SIZE: "11px", TEXT_ALIGN: "center", VISIBLE_OPTION_BTN: { "group_level": "0" }, HIDDEN: false }
+        { HEADER: Message.Label.Array["SYS_DEPT_GRP.GRP_NM"], ID: "grp_nm", WIDTH: "40", TYPE: "text", FONT_SIZE: "11px", TEXT_ALIGN: "left" },
+        { HEADER: Message.Label.Array["SYS_DEPT_GRP.TOP_GRP_ID"], ID: "top_grp_id", WIDTH: "20", TYPE: "text", FONT_SIZE: "11px", TEXT_ALIGN: "center", HIDDEN: false },
+        { HEADER: Message.Label.Array["SYS_DEPT_GRP.GRP_ID"], ID: "grp_id", WIDTH: "30", TYPE: "text", FONT_SIZE: "11px", TEXT_ALIGN: "center" },
+        { HEADER: Message.Label.Array["SYS_DEPT_GRP.USE_YN"], ID: "use_yn", WIDTH: "20", TYPE: "text", FONT_SIZE: "11px", TEXT_ALIGN: "center", SYS_CD_GRP_ID: "USE_YN", HIDDEN: false },
+        { HEADER: Message.Label.Array["SYS_DEPT_GRP.GRP_LVL"], ID: "grp_lvl", WIDTH: "5", TYPE: "text", FONT_SIZE: "11px", TEXT_ALIGN: "center", HIDDEN: true },
+        { HEADER: Message.Label.Array["REGISTER_BTN"], ID: "register_btn", WIDTH: "10", TYPE: "button", FONT_SIZE: "11px", TEXT_ALIGN: "center", VISIBLE_OPTION_BTN: { "grp_lvl": "0" }, HIDDEN: false }
       ]
     };
 
     // 그리드 생성 및 계층 설정
     let grid = formUtil.giGridHierarchy(header, "", "", MANAGER_GROUP_LIST_GRID_ID);
-    grid.HierarchyOption({ level_column: "group_level", parent_depth_column: "group_id", child_depth_column: "top_group_id" });
+    grid.HierarchyOption({ level_column: "grp_lvl", parent_depth_column: "grp_id", child_depth_column: "top_grp_id" });
 
     // 데이터 바인딩
     grid.DataSet(data);
@@ -844,8 +844,8 @@
       let currentIds = $("#" + targetBbsManagerInputId).val();
       let idArray = currentIds ? currentIds.split(",").map(id => id.trim()) : [];
 
-      if (!idArray.includes(row.group_id)) {
-        idArray.push(row.group_id);
+      if (!idArray.includes(row.grp_id)) {
+        idArray.push(row.grp_id);
         $("#" + targetBbsManagerInputId).val(idArray.join(","));
         // 렌더링 함수에 현재 들고 있는 data를 그대로 전달하여 다시 그림
         renderManagerGroupSelectedGrid(data);
@@ -862,13 +862,13 @@
   function renderManagerGroupSelectedGrid(totalData) {
     let currentIds = $("#" + targetBbsManagerInputId).val();
     let idArray = currentIds ? currentIds.split(",").map(id => id.trim()) : [];
-    let selectedData = totalData.filter(group => idArray.includes(group.group_id));
+    let selectedData = totalData.filter(group => idArray.includes(group.grp_id));
 
     let header = {
       title: Message.Label.Array["SYS_BBS.BBS_MANAGER_GROUP_LIST"],
       list: [
-        { HEADER: Message.Label.Array["SYS_DEPT_GROUP.GROUP_NAME"], ID: "group_name", FONT_SIZE: "12px", WIDTH: "60", TYPE: "text", TEXT_ALIGN: "center" },
-        { HEADER: Message.Label.Array["SYS_DEPT_GROUP.GROUP_ID"], ID: "group_id", FONT_SIZE: "12px", WIDTH: "30", TYPE: "text", TEXT_ALIGN: "center" },
+        { HEADER: Message.Label.Array["SYS_DEPT_GRP.GRP_NM"], ID: "grp_nm", FONT_SIZE: "12px", WIDTH: "60", TYPE: "text", TEXT_ALIGN: "center" },
+        { HEADER: Message.Label.Array["SYS_DEPT_GRP.GRP_ID"], ID: "grp_id", FONT_SIZE: "12px", WIDTH: "30", TYPE: "text", TEXT_ALIGN: "center" },
         { HEADER: Message.Label.Array["DELETE_BTN"], ID: "delete_btn", FONT_SIZE: "12px", WIDTH: "10", TYPE: "img", TEXT_ALIGN: "center" }
       ]
     };
@@ -879,7 +879,7 @@
 
     // 이벤트: 삭제 버튼 클릭 시 입력 필드 업데이트 및 자신을 다시 그림
     grid.deleteBtnClick(function (row) {
-      let updatedIds = idArray.filter(id => id !== row.group_id);
+      let updatedIds = idArray.filter(id => id !== row.grp_id);
       $("#" + targetBbsManagerInputId).val(updatedIds.join(","));
       renderManagerGroupSelectedGrid(totalData);
       formUtil.toast(Message.Label.Array["COMPLETE.DELETE"], "success");
@@ -895,12 +895,12 @@
     let htmlSource =
       '<div class="gi-row-100 gi-col-100 gi-flex gi-flex-column gi-padding-10px" style="gap: 20px; overflow-y: auto;">'
       + '  <div class="gi-flex gi-flex-column" style="height: 350px; flex-shrink: 0;">'
-      + '    <span class="gi-text-align-center" style="font-weight: 600; margin-bottom: 10px; color: #334155;">[ ' + Message.Label.Array["SYS_DEPT_GROUP.TITLE_LIST"] + ' ]</span>'
+      + '    <span class="gi-text-align-center" style="font-weight: 600; margin-bottom: 10px; color: #334155;">[ ' + Message.Label.Array["SYS_DEPT_GRP.TITLE_LIST"] + ' ]</span>'
       + '    <div id="gi-Grid2" class="gi-Grid" style="height: calc(100% - 30px) !important;"></div>'
       + '  </div>'
       + '  <div style="border-top: 1px dashed #cbd5e1; margin: 0 10px;"></div>'
       + '  <div class="gi-flex gi-flex-column" style="height: 350px; flex-shrink: 0;">'
-      + '    <span class="gi-text-align-center" style="font-weight: 600; margin-bottom: 10px; color: #334155;">[ ' + Message.Label.Array["SYS_ACCS_GROUP_MENU.TITLE_LIST"] + ' ]</span>'
+      + '    <span class="gi-text-align-center" style="font-weight: 600; margin-bottom: 10px; color: #334155;">[ ' + Message.Label.Array["SYS_ACS_GRP_MENU.TITLE_LIST"] + ' ]</span>'
       + '    <div id="gi-Grid3" class="gi-Grid" style="height: calc(100% - 30px) !important;"></div>'
       + '  </div>'
       + '</div>';
@@ -912,25 +912,25 @@
   function findBySysDeptGroupList(page, range, sortId, sortOrder, cont) {
     let url = "/cms/common/sysDeptGroup/findNotExistsSysAccsGroupMenu";
     let param = {};
-    if (cont !== null) if (formUtil.checkEmptyValue(cont.bbs_id)) param.menu_code = cont.bbs_id; // bbs_id 를 menu_code로 사용
+    if (cont !== null) if (formUtil.checkEmptyValue(cont.bbs_id)) param.menu_cd = cont.bbs_id; // bbs_id 를 menu_cd로 사용
 
     axios.post(url, param).then(response => {
       if (response.status === 200) {
         let data = response.data;
         let sysDeptGroup_menuGrid_header = {
-          title: Message.Label.Array["SYS_DEPT_GROUP.TITLE"],
+          title: Message.Label.Array["SYS_DEPT_GRP.TITLE"],
           list: [
             { HEADER: 'No', ID: 'no', WIDTH: '7', TYPE: 'text', FONT_SIZE: '11px', TEXT_ALIGN: 'center', HIDDEN: true },
-            { HEADER: Message.Label.Array["SYS_DEPT_GROUP.GROUP_NAME"], ID: "group_name", WIDTH: "40", TYPE: "text", FONT_SIZE: "11px", TEXT_ALIGN: "left" },
-            { HEADER: Message.Label.Array["SYS_DEPT_GROUP.TOP_GROUP_ID"], ID: "top_group_id", WIDTH: "20", TYPE: "text", FONT_SIZE: "11px", TEXT_ALIGN: "center", HIDDEN: false },
-            { HEADER: Message.Label.Array["SYS_DEPT_GROUP.GROUP_ID"], ID: "group_id", WIDTH: "30", TYPE: "text", FONT_SIZE: "11px", TEXT_ALIGN: "center" },
-            { HEADER: Message.Label.Array["SYS_DEPT_GROUP.USE_YN"], ID: "use_yn", WIDTH: "20", TYPE: "text", FONT_SIZE: "11px", TEXT_ALIGN: "center", SYS_CODE_GROUP_ID: "USE_YN", HIDDEN: false },
-            { HEADER: Message.Label.Array["SYS_DEPT_GROUP.GROUP_LEVEL"], ID: "group_level", WIDTH: "5", TYPE: "text", FONT_SIZE: "11px", TEXT_ALIGN: "center", HIDDEN: true },
-            { HEADER: Message.Label.Array["REGISTER_BTN"], ID: "register_btn", WIDTH: "10", TYPE: "button", FONT_SIZE: "11px", TEXT_ALIGN: "center", VISIBLE_OPTION_BTN: { "group_level": "0" }, HIDDEN: false }
+            { HEADER: Message.Label.Array["SYS_DEPT_GRP.GRP_NM"], ID: "grp_nm", WIDTH: "40", TYPE: "text", FONT_SIZE: "11px", TEXT_ALIGN: "left" },
+            { HEADER: Message.Label.Array["SYS_DEPT_GRP.TOP_GRP_ID"], ID: "top_grp_id", WIDTH: "20", TYPE: "text", FONT_SIZE: "11px", TEXT_ALIGN: "center", HIDDEN: false },
+            { HEADER: Message.Label.Array["SYS_DEPT_GRP.GRP_ID"], ID: "grp_id", WIDTH: "30", TYPE: "text", FONT_SIZE: "11px", TEXT_ALIGN: "center" },
+            { HEADER: Message.Label.Array["SYS_DEPT_GRP.USE_YN"], ID: "use_yn", WIDTH: "20", TYPE: "text", FONT_SIZE: "11px", TEXT_ALIGN: "center", SYS_CD_GRP_ID: "USE_YN", HIDDEN: false },
+            { HEADER: Message.Label.Array["SYS_DEPT_GRP.GRP_LVL"], ID: "grp_lvl", WIDTH: "5", TYPE: "text", FONT_SIZE: "11px", TEXT_ALIGN: "center", HIDDEN: true },
+            { HEADER: Message.Label.Array["REGISTER_BTN"], ID: "register_btn", WIDTH: "10", TYPE: "button", FONT_SIZE: "11px", TEXT_ALIGN: "center", VISIBLE_OPTION_BTN: { "grp_lvl": "0" }, HIDDEN: false }
           ]
         }
         let sysDeptGroup_menu_grid = formUtil.giGridHierarchy(sysDeptGroup_menuGrid_header, null, null, "gi-Grid2");
-        sysDeptGroup_menu_grid.HierarchyOption({ level_column: "group_level", parent_depth_column: "group_id", child_depth_column: "top_group_id" });
+        sysDeptGroup_menu_grid.HierarchyOption({ level_column: "grp_lvl", parent_depth_column: "grp_id", child_depth_column: "top_grp_id" });
 
         if (cont !== null) {
           sysDeptGroup_menu_grid.DataSet(data);
@@ -939,7 +939,7 @@
         }
 
         sysDeptGroup_menu_grid.detailBtnClick(function (row) {
-          row["menu_code"] = cont.bbs_id;
+          row["menu_cd"] = cont.bbs_id;
           accessGroupInMenuRegister(row, cont);
         }, "register_btn");
         sysDeptGroup_menu_grid.gridColumResize("gi-Grid2");
@@ -950,8 +950,8 @@
   function accessGroupInMenuRegister(row, originCont) {
     let url = "/cms/common/sysAccsGroupMenu/register";
     let param = {
-      menu_code: row.menu_code,
-      access_rights_group_id: row.group_id
+      menu_cd: row.menu_cd,
+      acs_rts_grp_id: row.grp_id
     };
     axios.post(url, param).then(response => {
       if (response.status === 200) {
@@ -975,7 +975,7 @@
       row_range: range,
       offset: (page - 1) * range
     };
-    if (cont !== null) if (formUtil.checkEmptyValue(cont.bbs_id)) param.menu_code = cont.bbs_id;
+    if (cont !== null) if (formUtil.checkEmptyValue(cont.bbs_id)) param.menu_cd = cont.bbs_id;
 
     axios.post(url, param).then(response => {
       if (response.status === 200) {
@@ -983,11 +983,11 @@
         let paging = response.data.TOTAL_PAGING[0];
 
         let sysAccsGroupMenu_menuGrid_header = {
-          title: Message.Label.Array["SYS_ACCS_GROUP_MENU.TITLE"],
+          title: Message.Label.Array["SYS_ACS_GRP_MENU.TITLE"],
           list: [
             { HEADER: 'No', ID: 'no', WIDTH: '7', TYPE: 'text', FONT_SIZE: '11px', TEXT_ALIGN: 'center', HIDDEN: false },
-            { HEADER: Message.Label.Array["SYS_ACCS_GROUP_MENU.MENU_CODE"], ID: 'menu_code', WIDTH: '40', TYPE: 'text', FONT_SIZE: '11px', TEXT_ALIGN: 'center', HIDDEN: true },
-            { HEADER: Message.Label.Array["SYS_ACCS_GROUP_MENU.ACCESS_RIGHTS_GROUP_ID"], ID: 'access_rights_group_id', WIDTH: '70', TYPE: 'text', FONT_SIZE: '11px', TEXT_ALIGN: 'center' },
+            { HEADER: Message.Label.Array["SYS_ACS_GRP_MENU.MENU_CD"], ID: 'menu_cd', WIDTH: '40', TYPE: 'text', FONT_SIZE: '11px', TEXT_ALIGN: 'center', HIDDEN: true },
+            { HEADER: Message.Label.Array["SYS_ACS_GRP_MENU.ACS_RTS_GRP_ID"], ID: 'acs_rts_grp_id', WIDTH: '70', TYPE: 'text', FONT_SIZE: '11px', TEXT_ALIGN: 'center' },
             { HEADER: Message.Label.Array["DELETE_BTN"], ID: 'delete_btn', WIDTH: '15', TYPE: 'button', FONT_SIZE: '11px', TEXT_ALIGN: 'center' },
           ]
         }
@@ -1010,8 +1010,8 @@
   function commonAccessGroupIdRemove(row, originCont) {
     let url = "/cms/common/sysAccsGroupMenu/remove";
     let param = {
-      menu_code: originCont.bbs_id,
-      access_rights_group_id: row.access_rights_group_id
+      menu_cd: originCont.bbs_id,
+      acs_rts_grp_id: row.acs_rts_grp_id
     };
     axios.post(url, param).then(response => {
       if (response.status === 200) {

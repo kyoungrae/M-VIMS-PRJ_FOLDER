@@ -345,9 +345,9 @@
         }
 
         data.forEach(item => {
-            // thumbnail 컬럼이 있으면 우선 사용, 없으면 기본 이미지
-            let hasThumbnail = !!item.thumbnail;
-            let imgSrc = hasThumbnail ? '/fms/fileManager/downloadByUuid?fileUuid=' + item.thumbnail : '/common/img/noImage.png';
+            // thmbnl 컬럼이 있으면 우선 사용, 없으면 기본 이미지
+            let hasThumbnail = !!item.thmbnl;
+            let imgSrc = hasThumbnail ? '/fms/fileManager/downloadByUuid?fileUuid=' + item.thmbnl : '/common/img/noImage.png';
             let imgClass = hasThumbnail ? '' : 'no-image';
 
             const card = $(`
@@ -359,9 +359,9 @@
                         <div class="gi-gallery-title">${item.title || Message.Label.Array["NO_TITLE"]}</div>
                         <div class="gi-gallery-desc">${stripHtml(item.content || '').substring(0, 150)}...</div>
                         <div class="gi-gallery-footer">
-                            <span><i class="fa-solid fa-user"></i> ${item.writer_name || Message.Label.Array["UNKNOWN"]}</span>
-                            <span><i class="fa-solid fa-calendar"></i> ${formatDate(item.system_create_date)}</span>
-                            <span><i class="fa-solid fa-eye"></i> ${item.hit_count || 0}</span>
+                            <span><i class="fa-solid fa-user"></i> ${item.wrtr_nm || Message.Label.Array["UNKNOWN"]}</span>
+                            <span><i class="fa-solid fa-calendar"></i> ${formatDate(item.sys_crt_dt)}</span>
+                            <span><i class="fa-solid fa-eye"></i> ${item.hit_cnt || 0}</span>
                             <span><i class="fa-solid fa-comment"></i> ${item.reply_count || 0}</span>
                         </div>
                     </div>

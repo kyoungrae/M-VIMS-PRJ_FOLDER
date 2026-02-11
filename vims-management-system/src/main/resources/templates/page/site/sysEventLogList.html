@@ -109,8 +109,8 @@
 
     <!-- 페이지 헤더 -->
     <header class="gi-margin-bottom-40px gi-padding-left-20px gi-padding-top-20px">
-      <h1 class="gi-page-title">[Page.Message].Message.Label.Array["SYS_EVENT_LOG.TITLE_LIST"]</h1>
-      <p class="gi-subtitle-main">[Page.Message].Message.Label.Array["SYS_EVENT_LOG.SUB_TITLE_LIST"]</p>
+      <h1 class="gi-page-title">[Page.Message].Message.Label.Array["SYS_EVT_LOG.TITLE_LIST"]</h1>
+      <p class="gi-subtitle-main">[Page.Message].Message.Label.Array["SYS_EVT_LOG.SUB_TITLE_LIST"]</p>
     </header>
 
     <article>
@@ -119,19 +119,19 @@
         <div class="gi-flex gi-flex-align-items-center gi-grid-gap-20px">
           <div class="gi-input-container gi-flex-1">
             <label for="searchDesc1" class="gi-input-label"
-              data-focus-label="true">[Page.Message].Message.Label.Array["SYS_EVENT_LOG.EMAIL"]</label>
+              data-focus-label="true">[Page.Message].Message.Label.Array["SYS_EVT_LOG.EMAIL"]</label>
             <input class="gi-input" type="text" id="searchDesc1" name="searchDesc1" autocomplete="off" />
           </div>
 
           <div class="gi-input-container gi-flex-1">
             <label for="from_date" class="gi-input-label"
-              data-focus-label="true">[Page.Message].Message.Label.Array["SYS_EVENT_LOG.FROM_SYSTEM_CREATE_DATE"]</label>
+              data-focus-label="true">[Page.Message].Message.Label.Array["SYS_EVT_LOG.FROM_SYS_CRT_DT"]</label>
             <input id="from_date" class="gi-input" type="text" name="from_date" autocomplete="off" data-datepicker />
           </div>
 
           <div class="gi-input-container gi-flex-1">
             <label for="to_date" class="gi-input-label"
-              data-focus-label="true">[Page.Message].Message.Label.Array["SYS_EVENT_LOG.TO_SYSTEM_CREATE_DATE"]</label>
+              data-focus-label="true">[Page.Message].Message.Label.Array["SYS_EVT_LOG.TO_SYS_CRT_DT"]</label>
             <input id="to_date" class="gi-input" type="text" name="to_date" autocomplete="off" data-datepicker />
           </div>
 
@@ -166,7 +166,7 @@
 <article id="detail_sysEventLog_popup" class="gi-popup" data-popup-open="false">
   <div class="gi-popup-body" style="max-width: 700px !important;">
     <div class="gi-popup-header">
-      <span>[Page.Message].Message.Label.Array["SYS_EVENT_LOG.TITLE_DETAIL"]</span>
+      <span>[Page.Message].Message.Label.Array["SYS_EVT_LOG.TITLE_DETAIL"]</span>
     </div>
     <div class="gi-popup-contents" style="padding: 24px 30px !important;">
 
@@ -176,7 +176,7 @@
         <div class="gi-span-container"
           style="margin-bottom:0px !important; display: flex !important; flex-direction: column !important;">
           <span class="gi-span-label"
-            style="position:static !important; font-size:11px !important; margin-bottom:4px !important;">[Page.Message].Message.Label.Array["SYS_EVENT_LOG.ID"]</span>
+            style="position:static !important; font-size:11px !important; margin-bottom:4px !important;">[Page.Message].Message.Label.Array["SYS_EVT_LOG.ID"]</span>
           <span data-field="id" class="gi-span" data-focus-span-text-align="center"
             style="min-height:30px !important; padding:4px 8px !important; font-size:12px !important;"></span>
         </div>
@@ -184,7 +184,7 @@
         <div class="gi-span-container"
           style="margin-bottom:0px !important; display: flex !important; flex-direction: column !important;">
           <span class="gi-span-label"
-            style="position:static !important; font-size:11px !important; margin-bottom:4px !important;">[Page.Message].Message.Label.Array["SYS_EVENT_LOG.USER_ID"]</span>
+            style="position:static !important; font-size:11px !important; margin-bottom:4px !important;">[Page.Message].Message.Label.Array["SYS_EVT_LOG.USER_ID"]</span>
           <span data-field="user_id" class="gi-span" data-focus-span-text-align="center"
             style="min-height:30px !important; padding:4px 8px !important; font-size:12px !important;"></span>
         </div>
@@ -192,7 +192,7 @@
         <div class="gi-span-container"
           style="margin-bottom:0px !important; display: flex !important; flex-direction: column !important;">
           <span class="gi-span-label"
-            style="position:static !important; font-size:11px !important; margin-bottom:4px !important;">[Page.Message].Message.Label.Array["SYS_EVENT_LOG.EMAIL"]</span>
+            style="position:static !important; font-size:11px !important; margin-bottom:4px !important;">[Page.Message].Message.Label.Array["SYS_EVT_LOG.EMAIL"]</span>
           <span data-field="email" class="gi-span" data-focus-span-text-align="center"
             style="min-height:30px !important; padding:4px 8px !important; font-size:12px !important;"></span>
         </div>
@@ -200,7 +200,7 @@
         <div class="gi-span-container"
           style="margin-bottom:0px !important; display: flex !important; flex-direction: column !important;">
           <span class="gi-span-label"
-            style="position:static !important; font-size:11px !important; margin-bottom:4px !important;">[Page.Message].Message.Label.Array["SYS_EVENT_LOG.ROLE"]</span>
+            style="position:static !important; font-size:11px !important; margin-bottom:4px !important;">[Page.Message].Message.Label.Array["SYS_EVT_LOG.ROLE"]</span>
           <span data-field="role" class="gi-span" data-focus-span-text-align="center"
             style="min-height:30px !important; padding:4px 8px !important; font-size:12px !important;"></span>
         </div>
@@ -208,40 +208,40 @@
         <div class="gi-span-container"
           style="margin-bottom:0px !important; display: flex !important; flex-direction: column !important;">
           <span class="gi-span-label"
-            style="position:static !important; font-size:11px !important; margin-bottom:4px !important;">[Page.Message].Message.Label.Array["SYS_EVENT_LOG.ACTION_TYPE"]</span>
-          <span data-field="action_type" class="gi-span" data-focus-span-text-align="center"
+            style="position:static !important; font-size:11px !important; margin-bottom:4px !important;">[Page.Message].Message.Label.Array["SYS_EVT_LOG.ACT_TYPE"]</span>
+          <span data-field="act_type" class="gi-span" data-focus-span-text-align="center"
             style="min-height:30px !important; padding:4px 8px !important; font-size:12px !important;"></span>
         </div>
 
         <div class="gi-span-container"
           style="margin-bottom:0px !important; display: flex !important; flex-direction: column !important;">
           <span class="gi-span-label"
-            style="position:static !important; font-size:11px !important; margin-bottom:4px !important;">[Page.Message].Message.Label.Array["SYS_EVENT_LOG.TARGET_TABLE"]</span>
-          <span data-field="target_table" class="gi-span" data-focus-span-text-align="center"
+            style="position:static !important; font-size:11px !important; margin-bottom:4px !important;">[Page.Message].Message.Label.Array["SYS_EVT_LOG.TGT_TBL"]</span>
+          <span data-field="tgt_tbl" class="gi-span" data-focus-span-text-align="center"
             style="min-height:30px !important; padding:4px 8px !important; font-size:12px !important;"></span>
         </div>
 
         <div class="gi-span-container"
           style="margin-bottom:0px !important; display: flex !important; flex-direction: column !important;">
           <span class="gi-span-label"
-            style="position:static !important; font-size:11px !important; margin-bottom:4px !important;">[Page.Message].Message.Label.Array["SYS_EVENT_LOG.TARGET_ID"]</span>
-          <span data-field="target_id" class="gi-span" data-focus-span-text-align="center"
+            style="position:static !important; font-size:11px !important; margin-bottom:4px !important;">[Page.Message].Message.Label.Array["SYS_EVT_LOG.TGT_ID"]</span>
+          <span data-field="tgt_id" class="gi-span" data-focus-span-text-align="center"
             style="min-height:30px !important; padding:4px 8px !important; font-size:12px !important;"></span>
         </div>
 
         <div class="gi-span-container"
           style="margin-bottom:0px !important; display: flex !important; flex-direction: column !important;">
           <span class="gi-span-label"
-            style="position:static !important; font-size:11px !important; margin-bottom:4px !important;">[Page.Message].Message.Label.Array["SYS_EVENT_LOG.IP_ADDRESS"]</span>
-          <span data-field="ip_address" class="gi-span" data-focus-span-text-align="center"
+            style="position:static !important; font-size:11px !important; margin-bottom:4px !important;">[Page.Message].Message.Label.Array["SYS_EVT_LOG.IP_ADDR"]</span>
+          <span data-field="ip_addr" class="gi-span" data-focus-span-text-align="center"
             style="min-height:30px !important; padding:4px 8px !important; font-size:12px !important;"></span>
         </div>
 
         <div class="gi-span-container"
           style="margin-bottom:0px !important; display: flex !important; flex-direction: column !important;">
           <span class="gi-span-label"
-            style="position:static !important; font-size:11px !important; margin-bottom:4px !important;">[Page.Message].Message.Label.Array["SYS_EVENT_LOG.SYSTEM_CREATE_DATE"]</span>
-          <span data-field="system_create_date" class="gi-span" data-focus-span-text-align="center"
+            style="position:static !important; font-size:11px !important; margin-bottom:4px !important;">[Page.Message].Message.Label.Array["SYS_EVT_LOG.SYS_CRT_DT"]</span>
+          <span data-field="sys_crt_dt" class="gi-span" data-focus-span-text-align="center"
             style="min-height:30px !important; padding:4px 8px !important; font-size:12px !important;"></span>
         </div>
 
@@ -251,15 +251,15 @@
       <div class="log-bottom-comparison">
         <div class="log-compare-column">
           <span class="log-label-strong"
-            style="color: #ef4444 !important;">[Page.Message].Message.Label.Array["SYS_EVENT_LOG.BEFORE_DATA"]</span>
-          <span data-field="before_data" class="gi-span log-data-view log-data-before"
+            style="color: #ef4444 !important;">[Page.Message].Message.Label.Array["SYS_EVT_LOG.BFR_DATA"]</span>
+          <span data-field="bfr_data" class="gi-span log-data-view log-data-before"
             data-focus-span-text-align="default"></span>
         </div>
 
         <div class="log-compare-column">
           <span class="log-label-strong"
-            style="color: #10b981 !important;">[Page.Message].Message.Label.Array["SYS_EVENT_LOG.AFTER_DATA"]</span>
-          <span data-field="after_data" class="gi-span log-data-view log-data-after"
+            style="color: #10b981 !important;">[Page.Message].Message.Label.Array["SYS_EVT_LOG.AFT_DATA"]</span>
+          <span data-field="aft_data" class="gi-span log-data-view log-data-after"
             data-focus-span-text-align="default"></span>
         </div>
       </div>
@@ -275,7 +275,7 @@
 <article id="register_sysEventLog_popup" class="gi-popup" data-popup-open="false">
   <div class="gi-popup-body" style="width: 700px;">
     <div class="gi-popup-header">
-      <span>[Page.Message].Message.Label.Array["SYS_EVENT_LOG.TITLE_REGISTER"]</span>
+      <span>[Page.Message].Message.Label.Array["SYS_EVT_LOG.TITLE_REGISTER"]</span>
     </div>
     <div class="gi-popup-contents">
       <form id="sysEventLogRegisterForm">
@@ -284,7 +284,7 @@
           <div class="gi-flex gi-grid-gap-16px">
             <div class="gi-input-container gi-flex-1">
               <label for="register_id" class="gi-input-label" data-focus-label="true"
-                data-required="true">[Page.Message].Message.Label.Array["SYS_EVENT_LOG.ID"]</label>
+                data-required="true">[Page.Message].Message.Label.Array["SYS_EVT_LOG.ID"]</label>
               <input data-field="id" id="register_id" name="id" class="gi-input" data-required="true"
                 autocomplete="off" />
             </div>
@@ -293,7 +293,7 @@
           <div class="gi-flex gi-grid-gap-16px">
             <div class="gi-input-container gi-flex-1">
               <label for="register_user_id" class="gi-input-label" data-focus-label="true"
-                data-required="true">[Page.Message].Message.Label.Array["SYS_EVENT_LOG.USER_ID"]</label>
+                data-required="true">[Page.Message].Message.Label.Array["SYS_EVT_LOG.USER_ID"]</label>
               <input data-field="user_id" id="register_user_id" name="user_id" class="gi-input" data-required="true"
                 autocomplete="off" />
             </div>
@@ -302,7 +302,7 @@
           <div class="gi-flex gi-grid-gap-16px">
             <div class="gi-input-container gi-flex-1">
               <label for="register_email" class="gi-input-label" data-focus-label="true"
-                data-required="true">[Page.Message].Message.Label.Array["SYS_EVENT_LOG.EMAIL"]</label>
+                data-required="true">[Page.Message].Message.Label.Array["SYS_EVT_LOG.EMAIL"]</label>
               <input data-field="email" id="register_email" name="email" class="gi-input" data-required="true"
                 autocomplete="off" />
             </div>
@@ -311,7 +311,7 @@
           <div class="gi-flex gi-grid-gap-16px">
             <div class="gi-input-container gi-flex-1">
               <label for="register_role" class="gi-input-label" data-focus-label="true"
-                data-required="true">[Page.Message].Message.Label.Array["SYS_EVENT_LOG.ROLE"]</label>
+                data-required="true">[Page.Message].Message.Label.Array["SYS_EVT_LOG.ROLE"]</label>
               <input data-field="role" id="register_role" name="role" class="gi-input" data-required="true"
                 autocomplete="off" />
             </div>
@@ -319,63 +319,63 @@
 
           <div class="gi-flex gi-grid-gap-16px">
             <div class="gi-input-container gi-flex-1">
-              <label for="register_action_type" class="gi-input-label" data-focus-label="true"
-                data-required="true">[Page.Message].Message.Label.Array["SYS_EVENT_LOG.ACTION_TYPE"]</label>
-              <input data-field="action_type" id="register_action_type" name="action_type" class="gi-input"
+              <label for="register_act_type" class="gi-input-label" data-focus-label="true"
+                data-required="true">[Page.Message].Message.Label.Array["SYS_EVT_LOG.ACT_TYPE"]</label>
+              <input data-field="act_type" id="register_act_type" name="act_type" class="gi-input"
                 data-required="true" autocomplete="off" />
             </div>
           </div>
 
           <div class="gi-flex gi-grid-gap-16px">
             <div class="gi-input-container gi-flex-1">
-              <label for="register_target_table" class="gi-input-label" data-focus-label="true"
-                data-required="true">[Page.Message].Message.Label.Array["SYS_EVENT_LOG.TARGET_TABLE"]</label>
-              <input data-field="target_table" id="register_target_table" name="target_table" class="gi-input"
+              <label for="register_tgt_tbl" class="gi-input-label" data-focus-label="true"
+                data-required="true">[Page.Message].Message.Label.Array["SYS_EVT_LOG.TGT_TBL"]</label>
+              <input data-field="tgt_tbl" id="register_tgt_tbl" name="tgt_tbl" class="gi-input"
                 data-required="true" autocomplete="off" />
             </div>
           </div>
 
           <div class="gi-flex gi-grid-gap-16px">
             <div class="gi-input-container gi-flex-1">
-              <label for="register_target_id" class="gi-input-label" data-focus-label="true"
-                data-required="false">[Page.Message].Message.Label.Array["SYS_EVENT_LOG.TARGET_ID"]</label>
-              <input data-field="target_id" id="register_target_id" name="target_id" class="gi-input"
+              <label for="register_tgt_id" class="gi-input-label" data-focus-label="true"
+                data-required="false">[Page.Message].Message.Label.Array["SYS_EVT_LOG.TGT_ID"]</label>
+              <input data-field="tgt_id" id="register_tgt_id" name="tgt_id" class="gi-input"
                 data-required="false" autocomplete="off" />
             </div>
           </div>
 
           <div class="gi-flex gi-grid-gap-16px">
             <div class="gi-input-container gi-flex-1">
-              <label for="register_before_data" class="gi-input-label" data-focus-label="true"
-                data-required="false">[Page.Message].Message.Label.Array["SYS_EVENT_LOG.BEFORE_DATA"]</label>
-              <input data-field="before_data" id="register_before_data" name="before_data" class="gi-input"
+              <label for="register_bfr_data" class="gi-input-label" data-focus-label="true"
+                data-required="false">[Page.Message].Message.Label.Array["SYS_EVT_LOG.BFR_DATA"]</label>
+              <input data-field="bfr_data" id="register_bfr_data" name="bfr_data" class="gi-input"
                 data-required="false" autocomplete="off" />
             </div>
           </div>
 
           <div class="gi-flex gi-grid-gap-16px">
             <div class="gi-input-container gi-flex-1">
-              <label for="register_after_data" class="gi-input-label" data-focus-label="true"
-                data-required="false">[Page.Message].Message.Label.Array["SYS_EVENT_LOG.AFTER_DATA"]</label>
-              <input data-field="after_data" id="register_after_data" name="after_data" class="gi-input"
+              <label for="register_aft_data" class="gi-input-label" data-focus-label="true"
+                data-required="false">[Page.Message].Message.Label.Array["SYS_EVT_LOG.AFT_DATA"]</label>
+              <input data-field="aft_data" id="register_aft_data" name="aft_data" class="gi-input"
                 data-required="false" autocomplete="off" />
             </div>
           </div>
 
           <div class="gi-flex gi-grid-gap-16px">
             <div class="gi-input-container gi-flex-1">
-              <label for="register_ip_address" class="gi-input-label" data-focus-label="true"
-                data-required="true">[Page.Message].Message.Label.Array["SYS_EVENT_LOG.IP_ADDRESS"]</label>
-              <input data-field="ip_address" id="register_ip_address" name="ip_address" class="gi-input"
+              <label for="register_ip_addr" class="gi-input-label" data-focus-label="true"
+                data-required="true">[Page.Message].Message.Label.Array["SYS_EVT_LOG.IP_ADDR"]</label>
+              <input data-field="ip_addr" id="register_ip_addr" name="ip_addr" class="gi-input"
                 data-required="true" autocomplete="off" />
             </div>
           </div>
 
           <div class="gi-flex gi-grid-gap-16px">
             <div class="gi-input-container gi-flex-1">
-              <label for="register_system_create_date" class="gi-input-label" data-focus-label="true"
-                data-required="false">[Page.Message].Message.Label.Array["SYS_EVENT_LOG.SYSTEM_CREATE_DATE"]</label>
-              <input data-field="system_create_date" id="register_system_create_date" name="system_create_date"
+              <label for="register_sys_crt_dt" class="gi-input-label" data-focus-label="true"
+                data-required="false">[Page.Message].Message.Label.Array["SYS_EVT_LOG.SYS_CRT_DT"]</label>
+              <input data-field="sys_crt_dt" id="register_sys_crt_dt" name="sys_crt_dt"
                 class="gi-input" data-required="false" autocomplete="off" />
             </div>
           </div>
@@ -395,7 +395,7 @@
 <article id="update_sysEventLog_popup" class="gi-popup" data-popup-open="false">
   <div class="gi-popup-body" style="width: 700px;">
     <div class="gi-popup-header">
-      <span>[Page.Message].Message.Label.Array["SYS_EVENT_LOG.TITLE_UPDATE"]</span>
+      <span>[Page.Message].Message.Label.Array["SYS_EVT_LOG.TITLE_UPDATE"]</span>
     </div>
     <div class="gi-popup-contents">
       <form id="sysEventLogUpdateForm">
@@ -404,7 +404,7 @@
           <div class="gi-flex gi-grid-gap-16px">
             <div class="gi-input-container gi-flex-1">
               <label for="update_id" class="gi-input-label" data-focus-label="true"
-                data-required="true">[Page.Message].Message.Label.Array["SYS_EVENT_LOG.ID"]</label>
+                data-required="true">[Page.Message].Message.Label.Array["SYS_EVT_LOG.ID"]</label>
               <input data-field="id" id="update_id" name="update_id" class="gi-input" data-required="true"
                 autocomplete="off" />
             </div>
@@ -413,7 +413,7 @@
           <div class="gi-flex gi-grid-gap-16px">
             <div class="gi-input-container gi-flex-1">
               <label for="update_user_id" class="gi-input-label" data-focus-label="true"
-                data-required="true">[Page.Message].Message.Label.Array["SYS_EVENT_LOG.USER_ID"]</label>
+                data-required="true">[Page.Message].Message.Label.Array["SYS_EVT_LOG.USER_ID"]</label>
               <input data-field="user_id" id="update_user_id" name="update_user_id" class="gi-input"
                 data-required="true" autocomplete="off" />
             </div>
@@ -422,7 +422,7 @@
           <div class="gi-flex gi-grid-gap-16px">
             <div class="gi-input-container gi-flex-1">
               <label for="update_email" class="gi-input-label" data-focus-label="true"
-                data-required="true">[Page.Message].Message.Label.Array["SYS_EVENT_LOG.EMAIL"]</label>
+                data-required="true">[Page.Message].Message.Label.Array["SYS_EVT_LOG.EMAIL"]</label>
               <input data-field="email" id="update_email" name="update_email" class="gi-input" data-required="true"
                 autocomplete="off" />
             </div>
@@ -431,7 +431,7 @@
           <div class="gi-flex gi-grid-gap-16px">
             <div class="gi-input-container gi-flex-1">
               <label for="update_role" class="gi-input-label" data-focus-label="true"
-                data-required="true">[Page.Message].Message.Label.Array["SYS_EVENT_LOG.ROLE"]</label>
+                data-required="true">[Page.Message].Message.Label.Array["SYS_EVT_LOG.ROLE"]</label>
               <input data-field="role" id="update_role" name="update_role" class="gi-input" data-required="true"
                 autocomplete="off" />
             </div>
@@ -439,63 +439,63 @@
 
           <div class="gi-flex gi-grid-gap-16px">
             <div class="gi-input-container gi-flex-1">
-              <label for="update_action_type" class="gi-input-label" data-focus-label="true"
-                data-required="true">[Page.Message].Message.Label.Array["SYS_EVENT_LOG.ACTION_TYPE"]</label>
-              <input data-field="action_type" id="update_action_type" name="update_action_type" class="gi-input"
+              <label for="update_act_type" class="gi-input-label" data-focus-label="true"
+                data-required="true">[Page.Message].Message.Label.Array["SYS_EVT_LOG.ACT_TYPE"]</label>
+              <input data-field="act_type" id="update_act_type" name="update_act_type" class="gi-input"
                 data-required="true" autocomplete="off" />
             </div>
           </div>
 
           <div class="gi-flex gi-grid-gap-16px">
             <div class="gi-input-container gi-flex-1">
-              <label for="update_target_table" class="gi-input-label" data-focus-label="true"
-                data-required="true">[Page.Message].Message.Label.Array["SYS_EVENT_LOG.TARGET_TABLE"]</label>
-              <input data-field="target_table" id="update_target_table" name="update_target_table" class="gi-input"
+              <label for="update_tgt_tbl" class="gi-input-label" data-focus-label="true"
+                data-required="true">[Page.Message].Message.Label.Array["SYS_EVT_LOG.TGT_TBL"]</label>
+              <input data-field="tgt_tbl" id="update_tgt_tbl" name="update_tgt_tbl" class="gi-input"
                 data-required="true" autocomplete="off" />
             </div>
           </div>
 
           <div class="gi-flex gi-grid-gap-16px">
             <div class="gi-input-container gi-flex-1">
-              <label for="update_target_id" class="gi-input-label" data-focus-label="true"
-                data-required="false">[Page.Message].Message.Label.Array["SYS_EVENT_LOG.TARGET_ID"]</label>
-              <input data-field="target_id" id="update_target_id" name="update_target_id" class="gi-input"
+              <label for="update_tgt_id" class="gi-input-label" data-focus-label="true"
+                data-required="false">[Page.Message].Message.Label.Array["SYS_EVT_LOG.TGT_ID"]</label>
+              <input data-field="tgt_id" id="update_tgt_id" name="update_tgt_id" class="gi-input"
                 data-required="false" autocomplete="off" />
             </div>
           </div>
 
           <div class="gi-flex gi-grid-gap-16px">
             <div class="gi-input-container gi-flex-1">
-              <label for="update_before_data" class="gi-input-label" data-focus-label="true"
-                data-required="false">[Page.Message].Message.Label.Array["SYS_EVENT_LOG.BEFORE_DATA"]</label>
-              <input data-field="before_data" id="update_before_data" name="update_before_data" class="gi-input"
+              <label for="update_bfr_data" class="gi-input-label" data-focus-label="true"
+                data-required="false">[Page.Message].Message.Label.Array["SYS_EVT_LOG.BFR_DATA"]</label>
+              <input data-field="bfr_data" id="update_bfr_data" name="update_bfr_data" class="gi-input"
                 data-required="false" autocomplete="off" />
             </div>
           </div>
 
           <div class="gi-flex gi-grid-gap-16px">
             <div class="gi-input-container gi-flex-1">
-              <label for="update_after_data" class="gi-input-label" data-focus-label="true"
-                data-required="false">[Page.Message].Message.Label.Array["SYS_EVENT_LOG.AFTER_DATA"]</label>
-              <input data-field="after_data" id="update_after_data" name="update_after_data" class="gi-input"
+              <label for="update_aft_data" class="gi-input-label" data-focus-label="true"
+                data-required="false">[Page.Message].Message.Label.Array["SYS_EVT_LOG.AFT_DATA"]</label>
+              <input data-field="aft_data" id="update_aft_data" name="update_aft_data" class="gi-input"
                 data-required="false" autocomplete="off" />
             </div>
           </div>
 
           <div class="gi-flex gi-grid-gap-16px">
             <div class="gi-input-container gi-flex-1">
-              <label for="update_ip_address" class="gi-input-label" data-focus-label="true"
-                data-required="true">[Page.Message].Message.Label.Array["SYS_EVENT_LOG.IP_ADDRESS"]</label>
-              <input data-field="ip_address" id="update_ip_address" name="update_ip_address" class="gi-input"
+              <label for="update_ip_addr" class="gi-input-label" data-focus-label="true"
+                data-required="true">[Page.Message].Message.Label.Array["SYS_EVT_LOG.IP_ADDR"]</label>
+              <input data-field="ip_addr" id="update_ip_addr" name="update_ip_addr" class="gi-input"
                 data-required="true" autocomplete="off" />
             </div>
           </div>
 
           <div class="gi-flex gi-grid-gap-16px">
             <div class="gi-input-container gi-flex-1">
-              <label for="update_system_create_date" class="gi-input-label" data-focus-label="true"
-                data-required="false">[Page.Message].Message.Label.Array["SYS_EVENT_LOG.SYSTEM_CREATE_DATE"]</label>
-              <input data-field="system_create_date" id="update_system_create_date" name="update_system_create_date"
+              <label for="update_sys_crt_dt" class="gi-input-label" data-focus-label="true"
+                data-required="false">[Page.Message].Message.Label.Array["SYS_EVT_LOG.SYS_CRT_DT"]</label>
+              <input data-field="sys_crt_dt" id="update_sys_crt_dt" name="update_sys_crt_dt"
                 class="gi-input" data-required="false" autocomplete="off" />
             </div>
           </div>
@@ -604,26 +604,26 @@
 
         // 그리드 헤더 설정
         let sysEventLog_grid_header = {
-          title: '[Page.Message].Message.Label.Array["SYS_EVENT_LOG.TITLE"]',
+          title: '[Page.Message].Message.Label.Array["SYS_EVT_LOG.TITLE"]',
           list: [
             { HEADER: 'No', ID: 'no', WIDTH: '7', TYPE: 'text', FONT_SIZE: '12px', TEXT_ALIGN: 'center', HIDDEN: false },
-            { HEADER: Message.Label.Array["SYS_EVENT_LOG.ID"], ID: 'id', WIDTH: '40', TYPE: 'text', FONT_SIZE: '12px', TEXT_ALIGN: 'center', HIDDEN: false },
-            { HEADER: Message.Label.Array["SYS_EVENT_LOG.USER_ID"], ID: 'user_id', WIDTH: '40', TYPE: 'text', FONT_SIZE: '12px', TEXT_ALIGN: 'center', HIDDEN: true },
-            { HEADER: Message.Label.Array["SYS_EVENT_LOG.EMAIL"], ID: 'email', WIDTH: '40', TYPE: 'text', FONT_SIZE: '12px', TEXT_ALIGN: 'center', HIDDEN: false },
-            { HEADER: Message.Label.Array["SYS_EVENT_LOG.ROLE"], ID: 'role', WIDTH: '40', TYPE: 'text', FONT_SIZE: '12px', TEXT_ALIGN: 'center', HIDDEN: false },
-            { HEADER: Message.Label.Array["SYS_EVENT_LOG.ACTION_TYPE"], ID: 'action_type', WIDTH: '40', TYPE: 'text', FONT_SIZE: '12px', TEXT_ALIGN: 'center', HIDDEN: false },
-            { HEADER: Message.Label.Array["SYS_EVENT_LOG.TARGET_TABLE"], ID: 'target_table', WIDTH: '40', TYPE: 'text', FONT_SIZE: '12px', TEXT_ALIGN: 'center', HIDDEN: false },
-            { HEADER: Message.Label.Array["SYS_EVENT_LOG.TARGET_ID"], ID: 'target_id', WIDTH: '40', TYPE: 'text', FONT_SIZE: '12px', TEXT_ALIGN: 'center', HIDDEN: true },
-            { HEADER: Message.Label.Array["SYS_EVENT_LOG.BEFORE_DATA"], ID: 'before_data', WIDTH: '40', TYPE: 'text', FONT_SIZE: '12px', TEXT_ALIGN: 'center', HIDDEN: true },
-            { HEADER: Message.Label.Array["SYS_EVENT_LOG.AFTER_DATA"], ID: 'after_data', WIDTH: '40', TYPE: 'text', FONT_SIZE: '12px', TEXT_ALIGN: 'center', HIDDEN: true },
-            { HEADER: Message.Label.Array["SYS_EVENT_LOG.IP_ADDRESS"], ID: 'ip_address', WIDTH: '40', TYPE: 'text', FONT_SIZE: '12px', TEXT_ALIGN: 'center', HIDDEN: false },
-            { HEADER: Message.Label.Array["SYS_EVENT_LOG.SYSTEM_CREATE_DATE"], ID: 'system_create_date', WIDTH: '40', TYPE: 'date', FONT_SIZE: '12px', TEXT_ALIGN: 'center', HIDDEN: false },
+            { HEADER: Message.Label.Array["SYS_EVT_LOG.ID"], ID: 'id', WIDTH: '40', TYPE: 'text', FONT_SIZE: '12px', TEXT_ALIGN: 'center', HIDDEN: false },
+            { HEADER: Message.Label.Array["SYS_EVT_LOG.USER_ID"], ID: 'user_id', WIDTH: '40', TYPE: 'text', FONT_SIZE: '12px', TEXT_ALIGN: 'center', HIDDEN: true },
+            { HEADER: Message.Label.Array["SYS_EVT_LOG.EMAIL"], ID: 'email', WIDTH: '40', TYPE: 'text', FONT_SIZE: '12px', TEXT_ALIGN: 'center', HIDDEN: false },
+            { HEADER: Message.Label.Array["SYS_EVT_LOG.ROLE"], ID: 'role', WIDTH: '40', TYPE: 'text', FONT_SIZE: '12px', TEXT_ALIGN: 'center', HIDDEN: false },
+            { HEADER: Message.Label.Array["SYS_EVT_LOG.ACT_TYPE"], ID: 'act_type', WIDTH: '40', TYPE: 'text', FONT_SIZE: '12px', TEXT_ALIGN: 'center', HIDDEN: false },
+            { HEADER: Message.Label.Array["SYS_EVT_LOG.TGT_TBL"], ID: 'tgt_tbl', WIDTH: '40', TYPE: 'text', FONT_SIZE: '12px', TEXT_ALIGN: 'center', HIDDEN: false },
+            { HEADER: Message.Label.Array["SYS_EVT_LOG.TGT_ID"], ID: 'tgt_id', WIDTH: '40', TYPE: 'text', FONT_SIZE: '12px', TEXT_ALIGN: 'center', HIDDEN: true },
+            { HEADER: Message.Label.Array["SYS_EVT_LOG.BFR_DATA"], ID: 'bfr_data', WIDTH: '40', TYPE: 'text', FONT_SIZE: '12px', TEXT_ALIGN: 'center', HIDDEN: true },
+            { HEADER: Message.Label.Array["SYS_EVT_LOG.AFT_DATA"], ID: 'aft_data', WIDTH: '40', TYPE: 'text', FONT_SIZE: '12px', TEXT_ALIGN: 'center', HIDDEN: true },
+            { HEADER: Message.Label.Array["SYS_EVT_LOG.IP_ADDR"], ID: 'ip_addr', WIDTH: '40', TYPE: 'text', FONT_SIZE: '12px', TEXT_ALIGN: 'center', HIDDEN: false },
+            { HEADER: Message.Label.Array["SYS_EVT_LOG.SYS_CRT_DT"], ID: 'sys_crt_dt', WIDTH: '40', TYPE: 'date', FONT_SIZE: '12px', TEXT_ALIGN: 'center', HIDDEN: false },
             { HEADER: Message.Label.Array["DETAIL_BTN"], ID: 'detail_btn', WIDTH: '15', TYPE: 'button', FONT_SIZE: '12px', TEXT_ALIGN: 'center', HIDDEN: false },
             { HEADER: Message.Label.Array["UPDATE_BTN"], ID: 'update_btn', WIDTH: '15', TYPE: 'button', FONT_SIZE: '12px', TEXT_ALIGN: 'center', HIDDEN: true },
             { HEADER: Message.Label.Array["DELETE_BTN"], ID: 'delete_btn', WIDTH: '15', TYPE: 'button', FONT_SIZE: '12px', TEXT_ALIGN: 'center', HIDDEN: true },
             { HEADER: Message.Label.Array["SIDE_BTN"], ID: 'side_btn', WIDTH: '15', TYPE: 'button', FONT_SIZE: '12px', TEXT_ALIGN: 'center', HIDDEN: true },
             { HEADER: 'checkbox', ID: 'checkbox', WIDTH: '25', TYPE: 'checkbox', FONT_SIZE: '12px', TEXT_ALIGN: 'center', HIDDEN: true }
-            //{ HEADER: 'test1', ID: 'use_yn', WIDTH: '7', TYPE: 'text', FONT_SIZE: '12px', TEXT_ALIGN: 'center', SYS_CODE_GROUP_ID: "USE_YN", HIDDEN: true }, // 공통코드 치환
+            //{ HEADER: 'test1', ID: 'use_yn', WIDTH: '7', TYPE: 'text', FONT_SIZE: '12px', TEXT_ALIGN: 'center', SYS_CD_GRP_ID: "USE_YN", HIDDEN: true }, // 공통코드 치환
             //{ HEADER: 'test2', ID: "test2", WIDTH: "5", TYPE: "button", FONT_SIZE: "12px", TEXT_ALIGN: "center", VISIBLE_OPTION_BTN: [{ "test2": "0" }], HIDDEN: true }, // 조건에 따라 버튼 표시
             //{ HEADER: 'test3', ID: 'test3', WIDTH: '7', TYPE: 'password', FONT_SIZE: '12px', TEXT_ALIGN: 'center', HIDDEN: true }, // 비밀번호
           ]
@@ -668,12 +668,12 @@
 
         // 그리드 데이터 가공 (작업 유형 디자인 적용)
         data.forEach(item => {
-          if (item.action_type === 'INSERT') {
-            item.action_type = '<span class="action-badge action-insert">INSERT</span>';
-          } else if (item.action_type === 'UPDATE') {
-            item.action_type = '<span class="action-badge action-update">UPDATE</span>';
-          } else if (item.action_type === 'DELETE') {
-            item.action_type = '<span class="action-badge action-delete">DELETE</span>';
+          if (item.act_type === 'INSERT') {
+            item.act_type = '<span class="action-badge action-insert">INSERT</span>';
+          } else if (item.act_type === 'UPDATE') {
+            item.act_type = '<span class="action-badge action-update">UPDATE</span>';
+          } else if (item.act_type === 'DELETE') {
+            item.act_type = '<span class="action-badge action-delete">DELETE</span>';
           }
         });
 
@@ -684,7 +684,7 @@
         sysEventLog_grid.gridColumResize(MAIN_GRID_ID);
 
         //그리드 엑셀 다운로드 버튼 활성화
-        sysEventLog_grid.excelDownloadEvent(Message.Label.Array["SYS_EVENT_LOG.TITLE_LIST"]);
+        sysEventLog_grid.excelDownloadEvent(Message.Label.Array["SYS_EVT_LOG.TITLE_LIST"]);
 
         //그리드 row 개수 변경 및 페이징 버튼 이벤트 설정
         sysEventLog_grid.pagingSet(findBySysEventLogList);
@@ -784,8 +784,8 @@
     };
 
     const formattedCont = { ...cont };
-    formattedCont.before_data = formatJson(cont.before_data);
-    formattedCont.after_data = formatJson(cont.after_data);
+    formattedCont.bfr_data = formatJson(cont.bfr_data);
+    formattedCont.aft_data = formatJson(cont.aft_data);
 
     dataBinding.setDataForm(DETAIL_POPUP_ID, formattedCont);
     popup.open(DETAIL_POPUP_ID);
@@ -815,13 +815,13 @@
         user_id: data.user_id,
         email: data.email,
         role: data.role,
-        action_type: data.action_type,
-        target_table: data.target_table,
-        target_id: data.target_id,
-        before_data: data.before_data,
-        after_data: data.after_data,
-        ip_address: data.ip_address,
-        system_create_date: data.system_create_date
+        act_type: data.act_type,
+        tgt_tbl: data.tgt_tbl,
+        tgt_id: data.tgt_id,
+        bfr_data: data.bfr_data,
+        aft_data: data.aft_data,
+        ip_addr: data.ip_addr,
+        sys_crt_dt: data.sys_crt_dt
       };
       axios.post(url, param).then(response => {
         let status = response.status;
@@ -838,10 +838,10 @@
     }
   }
   function sysEventLogRegisterCheckValidation() {
-    return formUtil.validationCheck(REGISTER_POPUP_FORM, "SYS_EVENT_LOG.CHECK.");
+    return formUtil.validationCheck(REGISTER_POPUP_FORM, "SYS_EVT_LOG.CHECK.");
   }
   function sysEventLogUpdateCheckValidation() {
-    return formUtil.validationCheck(UPDATE_POPUP_FORM, "SYS_EVENT_LOG.CHECK.");
+    return formUtil.validationCheck(UPDATE_POPUP_FORM, "SYS_EVT_LOG.CHECK.");
   }
 
   //FUN : 수정 이벤트
@@ -853,15 +853,15 @@
       //console.log(data);
       let param = {
 
-        top_office_code: data.top_office_code,
-        office_name: data.office_name,
-        office_code: data.office_code,
-        office_type: data.office_type,
-        office_type_code: data.office_type_code,
-        system_create_userid: data.system_create_userid,
-        system_create_date: data.system_create_date,
-        system_update_userid: data.system_update_userid,
-        system_update_date: data.system_update_date
+        top_offc_cd: data.top_offc_cd,
+        offc_nm: data.offc_nm,
+        offc_cd: data.offc_cd,
+        offc_type: data.offc_type,
+        offc_type_cd: data.offc_type_cd,
+        sys_crt_usr_id: data.sys_crt_usr_id,
+        sys_crt_dt: data.sys_crt_dt,
+        sys_upd_usr_id: data.sys_upd_usr_id,
+        sys_upd_dt: data.sys_upd_dt
       };
       axios.post(url, param).then(response => {
         let status = response.status;
@@ -888,13 +888,13 @@
       user_id: data.user_id,
       email: data.email,
       role: data.role,
-      action_type: data.action_type,
-      target_table: data.target_table,
-      target_id: data.target_id,
-      before_data: data.before_data,
-      after_data: data.after_data,
-      ip_address: data.ip_address,
-      system_create_date: data.system_create_date
+      act_type: data.act_type,
+      tgt_tbl: data.tgt_tbl,
+      tgt_id: data.tgt_id,
+      bfr_data: data.bfr_data,
+      aft_data: data.aft_data,
+      ip_addr: data.ip_addr,
+      sys_crt_dt: data.sys_crt_dt
     };
     axios.post(url, param).then(response => {
       let status = response.status;

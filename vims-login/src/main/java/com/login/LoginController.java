@@ -1,11 +1,10 @@
 package com.login;
 
-import com.system.auth.authuser.AuthUserService;
 import com.system.auth.dto.AuthenticationRequest;
 import com.system.auth.dto.AuthenticationResponse;
 import com.system.auth.jwt.JwtService;
 import com.system.auth.service.AuthenticationService;
-import com.system.auth.token.TokenService;
+
 import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -104,7 +103,7 @@ public class LoginController {
                 log.setId(UUID.randomUUID().toString());
                 log.setUser_id(user.getUser_id());
                 log.setEmail(user.getEmail());
-                log.setIp_address(ip);
+                log.setIp_addr(ip);
 
                 // Simple User-Agent parsing
                 String os = "Unknown";
@@ -118,7 +117,7 @@ public class LoginController {
                     os = "Android";
                 else if (userAgent.toLowerCase().contains("iphone"))
                     os = "iOS";
-                log.setOs_name(os);
+                log.setOs_nm(os);
 
                 String browser = "Unknown";
                 if (userAgent.toLowerCase().contains("edg"))
@@ -129,11 +128,11 @@ public class LoginController {
                     browser = "Firefox";
                 else if (userAgent.toLowerCase().contains("safari"))
                     browser = "Safari";
-                log.setBrowser_name(browser);
+                log.setBrwsr_nm(browser);
 
-                log.setDevice_type("PC"); // Default or infer from UA
+                log.setDev_type("PC"); // Default or infer from UA
                 if (userAgent.toLowerCase().contains("mobile"))
-                    log.setDevice_type("Mobile");
+                    log.setDev_type("Mobile");
 
                 sysAccsLogService.logAccess(log);
             }
@@ -150,7 +149,7 @@ public class LoginController {
             Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
             if (authentication != null && authentication.getPrincipal() instanceof AuthUser) {
                 AuthUser user = (AuthUser) authentication.getPrincipal();
-                responseBody.put("userName", user.getUser_name());
+                responseBody.put("userName", user.getUser_nm());
             }
         } catch (Exception e) {
             logger.error("Failed to retrieve user name during login", e);

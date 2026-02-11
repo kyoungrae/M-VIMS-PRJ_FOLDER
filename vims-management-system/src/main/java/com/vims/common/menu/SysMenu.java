@@ -22,57 +22,57 @@ import java.util.Date;
 @SuperBuilder
 public class SysMenu extends Common {
     @Transient
-    private String keys = Arrays.toString(new String[] { "menu_code", "menu_sequence" });
+    private String keys = Arrays.toString(new String[] { "menu_cd", "menu_seq" });
 
     @Id
     /***
      * <pre>
-     *  menu_code : 메뉴코드
+     *  menu_cd : 메뉴코드
      * </pre>
      */
-    private String menu_code;
+    private String menu_cd;
 
     /***
      * <pre>
-     *  menu_name_kr : 메뉴명_한국어
+     *  menu_nm_kr : 메뉴명_한국어
      * </pre>
      */
-    private String menu_name_kr;
+    private String menu_nm_kr;
 
     /***
      * <pre>
-     *  menu_name_en : 메뉴명_영어
+     *  menu_nm_en : 메뉴명_영어
      * </pre>
      */
-    private String menu_name_en;
+    private String menu_nm_en;
 
     /***
      * <pre>
-     *  menu_name_mn : 메뉴명_몽골어
+     *  menu_nm_mn : 메뉴명_몽골어
      * </pre>
      */
-    private String menu_name_mn;
+    private String menu_nm_mn;
 
     /***
      * <pre>
-     *  menu_number : 메뉴순서
+     *  menu_no : 메뉴순서
      * </pre>
      */
-    private String menu_number;
+    private String menu_no;
 
     /***
      * <pre>
-     *  menu_level : 메뉴레벨
+     *  menu_lvl : 메뉴레벨
      * </pre>
      */
-    private String menu_level;
+    private String menu_lvl;
 
     /***
      * <pre>
-     *  top_menu_code : 상위 메뉴코드
+     *  top_menu_cd : 상위 메뉴코드
      * </pre>
      */
-    private String top_menu_code;
+    private String top_menu_cd;
 
     /***
      * <pre>
@@ -90,38 +90,38 @@ public class SysMenu extends Common {
 
     /***
      * <pre>
-     *  system_create_date : 작성일자
+     *  sys_crt_dt : 작성일자
      * </pre>
      */
-    private Date system_create_date;
+    private Date sys_crt_dt;
 
     /***
      * <pre>
-     *  system_create_userid : 작성자ID
+     *  sys_crt_usr_id : 작성자ID
      * </pre>
      */
-    private String system_create_userid;
+    private String sys_crt_usr_id;
 
     /***
      * <pre>
-     *  system_update_date : 수정일자
+     *  sys_upd_dt : 수정일자
      * </pre>
      */
-    private Date system_update_date;
+    private Date sys_upd_dt;
 
     /***
      * <pre>
-     *  system_update_userid : 수정자ID
+     *  sys_upd_usr_id : 수정자ID
      * </pre>
      */
-    private String system_update_userid;
+    private String sys_upd_usr_id;
 
     /***
      * <pre>
-     *  menu_sequence : 메뉴노출순서
+     *  menu_seq : 메뉴노출순서
      * </pre>
      */
-    private String menu_sequence;
+    private String menu_seq;
 
     /***
      * <pre>
@@ -146,59 +146,59 @@ public class SysMenu extends Common {
     private String user_email;
     /***
      * <pre>
-     *  menu_code : 메뉴코드
+     *  menu_cd : 메뉴코드
      * </pre>
      */
     @Transient
-    private String _menu_code;
+    private String _menu_cd;
 
     /***
      * <pre>
-     *  menu_name_kr : 메뉴명_한국어
+     *  menu_nm_kr : 메뉴명_한국어
      * </pre>
      */
     @Transient
-    private String _menu_name_kr;
+    private String _menu_nm_kr;
 
     /***
      * <pre>
-     *  menu_name_en : 메뉴명_영어
+     *  menu_nm_en : 메뉴명_영어
      * </pre>
      */
     @Transient
-    private String _menu_name_en;
+    private String _menu_nm_en;
 
     /***
      * <pre>
-     *  menu_name_mn : 메뉴명_몽골어
+     *  menu_nm_mn : 메뉴명_몽골어
      * </pre>
      */
     @Transient
-    private String _menu_name_mn;
+    private String _menu_nm_mn;
 
     /***
      * <pre>
-     *  menu_number : 메뉴순서
+     *  menu_no : 메뉴순서
      * </pre>
      */
     @Transient
-    private String _menu_number;
+    private String _menu_no;
 
     /***
      * <pre>
-     *  menu_level : 메뉴레벨
+     *  menu_lvl : 메뉴레벨
      * </pre>
      */
     @Transient
-    private String _menu_level;
+    private String _menu_lvl;
 
     /***
      * <pre>
-     *  top_menu_code : 상위 메뉴코드
+     *  top_menu_cd : 상위 메뉴코드
      * </pre>
      */
     @Transient
-    private String _top_menu_code;
+    private String _top_menu_cd;
 
     /***
      * <pre>
@@ -218,43 +218,43 @@ public class SysMenu extends Common {
 
     /***
      * <pre>
-     *  system_create_date : 작성일자
+     *  sys_crt_dt : 작성일자
      * </pre>
      */
     @Transient
-    private String _system_create_date;
+    private String _sys_crt_dt;
 
     /***
      * <pre>
-     *  system_create_userid : 작성자ID
+     *  sys_crt_usr_id : 작성자ID
      * </pre>
      */
     @Transient
-    private String _system_create_userid;
+    private String _sys_crt_usr_id;
 
     /***
      * <pre>
-     *  system_update_date : 수정일자
+     *  sys_upd_dt : 수정일자
      * </pre>
      */
     @Transient
-    private String _system_update_date;
+    private String _sys_upd_dt;
 
     /***
      * <pre>
-     *  system_update_userid : 수정자ID
+     *  sys_upd_usr_id : 수정자ID
      * </pre>
      */
     @Transient
-    private String _system_update_userid;
+    private String _sys_upd_usr_id;
 
     /***
      * <pre>
-     *  menu_sequence : 메뉴노출순서
+     *  menu_seq : 메뉴노출순서
      * </pre>
      */
     @Transient
-    private String _menu_sequence;
+    private String _menu_seq;
 
     /***
      * <pre>

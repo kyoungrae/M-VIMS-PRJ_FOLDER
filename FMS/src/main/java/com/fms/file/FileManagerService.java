@@ -29,9 +29,9 @@ public class FileManagerService extends FileProcessManager {
     // }
     // public void fileCreate(Map<String , Object> map) throws Exception{
     // String folderName = (String) map.get("folder_name");
-    // String fileName = (String) map.get("file_name");
+    // String fileName = (String) map.get("file_nm");
     // String fileContent = (String) map.get("file_content");
-    // String fileExtension = (String) map.get("file_extension");
+    // String fileExtension = (String) map.get("file_ext");
     //
     // createFile(folderName, fileName, fileContent, fileExtension);
     // }
@@ -47,7 +47,7 @@ public class FileManagerService extends FileProcessManager {
             List<Map<String, Object>> result = uploadFile(folder_name, files);
             for (Map<String, Object> list : result) {
                 list.put("file_uuid", uid);
-                list.put("system_create_userid", userId);
+                list.put("sys_crt_usr_id", userId);
             }
             if (!result.isEmpty()) {
                 // 기존 UUID인 경우 SYS_FILE 테이블에 이미 존재할 수 있으므로 존재 여부 체크 후 인서트
@@ -63,8 +63,8 @@ public class FileManagerService extends FileProcessManager {
                     var sysFile = SysFile.builder()
                             .file_uuid(uid)
                             .temp_yn(0) // NOTE : 파일 임시 저장, 사용자가 작성 취소 하거나, 화면을 나갈 경우 삭제하기 위한 flag
-                            .system_create_userid(userId)
-                            .system_create_date(new java.util.Date())
+                            .sys_crt_usr_id(userId)
+                            .sys_crt_dt(new java.util.Date())
                             .build();
                     sysFileMapper.SYS_FILE_INSERT(sysFile);
                 }
@@ -89,8 +89,8 @@ public class FileManagerService extends FileProcessManager {
             Map<String, Object> param = new HashMap<>();
             param.put("file_path", detail.getFile_path());
             param.put("file_id", detail.getFile_id());
-            param.put("file_name", detail.getFile_name());
-            param.put("file_extension", detail.getFile_extension());
+            param.put("file_nm", detail.getFile_nm());
+            param.put("file_ext", detail.getFile_ext());
 
             downloadFile(param, response);
         } else {
@@ -109,8 +109,8 @@ public class FileManagerService extends FileProcessManager {
             Map<String, Object> param = new HashMap<>();
             param.put("file_path", detail.getFile_path());
             param.put("file_id", detail.getFile_id());
-            param.put("file_name", detail.getFile_name());
-            param.put("file_extension", detail.getFile_extension());
+            param.put("file_nm", detail.getFile_nm());
+            param.put("file_ext", detail.getFile_ext());
 
             downloadFile(param, response);
         } else {
@@ -119,7 +119,7 @@ public class FileManagerService extends FileProcessManager {
     }
     // public void zipFileDownload(List<Map<String,Object>> params,
     // HttpServletResponse response) throws Exception{
-    // String zipFileName = (String) params.get(0).get("file_zip_file_name");
+    // String zipFileName = (String) params.get(0).get("file_zip_file_nm");
     // downloadZipFile(downloadZipFileList(params),response,zipFileName);
     // }
     // public String getImage(Map<String,Object> request) throws

@@ -216,7 +216,7 @@
     });
 
     $("#insert-btn").off("click.insertBtnClickEventHandler").on("click.insertBtnClickEventHandler", function () {
-      input.setSelectOption("#register_office_code", "/cms/common/sysOffice/find", { code: "office_code", name: "office_name" });
+      input.setSelectOption("#register_offc_cd", "/cms/common/sysOffice/find", { code: "offc_cd", name: "offc_nm" });
     });
     //추가버튼 클릭 이벤트
     $(POPUP_REGISTER_BTN).off("click.popupRegisterBtnClickEventHandler")
@@ -289,7 +289,7 @@
       title: '[Page.Message].Message.Label.Array["SAMPLE.TITLE"]',
       list: [
         { HEADER: 'No', ID: 'no', WIDTH: '7', TYPE: 'text', FONT_SIZE: '12px', TEXT_ALIGN: 'center', HIDDEN: false },
-        { HEADER: 'test1', ID: 'use_yn', WIDTH: '7', TYPE: 'text', FONT_SIZE: '12px', TEXT_ALIGN: 'center', SYS_CODE_GROUP_ID: "USE_YN", HIDDEN: false }, // 공통코드 치환
+        { HEADER: 'test1', ID: 'use_yn', WIDTH: '7', TYPE: 'text', FONT_SIZE: '12px', TEXT_ALIGN: 'center', SYS_CD_GRP_ID: "USE_YN", HIDDEN: false }, // 공통코드 치환
         { HEADER: 'test2', ID: "test2", WIDTH: "5", TYPE: "button", FONT_SIZE: "12px", TEXT_ALIGN: "center", VISIBLE_OPTION_BTN: [{ "test2": "0" }], HIDDEN: false }, // 조건에 따라 버튼 표시
         { HEADER: 'test3', ID: 'test3', WIDTH: '7', TYPE: 'password', FONT_SIZE: '12px', TEXT_ALIGN: 'center', HIDDEN: false }, // 비밀번호
         { HEADER: 'test4', ID: 'test4', WIDTH: '7', TYPE: 'text', FONT_SIZE: '12px', TEXT_ALIGN: 'center', HIDDEN: false },
@@ -416,27 +416,27 @@
   function findBySampleHierarchyList() {
     // 메뉴 설정 구조와 동일한 샘플 데이터 구성
     let hierarchyData = [
-      { no: 1, menu_name_kr: "시스템 관리", menu_level: "0", top_menu_code: "-", menu_code: "SYS_MGMT", url: "/sys", use_yn: "1" },
-      { no: 2, menu_name_kr: "사용자 관리", menu_level: "1", top_menu_code: "SYS_MGMT", menu_code: "USER_MGMT", url: "/sys/user", use_yn: "1" },
-      { no: 3, menu_name_kr: "메뉴 설정", menu_level: "1", top_menu_code: "SYS_MGMT", menu_code: "MENU_MGMT", url: "/sys/menu", use_yn: "1" },
-      { no: 4, menu_name_kr: "권한 관리", menu_level: "2", top_menu_code: "MENU_MGMT", menu_code: "AUTH_MGMT", url: "/sys/menu/auth", use_yn: "1" },
-      { no: 5, menu_name_kr: "공통코드 관리", menu_level: "1", top_menu_code: "SYS_MGMT", menu_code: "CODE_MGMT", url: "/sys/code", use_yn: "1" },
+      { no: 1, menu_nm_kr: "시스템 관리", menu_lvl: "0", top_menu_cd: "-", menu_cd: "SYS_MGMT", url: "/sys", use_yn: "1" },
+      { no: 2, menu_nm_kr: "사용자 관리", menu_lvl: "1", top_menu_cd: "SYS_MGMT", menu_cd: "USER_MGMT", url: "/sys/user", use_yn: "1" },
+      { no: 3, menu_nm_kr: "메뉴 설정", menu_lvl: "1", top_menu_cd: "SYS_MGMT", menu_cd: "MENU_MGMT", url: "/sys/menu", use_yn: "1" },
+      { no: 4, menu_nm_kr: "권한 관리", menu_lvl: "2", top_menu_cd: "MENU_MGMT", menu_cd: "AUTH_MGMT", url: "/sys/menu/auth", use_yn: "1" },
+      { no: 5, menu_nm_kr: "공통코드 관리", menu_lvl: "1", top_menu_cd: "SYS_MGMT", menu_cd: "CODE_MGMT", url: "/sys/code", use_yn: "1" },
 
-      { no: 6, menu_name_kr: "운영 관리", menu_level: "0", top_menu_code: "-", menu_code: "OPER_MGMT", url: "/oper", use_yn: "1" },
-      { no: 7, menu_name_kr: "게시판 관리", menu_level: "1", top_menu_code: "OPER_MGMT", menu_code: "BOARD_MGMT", url: "/oper/board", use_yn: "1" },
-      { no: 8, menu_name_kr: "공지사항", menu_level: "2", top_menu_code: "BOARD_MGMT", menu_code: "NOTICE_MGMT", url: "/oper/board/notice", use_yn: "1" }
+      { no: 6, menu_nm_kr: "운영 관리", menu_lvl: "0", top_menu_cd: "-", menu_cd: "OPER_MGMT", url: "/oper", use_yn: "1" },
+      { no: 7, menu_nm_kr: "게시판 관리", menu_lvl: "1", top_menu_cd: "OPER_MGMT", menu_cd: "BOARD_MGMT", url: "/oper/board", use_yn: "1" },
+      { no: 8, menu_nm_kr: "공지사항", menu_lvl: "2", top_menu_cd: "BOARD_MGMT", menu_cd: "NOTICE_MGMT", url: "/oper/board/notice", use_yn: "1" }
     ];
 
     let header = {
       title: "메뉴 구조 샘플 그리드",
       list: [
         { HEADER: 'No', ID: 'no', WIDTH: '7', TYPE: 'text', FONT_SIZE: '12px', TEXT_ALIGN: 'center', HIDDEN: false },
-        { HEADER: '메뉴명', ID: 'menu_name_kr', WIDTH: '40', TYPE: 'text', FONT_SIZE: '14px', TEXT_ALIGN: 'left', HIDDEN: false },
-        { HEADER: '메뉴코드', ID: 'menu_code', WIDTH: '20', TYPE: 'text', FONT_SIZE: '12px', TEXT_ALIGN: 'center', HIDDEN: false },
+        { HEADER: '메뉴명', ID: 'menu_nm_kr', WIDTH: '40', TYPE: 'text', FONT_SIZE: '14px', TEXT_ALIGN: 'left', HIDDEN: false },
+        { HEADER: '메뉴코드', ID: 'menu_cd', WIDTH: '20', TYPE: 'text', FONT_SIZE: '12px', TEXT_ALIGN: 'center', HIDDEN: false },
         { HEADER: '경로', ID: 'url', WIDTH: '33', TYPE: 'text', FONT_SIZE: '12px', TEXT_ALIGN: 'left', HIDDEN: false },
         // 하이라키 동작 필수 컬럼 (숨김)
-        { HEADER: '레벨', ID: 'menu_level', WIDTH: '0', TYPE: 'text', HIDDEN: true },
-        { HEADER: '상위코드', ID: 'top_menu_code', WIDTH: '0', TYPE: 'text', HIDDEN: true }
+        { HEADER: '레벨', ID: 'menu_lvl', WIDTH: '0', TYPE: 'text', HIDDEN: true },
+        { HEADER: '상위코드', ID: 'top_menu_cd', WIDTH: '0', TYPE: 'text', HIDDEN: true }
       ]
     };
 
@@ -444,9 +444,9 @@
 
     // 하이라키 옵션 설정 (메뉴 설정 페이지와 동일하게 설정)
     grid.HierarchyOption({
-      level_column: "menu_level",
-      parent_depth_column: "menu_code",
-      child_depth_column: "top_menu_code"
+      level_column: "menu_lvl",
+      parent_depth_column: "menu_cd",
+      child_depth_column: "top_menu_cd"
     });
 
     // 데이터 바인딩
@@ -464,12 +464,12 @@
   //FUN : 수정팝업 호출
   function sampleUpdatePopupOpen(cont) {
     //console.log(cont);
-    input.setSelectOption("#update_office_code", "/cms/common/sysOffice/find", { code: "office_code", name: "office_name" });
+    input.setSelectOption("#update_offc_cd", "/cms/common/sysOffice/find", { code: "offc_cd", name: "offc_nm" });
     dataBinding.setDataForm(UPDATE_POPUP_ID, cont);
 
     // 비밀번호 필드는 보안상 비워둠
-    $("#update_password").val("");
-    $("#update_password_confirm").val("");
+    $("#update_pwd").val("");
+    $("#update_pwd_confirm").val("");
 
     new AfterLoadDataEvent();
 

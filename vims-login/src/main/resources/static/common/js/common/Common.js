@@ -408,7 +408,7 @@ class DataBinding {
             let listHtml = "";
             boxList.forEach(function (obj) {
                 listHtml += `<ul class='gi-row-100'>
-                <li class='gi-row-75 gi-margin-left-2px' data-part-code='${obj.group_id}${obj.group_name}'>${obj.group_name}</li>
+                <li class='gi-row-75 gi-margin-left-2px' data-part-code='${obj.grp_id}${obj.grp_nm}'>${obj.grp_nm}</li>
                 <li class='gi-row-10 formUtil-file_close_image formUtil-btn-delete' data-close-button></li>
             </ul>`;
             });
@@ -419,7 +419,7 @@ class DataBinding {
         function boxListDeleteButtonClick() {
             $container.find("[data-close-button]").on("click", function () {
                 let targetCode = $(this).siblings("li").data("part-code");
-                boxList = boxList.filter(item => item.group_id + item.group_name !== targetCode);
+                boxList = boxList.filter(item => item.grp_id + item.grp_nm !== targetCode);
                 setChangedBoxList();
             });
         }

@@ -25,20 +25,20 @@ public class AuthUser extends Common implements UserDetails{
     private Integer id;
     private String user_id;
     private String email;
-    private String password;
+    private String pwd;
 
-    private String office_code;
-    private String user_name;
+    private String offc_cd;
+    private String user_nm;
     private String tel;
-    private String address;
-    private String address_detail;
-    private String postal_code;
+    private String addr;
+    private String addr_dtl;
+    private String post_cd;
     private String uuid;
 
-    private Date system_create_date;
-    private Date system_update_date;
-    private String system_create_userid;
-    private String system_update_userid;
+    private Date sys_crt_dt;
+    private Date sys_upd_dt;
+    private String sys_crt_usr_id;
+    private String sys_upd_usr_id;
     /*
     * @Enumerated(EnumType.STRING)
     * spring에게 이것이 enum 이고 enum유형인지 여부에 관계없이 사용하고 싶다고 알리는 것.
@@ -54,7 +54,7 @@ public class AuthUser extends Common implements UserDetails{
     }
     @Override
     public String getPassword() {
-        return password;
+        return pwd;
     }
 
     @Override

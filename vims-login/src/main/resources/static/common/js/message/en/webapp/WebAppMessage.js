@@ -119,7 +119,7 @@ Message.Label.Array["MYINFO.SECTION.VEHICLE"] = "My Vehicles";
 Message.Label.Array["MYINFO.LABEL.NAME"] = "Name";
 Message.Label.Array["MYINFO.LABEL.GENDER"] = "Gender";
 Message.Label.Array["MYINFO.LABEL.PHONE"] = "Phone Number";
-Message.Label.Array["MYINFO.LABEL.ADDRESS"] = "Address";
+Message.Label.Array["MYINFO.LABEL.ADDR"] = "Address";
 Message.Label.Array["MYINFO.LABEL.LAST_INSPECT"] = "Last Inspection";
 Message.Label.Array["MYINFO.LABEL.NEXT_INSPECT"] = "Next Inspection Due";
 
@@ -127,8 +127,8 @@ Message.Label.Array["MYINFO.GENDER.MALE"] = "Male";
 Message.Label.Array["MYINFO.GENDER.FEMALE"] = "Female";
 
 Message.Label.Array["MYINFO.PLACEHOLDER.POSTCODE"] = "Postal Code";
-Message.Label.Array["MYINFO.PLACEHOLDER.ADDRESS"] = "Address";
-Message.Label.Array["MYINFO.PLACEHOLDER.ADDRESS_DETAIL"] = "Enter detailed address";
+Message.Label.Array["MYINFO.PLACEHOLDER.ADDR"] = "Address";
+Message.Label.Array["MYINFO.PLACEHOLDER.ADDR_DTL"] = "Enter detailed address";
 
 Message.Label.Array["MYINFO.BTN.SEARCH"] = "Search";
 Message.Label.Array["MYINFO.BTN.SAVE"] = "Save";
@@ -136,7 +136,7 @@ Message.Label.Array["MYINFO.BTN.CANCEL"] = "Cancel";
 
 Message.Label.Array["MYINFO.STATUS.VALID"] = "Valid";
 Message.Label.Array["MYINFO.STATUS.UPCOMING"] = "Upcoming";
-Message.Label.Array["MYINFO.STATUS.EXPIRED"] = "Expired";
+Message.Label.Array["MYINFO.STATUS.EXP"] = "Expired";
 
 Message.Label.Array["MYINFO.MSG.NO_VEHICLE"] = "No registered vehicles.";
 Message.Label.Array["MYINFO.MSG.CONFIRM_CANCEL"] = "Are you sure to cancel changes?";
@@ -288,7 +288,7 @@ Message.Label.Array["INSRNC.LABEL.PERIOD"] = "Coverage Period";
 Message.Label.Array["INSRNC.LABEL.TYPE"] = "Policy Type";
 Message.Label.Array["INSRNC.LABEL.STATUS"] = "Status";
 Message.Label.Array["INSRNC.STATUS.ACTIVE"] = "Active";
-Message.Label.Array["INSRNC.STATUS.EXPIRED"] = "Expired";
+Message.Label.Array["INSRNC.STATUS.EXP"] = "Expired";
 
 // Customs inquiry Page
 Message.Label.Array["CSTM.PAGE_TITLE"] = "Customs Information Inquiry";

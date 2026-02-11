@@ -23,22 +23,22 @@ import java.util.Date;
 @ToString(callSuper = true)
 public class SysCodeGroup extends Common {
     @Transient
-    private String keys = Arrays.toString(new String[] { "group_id" });
+    private String keys = Arrays.toString(new String[] { "grp_id" });
 
     /***
      * <pre>
-     *  group_id :
+     *  grp_id :
      * </pre>
      */
     @Id
-    private String group_id;
+    private String grp_id;
 
     /***
      * <pre>
-     *  group_name :
+     *  grp_nm :
      * </pre>
      */
-    private String group_name;
+    private String grp_nm;
 
     /***
      * <pre>
@@ -56,19 +56,19 @@ public class SysCodeGroup extends Common {
 
     /***
      * <pre>
-     *  group_id :
+     *  grp_id :
      * </pre>
      */
     @Transient
-    private String _group_id;
+    private String _grp_id;
 
     /***
      * <pre>
-     *  group_name :
+     *  grp_nm :
      * </pre>
      */
     @Transient
-    private String _group_name;
+    private String _grp_nm;
 
     /***
      * <pre>
@@ -79,43 +79,43 @@ public class SysCodeGroup extends Common {
     private String _use_yn;
 
     @Transient
-    private Date system_create_date;
+    private Date sys_crt_dt;
     @Transient
-    private String system_create_userid;
+    private String sys_crt_usr_id;
     @Transient
-    private Date system_update_date;
+    private Date sys_upd_dt;
     @Transient
-    private String system_update_userid;
+    private String sys_upd_usr_id;
 
     /***
      * <pre>
-     *  system_create_date : 작성일자
+     *  sys_crt_dt : 작성일자
      * </pre>
      */
     @Transient
-    private java.sql.Date _system_create_date;
+    private java.sql.Date _sys_crt_dt;
 
     /***
      * <pre>
-     *  system_create_userid : 작성자ID
+     *  sys_crt_usr_id : 작성자ID
      * </pre>
      */
     @Transient
-    private String _system_create_userid;
+    private String _sys_crt_usr_id;
 
     /***
      * <pre>
-     *  system_update_date : 수정일자
+     *  sys_upd_dt : 수정일자
      * </pre>
      */
     @Transient
-    private java.sql.Date _system_update_date;
+    private java.sql.Date _sys_upd_dt;
 
     /***
      * <pre>
-     *  system_update_userid : 수정자ID
+     *  sys_upd_usr_id : 수정자ID
      * </pre>
      */
     @Transient
-    private String _system_update_userid;
+    private String _sys_upd_usr_id;
 }

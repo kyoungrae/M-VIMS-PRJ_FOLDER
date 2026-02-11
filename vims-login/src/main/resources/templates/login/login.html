@@ -67,7 +67,7 @@
                     <div class="gi-col-25 gi-row-100">
                         <div class="gi-input-container" data-focus-line="false">
                             <label class="gi-input-label" data-focus-label="false" data-required="true"
-                                for="password">[Page.Message].Message.Label.Array["PASSWORD"]</label>
+                                for="password">[Page.Message].Message.Label.Array["PWD"]</label>
                             <input class="gi-input" data-required="true" type="password" id="password" name="password"
                                 autocomplete="off" />
                         </div>
@@ -84,7 +84,7 @@
                             <div class="gi-span-container gi-flex-1">
                                 <span class="gi-margin-right-3">
                                     <a id="find-pw-btn" class="gi-row-50 gi-login-forgot-password  gi-cursor-pointer"
-                                        gi-popup-open-id="gi-popup2">[Page.Message].Message.Label.Array["LOGIN.FORGOT_PASSWORD"]</a>
+                                        gi-popup-open-id="gi-popup2">[Page.Message].Message.Label.Array["LOGIN.FORGOT_PWD"]</a>
                                 </span>
                             </div>
                         </div>
@@ -100,7 +100,7 @@
                         <div class="gi-span-container gi-flex-1" style="border:unset;">
                             <span class="gi-margin-right-3">
                                 <a id="find-pw-btn" class="gi-row-50 gi-login-forgot-password  gi-cursor-pointer"
-                                    gi-popup-open-id="gi-popup2">[Page.Message].Message.Label.Array["LOGIN.FORGOT_PASSWORD"]</a>
+                                    gi-popup-open-id="gi-popup2">[Page.Message].Message.Label.Array["LOGIN.FORGOT_PWD"]</a>
                             </span>
                         </div>
                     </div>
@@ -149,7 +149,7 @@
 <article id="gi-popup2" class="gi-popup login-page" data-popup-open="false">
     <div class="gi-popup-body login-page">
         <div class="gi-popup-header">
-            <span>[Page.Message].Message.Label.Array["LOGIN.RESET_PASSWORD_TITLE"]</span>
+            <span>[Page.Message].Message.Label.Array["LOGIN.RESET_PWD_TITLE"]</span>
         </div>
         <div class="gi-popup-contents">
             <!--      팝업내용 삽입 영역      -->
@@ -321,19 +321,19 @@
             let newPasswordCheck = $("#changePasswordCheck").val();
 
             if (!formUtil.checkEmptyValue(newPassword)) {
-                const message = Message.Label.Array["CHECK.INPUT.PASSWORD"];
+                const message = Message.Label.Array["CHECK.INPUT.PWD"];
                 formUtil.showMessage(message);
                 return false;
             }
 
             if (!formUtil.checkEmptyValue(newPasswordCheck)) {
-                const message = Message.Label.Array["CHECK.INPUT.PASSWORD_CHECK"];
+                const message = Message.Label.Array["CHECK.INPUT.PWD_CHECK"];
                 formUtil.showMessage(message);
                 return false;
             }
 
             if (newPassword !== newPasswordCheck) {
-                const message = Message.Label.Array["FAIL.COMPARE.PASSWORD"];
+                const message = Message.Label.Array["FAIL.COMPARE.PWD"];
                 formUtil.showMessage(message);
                 return false;
             }
@@ -477,7 +477,7 @@
         let target = $(".authentication-check-message");
         let enableTags = ['authenticationTarget', 'send-number-btn'];
         target.removeClass("gi-hidden");
-        target.text(Message.Label.Array["LOGIN.EXPIRED_VERIFICATION_CODE"]);
+        target.text(Message.Label.Array["LOGIN.EXP_VERIFICATION_CODE"]);
         commonTag.tagDisabled(false, enableTags);
     }
 

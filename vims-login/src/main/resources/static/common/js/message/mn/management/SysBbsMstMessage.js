@@ -17,17 +17,17 @@ Message.Label.Array["SYS_BBS_MST.INFO"] = "Зарлалын самбарын М�
 Message.Label.Array["SYS_BBS_MST.CHECK.BBS_ID"] = "Зарлалын самбарын өвөрмөц кодыг оруулна уу";
 Message.Label.Array["SYS_BBS_MST.CHECK.BBS_NM"] = "Зарлалын самбарын нэршлийг оруулна уу";
 Message.Label.Array["SYS_BBS_MST.CHECK.BBS_TYPE"] = "Зарлалын самбарын төрлийг оруулна уу";
-Message.Label.Array["SYS_BBS_MST.CHECK.SYSTEM_CREATE_USERID"] = "Системд үүсгэсэн хэрэглэгчийн ID-г оруулна уу";
-Message.Label.Array["SYS_BBS_MST.CHECK.SYSTEM_CREATE_DATE"] = "Системд бүртгэсэн огноо, цагийг оруулна уу";
-Message.Label.Array["SYS_BBS_MST.CHECK.SYSTEM_UPDATE_USERID"] = "Системд зассан хэрэглэгчийн ID-г оруулна уу";
-Message.Label.Array["SYS_BBS_MST.CHECK.SYSTEM_UPDATE_DATE"] = "Системд зассан огноо, цагийг оруулна уу";
+Message.Label.Array["SYS_BBS_MST.CHECK.SYS_CRT_USR_ID"] = "Системд үүсгэсэн хэрэглэгчийн ID-г оруулна уу";
+Message.Label.Array["SYS_BBS_MST.CHECK.SYS_CRT_DT"] = "Системд бүртгэсэн огноо, цагийг оруулна уу";
+Message.Label.Array["SYS_BBS_MST.CHECK.SYS_UPD_USR_ID"] = "Системд зассан хэрэглэгчийн ID-г оруулна уу";
+Message.Label.Array["SYS_BBS_MST.CHECK.SYS_UPD_DT"] = "Системд зассан огноо, цагийг оруулна уу";
 
 
 Message.Label.Array["SYS_BBS_MST.BBS_ID"] = "Зарлалын самбарын өвөрмөц код";
 Message.Label.Array["SYS_BBS_MST.BBS_MST_ID"] = "Зарлалын самбарын Мастер ID";
 Message.Label.Array["SYS_BBS_MST.BBS_NM"] = "Зарлалын самбарын нэршил";
 Message.Label.Array["SYS_BBS_MST.BBS_TYPE"] = "Зарлалын самбарын төрөл";
-Message.Label.Array["SYS_BBS_MST.SYSTEM_CREATE_USERID"] = "Системд үүсгэсэн хэрэглэгчийн ID";
-Message.Label.Array["SYS_BBS_MST.SYSTEM_CREATE_DATE"] = "Системд бүртгэсэн огноо, цаг";
-Message.Label.Array["SYS_BBS_MST.SYSTEM_UPDATE_USERID"] = "Системд зассан хэрэглэгчийн ID";
-Message.Label.Array["SYS_BBS_MST.SYSTEM_UPDATE_DATE"] = "Системд зассан огноо, цаг";
+Message.Label.Array["SYS_BBS_MST.SYS_CRT_USR_ID"] = "Системд үүсгэсэн хэрэглэгчийн ID";
+Message.Label.Array["SYS_BBS_MST.SYS_CRT_DT"] = "Системд бүртгэсэн огноо, цаг";
+Message.Label.Array["SYS_BBS_MST.SYS_UPD_USR_ID"] = "Системд зассан хэрэглэгчийн ID";
+Message.Label.Array["SYS_BBS_MST.SYS_UPD_DT"] = "Системд зассан огноо, цаг";

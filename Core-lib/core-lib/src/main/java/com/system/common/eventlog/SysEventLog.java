@@ -19,7 +19,7 @@ import java.util.Arrays;
 @SuperBuilder
 public class SysEventLog extends Common {
     @Transient
-    private String keys = Arrays.toString(new String[] { "id", "user_id", "action_type", "system_create_date" });
+    private String keys = Arrays.toString(new String[] { "id", "user_id", "act_type", "sys_crt_dt" });
 
     @Id
     /***
@@ -52,52 +52,52 @@ public class SysEventLog extends Common {
 
     /***
      * <pre>
-     *  action_type : 작업 유형
+     *  act_type : 작업 유형
      * </pre>
      */
-    private String action_type;
+    private String act_type;
 
     /***
      * <pre>
-     *  target_table : 대상 테이블명
+     *  tgt_tbl : 대상 테이블명
      * </pre>
      */
-    private String target_table;
+    private String tgt_tbl;
 
     /***
      * <pre>
-     *  target_id : 대상 데이터의 PK
+     *  tgt_id : 대상 데이터의 PK
      * </pre>
      */
-    private String target_id;
+    private String tgt_id;
 
     /***
      * <pre>
-     *  before_data : 변경 전 데이터
+     *  bfr_data : 변경 전 데이터
      * </pre>
      */
-    private String before_data;
+    private String bfr_data;
 
     /***
      * <pre>
-     *  after_data : 변경 후 데이터
+     *  aft_data : 변경 후 데이터
      * </pre>
      */
-    private String after_data;
+    private String aft_data;
 
     /***
      * <pre>
-     *  ip_address : IPv4 또는 IPv6 주소
+     *  ip_addr : IPv4 또는 IPv6 주소
      * </pre>
      */
-    private String ip_address;
+    private String ip_addr;
 
     /***
      * <pre>
-     *  system_create_date : 로그 발생 일시
+     *  sys_crt_dt : 로그 발생 일시
      * </pre>
      */
-    private Date system_create_date;
+    private Date sys_crt_dt;
 
     /***
      * <pre>
@@ -133,58 +133,58 @@ public class SysEventLog extends Common {
 
     /***
      * <pre>
-     *  action_type : 작업 유형
+     *  act_type : 작업 유형
      * </pre>
      */
     @Transient
-    private String _action_type;
+    private String _act_type;
 
     /***
      * <pre>
-     *  target_table : 대상 테이블명
+     *  tgt_tbl : 대상 테이블명
      * </pre>
      */
     @Transient
-    private String _target_table;
+    private String _tgt_tbl;
 
     /***
      * <pre>
-     *  target_id : 대상 데이터의 PK
+     *  tgt_id : 대상 데이터의 PK
      * </pre>
      */
     @Transient
-    private String _target_id;
+    private String _tgt_id;
 
     /***
      * <pre>
-     *  before_data : 변경 전 데이터
+     *  bfr_data : 변경 전 데이터
      * </pre>
      */
     @Transient
-    private String _before_data;
+    private String _bfr_data;
 
     /***
      * <pre>
-     *  after_data : 변경 후 데이터
+     *  aft_data : 변경 후 데이터
      * </pre>
      */
     @Transient
-    private String _after_data;
+    private String _aft_data;
 
     /***
      * <pre>
-     *  ip_address : IPv4 또는 IPv6 주소
+     *  ip_addr : IPv4 또는 IPv6 주소
      * </pre>
      */
     @Transient
-    private String _ip_address;
+    private String _ip_addr;
 
     /***
      * <pre>
-     *  system_create_date : 로그 발생 일시
+     *  sys_crt_dt : 로그 발생 일시
      * </pre>
      */
     @Transient
-    private String _system_create_date;
+    private String _sys_crt_dt;
 
 }

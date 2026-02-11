@@ -56,14 +56,14 @@ public class SysMenuService extends AbstractCommonService<SysMenu> {
 
     public int removeMenuCode(SysMenu request) throws Exception {
         var containTopMenuCode = SysMenu.builder()
-                .top_menu_code(request.getMenu_code())
+                .top_menu_cd(request.getMenu_cd())
                 .build();
         var containMenuCode = SysMenu.builder()
-                .menu_code(request.getMenu_code())
-                .menu_sequence(request.getMenu_sequence())
+                .menu_cd(request.getMenu_cd())
+                .menu_seq(request.getMenu_seq())
                 .build();
         var containAccessRightGroupCode = SysAccsGroupMenu.builder()
-                .menu_code(request.getMenu_code())
+                .menu_cd(request.getMenu_cd())
                 .build();
         List<SysAccsGroupMenu> acList = sysAccsGroupMenuMapper.SELECT(containAccessRightGroupCode);
         List<SysMenu> list = sysMenuMapper.SELECT(containTopMenuCode);

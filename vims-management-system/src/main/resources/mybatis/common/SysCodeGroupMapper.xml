@@ -9,40 +9,40 @@
                 ${sort_id} ${sort_order}
             </when>
             <otherwise>
-                system_create_date DESC
+                sys_crt_dt DESC
             </otherwise>
         </choose>
     </sql>
 
     <select id="SELECT_PAGE" resultType="com.vims.common.codegroup.SysCodeGroup">
         SELECT
-            row_number() over (ORDER BY system_create_date DESC )AS no,
-            group_id, 
-            group_name, 
-            system_create_date, 
-            system_create_userid, 
-            system_update_date, 
-            system_update_userid, 
+            row_number() over (ORDER BY sys_crt_dt DESC )AS no,
+            grp_id, 
+            grp_nm, 
+            sys_crt_dt, 
+            sys_crt_usr_id, 
+            sys_upd_dt, 
+            sys_upd_usr_id, 
             use_yn, 
             comment 
-        FROM SYS_CODE_GROUP
+        FROM SYS_CD_GRP
         <where>
             
-            <if test="group_id != null and group_id != ''">AND group_id = #{group_id}</if>
-            <if test="group_name != null and group_name != ''">AND group_name = #{group_name}</if>
-            <if test="system_create_date != null">AND system_create_date = #{system_create_date}</if>
-            <if test="system_create_userid != null and system_create_userid != ''">AND system_create_userid = #{system_create_userid}</if>
-            <if test="system_update_date != null">AND system_update_date = #{system_update_date}</if>
-            <if test="system_update_userid != null and system_update_userid != ''">AND system_update_userid = #{system_update_userid}</if>
+            <if test="grp_id != null and grp_id != ''">AND grp_id = #{grp_id}</if>
+            <if test="grp_nm != null and grp_nm != ''">AND grp_nm = #{grp_nm}</if>
+            <if test="sys_crt_dt != null">AND sys_crt_dt = #{sys_crt_dt}</if>
+            <if test="sys_crt_usr_id != null and sys_crt_usr_id != ''">AND sys_crt_usr_id = #{sys_crt_usr_id}</if>
+            <if test="sys_upd_dt != null">AND sys_upd_dt = #{sys_upd_dt}</if>
+            <if test="sys_upd_usr_id != null and sys_upd_usr_id != ''">AND sys_upd_usr_id = #{sys_upd_usr_id}</if>
             <if test="use_yn != null and use_yn != ''">AND use_yn = #{use_yn}</if>
             <if test="comment != null and comment != ''">AND comment = #{comment}</if>
             
-            <if test="_group_id != null and _group_id != ''">AND group_id LIKE CONCAT('%', #{_group_id}, '%')</if>
-            <if test="_group_name != null and _group_name != ''">AND group_name LIKE CONCAT('%', #{_group_name}, '%')</if>
-            <if test="_system_create_date != null and _system_create_date != ''">AND system_create_date LIKE CONCAT('%', #{_system_create_date}, '%')</if>
-            <if test="_system_create_userid != null and _system_create_userid != ''">AND system_create_userid LIKE CONCAT('%', #{_system_create_userid}, '%')</if>
-            <if test="_system_update_date != null and _system_update_date != ''">AND system_update_date LIKE CONCAT('%', #{_system_update_date}, '%')</if>
-            <if test="_system_update_userid != null and _system_update_userid != ''">AND system_update_userid LIKE CONCAT('%', #{_system_update_userid}, '%')</if>
+            <if test="_grp_id != null and _grp_id != ''">AND grp_id LIKE CONCAT('%', #{_grp_id}, '%')</if>
+            <if test="_grp_nm != null and _grp_nm != ''">AND grp_nm LIKE CONCAT('%', #{_grp_nm}, '%')</if>
+            <if test="_sys_crt_dt != null and _sys_crt_dt != ''">AND sys_crt_dt LIKE CONCAT('%', #{_sys_crt_dt}, '%')</if>
+            <if test="_sys_crt_usr_id != null and _sys_crt_usr_id != ''">AND sys_crt_usr_id LIKE CONCAT('%', #{_sys_crt_usr_id}, '%')</if>
+            <if test="_sys_upd_dt != null and _sys_upd_dt != ''">AND sys_upd_dt LIKE CONCAT('%', #{_sys_upd_dt}, '%')</if>
+            <if test="_sys_upd_usr_id != null and _sys_upd_usr_id != ''">AND sys_upd_usr_id LIKE CONCAT('%', #{_sys_upd_usr_id}, '%')</if>
             <if test="_use_yn != null and _use_yn != ''">AND use_yn LIKE CONCAT('%', #{_use_yn}, '%')</if>
         </where>
         <include refid="sortFilter"/>
@@ -50,24 +50,24 @@
     </select>
 
     <select id="SELECT_PAGING_TOTAL_NUMBER" resultType="int">
-        SELECT CEIL(COUNT(*) / #{row_range}) FROM SYS_CODE_GROUP
+        SELECT CEIL(COUNT(*) / #{row_range}) FROM SYS_CD_GRP
         <where>
             
-            <if test="group_id != null and group_id != ''">AND group_id = #{group_id}</if>
-            <if test="group_name != null and group_name != ''">AND group_name = #{group_name}</if>
-            <if test="system_create_date != null">AND system_create_date = #{system_create_date}</if>
-            <if test="system_create_userid != null and system_create_userid != ''">AND system_create_userid = #{system_create_userid}</if>
-            <if test="system_update_date != null">AND system_update_date = #{system_update_date}</if>
-            <if test="system_update_userid != null and system_update_userid != ''">AND system_update_userid = #{system_update_userid}</if>
+            <if test="grp_id != null and grp_id != ''">AND grp_id = #{grp_id}</if>
+            <if test="grp_nm != null and grp_nm != ''">AND grp_nm = #{grp_nm}</if>
+            <if test="sys_crt_dt != null">AND sys_crt_dt = #{sys_crt_dt}</if>
+            <if test="sys_crt_usr_id != null and sys_crt_usr_id != ''">AND sys_crt_usr_id = #{sys_crt_usr_id}</if>
+            <if test="sys_upd_dt != null">AND sys_upd_dt = #{sys_upd_dt}</if>
+            <if test="sys_upd_usr_id != null and sys_upd_usr_id != ''">AND sys_upd_usr_id = #{sys_upd_usr_id}</if>
             <if test="use_yn != null and use_yn != ''">AND use_yn = #{use_yn}</if>
             <if test="comment != null and comment != ''">AND comment = #{comment}</if>
             
-            <if test="_group_id != null and _group_id != ''">AND group_id LIKE CONCAT('%', #{_group_id}, '%')</if>
-            <if test="_group_name != null and _group_name != ''">AND group_name LIKE CONCAT('%', #{_group_name}, '%')</if>
-            <if test="_system_create_date != null and _system_create_date != ''">AND system_create_date LIKE CONCAT('%', #{_system_create_date}, '%')</if>
-            <if test="_system_create_userid != null and _system_create_userid != ''">AND system_create_userid LIKE CONCAT('%', #{_system_create_userid}, '%')</if>
-            <if test="_system_update_date != null and _system_update_date != ''">AND system_update_date LIKE CONCAT('%', #{_system_update_date}, '%')</if>
-            <if test="_system_update_userid != null and _system_update_userid != ''">AND system_update_userid LIKE CONCAT('%', #{_system_update_userid}, '%')</if>
+            <if test="_grp_id != null and _grp_id != ''">AND grp_id LIKE CONCAT('%', #{_grp_id}, '%')</if>
+            <if test="_grp_nm != null and _grp_nm != ''">AND grp_nm LIKE CONCAT('%', #{_grp_nm}, '%')</if>
+            <if test="_sys_crt_dt != null and _sys_crt_dt != ''">AND sys_crt_dt LIKE CONCAT('%', #{_sys_crt_dt}, '%')</if>
+            <if test="_sys_crt_usr_id != null and _sys_crt_usr_id != ''">AND sys_crt_usr_id LIKE CONCAT('%', #{_sys_crt_usr_id}, '%')</if>
+            <if test="_sys_upd_dt != null and _sys_upd_dt != ''">AND sys_upd_dt LIKE CONCAT('%', #{_sys_upd_dt}, '%')</if>
+            <if test="_sys_upd_usr_id != null and _sys_upd_usr_id != ''">AND sys_upd_usr_id LIKE CONCAT('%', #{_sys_upd_usr_id}, '%')</if>
             <if test="_use_yn != null and _use_yn != ''">AND use_yn LIKE CONCAT('%', #{_use_yn}, '%')</if>
         </where>
     </select>
@@ -75,94 +75,94 @@
     <select id="SELECT" resultType="com.vims.common.codegroup.SysCodeGroup">
         SELECT
             
-            group_id,
-            group_name,
-            system_create_date,
-            system_create_userid,
-            system_update_date,
-            system_update_userid,
+            grp_id,
+            grp_nm,
+            sys_crt_dt,
+            sys_crt_usr_id,
+            sys_upd_dt,
+            sys_upd_usr_id,
             use_yn,
             comment
-        FROM SYS_CODE_GROUP
+        FROM SYS_CD_GRP
         <where>
             
-            <if test="group_id != null and group_id != ''">AND group_id = #{group_id}</if>
-            <if test="group_name != null and group_name != ''">AND group_name = #{group_name}</if>
-            <if test="system_create_date != null">AND system_create_date = #{system_create_date}</if>
-            <if test="system_create_userid != null and system_create_userid != ''">AND system_create_userid = #{system_create_userid}</if>
-            <if test="system_update_date != null">AND system_update_date = #{system_update_date}</if>
-            <if test="system_update_userid != null and system_update_userid != ''">AND system_update_userid = #{system_update_userid}</if>
+            <if test="grp_id != null and grp_id != ''">AND grp_id = #{grp_id}</if>
+            <if test="grp_nm != null and grp_nm != ''">AND grp_nm = #{grp_nm}</if>
+            <if test="sys_crt_dt != null">AND sys_crt_dt = #{sys_crt_dt}</if>
+            <if test="sys_crt_usr_id != null and sys_crt_usr_id != ''">AND sys_crt_usr_id = #{sys_crt_usr_id}</if>
+            <if test="sys_upd_dt != null">AND sys_upd_dt = #{sys_upd_dt}</if>
+            <if test="sys_upd_usr_id != null and sys_upd_usr_id != ''">AND sys_upd_usr_id = #{sys_upd_usr_id}</if>
             <if test="use_yn != null and use_yn != ''">AND use_yn = #{use_yn}</if>
             <if test="comment != null and comment != ''">AND comment = #{comment}</if>
             
-            <if test="_group_id != null and _group_id != ''">AND group_id LIKE CONCAT('%', #{_group_id}, '%')</if>
-            <if test="_group_name != null and _group_name != ''">AND group_name LIKE CONCAT('%', #{_group_name}, '%')</if>
-            <if test="_system_create_date != null and _system_create_date != ''">AND system_create_date LIKE CONCAT('%', #{_system_create_date}, '%')</if>
-            <if test="_system_create_userid != null and _system_create_userid != ''">AND system_create_userid LIKE CONCAT('%', #{_system_create_userid}, '%')</if>
-            <if test="_system_update_date != null and _system_update_date != ''">AND system_update_date LIKE CONCAT('%', #{_system_update_date}, '%')</if>
-            <if test="_system_update_userid != null and _system_update_userid != ''">AND system_update_userid LIKE CONCAT('%', #{_system_update_userid}, '%')</if>
+            <if test="_grp_id != null and _grp_id != ''">AND grp_id LIKE CONCAT('%', #{_grp_id}, '%')</if>
+            <if test="_grp_nm != null and _grp_nm != ''">AND grp_nm LIKE CONCAT('%', #{_grp_nm}, '%')</if>
+            <if test="_sys_crt_dt != null and _sys_crt_dt != ''">AND sys_crt_dt LIKE CONCAT('%', #{_sys_crt_dt}, '%')</if>
+            <if test="_sys_crt_usr_id != null and _sys_crt_usr_id != ''">AND sys_crt_usr_id LIKE CONCAT('%', #{_sys_crt_usr_id}, '%')</if>
+            <if test="_sys_upd_dt != null and _sys_upd_dt != ''">AND sys_upd_dt LIKE CONCAT('%', #{_sys_upd_dt}, '%')</if>
+            <if test="_sys_upd_usr_id != null and _sys_upd_usr_id != ''">AND sys_upd_usr_id LIKE CONCAT('%', #{_sys_upd_usr_id}, '%')</if>
             <if test="_use_yn != null and _use_yn != ''">AND use_yn LIKE CONCAT('%', #{_use_yn}, '%')</if>
         </where>
     </select>
 
     <insert id="INSERT">
-        INSERT INTO SYS_CODE_GROUP(
+        INSERT INTO SYS_CD_GRP(
             
-             group_id 
+             grp_id 
             
-            <if test="group_name != null">, group_name</if>
-            <if test="system_create_date != null">, system_create_date</if>
-            <if test="system_create_userid != null">, system_create_userid</if>
-            <if test="system_update_date != null">, system_update_date</if>
-            <if test="system_update_userid != null">, system_update_userid</if>
+            <if test="grp_nm != null">, grp_nm</if>
+            <if test="sys_crt_dt != null">, sys_crt_dt</if>
+            <if test="sys_crt_usr_id != null">, sys_crt_usr_id</if>
+            <if test="sys_upd_dt != null">, sys_upd_dt</if>
+            <if test="sys_upd_usr_id != null">, sys_upd_usr_id</if>
             <if test="use_yn != null">, use_yn</if>
             <if test="comment != null">, comment</if>
         )
         VALUES(
             
-             #{group_id}
+             #{grp_id}
             
-            <if test="group_name != null">, #{group_name}</if>
-            <if test="system_create_date != null">, #{system_create_date}</if>
-            <if test="system_create_userid != null">, #{system_create_userid}</if>
-            <if test="system_update_date != null">, #{system_update_date}</if>
-            <if test="system_update_userid != null">, #{system_update_userid}</if>
+            <if test="grp_nm != null">, #{grp_nm}</if>
+            <if test="sys_crt_dt != null">, #{sys_crt_dt}</if>
+            <if test="sys_crt_usr_id != null">, #{sys_crt_usr_id}</if>
+            <if test="sys_upd_dt != null">, #{sys_upd_dt}</if>
+            <if test="sys_upd_usr_id != null">, #{sys_upd_usr_id}</if>
             <if test="use_yn != null">, #{use_yn}</if>
             <if test="comment != null">, #{comment}</if>
         )
     </insert>
 
     <delete id="DELETE">
-        DELETE FROM SYS_CODE_GROUP
+        DELETE FROM SYS_CD_GRP
         <where>
             
-            AND group_id = #{group_id}
+            AND grp_id = #{grp_id}
             
-            <if test="group_name != null">AND group_name = #{group_name}</if>
-            <if test="system_create_date != null">AND system_create_date = #{system_create_date}</if>
-            <if test="system_create_userid != null">AND system_create_userid = #{system_create_userid}</if>
-            <if test="system_update_date != null">AND system_update_date = #{system_update_date}</if>
-            <if test="system_update_userid != null">AND system_update_userid = #{system_update_userid}</if>
+            <if test="grp_nm != null">AND grp_nm = #{grp_nm}</if>
+            <if test="sys_crt_dt != null">AND sys_crt_dt = #{sys_crt_dt}</if>
+            <if test="sys_crt_usr_id != null">AND sys_crt_usr_id = #{sys_crt_usr_id}</if>
+            <if test="sys_upd_dt != null">AND sys_upd_dt = #{sys_upd_dt}</if>
+            <if test="sys_upd_usr_id != null">AND sys_upd_usr_id = #{sys_upd_usr_id}</if>
             <if test="use_yn != null">AND use_yn = #{use_yn}</if>
             <if test="comment != null">AND comment = #{comment}</if>
         </where>
     </delete>
 
     <update id="UPDATE">
-        UPDATE SYS_CODE_GROUP
+        UPDATE SYS_CD_GRP
         <set>
             
-            <if test="group_name != null">,group_name = #{group_name}</if>
-            <if test="system_create_date != null">,system_create_date = #{system_create_date}</if>
-            <if test="system_create_userid != null">,system_create_userid = #{system_create_userid}</if>
-            <if test="system_update_date != null">,system_update_date = #{system_update_date}</if>
-            <if test="system_update_userid != null">,system_update_userid = #{system_update_userid}</if>
+            <if test="grp_nm != null">,grp_nm = #{grp_nm}</if>
+            <if test="sys_crt_dt != null">,sys_crt_dt = #{sys_crt_dt}</if>
+            <if test="sys_crt_usr_id != null">,sys_crt_usr_id = #{sys_crt_usr_id}</if>
+            <if test="sys_upd_dt != null">,sys_upd_dt = #{sys_upd_dt}</if>
+            <if test="sys_upd_usr_id != null">,sys_upd_usr_id = #{sys_upd_usr_id}</if>
             <if test="use_yn != null">,use_yn = #{use_yn}</if>
             <if test="comment != null">,comment = #{comment}</if>
         </set>
         <where>
             
-            AND group_id = #{group_id}
+            AND grp_id = #{grp_id}
         </where>
     </update>
 </mapper>

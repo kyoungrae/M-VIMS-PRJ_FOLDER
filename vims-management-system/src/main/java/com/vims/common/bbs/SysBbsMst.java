@@ -45,31 +45,31 @@ public class SysBbsMst extends Common {
 
     /***
      * <pre>
-     *  system_create_userid : 시스템 작성자ID
+     *  sys_crt_usr_id : 시스템 작성자ID
      * </pre>
      */
-    private String system_create_userid;
+    private String sys_crt_usr_id;
 
     /***
      * <pre>
-     *  system_create_date : 시스템 등록 일시
+     *  sys_crt_dt : 시스템 등록 일시
      * </pre>
      */
-    private Date system_create_date;
+    private Date sys_crt_dt;
 
     /***
      * <pre>
-     *  system_update_userid : 시스템 수정자ID
+     *  sys_upd_usr_id : 시스템 수정자ID
      * </pre>
      */
-    private String system_update_userid;
+    private String sys_upd_usr_id;
 
     /***
      * <pre>
-     *  system_update_date : 시스템 수정 일시
+     *  sys_upd_dt : 시스템 수정 일시
      * </pre>
      */
-    private Date system_update_date;
+    private Date sys_upd_dt;
 
     /***
      * <pre>
@@ -97,34 +97,34 @@ public class SysBbsMst extends Common {
 
     /***
      * <pre>
-     *  system_create_userid : 시스템 작성자ID
+     *  sys_crt_usr_id : 시스템 작성자ID
      * </pre>
      */
     @Transient
-    private String _system_create_userid;
+    private String _sys_crt_usr_id;
 
     /***
      * <pre>
-     *  system_create_date : 시스템 등록 일시
+     *  sys_crt_dt : 시스템 등록 일시
      * </pre>
      */
     @Transient
-    private Date _system_create_date;
+    private Date _sys_crt_dt;
 
     /***
      * <pre>
-     *  system_update_userid : 시스템 수정자ID
+     *  sys_upd_usr_id : 시스템 수정자ID
      * </pre>
      */
     @Transient
-    private String _system_update_userid;
+    private String _sys_upd_usr_id;
 
     /***
      * <pre>
-     *  system_update_date : 시스템 수정 일시
+     *  sys_upd_dt : 시스템 수정 일시
      * </pre>
      */
     @Transient
-    private Date _system_update_date;
+    private Date _sys_upd_dt;
 
 }

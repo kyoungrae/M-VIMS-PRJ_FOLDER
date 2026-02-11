@@ -41,7 +41,7 @@ public class SysUser extends Common {
      *  password : 비밀번호
      * </pre>
      */
-    private String password;
+    private String pwd;
 
     /***
      * <pre>
@@ -59,45 +59,45 @@ public class SysUser extends Common {
 
     /***
      * <pre>
-     *  office_code : 소속코드
+     *  offc_cd : 소속코드
      * </pre>
      */
-    private String office_code;
+    private String offc_cd;
 
     /***
      * <pre>
-     *  system_create_userid : 작성자ID
+     *  sys_crt_usr_id : 작성자ID
      * </pre>
      */
-    private String system_create_userid;
+    private String sys_crt_usr_id;
 
     /***
      * <pre>
-     *  system_create_date : 작성일자
+     *  sys_crt_dt : 작성일자
      * </pre>
      */
-    private Date system_create_date;
+    private Date sys_crt_dt;
 
     /***
      * <pre>
-     *  system_update_userid : 수정자ID
+     *  sys_upd_usr_id : 수정자ID
      * </pre>
      */
-    private String system_update_userid;
+    private String sys_upd_usr_id;
 
     /***
      * <pre>
-     *  system_update_date : 수정일자
+     *  sys_upd_dt : 수정일자
      * </pre>
      */
-    private Date system_update_date;
+    private Date sys_upd_dt;
 
     /***
      * <pre>
-     *  user_name : 사용자이름
+     *  user_nm : 사용자이름
      * </pre>
      */
-    private String user_name;
+    private String user_nm;
 
     /***
      * <pre>
@@ -111,21 +111,21 @@ public class SysUser extends Common {
      *  address : 주소
      * </pre>
      */
-    private String address;
+    private String addr;
 
     /***
      * <pre>
-     *  address_detail : 주소상세
+     *  addr_dtl : 주소상세
      * </pre>
      */
-    private String address_detail;
+    private String addr_dtl;
 
     /***
      * <pre>
-     *  postal_code : 우편번호
+     *  post_cd : 우편번호
      * </pre>
      */
-    private String postal_code;
+    private String post_cd;
 
     /***
      * <pre>
@@ -135,13 +135,13 @@ public class SysUser extends Common {
     private String uuid;
     /***
      * <pre>
-     *  before_password : 기존비밀번호
+     *  before_pwd : 기존비밀번호
      * </pre>
      */
-    private String before_password;
+    private String before_pwd;
     /***
      * <pre>
-     *  before_password : 비밀번호 확인
+     *  before_pwd : 비밀번호 확인
      * </pre>
      */
     @Transient
@@ -149,11 +149,11 @@ public class SysUser extends Common {
 
     /***
      * <pre>
-     *  office_name : 소속명
+     *  offc_nm : 소속명
      * </pre>
      */
     @Transient
-    private String office_name;
+    private String offc_nm;
 
     /***
      * <pre>
@@ -177,7 +177,7 @@ public class SysUser extends Common {
      * </pre>
      */
     @Transient
-    private String _password;
+    private String _pwd;
 
     /***
      * <pre>
@@ -197,51 +197,51 @@ public class SysUser extends Common {
 
     /***
      * <pre>
-     *  office_code : 소속코드
+     *  offc_cd : 소속코드
      * </pre>
      */
     @Transient
-    private String _office_code;
+    private String _offc_cd;
 
     /***
      * <pre>
-     *  system_create_userid : 작성자ID
+     *  sys_crt_usr_id : 작성자ID
      * </pre>
      */
     @Transient
-    private String _system_create_userid;
+    private String _sys_crt_usr_id;
 
     /***
      * <pre>
-     *  system_create_date : 작성일자
+     *  sys_crt_dt : 작성일자
      * </pre>
      */
     @Transient
-    private String _system_create_date;
+    private String _sys_crt_dt;
 
     /***
      * <pre>
-     *  system_update_userid : 수정자ID
+     *  sys_upd_usr_id : 수정자ID
      * </pre>
      */
     @Transient
-    private String _system_update_userid;
+    private String _sys_upd_usr_id;
 
     /***
      * <pre>
-     *  system_update_date : 수정일자
+     *  sys_upd_dt : 수정일자
      * </pre>
      */
     @Transient
-    private String _system_update_date;
+    private String _sys_upd_dt;
 
     /***
      * <pre>
-     *  user_name : 사용자이름
+     *  user_nm : 사용자이름
      * </pre>
      */
     @Transient
-    private String _user_name;
+    private String _user_nm;
 
     /***
      * <pre>
@@ -257,23 +257,23 @@ public class SysUser extends Common {
      * </pre>
      */
     @Transient
-    private String _address;
+    private String _addr;
 
     /***
      * <pre>
-     *  address_detail : 주소상세
+     *  addr_dtl : 주소상세
      * </pre>
      */
     @Transient
-    private String _address_detail;
+    private String _addr_dtl;
 
     /***
      * <pre>
-     *  postal_code : 우편번호
+     *  post_cd : 우편번호
      * </pre>
      */
     @Transient
-    private String _postal_code;
+    private String _post_cd;
 
     /***
      * <pre>

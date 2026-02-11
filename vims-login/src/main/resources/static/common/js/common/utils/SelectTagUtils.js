@@ -105,7 +105,7 @@ CommonTag.prototype.selectTagReset = function (select) {
 /**
  * @title : 공통 코드 기반 Select Box 생성
  * @see : input[gi-selectbox]
- * @text : input[gi-selectbox]의 data-selectbox-field 속성을 가져와 SYS_CODE의 GROUP_ID와 매칭시켜 selectbox를 반환
+ * @text : input[gi-selectbox]의 data-selectbox-field 속성을 가져와 SYS_CODE의 GRP_ID와 매칭시켜 selectbox를 반환
  * @writer : 진은영
  */
 class GiSelectBox {
@@ -145,7 +145,7 @@ class GiSelectBox {
 
             let url = '/cms/common/sysCode/findSysCode';
             let param = {
-                group_id: fieldValue,
+                grp_id: fieldValue,
                 use_yn: '1'
             };
 
@@ -161,7 +161,7 @@ class GiSelectBox {
 
                 data.forEach(item => {
                     let liElementOption = $('<li></li>');
-                    liElementOption.html(`<button type="button" value="${item.code_id}" class="gi-overflow-scroll">${item.code_name}</button>`);
+                    liElementOption.html(`<button type="button" value="${item.cd_id}" class="gi-overflow-scroll">${item.cd_nm}</button>`);
                     ulElement.append(liElementOption);
                 });
 
@@ -416,7 +416,7 @@ class GiSelectBoxCustom {
             // 데이터 세트를 기반으로 옵션 추가
             options.forEach(item => {
                 let liElementOption = $('<li></li>');
-                liElementOption.html(`<button type="button" value="${item.code_id}" class="gi-overflow-scroll">${item.code_name}</button>`);
+                liElementOption.html(`<button type="button" value="${item.cd_id}" class="gi-overflow-scroll">${item.cd_nm}</button>`);
                 ulElement.append(liElementOption);
             });
 
@@ -554,7 +554,7 @@ class GiSelectBoxCustom {
         const $dropdown = $customInput.next('ul.slide-drop-down');
 
         const optionElement = $('<li></li>');
-        optionElement.html(`<button type="button" value="${option.code_id}" class="gi-overflow-scroll">${option.code_name}</button>`);
+        optionElement.html(`<button type="button" value="${option.cd_id}" class="gi-overflow-scroll">${option.cd_nm}</button>`);
         $dropdown.append(optionElement);
     }
 
@@ -578,7 +578,7 @@ class GiSelectBoxCustom {
         // 새 옵션 추가
         options.forEach(option => {
             const optionElement = $('<li></li>');
-            optionElement.html(`<button type="button" value="${option.code_id}" class="gi-overflow-scroll">${option.code_name}</button>`);
+            optionElement.html(`<button type="button" value="${option.cd_id}" class="gi-overflow-scroll">${option.cd_nm}</button>`);
             $dropdown.append(optionElement);
         });
 

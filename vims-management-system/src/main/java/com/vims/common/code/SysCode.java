@@ -24,37 +24,37 @@ import java.util.Date;
 @ToString(callSuper = true)
 public class SysCode extends Common {
     @Transient
-    private String keys = Arrays.toString(new String[] { "code_id", "group_id" });
+    private String keys = Arrays.toString(new String[] { "cd_id", "grp_id" });
 
     @Id
 
     /***
      * <pre>
-     *  code_id : 코드ID
+     *  cd_id : 코드ID
      * </pre>
      */
-    private String code_id;
+    private String cd_id;
 
     /***
      * <pre>
-     *  group_id : 그룹ID
+     *  grp_id : 그룹ID
      * </pre>
      */
-    private String group_id;
+    private String grp_id;
 
     /***
      * <pre>
-     *  code_name : 그룹명
+     *  cd_nm : 그룹명
      * </pre>
      */
-    private String code_name;
+    private String cd_nm;
 
     /***
      * <pre>
-     *  code_number : 노출순서
+     *  cd_no : 노출순서
      * </pre>
      */
-    private String code_number;
+    private String cd_no;
 
     /***
      * <pre>
@@ -65,35 +65,35 @@ public class SysCode extends Common {
 
     /***
      * <pre>
-     *  code_id : 코드ID
+     *  cd_id : 코드ID
      * </pre>
      */
     @Transient
-    private String _code_id;
+    private String _cd_id;
 
     /***
      * <pre>
-     *  group_id : 그룹ID
+     *  grp_id : 그룹ID
      * </pre>
      */
     @Transient
-    private String _group_id;
+    private String _grp_id;
 
     /***
      * <pre>
-     *  code_name : 그룹명
+     *  cd_nm : 그룹명
      * </pre>
      */
     @Transient
-    private String _code_name;
+    private String _cd_nm;
 
     /***
      * <pre>
-     *  code_number : 노출순서
+     *  cd_no : 노출순서
      * </pre>
      */
     @Transient
-    private String _code_number;
+    private String _cd_no;
 
     /***
      * <pre>
@@ -104,43 +104,43 @@ public class SysCode extends Common {
     private String _use_yn;
 
     @Transient
-    private Date system_create_date;
+    private Date sys_crt_dt;
     @Transient
-    private String system_create_userid;
+    private String sys_crt_usr_id;
     @Transient
-    private Date system_update_date;
+    private Date sys_upd_dt;
     @Transient
-    private String system_update_userid;
+    private String sys_upd_usr_id;
 
     /***
      * <pre>
-     *  system_create_date : 작성일자
+     *  sys_crt_dt : 작성일자
      * </pre>
      */
     @Transient
-    private java.sql.Date _system_create_date;
+    private java.sql.Date _sys_crt_dt;
 
     /***
      * <pre>
-     *  system_create_userid : 작성자ID
+     *  sys_crt_usr_id : 작성자ID
      * </pre>
      */
     @Transient
-    private String _system_create_userid;
+    private String _sys_crt_usr_id;
 
     /***
      * <pre>
-     *  system_update_date : 수정일자
+     *  sys_upd_dt : 수정일자
      * </pre>
      */
     @Transient
-    private java.sql.Date _system_update_date;
+    private java.sql.Date _sys_upd_dt;
 
     /***
      * <pre>
-     *  system_update_userid : 수정자ID
+     *  sys_upd_usr_id : 수정자ID
      * </pre>
      */
     @Transient
-    private String _system_update_userid;
+    private String _sys_upd_usr_id;
 }

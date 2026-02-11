@@ -9,7 +9,7 @@
                 ${sort_id} ${sort_order}
             </when>
             <otherwise>
-                system_create_date DESC
+                sys_crt_dt DESC
             </otherwise>
         </choose>
     </sql>
@@ -17,21 +17,21 @@
     <select id="SELECT_PAGE" resultType="com.vims.common.bbs.SysBbsBoard">
         SELECT * FROM (
             SELECT
-                row_number() over (ORDER BY system_create_date DESC ) AS no,
+                row_number() over (ORDER BY sys_crt_dt DESC ) AS no,
                 board_id,
                 bbs_id,
                 title,
                 content,
-                writer_name,
-                hit_count,
+                wrtr_nm,
+                hit_cnt,
                 file_uuid,
-                thumbnail,
-                (SELECT COUNT(*) FROM SYS_BBS_REPLY WHERE SYS_BBS_REPLY.board_id = SYS_BBS_BOARD.board_id) AS reply_count,
-                system_create_userid,
-                system_create_date,
-                system_update_userid,
-                system_update_date
-            FROM SYS_BBS_BOARD
+                thmbnl,
+                (SELECT COUNT(*) FROM SYS_BBS_RPLY WHERE SYS_BBS_RPLY.board_id = SYS_BBS_BRD.board_id) AS reply_count,
+                sys_crt_usr_id,
+                sys_crt_dt,
+                sys_upd_usr_id,
+                sys_upd_dt
+            FROM SYS_BBS_BRD
             <where>
                 <if test="bbs_id != null and bbs_id != ''">AND bbs_id = #{bbs_id}</if>
                 <if test="board_id != null and board_id != ''">AND board_id = #{board_id}</if>
@@ -43,7 +43,7 @@
     </select>
 
     <select id="SELECT_PAGING_TOTAL_NUMBER" resultType="int">
-        SELECT CEIL(COUNT(*) / #{row_range}) FROM SYS_BBS_BOARD
+        SELECT CEIL(COUNT(*) / #{row_range}) FROM SYS_BBS_BRD
         <where>
             <if test="bbs_id != null and bbs_id != ''">AND bbs_id = #{bbs_id}</if>
             <if test="_title != null and _title != ''">AND title LIKE CONCAT('%', #{_title}, '%')</if>
@@ -51,7 +51,7 @@
     </select>
 
     <select id="SELECT_TOTAL_COUNT" resultType="int">
-        SELECT COUNT(*) FROM SYS_BBS_BOARD
+        SELECT COUNT(*) FROM SYS_BBS_BRD
         <where>
             <if test="bbs_id != null and bbs_id != ''">AND bbs_id = #{bbs_id}</if>
             <if test="_title != null and _title != ''">AND title LIKE CONCAT('%', #{_title}, '%')</if>
@@ -60,9 +60,9 @@
 
     <select id="SELECT" resultType="com.vims.common.bbs.SysBbsBoard">
         SELECT
-            board_id, bbs_id, title, content, writer_name, hit_count, file_uuid, thumbnail,
-            system_create_userid, system_create_date, system_update_userid, system_update_date
-        FROM SYS_BBS_BOARD
+            board_id, bbs_id, title, content, wrtr_nm, hit_cnt, file_uuid, thmbnl,
+            sys_crt_usr_id, sys_crt_dt, sys_upd_usr_id, sys_upd_dt
+        FROM SYS_BBS_BRD
         <where>
             <if test="board_id != null and board_id != ''">AND board_id = #{board_id}</if>
             <if test="bbs_id != null and bbs_id != ''">AND bbs_id = #{bbs_id}</if>
@@ -70,40 +70,40 @@
     </select>
 
     <insert id="INSERT">
-        INSERT INTO SYS_BBS_BOARD(
-            board_id, bbs_id, title, content, writer_name, hit_count, file_uuid, thumbnail,
-            system_create_userid, system_create_date, system_update_userid, system_update_date
+        INSERT INTO SYS_BBS_BRD(
+            board_id, bbs_id, title, content, wrtr_nm, hit_cnt, file_uuid, thmbnl,
+            sys_crt_usr_id, sys_crt_dt, sys_upd_usr_id, sys_upd_dt
         )
         VALUES(
-            #{board_id}, #{bbs_id}, #{title}, #{content}, #{writer_name}, 0, #{file_uuid}, #{thumbnail},
-            #{system_create_userid}, NOW(), #{system_update_userid}, NOW()
+            #{board_id}, #{bbs_id}, #{title}, #{content}, #{wrtr_nm}, 0, #{file_uuid}, #{thmbnl},
+            #{sys_crt_usr_id}, NOW(), #{sys_upd_usr_id}, NOW()
         )
     </insert>
 
     <update id="UPDATE">
-        UPDATE SYS_BBS_BOARD
+        UPDATE SYS_BBS_BRD
         <set>
             <if test="title != null">title = #{title},</if>
             <if test="content != null">content = #{content},</if>
-            <if test="writer_name != null">writer_name = #{writer_name},</if>
-            <if test="hit_count != 0">hit_count = #{hit_count},</if>
+            <if test="wrtr_nm != null">wrtr_nm = #{wrtr_nm},</if>
+            <if test="hit_cnt != 0">hit_cnt = #{hit_cnt},</if>
             <if test="file_uuid != null">file_uuid = #{file_uuid},</if>
-            <if test="thumbnail != null">thumbnail = #{thumbnail},</if>
-            system_update_userid = #{system_update_userid},
-            system_update_date = NOW()
+            <if test="thmbnl != null">thmbnl = #{thmbnl},</if>
+            sys_upd_usr_id = #{sys_upd_usr_id},
+            sys_upd_dt = NOW()
         </set>
         <where>
             AND board_id = #{board_id}
         </where>
     </update>
 
-    <update id="INCREMENT_HIT_COUNT">
-        UPDATE SYS_BBS_BOARD
-        SET hit_count = hit_count + 1
+    <update id="INCREMENT_HIT_CNT">
+        UPDATE SYS_BBS_BRD
+        SET hit_cnt = hit_cnt + 1
         WHERE board_id = #{board_id}
     </update>
 
     <delete id="DELETE">
-        DELETE FROM SYS_BBS_BOARD WHERE board_id = #{board_id}
+        DELETE FROM SYS_BBS_BRD WHERE board_id = #{board_id}
     </delete>
 </mapper>

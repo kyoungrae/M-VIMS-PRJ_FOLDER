@@ -15,10 +15,7 @@ import com.vims.common.usergroup.SysUserGroup;
 import com.vims.common.usergroup.SysUserGroupService;
 import com.vims.fmsClient.ExcelDataResponse;
 import com.vims.fmsClient.FmsExcelClient;
-import com.system.auth.domain.Token;
-import com.system.auth.domain.TokenType;
-import com.system.auth.mapper.SequenceMapper;
-import com.system.auth.token.TokenMapper;
+
 import com.system.auth.token.TokenService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.cache.annotation.Cacheable;
@@ -27,10 +24,8 @@ import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.multipart.MultipartFile;
 
-import com.system.auth.authuser.Role;
+import org.springframework.web.multipart.MultipartFile;
 
 import org.springframework.beans.factory.annotation.Value;
 
@@ -117,28 +112,28 @@ public class SysUserService extends AbstractCommonService<SysUser> {
     @Override
     protected int updateImpl(SysUser request) throws Exception {
         ValidationService validationService = new ValidationService();
-        boolean isPasswordProvided = validationService.checkEmptyValue(request.getPassword());
+        boolean isPasswordProvided = validationService.checkEmptyValue(request.getPwd());
         try {
             if (isPasswordProvided) {
                 // 1. 비밀번호 확인 체크
-                if (!request.getPassword().equals(request.getPassword_confirm())) {
-                    throw new CustomException(getMessage("EXCEPTION.PASSWORD.CONFIRM_NOT_MATCH"));
+                if (!request.getPwd().equals(request.getPassword_confirm())) {
+                    throw new CustomException(getMessage("EXCEPTION.PWD.CONFIRM_NOT_MATCH"));
                 }
 
                 // 2. 기존 비밀번호와 동일한지 체크 (raw 패스워드와 비교)
                 SysUser existingUser = sysUserMapper.SELECT(SysUser.builder().id(request.getId()).build()).get(0);
-                if (passwordEncoder.matches(request.getPassword(), existingUser.getPassword())) {
-                    throw new CustomException(getMessage("EXCEPTION.PASSWORD.SAME_AS_OLD"));
+                if (passwordEncoder.matches(request.getPwd(), existingUser.getPwd())) {
+                    throw new CustomException(getMessage("EXCEPTION.PWD.SAME_AS_OLD"));
                 }
 
                 // 3. 비밀번호 정책 확인
-                validationPasswordPolicy(request.getPassword());
+                validationPasswordPolicy(request.getPwd());
 
                 // 4. 비밀번호 암호화
-                request.setPassword(passwordEncoder.encode(request.getPassword()));
+                request.setPwd(passwordEncoder.encode(request.getPwd()));
             } else {
                 // 비밀번호가 입력되지 않은 경우 기존 비밀번호를 유지
-                request.setPassword(null);
+                request.setPwd(null);
             }
             return sysUserMapper.UPDATE(request);
         } catch (Exception e) {
@@ -150,10 +145,10 @@ public class SysUserService extends AbstractCommonService<SysUser> {
     protected int updatePasswordImpl(SysUser request) throws Exception {
         try {
             String pw = "1234";
-            var pwParam = SysUser.builder().id(request.getId()).password(passwordEncoder.encode(pw)).build();
+            var pwParam = SysUser.builder().id(request.getId()).pwd(passwordEncoder.encode(pw)).build();
             return sysUserMapper.UPDATE(pwParam);
         } catch (Exception e) {
-            throw new CustomException(getMessage("EXCEPTION.PASSWORD.RESET"));
+            throw new CustomException(getMessage("EXCEPTION.PWD.RESET"));
         }
     }
 
@@ -161,14 +156,14 @@ public class SysUserService extends AbstractCommonService<SysUser> {
     @Override
     protected int registerImpl(SysUser request) throws Exception {
         // 비밀번호 확인
-        if (!request.getPassword().equals(request.getPassword_confirm())) {
-            throw new CustomException(getMessage("EXCEPTION.PASSWORD.CONFIRM_NOT_MATCH"));
+        if (!request.getPwd().equals(request.getPassword_confirm())) {
+            throw new CustomException(getMessage("EXCEPTION.PWD.CONFIRM_NOT_MATCH"));
         }
         // 비밀번호 정책 확인
-        validationPasswordPolicy(request.getPassword());
+        validationPasswordPolicy(request.getPwd());
 
         // 비밀번호 암호화
-        request.setPassword(passwordEncoder.encode(request.getPassword()));
+        request.setPwd(passwordEncoder.encode(request.getPwd()));
 
         try {
             int result = sysUserMapper.INSERT(request);
@@ -191,13 +186,13 @@ public class SysUserService extends AbstractCommonService<SysUser> {
         }
 
         if (!matchToPassword(request)) {
-            throw new CustomException(getMessage("EXCEPTION.PASSWORD.NOT_MATCH"));
+            throw new CustomException(getMessage("EXCEPTION.PWD.NOT_MATCH"));
         }
-        validationPasswordPolicy(request.getPassword());
+        validationPasswordPolicy(request.getPwd());
 
         var user = SysUser.builder()
                 .id(users.get(0).getId())
-                .password(passwordEncoder.encode(request.getPassword()))
+                .pwd(passwordEncoder.encode(request.getPwd()))
                 .build();
         return sysUserMapper.UPDATE(user);
     }
@@ -209,7 +204,7 @@ public class SysUserService extends AbstractCommonService<SysUser> {
     @Cacheable(value = "passwordPolicy", unless = "#result == null")
     private PasswordPolicy getPasswordPolicyFromConfig() throws Exception {
         var sysSiteConfig = SysSiteConfig.builder()
-                .config_group_id("PASSWORD_POLICY")
+                .cfg_grp_id("PWD_POLICY")
                 .use_yn("1")
                 .build();
         List<SysSiteConfig> configList = sysSiteConfigService.findImpl(sysSiteConfig);
@@ -228,8 +223,8 @@ public class SysUserService extends AbstractCommonService<SysUser> {
         }
 
         for (SysSiteConfig config : configList) {
-            String key = config.getConfig_key();
-            String value = config.getConfig_value();
+            String key = config.getCfg_key();
+            String value = config.getCfg_val();
 
             switch (key) {
                 case "MAX_LENGTH":
@@ -276,7 +271,7 @@ public class SysUserService extends AbstractCommonService<SysUser> {
             throw e;
         } catch (Exception e) {
             e.printStackTrace();
-            throw new CustomException(getMessage("EXCEPTION.PASSWORD.POLICY.LOAD_FAILED"));
+            throw new CustomException(getMessage("EXCEPTION.PWD.POLICY.LOAD_FAILED"));
         }
     }
 
@@ -285,8 +280,8 @@ public class SysUserService extends AbstractCommonService<SysUser> {
                 .email(request.getEmail())
                 .build();
         List<SysUser> userList = sysUserMapper.SELECT(sysUser);
-        String before_password_encoded = userList.get(0).getPassword();
-        return passwordEncoder.matches(request.getBefore_password(), before_password_encoded);
+        String before_pwd_encoded = userList.get(0).getPwd();
+        return passwordEncoder.matches(request.getBefore_pwd(), before_pwd_encoded);
     }
 
     @Override

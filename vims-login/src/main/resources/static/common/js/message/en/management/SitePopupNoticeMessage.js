@@ -21,10 +21,10 @@ Message.Label.Array["SITE_POPUP_NOTICE.CHECK.TOP"] = "Please enter vertical posi
 Message.Label.Array["SITE_POPUP_NOTICE.CHECK.WIDTH"] = "Please enter width";
 Message.Label.Array["SITE_POPUP_NOTICE.CHECK.HEIGHT"] = "Please enter height";
 Message.Label.Array["SITE_POPUP_NOTICE.CHECK.USE_YN"] = "Please enter usage status";
-Message.Label.Array["SITE_POPUP_NOTICE.CHECK.SYSTEM_CREATE_DATE"] = "Please enter creation date";
-Message.Label.Array["SITE_POPUP_NOTICE.CHECK.SYSTEM_CREATE_USERID"] = "Please enter creator ID";
-Message.Label.Array["SITE_POPUP_NOTICE.CHECK.SYSTEM_UPDATE_DATE"] = "Please enter modification date";
-Message.Label.Array["SITE_POPUP_NOTICE.CHECK.SYSTEM_UPDATE_USERID"] = "Please enter modifier ID";
+Message.Label.Array["SITE_POPUP_NOTICE.CHECK.SYS_CRT_DT"] = "Please enter creation date";
+Message.Label.Array["SITE_POPUP_NOTICE.CHECK.SYS_CRT_USR_ID"] = "Please enter creator ID";
+Message.Label.Array["SITE_POPUP_NOTICE.CHECK.SYS_UPD_DT"] = "Please enter modification date";
+Message.Label.Array["SITE_POPUP_NOTICE.CHECK.SYS_UPD_USR_ID"] = "Please enter modifier ID";
 
 
 Message.Label.Array["SITE_POPUP_NOTICE.NOTICE_ID"] = "Group ID";
@@ -39,7 +39,7 @@ Message.Label.Array["SITE_POPUP_NOTICE.TOP"] = "Vertical Position";
 Message.Label.Array["SITE_POPUP_NOTICE.WIDTH"] = "Width";
 Message.Label.Array["SITE_POPUP_NOTICE.HEIGHT"] = "Height";
 Message.Label.Array["SITE_POPUP_NOTICE.USE_YN"] = "Usage Status";
-Message.Label.Array["SITE_POPUP_NOTICE.SYSTEM_CREATE_DATE"] = "Creation Date";
-Message.Label.Array["SITE_POPUP_NOTICE.SYSTEM_CREATE_USERID"] = "Creator ID";
-Message.Label.Array["SITE_POPUP_NOTICE.SYSTEM_UPDATE_DATE"] = "Modification Date";
-Message.Label.Array["SITE_POPUP_NOTICE.SYSTEM_UPDATE_USERID"] = "Modifier ID";
+Message.Label.Array["SITE_POPUP_NOTICE.SYS_CRT_DT"] = "Creation Date";
+Message.Label.Array["SITE_POPUP_NOTICE.SYS_CRT_USR_ID"] = "Creator ID";
+Message.Label.Array["SITE_POPUP_NOTICE.SYS_UPD_DT"] = "Modification Date";
+Message.Label.Array["SITE_POPUP_NOTICE.SYS_UPD_USR_ID"] = "Modifier ID";

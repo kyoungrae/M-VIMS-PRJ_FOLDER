@@ -4,21 +4,21 @@
 
             <!-- 페이지 헤더 -->
             <header class="gi-margin-bottom-40px">
-                <h1 class="gi-font-size-36px gi-title-main">[Page.Message].Message.Label.Array["SYS_BBS_BOARD.TITLE_REGISTER"]</h1>
-                <p class="gi-subtitle-main">[Page.Message].Message.Label.Array["SYS_BBS_BOARD.SUB_TITLE_REGISTER"]</p>
+                <h1 class="gi-font-size-36px gi-title-main">[Page.Message].Message.Label.Array["SYS_BBS_BRD.TITLE_REGISTER"]</h1>
+                <p class="gi-subtitle-main">[Page.Message].Message.Label.Array["SYS_BBS_BRD.SUB_TITLE_REGISTER"]</p>
             </header>
 
             <form id="sysBbsBoardRegisterFrom">
 
                 <!-- [기본 정보 카드] -->
                 <div class="gi-article-content gi-margin-bottom-30px">
-                    <h2 class="gi-title-section">[Page.Message].Message.Label.Array["SYS_BBS_BOARD.INFO"]</h2>
+                    <h2 class="gi-title-section">[Page.Message].Message.Label.Array["SYS_BBS_BRD.INFO"]</h2>
                     <div class="gi-flex gi-flex-column gi-grid-gap-20px">
 
                         <div class="gi-flex gi-grid-gap-20px">
                             <div class="gi-input-container gi-flex-1">
                                 <label for="board_id" class="gi-input-label" data-focus-label="true"
-                                    data-required="true">[Page.Message].Message.Label.Array["SYS_BBS_BOARD.BOARD_ID"]</label>
+                                    data-required="true">[Page.Message].Message.Label.Array["SYS_BBS_BRD.BOARD_ID"]</label>
                                <input data-field="board_id" id="board_id" name="board_id" class="gi-input" data-focus-span-text-align="center" data-required="true" autocomplete="off"/>
                             </div>
                         </div>
@@ -26,7 +26,7 @@
                         <div class="gi-flex gi-grid-gap-20px">
                             <div class="gi-input-container gi-flex-1">
                                 <label for="bbs_id" class="gi-input-label" data-focus-label="true"
-                                    data-required="true">[Page.Message].Message.Label.Array["SYS_BBS_BOARD.BBS_ID"]</label>
+                                    data-required="true">[Page.Message].Message.Label.Array["SYS_BBS_BRD.BBS_ID"]</label>
                                <input data-field="bbs_id" id="bbs_id" name="bbs_id" class="gi-input" data-focus-span-text-align="center" data-required="true" autocomplete="off"/>
                             </div>
                         </div>
@@ -34,7 +34,7 @@
                         <div class="gi-flex gi-grid-gap-20px">
                             <div class="gi-input-container gi-flex-1">
                                 <label for="title" class="gi-input-label" data-focus-label="true"
-                                    data-required="true">[Page.Message].Message.Label.Array["SYS_BBS_BOARD.TITLE"]</label>
+                                    data-required="true">[Page.Message].Message.Label.Array["SYS_BBS_BRD.TITLE"]</label>
                                <input data-field="title" id="title" name="title" class="gi-input" data-focus-span-text-align="center" data-required="true" autocomplete="off"/>
                             </div>
                         </div>
@@ -42,64 +42,64 @@
                         <div class="gi-flex gi-grid-gap-20px">
                             <div class="gi-input-container gi-flex-1">
                                 <label for="content" class="gi-input-label" data-focus-label="true"
-                                    data-required="false">[Page.Message].Message.Label.Array["SYS_BBS_BOARD.CONTENT"]</label>
+                                    data-required="false">[Page.Message].Message.Label.Array["SYS_BBS_BRD.CONTENT"]</label>
                                <input data-field="content" id="content" name="content" class="gi-input" data-focus-span-text-align="center" data-required="false" autocomplete="off"/>
                             </div>
                         </div>
 
                         <div class="gi-flex gi-grid-gap-20px">
                             <div class="gi-input-container gi-flex-1">
-                                <label for="writer_name" class="gi-input-label" data-focus-label="true"
-                                    data-required="false">[Page.Message].Message.Label.Array["SYS_BBS_BOARD.WRITER_NAME"]</label>
-                               <input data-field="writer_name" id="writer_name" name="writer_name" class="gi-input" data-focus-span-text-align="center" data-required="false" autocomplete="off"/>
+                                <label for="wrtr_nm" class="gi-input-label" data-focus-label="true"
+                                    data-required="false">[Page.Message].Message.Label.Array["SYS_BBS_BRD.WRTR_NM"]</label>
+                               <input data-field="wrtr_nm" id="wrtr_nm" name="wrtr_nm" class="gi-input" data-focus-span-text-align="center" data-required="false" autocomplete="off"/>
                             </div>
                         </div>
 
                         <div class="gi-flex gi-grid-gap-20px">
                             <div class="gi-input-container gi-flex-1">
-                                <label for="hit_count" class="gi-input-label" data-focus-label="true"
-                                    data-required="false">[Page.Message].Message.Label.Array["SYS_BBS_BOARD.HIT_COUNT"]</label>
-                               <input data-field="hit_count" id="hit_count" name="hit_count" class="gi-input" data-focus-span-text-align="center" data-required="false" autocomplete="off"/>
+                                <label for="hit_cnt" class="gi-input-label" data-focus-label="true"
+                                    data-required="false">[Page.Message].Message.Label.Array["SYS_BBS_BRD.HIT_CNT"]</label>
+                               <input data-field="hit_cnt" id="hit_cnt" name="hit_cnt" class="gi-input" data-focus-span-text-align="center" data-required="false" autocomplete="off"/>
                             </div>
                         </div>
 
                         <div class="gi-flex gi-grid-gap-20px">
                             <div class="gi-input-container gi-flex-1">
-                                <label for="thumbnail" class="gi-input-label" data-focus-label="true"
-                                    data-required="false">[Page.Message].Message.Label.Array["SYS_BBS_BOARD.THUMBNAIL"]</label>
-                               <input data-field="thumbnail" id="thumbnail" name="thumbnail" class="gi-input" data-focus-span-text-align="center" data-required="false" autocomplete="off"/>
+                                <label for="thmbnl" class="gi-input-label" data-focus-label="true"
+                                    data-required="false">[Page.Message].Message.Label.Array["SYS_BBS_BRD.THMBNL"]</label>
+                               <input data-field="thmbnl" id="thmbnl" name="thmbnl" class="gi-input" data-focus-span-text-align="center" data-required="false" autocomplete="off"/>
                             </div>
                         </div>
 
                         <div class="gi-flex gi-grid-gap-20px">
                             <div class="gi-input-container gi-flex-1">
-                                <label for="system_create_userid" class="gi-input-label" data-focus-label="true"
-                                    data-required="false">[Page.Message].Message.Label.Array["SYS_BBS_BOARD.SYSTEM_CREATE_USERID"]</label>
-                               <input data-field="system_create_userid" id="system_create_userid" name="system_create_userid" class="gi-input" data-focus-span-text-align="center" data-required="false" autocomplete="off"/>
+                                <label for="sys_crt_usr_id" class="gi-input-label" data-focus-label="true"
+                                    data-required="false">[Page.Message].Message.Label.Array["SYS_BBS_BRD.SYS_CRT_USR_ID"]</label>
+                               <input data-field="sys_crt_usr_id" id="sys_crt_usr_id" name="sys_crt_usr_id" class="gi-input" data-focus-span-text-align="center" data-required="false" autocomplete="off"/>
                             </div>
                         </div>
 
                         <div class="gi-flex gi-grid-gap-20px">
                             <div class="gi-input-container gi-flex-1">
-                                <label for="system_create_date" class="gi-input-label" data-focus-label="true"
-                                    data-required="false">[Page.Message].Message.Label.Array["SYS_BBS_BOARD.SYSTEM_CREATE_DATE"]</label>
-                               <input data-field="system_create_date" id="system_create_date" name="system_create_date" class="gi-input" data-focus-span-text-align="center" data-required="false" autocomplete="off"/>
+                                <label for="sys_crt_dt" class="gi-input-label" data-focus-label="true"
+                                    data-required="false">[Page.Message].Message.Label.Array["SYS_BBS_BRD.SYS_CRT_DT"]</label>
+                               <input data-field="sys_crt_dt" id="sys_crt_dt" name="sys_crt_dt" class="gi-input" data-focus-span-text-align="center" data-required="false" autocomplete="off"/>
                             </div>
                         </div>
 
                         <div class="gi-flex gi-grid-gap-20px">
                             <div class="gi-input-container gi-flex-1">
-                                <label for="system_update_userid" class="gi-input-label" data-focus-label="true"
-                                    data-required="false">[Page.Message].Message.Label.Array["SYS_BBS_BOARD.SYSTEM_UPDATE_USERID"]</label>
-                               <input data-field="system_update_userid" id="system_update_userid" name="system_update_userid" class="gi-input" data-focus-span-text-align="center" data-required="false" autocomplete="off"/>
+                                <label for="sys_upd_usr_id" class="gi-input-label" data-focus-label="true"
+                                    data-required="false">[Page.Message].Message.Label.Array["SYS_BBS_BRD.SYS_UPD_USR_ID"]</label>
+                               <input data-field="sys_upd_usr_id" id="sys_upd_usr_id" name="sys_upd_usr_id" class="gi-input" data-focus-span-text-align="center" data-required="false" autocomplete="off"/>
                             </div>
                         </div>
 
                         <div class="gi-flex gi-grid-gap-20px">
                             <div class="gi-input-container gi-flex-1">
-                                <label for="system_update_date" class="gi-input-label" data-focus-label="true"
-                                    data-required="false">[Page.Message].Message.Label.Array["SYS_BBS_BOARD.SYSTEM_UPDATE_DATE"]</label>
-                               <input data-field="system_update_date" id="system_update_date" name="system_update_date" class="gi-input" data-focus-span-text-align="center" data-required="false" autocomplete="off"/>
+                                <label for="sys_upd_dt" class="gi-input-label" data-focus-label="true"
+                                    data-required="false">[Page.Message].Message.Label.Array["SYS_BBS_BRD.SYS_UPD_DT"]</label>
+                               <input data-field="sys_upd_dt" id="sys_upd_dt" name="sys_upd_dt" class="gi-input" data-focus-span-text-align="center" data-required="false" autocomplete="off"/>
                             </div>
                         </div>
 
@@ -146,7 +146,7 @@
 
     function initValueSetting(){
         // select option 초기화
-        //input.setSelectOption("#sample_category", "/cms/common/comCode/find", { code: "code_id", name: "code_name" });
+        //input.setSelectOption("#sample_category", "/cms/common/comCode/find", { code: "cd_id", name: "cd_nm" });
     }
 
     function resetEvent(){
@@ -182,13 +182,13 @@
                 bbs_id : data.bbs_id ,
                 title : data.title ,
                 content : data.content ,
-                writer_name : data.writer_name ,
-                hit_count : data.hit_count ,
-                thumbnail : data.thumbnail ,
-                system_create_userid : data.system_create_userid ,
-                system_create_date : data.system_create_date ,
-                system_update_userid : data.system_update_userid ,
-                system_update_date : data.system_update_date 
+                wrtr_nm : data.wrtr_nm ,
+                hit_cnt : data.hit_cnt ,
+                thmbnl : data.thmbnl ,
+                sys_crt_usr_id : data.sys_crt_usr_id ,
+                sys_crt_dt : data.sys_crt_dt ,
+                sys_upd_usr_id : data.sys_upd_usr_id ,
+                sys_upd_dt : data.sys_upd_dt 
             };
             axios.post(url,param).then(response =>{
                 let status = response.status;
@@ -203,6 +203,6 @@
         }
     }
     function sysBbsBoardRegisterCheckValidation(){
-        return formUtil.validationCheck(PRGFID,"SYS_BBS_BOARD.CHECK.");
+        return formUtil.validationCheck(PRGFID,"SYS_BBS_BRD.CHECK.");
     }
 </script>

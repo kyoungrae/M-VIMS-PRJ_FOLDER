@@ -19,7 +19,7 @@ public class FileProcessManager implements FileProcessManagerImpl {
     private final String directory;
     private final String fileSize;
     private final String fileUnit;
-    private final long MAX_FILE_SIZE;
+    private final long MAX_FILE_SZ;
 
     public FileProcessManager() {
         // 프로퍼티 로드
@@ -27,7 +27,7 @@ public class FileProcessManager implements FileProcessManagerImpl {
         this.directory = properties.getProperty("common.file.directory.path");
         this.fileSize = properties.getProperty("common.file.max.size");
         this.fileUnit = properties.getProperty("common.file.max.size.unit");
-        this.MAX_FILE_SIZE = fileSizeDefinition(fileSize, fileUnit);
+        this.MAX_FILE_SZ = fileSizeDefinition(fileSize, fileUnit);
     }
 
     private Properties loadProperties(String propertyFileName) {
@@ -76,14 +76,14 @@ public class FileProcessManager implements FileProcessManagerImpl {
     // }
     //
     // @Override
-    // public void createFile(String folder_name, String file_name, String
+    // public void createFile(String folder_name, String file_nm, String
     // file_content ,String ex){
-    // String fileName = file_name;
+    // String fileName = file_nm;
     // String fileContent = file_content;
     // String extensions = ex;
     // String folderName = folder_name;
     //
-    // if(fileContent.getBytes().length > MAX_FILE_SIZE){
+    // if(fileContent.getBytes().length > MAX_FILE_SZ){
     // System.err.println("File size exceeds the limit");
     // return;
     // }
@@ -163,9 +163,9 @@ public class FileProcessManager implements FileProcessManagerImpl {
                     List<String> list = Arrays.asList(Objects.requireNonNull(originalFileName).split("\\."));
                     String lastItem = list.stream().reduce((first, second) -> second).orElse(null);
 
-                    map.put("file_name", originalFileName);
-                    map.put("file_size", String.valueOf(file.getSize()));
-                    map.put("file_extension", lastItem);
+                    map.put("file_nm", originalFileName);
+                    map.put("file_sz", String.valueOf(file.getSize()));
+                    map.put("file_ext", lastItem);
 
                     File uploadFile = new File(directoryPath + File.separator + fileUUID + "." + lastItem);
                     file.transferTo(uploadFile);
@@ -182,7 +182,7 @@ public class FileProcessManager implements FileProcessManagerImpl {
         return result;
     }
 
-    public int fileDetailInsert(String fileUUID, String file_name, String file_size, String file_path) {
+    public int fileDetailInsert(String fileUUID, String file_nm, String file_sz, String file_path) {
         try {
 
         } catch (Exception e) {
@@ -195,8 +195,8 @@ public class FileProcessManager implements FileProcessManagerImpl {
     public void downloadFile(Map<String, Object> param, HttpServletResponse response) throws IOException {
         String filePath = (String) param.get("file_path");
         String fileId = (String) param.get("file_id");
-        String extension = (String) param.get("file_extension");
-        String originalFileName = (String) param.get("file_name");
+        String extension = (String) param.get("file_ext");
+        String originalFileName = (String) param.get("file_nm");
 
         String physicalFileName = fileId + (extension != null && !extension.isEmpty() ? "." + extension : "");
         Path path = Paths.get(filePath, physicalFileName);
@@ -228,7 +228,7 @@ public class FileProcessManager implements FileProcessManagerImpl {
     // List<File> fileList = new LinkedList<>();
     // for(Map<String,Object> param : params){
     // String filePath = (String) param.get("file_path");
-    // String fileName = (String) param.get("file_name");
+    // String fileName = (String) param.get("file_nm");
     // String fileOriginalName = (String) param.get("file_original_name");
     // Path sourcePath = Paths.get(filePath, fileName);
     // Path targetPath = Paths.get(filePath, fileOriginalName);
@@ -251,8 +251,8 @@ public class FileProcessManager implements FileProcessManagerImpl {
     //
     // @Override
     // public void downloadZipFile(List<File> param, HttpServletResponse response ,
-    // String zip_file_name) throws Exception {
-    // String zipFileName = zip_file_name + ".zip";
+    // String zip_file_nm) throws Exception {
+    // String zipFileName = zip_file_nm + ".zip";
     // String encodedFileName = URLEncoder.encode(zipFileName ,
     // StandardCharsets.UTF_8).replaceAll("\\+", "%20");
     //

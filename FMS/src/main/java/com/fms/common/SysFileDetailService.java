@@ -69,7 +69,7 @@ public class SysFileDetailService extends AbstractCommonService<SysFileDetail> {
         int rtn = 0;
         try {
             for (SysFileDetail map : request) {
-                if (map.getFile_name() != null && !map.getFile_name().isEmpty()) {
+                if (map.getFile_nm() != null && !map.getFile_nm().isEmpty()) {
                     rtn += sysFileDetailMapper.INSERT(map);
                 }
             }
@@ -129,7 +129,7 @@ public class SysFileDetailService extends AbstractCommonService<SysFileDetail> {
                 deleteFile(fileDetail);
             }
 
-            // 3. SYS_FILE_DETAIL 데이터 삭제 (UUID 기준 전체 삭제)
+            // 3. SYS_FILE_DTL 데이터 삭제 (UUID 기준 전체 삭제)
             deletedRows = sysFileDetailMapper.DELETE(request);
 
             // 4. SYS_FILE 데이터 삭제 (UUID 기준)
@@ -147,7 +147,7 @@ public class SysFileDetailService extends AbstractCommonService<SysFileDetail> {
 
     protected void deleteFile(SysFileDetail param) throws IOException {
         if (param.getFile_path() != null && !param.getFile_path().isEmpty()) {
-            File file = new File(param.getFile_path() + param.getFile_name());
+            File file = new File(param.getFile_path() + param.getFile_nm());
             // System.out.println(file);
             Files.deleteIfExists(file.toPath());
 

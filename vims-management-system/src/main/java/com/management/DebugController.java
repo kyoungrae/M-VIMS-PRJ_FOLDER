@@ -17,7 +17,7 @@ public class DebugController {
     @GetMapping("/message-test")
     @ResponseBody
     public Map<String, Object> testMessage(
-            @RequestParam(value = "key", defaultValue = "SYS_MENU.TOP_MENU_CODE") String key) {
+            @RequestParam(value = "key", defaultValue = "SYS_MENU.TOP_MENU_CD") String key) {
         Map<String, Object> result = new HashMap<>();
 
         // 메시지 조회 테스트
@@ -39,9 +39,9 @@ public class DebugController {
 
         // 여러 키 테스트
         String[] testKeys = {
-                "SYS_MENU.TOP_MENU_CODE",
+                "SYS_MENU.TOP_MENU_CD",
                 "SYS_MENU.MENU_NAME",
-                "SYS_ICON.ICON_CLASS",
+                "SYS_ICON.ICON_CLS",
                 "REGISTER_BTN",
                 "CLOSE_BTN"
         };

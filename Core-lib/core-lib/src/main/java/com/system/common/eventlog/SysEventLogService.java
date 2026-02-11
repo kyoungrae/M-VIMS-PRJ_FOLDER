@@ -78,7 +78,7 @@ public class SysEventLogService extends AbstractCommonService<SysEventLog> {
     @Override
     protected int registerImpl(SysEventLog request) {
         // 제외 대상 테이블인지 확인
-        if (isExcludedTable(request.getTarget_table())) {
+        if (isExcludedTable(request.getTgt_tbl())) {
             return 0;
         }
 

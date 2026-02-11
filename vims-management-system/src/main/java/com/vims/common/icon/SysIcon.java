@@ -22,28 +22,28 @@ public class SysIcon extends Common {
 	private String keys = Arrays.toString(new String[]{});
 
     @Id
-    /***<pre> icon_code : 아이콘 코드 </pre> */
-	private String icon_code;
+    /***<pre> icon_cd : 아이콘 코드 </pre> */
+	private String icon_cd;
 
-    /***<pre> icon_name : 아이콘 이름 </pre> */
-	private String icon_name;
+    /***<pre> icon_nm : 아이콘 이름 </pre> */
+	private String icon_nm;
 
-    /***<pre> icon_class : 클래스명 </pre> */
-	private String icon_class;
+    /***<pre> icon_cls : 클래스명 </pre> */
+	private String icon_cls;
 
 
 
-    /***<pre> icon_code : 아이콘 코드 </pre> */
+    /***<pre> icon_cd : 아이콘 코드 </pre> */
     @Transient
-	private String _icon_code;
+	private String _icon_cd;
 
-    /***<pre> icon_name : 아이콘 이름 </pre> */
+    /***<pre> icon_nm : 아이콘 이름 </pre> */
     @Transient
-	private String _icon_name;
+	private String _icon_nm;
 
-    /***<pre> icon_class : 클래스명 </pre> */
+    /***<pre> icon_cls : 클래스명 </pre> */
     @Transient
-	private String _icon_class;
+	private String _icon_cls;
 
 
 }

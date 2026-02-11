@@ -3,8 +3,8 @@
 
         <!-- 페이지 헤더 -->
         <header class="gi-margin-bottom-40px gi-padding-left-20px gi-padding-top-20px">
-            <h1 class="gi-page-title">[Page.Message].Message.Label.Array["SYS_OFFICE.TITLE_LIST"]</h1>
-            <p class="gi-subtitle-main">[Page.Message].Message.Label.Array["SYS_OFFICE.SUB_TITLE"]</p>
+            <h1 class="gi-page-title">[Page.Message].Message.Label.Array["SYS_OFFC.TITLE_LIST"]</h1>
+            <p class="gi-subtitle-main">[Page.Message].Message.Label.Array["SYS_OFFC.SUB_TITLE"]</p>
         </header>
 
         <article>
@@ -62,47 +62,47 @@
 <article id="register_sysOffice_popup" class="gi-popup" data-popup-open="false">
     <div class="gi-popup-body" style="width: 500px;">
         <div class="gi-popup-header">
-            <span>[Page.Message].Message.Label.Array["SYS_OFFICE.TITLE_REGISTER"]</span>
+            <span>[Page.Message].Message.Label.Array["SYS_OFFC.TITLE_REGISTER"]</span>
         </div>
         <div class="gi-popup-contents">
             <form id="sysOfficeRegisterForm">
                 <div class="gi-flex gi-flex-column gi-grid-gap-16px">
                     <div class="gi-input-container">
-                        <label for="register_top_office_code" class="gi-input-label" data-focus-label="true"
-                            data-required="true">[Page.Message].Message.Label.Array["SYS_OFFICE.TOP_OFFICE_CODE"]</label>
-                        <input data-field="top_office_code" id="register_top_office_code"
-                            name="register_top_office_code" class="gi-input" data-required="true" autocomplete="off" />
+                        <label for="register_top_offc_cd" class="gi-input-label" data-focus-label="true"
+                            data-required="true">[Page.Message].Message.Label.Array["SYS_OFFC.TOP_OFFC_CD"]</label>
+                        <input data-field="top_offc_cd" id="register_top_offc_cd"
+                            name="register_top_offc_cd" class="gi-input" data-required="true" autocomplete="off" />
                     </div>
                     <div class="gi-input-container">
-                        <label for="register_office_name" class="gi-input-label" data-focus-label="true"
-                            data-required="true">[Page.Message].Message.Label.Array["SYS_OFFICE.OFFICE_NAME"]</label>
-                        <input data-field="office_name" id="register_office_name" name="register_office_name"
+                        <label for="register_offc_nm" class="gi-input-label" data-focus-label="true"
+                            data-required="true">[Page.Message].Message.Label.Array["SYS_OFFC.OFFC_NM"]</label>
+                        <input data-field="offc_nm" id="register_offc_nm" name="register_offc_nm"
                             class="gi-input" data-required="true" autocomplete="off" />
                     </div>
                     <div class="gi-input-container">
-                        <label for="register_office_code" class="gi-input-label" data-focus-label="true"
-                            data-required="true">[Page.Message].Message.Label.Array["SYS_OFFICE.OFFICE_CODE"]</label>
-                        <input data-field="office_code" id="register_office_code" name="register_office_code"
+                        <label for="register_offc_cd" class="gi-input-label" data-focus-label="true"
+                            data-required="true">[Page.Message].Message.Label.Array["SYS_OFFC.OFFC_CD"]</label>
+                        <input data-field="offc_cd" id="register_offc_cd" name="register_offc_cd"
                             class="gi-input" data-required="true" autocomplete="off" />
                     </div>
                     <div class="gi-input-container">
-                        <label for="register_office_type" class="gi-input-label"
-                            data-focus-label="true">[Page.Message].Message.Label.Array["SYS_OFFICE.OFFICE_TYPE"]</label>
-                        <input data-field="office_type" id="register_office_type" name="register_office_type"
+                        <label for="register_offc_type" class="gi-input-label"
+                            data-focus-label="true">[Page.Message].Message.Label.Array["SYS_OFFC.OFFC_TYPE"]</label>
+                        <input data-field="offc_type" id="register_offc_type" name="register_offc_type"
                             class="gi-input" autocomplete="off" />
                     </div>
                     <div class="gi-flex gi-grid-gap-10px">
                         <div class="gi-input-container gi-flex-1">
-                            <label for="register_system_create_userid" class="gi-input-label"
-                                data-focus-label="true">[Page.Message].Message.Label.Array["SYS_OFFICE.WRITER"]</label>
-                            <input data-field="system_create_userid" id="register_system_create_userid"
-                                name="register_system_create_userid" class="gi-input" data-disabled />
+                            <label for="register_sys_crt_usr_id" class="gi-input-label"
+                                data-focus-label="true">[Page.Message].Message.Label.Array["SYS_OFFC.WRITER"]</label>
+                            <input data-field="sys_crt_usr_id" id="register_sys_crt_usr_id"
+                                name="register_sys_crt_usr_id" class="gi-input" data-disabled />
                         </div>
                         <div class="gi-input-container gi-flex-1">
-                            <label for="register_system_create_date" class="gi-input-label"
-                                data-focus-label="true">[Page.Message].Message.Label.Array["SYS_OFFICE.WRITE_DATE"]</label>
-                            <input data-field="system_create_date" id="register_system_create_date"
-                                name="register_system_create_date" class="gi-input" data-disabled />
+                            <label for="register_sys_crt_dt" class="gi-input-label"
+                                data-focus-label="true">[Page.Message].Message.Label.Array["SYS_OFFC.WRITE_DATE"]</label>
+                            <input data-field="sys_crt_dt" id="register_sys_crt_dt"
+                                name="register_sys_crt_dt" class="gi-input" data-disabled />
                         </div>
                     </div>
                 </div>
@@ -121,33 +121,33 @@
 <article id="update_sysOffice_popup" class="gi-popup" data-popup-open="false">
     <div class="gi-popup-body" style="width: 500px;">
         <div class="gi-popup-header">
-            <span>[Page.Message].Message.Label.Array["SYS_OFFICE.TITLE_UPDATE"]</span>
+            <span>[Page.Message].Message.Label.Array["SYS_OFFC.TITLE_UPDATE"]</span>
         </div>
         <div class="gi-popup-contents">
             <form id="sysOfficeUpdateForm">
                 <div class="gi-flex gi-flex-column gi-grid-gap-16px">
                     <div class="gi-input-container">
-                        <label for="update_top_office_code" class="gi-input-label" data-focus-label="true"
-                            data-required="true">[Page.Message].Message.Label.Array["SYS_OFFICE.TOP_OFFICE_CODE"]</label>
-                        <input data-field="top_office_code" id="update_top_office_code" name="update_top_office_code"
+                        <label for="update_top_offc_cd" class="gi-input-label" data-focus-label="true"
+                            data-required="true">[Page.Message].Message.Label.Array["SYS_OFFC.TOP_OFFC_CD"]</label>
+                        <input data-field="top_offc_cd" id="update_top_offc_cd" name="update_top_offc_cd"
                             class="gi-input" data-required="true" autocomplete="off" />
                     </div>
                     <div class="gi-input-container">
-                        <label for="update_office_name" class="gi-input-label" data-focus-label="true"
-                            data-required="true">[Page.Message].Message.Label.Array["SYS_OFFICE.OFFICE_NAME"]</label>
-                        <input data-field="office_name" id="update_office_name" name="update_office_name"
+                        <label for="update_offc_nm" class="gi-input-label" data-focus-label="true"
+                            data-required="true">[Page.Message].Message.Label.Array["SYS_OFFC.OFFC_NM"]</label>
+                        <input data-field="offc_nm" id="update_offc_nm" name="update_offc_nm"
                             class="gi-input" data-required="true" autocomplete="off" />
                     </div>
                     <div class="gi-input-container">
-                        <label for="update_office_code" class="gi-input-label" data-focus-label="true"
-                            data-required="true">[Page.Message].Message.Label.Array["SYS_OFFICE.OFFICE_CODE"]</label>
-                        <input data-field="office_code" id="update_office_code" name="update_office_code"
+                        <label for="update_offc_cd" class="gi-input-label" data-focus-label="true"
+                            data-required="true">[Page.Message].Message.Label.Array["SYS_OFFC.OFFC_CD"]</label>
+                        <input data-field="offc_cd" id="update_offc_cd" name="update_offc_cd"
                             class="gi-input" data-required="true" autocomplete="off" />
                     </div>
                     <div class="gi-input-container">
-                        <label for="update_office_type" class="gi-input-label"
-                            data-focus-label="true">[Page.Message].Message.Label.Array["SYS_OFFICE.OFFICE_TYPE"]</label>
-                        <input data-field="office_type" id="update_office_type" name="update_office_type"
+                        <label for="update_offc_type" class="gi-input-label"
+                            data-focus-label="true">[Page.Message].Message.Label.Array["SYS_OFFC.OFFC_TYPE"]</label>
+                        <input data-field="offc_type" id="update_offc_type" name="update_offc_type"
                             class="gi-input" autocomplete="off" />
                     </div>
                 </div>
@@ -167,60 +167,60 @@
 <article id="detail_sysOffice_popup" class="gi-popup" data-popup-open="false">
     <div class="gi-popup-body" style="width: 500px;">
         <div class="gi-popup-header">
-            <span>[Page.Message].Message.Label.Array["SYS_OFFICE.TITLE_DETAIL"]</span>
+            <span>[Page.Message].Message.Label.Array["SYS_OFFC.TITLE_DETAIL"]</span>
         </div>
         <div class="gi-popup-contents gi-padding-20px">
             <div class="gi-flex gi-flex-column gi-grid-gap-16px">
 
                 <div class="gi-span-container">
                     <span class="gi-span-label"
-                        data-focus-label="true">[Page.Message].Message.Label.Array["SYS_OFFICE.TOP_OFFICE_CODE"]</span>
-                    <span data-field="top_office_code" class="gi-span" data-focus-span-text-align="center"></span>
+                        data-focus-label="true">[Page.Message].Message.Label.Array["SYS_OFFC.TOP_OFFC_CD"]</span>
+                    <span data-field="top_offc_cd" class="gi-span" data-focus-span-text-align="center"></span>
                 </div>
 
                 <div class="gi-span-container">
                     <span class="gi-span-label"
-                        data-focus-label="true">[Page.Message].Message.Label.Array["SYS_OFFICE.OFFICE_NAME"]</span>
-                    <span data-field="office_name" class="gi-span" data-focus-span-text-align="center"></span>
+                        data-focus-label="true">[Page.Message].Message.Label.Array["SYS_OFFC.OFFC_NM"]</span>
+                    <span data-field="offc_nm" class="gi-span" data-focus-span-text-align="center"></span>
                 </div>
 
                 <div class="gi-span-container">
                     <span class="gi-span-label"
-                        data-focus-label="true">[Page.Message].Message.Label.Array["SYS_OFFICE.OFFICE_CODE"]</span>
-                    <span data-field="office_code" class="gi-span" data-focus-span-text-align="center"></span>
+                        data-focus-label="true">[Page.Message].Message.Label.Array["SYS_OFFC.OFFC_CD"]</span>
+                    <span data-field="offc_cd" class="gi-span" data-focus-span-text-align="center"></span>
                 </div>
 
                 <div class="gi-span-container">
                     <span class="gi-span-label"
-                        data-focus-label="true">[Page.Message].Message.Label.Array["SYS_OFFICE.OFFICE_TYPE"]</span>
-                    <span data-field="office_type" class="gi-span" data-focus-span-text-align="center"></span>
+                        data-focus-label="true">[Page.Message].Message.Label.Array["SYS_OFFC.OFFC_TYPE"]</span>
+                    <span data-field="offc_type" class="gi-span" data-focus-span-text-align="center"></span>
                 </div>
 
                 <div class="gi-flex gi-grid-gap-10px">
                     <div class="gi-span-container gi-flex-1">
                         <span class="gi-span-label"
-                            data-focus-label="true">[Page.Message].Message.Label.Array["SYS_OFFICE.WRITER"]</span>
-                        <span data-field="system_create_userid" class="gi-span"
+                            data-focus-label="true">[Page.Message].Message.Label.Array["SYS_OFFC.WRITER"]</span>
+                        <span data-field="sys_crt_usr_id" class="gi-span"
                             data-focus-span-text-align="center"></span>
                     </div>
                     <div class="gi-span-container gi-flex-1">
                         <span class="gi-span-label"
-                            data-focus-label="true">[Page.Message].Message.Label.Array["SYS_OFFICE.WRITE_DATE"]</span>
-                        <span data-field="system_create_date" class="gi-span"></span>
+                            data-focus-label="true">[Page.Message].Message.Label.Array["SYS_OFFC.WRITE_DATE"]</span>
+                        <span data-field="sys_crt_dt" class="gi-span"></span>
                     </div>
                 </div>
 
                 <div class="gi-flex gi-grid-gap-10px">
                     <div class="gi-span-container gi-flex-1">
                         <span class="gi-span-label"
-                            data-focus-label="true">[Page.Message].Message.Label.Array["SYS_OFFICE.UPDATER"]</span>
-                        <span data-field="system_update_userid" class="gi-span"
+                            data-focus-label="true">[Page.Message].Message.Label.Array["SYS_OFFC.UPDATER"]</span>
+                        <span data-field="sys_upd_usr_id" class="gi-span"
                             data-focus-span-text-align="center"></span>
                     </div>
                     <div class="gi-span-container gi-flex-1">
                         <span class="gi-span-label"
-                            data-focus-label="true">[Page.Message].Message.Label.Array["SYS_OFFICE.UPDATE_DATE"]</span>
-                        <span data-field="system_update_date" class="gi-span"></span>
+                            data-focus-label="true">[Page.Message].Message.Label.Array["SYS_OFFC.UPDATE_DATE"]</span>
+                        <span data-field="sys_upd_dt" class="gi-span"></span>
                     </div>
                 </div>
 
@@ -326,22 +326,22 @@
 
                 // 그리드 헤더 설정
                 let sysOffice_menuGrid_header = {
-                    title: '[Page.Message].Message.Label.Array["SYS_OFFICE.TITLE"]',
+                    title: '[Page.Message].Message.Label.Array["SYS_OFFC.TITLE"]',
                     list: [
                         { HEADER: 'No', ID: 'no', WIDTH: '7', TYPE: 'text', FONT_SIZE: '12px', TEXT_ALIGN: 'center', HIDDEN: false },
-                        { HEADER: Message.Label.Array["SYS_OFFICE.TOP_OFFICE_CODE"], ID: 'top_office_code', WIDTH: '40', TYPE: 'text', FONT_SIZE: '12px', TEXT_ALIGN: 'center', HIDDEN: false },
-                        { HEADER: Message.Label.Array["SYS_OFFICE.OFFICE_NAME"], ID: 'office_name', WIDTH: '40', TYPE: 'text', FONT_SIZE: '12px', TEXT_ALIGN: 'center', HIDDEN: false },
-                        { HEADER: Message.Label.Array["SYS_OFFICE.OFFICE_CODE"], ID: 'office_code', WIDTH: '40', TYPE: 'text', FONT_SIZE: '12px', TEXT_ALIGN: 'center', HIDDEN: false },
-                        { HEADER: Message.Label.Array["SYS_OFFICE.OFFICE_TYPE"], ID: 'office_type', WIDTH: '40', TYPE: 'text', FONT_SIZE: '12px', TEXT_ALIGN: 'center', HIDDEN: true },
-                        { HEADER: Message.Label.Array["SYS_OFFICE.OFFICE_TYPE_CODE"], ID: 'office_type_code', WIDTH: '40', TYPE: 'text', FONT_SIZE: '12px', TEXT_ALIGN: 'center', HIDDEN: true },
-                        { HEADER: Message.Label.Array["SYS_OFFICE.SYSTEM_CREATE_USERID"], ID: 'system_create_userid', WIDTH: '40', TYPE: 'text', FONT_SIZE: '12px', TEXT_ALIGN: 'center', HIDDEN: true },
-                        { HEADER: Message.Label.Array["SYS_OFFICE.SYSTEM_CREATE_DATE"], ID: 'system_create_date', WIDTH: '40', TYPE: 'text', FONT_SIZE: '12px', TEXT_ALIGN: 'center', HIDDEN: true },
-                        { HEADER: Message.Label.Array["SYS_OFFICE.SYSTEM_UPDATE_USERID"], ID: 'system_update_userid', WIDTH: '40', TYPE: 'text', FONT_SIZE: '12px', TEXT_ALIGN: 'center', HIDDEN: true },
-                        { HEADER: Message.Label.Array["SYS_OFFICE.SYSTEM_UPDATE_DATE"], ID: 'system_update_date', WIDTH: '40', TYPE: 'text', FONT_SIZE: '12px', TEXT_ALIGN: 'center', HIDDEN: true },
+                        { HEADER: Message.Label.Array["SYS_OFFC.TOP_OFFC_CD"], ID: 'top_offc_cd', WIDTH: '40', TYPE: 'text', FONT_SIZE: '12px', TEXT_ALIGN: 'center', HIDDEN: false },
+                        { HEADER: Message.Label.Array["SYS_OFFC.OFFC_NM"], ID: 'offc_nm', WIDTH: '40', TYPE: 'text', FONT_SIZE: '12px', TEXT_ALIGN: 'center', HIDDEN: false },
+                        { HEADER: Message.Label.Array["SYS_OFFC.OFFC_CD"], ID: 'offc_cd', WIDTH: '40', TYPE: 'text', FONT_SIZE: '12px', TEXT_ALIGN: 'center', HIDDEN: false },
+                        { HEADER: Message.Label.Array["SYS_OFFC.OFFC_TYPE"], ID: 'offc_type', WIDTH: '40', TYPE: 'text', FONT_SIZE: '12px', TEXT_ALIGN: 'center', HIDDEN: true },
+                        { HEADER: Message.Label.Array["SYS_OFFC.OFFC_TYPE_CD"], ID: 'offc_type_cd', WIDTH: '40', TYPE: 'text', FONT_SIZE: '12px', TEXT_ALIGN: 'center', HIDDEN: true },
+                        { HEADER: Message.Label.Array["SYS_OFFC.SYS_CRT_USR_ID"], ID: 'sys_crt_usr_id', WIDTH: '40', TYPE: 'text', FONT_SIZE: '12px', TEXT_ALIGN: 'center', HIDDEN: true },
+                        { HEADER: Message.Label.Array["SYS_OFFC.SYS_CRT_DT"], ID: 'sys_crt_dt', WIDTH: '40', TYPE: 'text', FONT_SIZE: '12px', TEXT_ALIGN: 'center', HIDDEN: true },
+                        { HEADER: Message.Label.Array["SYS_OFFC.SYS_UPD_USR_ID"], ID: 'sys_upd_usr_id', WIDTH: '40', TYPE: 'text', FONT_SIZE: '12px', TEXT_ALIGN: 'center', HIDDEN: true },
+                        { HEADER: Message.Label.Array["SYS_OFFC.SYS_UPD_DT"], ID: 'sys_upd_dt', WIDTH: '40', TYPE: 'text', FONT_SIZE: '12px', TEXT_ALIGN: 'center', HIDDEN: true },
                         { HEADER: Message.Label.Array["DETAIL_BTN"], ID: 'detail_btn', WIDTH: '15', TYPE: 'button', FONT_SIZE: '12px', TEXT_ALIGN: 'center', HIDDEN: false },
                         { HEADER: Message.Label.Array["UPDATE_BTN"], ID: 'update_btn', WIDTH: '15', TYPE: 'button', FONT_SIZE: '12px', TEXT_ALIGN: 'center', HIDDEN: false },
                         { HEADER: Message.Label.Array["DELETE_BTN"], ID: 'delete_btn', WIDTH: '15', TYPE: 'button', FONT_SIZE: '12px', TEXT_ALIGN: 'center', HIDDEN: false },
-                        { HEADER: Message.Label.Array["SYS_OFFICE.SIDE_GRID"], ID: 'sideGridOpen_btn', WIDTH: '15', TYPE: 'button', FONT_SIZE: '12px', TEXT_ALIGN: 'center', HIDDEN: true },
+                        { HEADER: Message.Label.Array["SYS_OFFC.SIDE_GRID"], ID: 'sideGridOpen_btn', WIDTH: '15', TYPE: 'button', FONT_SIZE: '12px', TEXT_ALIGN: 'center', HIDDEN: true },
                         { HEADER: 'checkbox', ID: 'checkbox', WIDTH: '25', TYPE: 'checkbox', FONT_SIZE: '12px', TEXT_ALIGN: 'center', HIDDEN: true }
                     ]
                 }
@@ -468,15 +468,15 @@
             //console.log(data);
             let param = {
 
-                top_office_code: data.top_office_code,
-                office_name: data.office_name,
-                office_code: data.office_code,
-                office_type: data.office_type,
-                office_type_code: data.office_type_code,
-                system_create_userid: data.system_create_userid,
-                system_create_date: data.system_create_date,
-                system_update_userid: data.system_update_userid,
-                system_update_date: data.system_update_date
+                top_offc_cd: data.top_offc_cd,
+                offc_nm: data.offc_nm,
+                offc_cd: data.offc_cd,
+                offc_type: data.offc_type,
+                offc_type_cd: data.offc_type_cd,
+                sys_crt_usr_id: data.sys_crt_usr_id,
+                sys_crt_dt: data.sys_crt_dt,
+                sys_upd_usr_id: data.sys_upd_usr_id,
+                sys_upd_dt: data.sys_upd_dt
             };
             axios.post(url, param).then(response => {
                 let status = response.status;
@@ -493,10 +493,10 @@
         }
     }
     function sysOfficeRegisterCheckValidation() {
-        return formUtil.validationCheck(REGISTER_POPUP_FORM, "SYS_OFFICE.CHECK.");
+        return formUtil.validationCheck(REGISTER_POPUP_FORM, "SYS_OFFC.CHECK.");
     }
     function sysOfficeUpdateCheckValidation() {
-        return formUtil.validationCheck(UPDATE_POPUP_FORM, "SYS_OFFICE.CHECK.");
+        return formUtil.validationCheck(UPDATE_POPUP_FORM, "SYS_OFFC.CHECK.");
     }
 
     //FUN : 수정 이벤트
@@ -508,15 +508,15 @@
             //console.log(data);
             let param = {
 
-                top_office_code: data.top_office_code,
-                office_name: data.office_name,
-                office_code: data.office_code,
-                office_type: data.office_type,
-                office_type_code: data.office_type_code,
-                system_create_userid: data.system_create_userid,
-                system_create_date: data.system_create_date,
-                system_update_userid: data.system_update_userid,
-                system_update_date: data.system_update_date
+                top_offc_cd: data.top_offc_cd,
+                offc_nm: data.offc_nm,
+                offc_cd: data.offc_cd,
+                offc_type: data.offc_type,
+                offc_type_cd: data.offc_type_cd,
+                sys_crt_usr_id: data.sys_crt_usr_id,
+                sys_crt_dt: data.sys_crt_dt,
+                sys_upd_usr_id: data.sys_upd_usr_id,
+                sys_upd_dt: data.sys_upd_dt
             };
             axios.post(url, param).then(response => {
                 let status = response.status;
@@ -539,15 +539,15 @@
         //console.log(data);
         let param = {
 
-            top_office_code: data.top_office_code,
-            office_name: data.office_name,
-            office_code: data.office_code,
-            office_type: data.office_type,
-            office_type_code: data.office_type_code,
-            system_create_userid: data.system_create_userid,
-            system_create_date: data.system_create_date,
-            system_update_userid: data.system_update_userid,
-            system_update_date: data.system_update_date
+            top_offc_cd: data.top_offc_cd,
+            offc_nm: data.offc_nm,
+            offc_cd: data.offc_cd,
+            offc_type: data.offc_type,
+            offc_type_cd: data.offc_type_cd,
+            sys_crt_usr_id: data.sys_crt_usr_id,
+            sys_crt_dt: data.sys_crt_dt,
+            sys_upd_usr_id: data.sys_upd_usr_id,
+            sys_upd_dt: data.sys_upd_dt
         };
         axios.post(url, param).then(response => {
             let status = response.status;

@@ -45,10 +45,10 @@ public class AuthenticationService {
                 .id(token_seq)
                 .user_id(request.getUser_id())
                 .email(request.getEmail())
-                .password(passwordEncoder.encode(request.getPassword()))
+                .pwd(passwordEncoder.encode(request.getPassword()))
                 .role(Role.USER)
-                .system_create_userid(userInfo.getUserEmail())
-                .system_create_date(timestamp)
+                .sys_crt_usr_id(userInfo.getUserEmail())
+                .sys_crt_dt(timestamp)
                 .build();
         AuthUserService.save(user);
         var jwtToken = jwtService.generateToken(user);
@@ -56,8 +56,8 @@ public class AuthenticationService {
                 .id(token_seq)
                 .token(jwtToken)
                 .token_type(TokenType.AUTHORIZATION)
-                .expired(false)
-                .revoked(false)
+                .exp(false)
+                .revok(false)
                 .auth_user(user)
                 .build();
         tokenService.save(token);
@@ -79,8 +79,8 @@ public class AuthenticationService {
             // 유효한 토큰 조회
             var tokenParam = Token.builder()
                     .auth_user(user)
-                    .expired(false)
-                    .revoked(false)
+                    .exp(false)
+                    .revok(false)
                     .build();
             List<Token> validTokens = tokenService.findByAllToken(tokenParam);
 
@@ -93,15 +93,15 @@ public class AuthenticationService {
                         break;
                     } else {
                         // DB 상으론 유효한데 실제론 만료된 경우 -> 업데이트
-                        validToken.setExpired(true);
-                        validToken.setRevoked(true);
+                        validToken.setExp(true);
+                        validToken.setRevok(true);
                         tokenService.update(validToken);
                     }
                 }
             }
 
             if (jwtToken == null) {
-                // 기존 유효한 토큰들을 모두 무효화 (EXPIRED=1, REVOKED=1)
+                // 기존 유효한 토큰들을 모두 무효화 (EXP=1, REVOK=1)
                 tokenService.revokeAllUserTokens(user.getId());
 
                 jwtToken = jwtService.generateToken(user);
@@ -112,8 +112,8 @@ public class AuthenticationService {
                         .id(token_seq)
                         .token(jwtToken)
                         .token_type(TokenType.AUTHORIZATION)
-                        .expired(false)
-                        .revoked(false)
+                        .exp(false)
+                        .revok(false)
                         .auth_user(user)
                         .build();
                 tokenService.save(token);

@@ -19,52 +19,52 @@ import java.util.Arrays;
 @SuperBuilder
 public class SysAccsGroupMenu extends Common {
     @Transient
-	private String keys = Arrays.toString(new String[]{"menu_code","access_rights_group_id"});
+	private String keys = Arrays.toString(new String[]{"menu_cd","acs_rts_grp_id"});
 
-    /***<pre> menu_code : 메뉴코드 </pre> */
+    /***<pre> menu_cd : 메뉴코드 </pre> */
     @Id
-	private String menu_code;
+	private String menu_cd;
 
-    /***<pre> access_rights_group_id : 권한그룹 아이디 </pre> */
-	private String access_rights_group_id;
+    /***<pre> acs_rts_grp_id : 권한그룹 아이디 </pre> */
+	private String acs_rts_grp_id;
 
-    /***<pre> system_create_date : 작성일자 </pre> */
-	private Date system_create_date;
+    /***<pre> sys_crt_dt : 작성일자 </pre> */
+	private Date sys_crt_dt;
 
-    /***<pre> system_create_userid : 작성자ID </pre> */
-	private String system_create_userid;
+    /***<pre> sys_crt_usr_id : 작성자ID </pre> */
+	private String sys_crt_usr_id;
 
-    /***<pre> system_update_date : 수정일자 </pre> */
-	private Date system_update_date;
+    /***<pre> sys_upd_dt : 수정일자 </pre> */
+	private Date sys_upd_dt;
 
-    /***<pre> system_update_userid : 수정자ID </pre> */
-	private String system_update_userid;
+    /***<pre> sys_upd_usr_id : 수정자ID </pre> */
+	private String sys_upd_usr_id;
 
 
 
-    /***<pre> menu_code : 메뉴코드 </pre> */
+    /***<pre> menu_cd : 메뉴코드 </pre> */
     @Transient
-	private String _menu_code;
+	private String _menu_cd;
 
-    /***<pre> access_rights_group_id : 권한그룹 아이디 </pre> */
+    /***<pre> acs_rts_grp_id : 권한그룹 아이디 </pre> */
     @Transient
-	private String _access_rights_group_id;
+	private String _acs_rts_grp_id;
 
-    /***<pre> system_create_date : 작성일자 </pre> */
+    /***<pre> sys_crt_dt : 작성일자 </pre> */
     @Transient
-	private Date _system_create_date;
+	private Date _sys_crt_dt;
 
-    /***<pre> system_create_userid : 작성자ID </pre> */
+    /***<pre> sys_crt_usr_id : 작성자ID </pre> */
     @Transient
-	private String _system_create_userid;
+	private String _sys_crt_usr_id;
 
-    /***<pre> system_update_date : 수정일자 </pre> */
+    /***<pre> sys_upd_dt : 수정일자 </pre> */
     @Transient
-	private Date _system_update_date;
+	private Date _sys_upd_dt;
 
-    /***<pre> system_update_userid : 수정자ID </pre> */
+    /***<pre> sys_upd_usr_id : 수정자ID </pre> */
     @Transient
-	private String _system_update_userid;
+	private String _sys_upd_usr_id;
 
 
 }

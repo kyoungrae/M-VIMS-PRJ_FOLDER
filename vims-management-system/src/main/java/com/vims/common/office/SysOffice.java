@@ -19,142 +19,142 @@ import java.util.Arrays;
 @SuperBuilder
 public class SysOffice extends Common {
     @Transient
-    private String keys = Arrays.toString(new String[] { "office_code" });
+    private String keys = Arrays.toString(new String[] { "offc_cd" });
 
     @Id
     /***
      * <pre>
-     *  top_office_code : 최상위 코드
+     *  top_offc_cd : 최상위 코드
      * </pre>
      */
-    private String top_office_code;
+    private String top_offc_cd;
 
     /***
      * <pre>
-     *  office_name : 기관명
+     *  offc_nm : 기관명
      * </pre>
      */
-    private String office_name;
+    private String offc_nm;
 
     /***
      * <pre>
-     *  office_code : 기관코드
+     *  offc_cd : 기관코드
      * </pre>
      */
-    private String office_code;
+    private String offc_cd;
 
     /***
      * <pre>
-     *  office_type : 기관유형
+     *  offc_type : 기관유형
      * </pre>
      */
-    private String office_type;
+    private String offc_type;
 
     /***
      * <pre>
-     *  office_type_code : 등록관청 구분부호
+     *  offc_type_cd : 등록관청 구분부호
      * </pre>
      */
-    private String office_type_code;
+    private String offc_type_cd;
 
     /***
      * <pre>
-     *  system_create_userid : 생성자ID
+     *  sys_crt_usr_id : 생성자ID
      * </pre>
      */
-    private String system_create_userid;
+    private String sys_crt_usr_id;
 
     /***
      * <pre>
-     *  system_create_date : 생성일자
+     *  sys_crt_dt : 생성일자
      * </pre>
      */
-    private Date system_create_date;
+    private Date sys_crt_dt;
 
     /***
      * <pre>
-     *  system_update_userid : 수정자ID
+     *  sys_upd_usr_id : 수정자ID
      * </pre>
      */
-    private String system_update_userid;
+    private String sys_upd_usr_id;
 
     /***
      * <pre>
-     *  system_update_date : 수정일자
+     *  sys_upd_dt : 수정일자
      * </pre>
      */
-    private Date system_update_date;
+    private Date sys_upd_dt;
 
     /***
      * <pre>
-     *  top_office_code : 최상위 코드
+     *  top_offc_cd : 최상위 코드
      * </pre>
      */
     @Transient
-    private String _top_office_code;
+    private String _top_offc_cd;
 
     /***
      * <pre>
-     *  office_name : 기관명
+     *  offc_nm : 기관명
      * </pre>
      */
     @Transient
-    private String _office_name;
+    private String _offc_nm;
 
     /***
      * <pre>
-     *  office_code : 기관코드
+     *  offc_cd : 기관코드
      * </pre>
      */
     @Transient
-    private String _office_code;
+    private String _offc_cd;
 
     /***
      * <pre>
-     *  office_type : 기관유형
+     *  offc_type : 기관유형
      * </pre>
      */
     @Transient
-    private String _office_type;
+    private String _offc_type;
 
     /***
      * <pre>
-     *  office_type_code : 등록관청 구분부호
+     *  offc_type_cd : 등록관청 구분부호
      * </pre>
      */
     @Transient
-    private String _office_type_code;
+    private String _offc_type_cd;
 
     /***
      * <pre>
-     *  system_create_userid : 생성자ID
+     *  sys_crt_usr_id : 생성자ID
      * </pre>
      */
     @Transient
-    private String _system_create_userid;
+    private String _sys_crt_usr_id;
 
     /***
      * <pre>
-     *  system_create_date : 생성일자
+     *  sys_crt_dt : 생성일자
      * </pre>
      */
     @Transient
-    private Date _system_create_date;
+    private Date _sys_crt_dt;
 
     /***
      * <pre>
-     *  system_update_userid : 수정자ID
+     *  sys_upd_usr_id : 수정자ID
      * </pre>
      */
     @Transient
-    private String _system_update_userid;
+    private String _sys_upd_usr_id;
 
     /***
      * <pre>
-     *  system_update_date : 수정일자
+     *  sys_upd_dt : 수정일자
      * </pre>
      */
     @Transient
-    private Date _system_update_date;
+    private Date _sys_upd_dt;
 
 }

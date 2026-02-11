@@ -7,5 +7,5 @@ import java.util.List;
 
 @Mapper
 public interface SysDeptGroupMapper extends CommonMapper<SysDeptGroup> {
-    List<SysDeptGroup> SELECT_NOT_EXISTS_SYS_ACCS_GROUP_MENU (SysDeptGroup request);
+    List<SysDeptGroup> SELECT_NOT_EXISTS_SYS_ACS_GRP_MENU (SysDeptGroup request);
 }

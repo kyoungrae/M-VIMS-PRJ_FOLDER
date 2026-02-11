@@ -2,17 +2,17 @@
 //Message.Label = {};
 //Message.Label.Array = {};
 
-Message.Label.Array["SYS_ACCS_GROUP_MENU_LIST.CHECK.MENU_CODE"] = "(을)를 입력해 주세요";
-Message.Label.Array["SYS_ACCS_GROUP_MENU_LIST.CHECK.ACCESS_RIGHTS_GROUP_ID"] = "(을)를 입력해 주세요";
-Message.Label.Array["SYS_ACCS_GROUP_MENU_LIST.CHECK.SYSTEM_CREATE_DATE"] = "(을)를 입력해 주세요";
-Message.Label.Array["SYS_ACCS_GROUP_MENU_LIST.CHECK.SYSTEM_CREATE_USERID"] = "(을)를 입력해 주세요";
-Message.Label.Array["SYS_ACCS_GROUP_MENU_LIST.CHECK.SYSTEM_UPDATE_DATE"] = "(을)를 입력해 주세요";
-Message.Label.Array["SYS_ACCS_GROUP_MENU_LIST.CHECK.SYSTEM_UPDATE_USERID"] = "(을)를 입력해 주세요";
+Message.Label.Array["SYS_ACS_GRP_MENU_LIST.CHECK.MENU_CD"] = "(을)를 입력해 주세요";
+Message.Label.Array["SYS_ACS_GRP_MENU_LIST.CHECK.ACS_RTS_GRP_ID"] = "(을)를 입력해 주세요";
+Message.Label.Array["SYS_ACS_GRP_MENU_LIST.CHECK.SYS_CRT_DT"] = "(을)를 입력해 주세요";
+Message.Label.Array["SYS_ACS_GRP_MENU_LIST.CHECK.SYS_CRT_USR_ID"] = "(을)를 입력해 주세요";
+Message.Label.Array["SYS_ACS_GRP_MENU_LIST.CHECK.SYS_UPD_DT"] = "(을)를 입력해 주세요";
+Message.Label.Array["SYS_ACS_GRP_MENU_LIST.CHECK.SYS_UPD_USR_ID"] = "(을)를 입력해 주세요";
 
 
-Message.Label.Array["SYS_ACCS_GROUP_MENU_LIST.MENU_CODE"] = "";
-Message.Label.Array["SYS_ACCS_GROUP_MENU_LIST.ACCESS_RIGHTS_GROUP_ID"] = "";
-Message.Label.Array["SYS_ACCS_GROUP_MENU_LIST.SYSTEM_CREATE_DATE"] = "";
-Message.Label.Array["SYS_ACCS_GROUP_MENU_LIST.SYSTEM_CREATE_USERID"] = "";
-Message.Label.Array["SYS_ACCS_GROUP_MENU_LIST.SYSTEM_UPDATE_DATE"] = "";
-Message.Label.Array["SYS_ACCS_GROUP_MENU_LIST.SYSTEM_UPDATE_USERID"] = "";
+Message.Label.Array["SYS_ACS_GRP_MENU_LIST.MENU_CD"] = "";
+Message.Label.Array["SYS_ACS_GRP_MENU_LIST.ACS_RTS_GRP_ID"] = "";
+Message.Label.Array["SYS_ACS_GRP_MENU_LIST.SYS_CRT_DT"] = "";
+Message.Label.Array["SYS_ACS_GRP_MENU_LIST.SYS_CRT_USR_ID"] = "";
+Message.Label.Array["SYS_ACS_GRP_MENU_LIST.SYS_UPD_DT"] = "";
+Message.Label.Array["SYS_ACS_GRP_MENU_LIST.SYS_UPD_USR_ID"] = "";

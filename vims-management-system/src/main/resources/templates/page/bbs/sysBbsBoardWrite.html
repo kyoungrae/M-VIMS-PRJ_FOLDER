@@ -1,7 +1,7 @@
 <article id="sysBbsBoardWritePage" class="gi-article-content gi-col-95 gi-row-100 gi-overflow-scroll"
     style="background: #f8fafc; border: none; box-shadow: none;">
     <style>
-        .gi-thumbnail-btn {
+        .gi-thmbnl-btn {
             background: #fff;
             border: 1px solid #e2e8f0;
             color: #64748b;
@@ -13,27 +13,27 @@
             transition: all 0.2s;
         }
 
-        .gi-thumbnail-btn:hover {
+        .gi-thmbnl-btn:hover {
             border-color: var(--background-color-btn-blue);
             color: var(--background-color-btn-blue);
         }
 
-        .gi-thumbnail-btn.active {
+        .gi-thmbnl-btn.active {
             background: var(--background-color-btn-blue);
             color: #fff;
             border-color: var(--background-color-btn-blue);
         }
 
-        .gi-file-item-card:hover .gi-thumbnail-btn {
+        .gi-file-item-card:hover .gi-thmbnl-btn {
             opacity: 1;
         }
     </style>
     <div class="gi-padding-left-right-20px">
         <!-- 헤더 영역 (카드 외부) -->
         <header class="gi-margin-bottom-30px gi-padding-left-10px">
-            <h1 class="gi-page-title" id="write-page-title">[Page.Message].Message.Label.Array["SYS_BBS_BOARD.WRITE"]
+            <h1 class="gi-page-title" id="write-page-title">[Page.Message].Message.Label.Array["SYS_BBS_BRD.WRITE"]
             </h1>
-            <p class="gi-subtitle-main">[Page.Message].Message.Label.Array["SYS_BBS_BOARD.SUB_TITLE_WRITE"]</p>
+            <p class="gi-subtitle-main">[Page.Message].Message.Label.Array["SYS_BBS_BRD.SUB_TITLE_WRITE"]</p>
         </header>
 
         <!-- 메인 카드 -->
@@ -44,12 +44,12 @@
                     <!-- 섹션 1: 기본 정보 -->
                     <div class="gi-form-section">
                         <h3 class="gi-form-section-title">
-                            [Page.Message].Message.Label.Array["SYS_BBS_BOARD.SECTION.BASIC"]</h3>
+                            [Page.Message].Message.Label.Array["SYS_BBS_BRD.SECTION.BASIC"]</h3>
                         <div class="gi-flex gi-grid-gap-20px">
                             <!-- 제목 입력 -->
                             <div class="gi-input-container gi-flex-1">
                                 <label for="board_title" class="gi-input-label" data-focus-label="true"
-                                    data-required="true">[Page.Message].Message.Label.Array["SYS_BBS_BOARD.TITLE"]</label>
+                                    data-required="true">[Page.Message].Message.Label.Array["SYS_BBS_BRD.TITLE"]</label>
                                 <input data-field="title" id="board_title" name="title" class="gi-input"
                                     data-required="true" autocomplete="off" maxlength="50" />
                             </div>
@@ -57,35 +57,35 @@
                             <!-- 작성자명 -->
                             <div class="gi-input-container gi-flex-1">
                                 <label for="board_writer" class="gi-input-label"
-                                    data-focus-label="true">[Page.Message].Message.Label.Array["SYS_BBS_BOARD.WRITER_NAME"]</label>
-                                <input data-disabled data-field="writer_name" id="board_writer" name="writer_name"
+                                    data-focus-label="true">[Page.Message].Message.Label.Array["SYS_BBS_BRD.WRTR_NM"]</label>
+                                <input data-disabled data-field="wrtr_nm" id="board_writer" name="wrtr_nm"
                                     class="gi-input" autocomplete="off" />
                             </div>
                         </div>
                     </div>
 
                     <!-- 섹션: 썸네일 (갤러리형만 표시) -->
-                    <div id="thumbnail-section-container" class="gi-form-section gi-hidden">
+                    <div id="thmbnl-section-container" class="gi-form-section gi-hidden">
                         <h3 class="gi-form-section-title">
-                            [Page.Message].Message.Label.Array["SYS_BBS_BOARD.SECTION.THUMBNAIL"]</h3>
+                            [Page.Message].Message.Label.Array["SYS_BBS_BRD.SECTION.THMBNL"]</h3>
                         <div class="gi-flex gi-flex-column gi-grid-gap-10px">
                             <div class="gi-flex gi-grid-gap-10px gi-align-center">
-                                <div id="thumbnail-preview-area" class="gi-hidden"
+                                <div id="thmbnl-preview-area" class="gi-hidden"
                                     style="width: 200px; height: 150px; border: 1px solid #e2e8f0; padding: 4px; background: #fff; border-radius: 4px;">
-                                    <img id="thumbnail-preview-img" src=""
+                                    <img id="thmbnl-preview-img" src=""
                                         style="width: 100%; height: 100%; object-fit: contain;">
                                 </div>
                                 <div class="gi-input-container" style="width: 300px;">
-                                    <label for="thumbnail_preview_name" class="gi-input-label"
-                                        data-focus-label="true">[Page.Message].Message.Label.Array["SYS_BBS_BOARD.THUMBNAIL"]</label>
-                                    <input type="text" class="gi-input" id="thumbnail_preview_name" data-disabled
-                                        data-field="thumbnail_name" autocomplete="off" />
+                                    <label for="thmbnl_preview_name" class="gi-input-label"
+                                        data-focus-label="true">[Page.Message].Message.Label.Array["SYS_BBS_BRD.THMBNL"]</label>
+                                    <input type="text" class="gi-input" id="thmbnl_preview_name" data-disabled
+                                        data-field="thmbnl_name" autocomplete="off" />
                                 </div>
                                 <button type="button" class="gi-btn"
-                                    onclick="document.getElementById('thumbnail-upload-input').click()">
+                                    onclick="document.getElementById('thmbnl-upload-input').click()">
                                     [Page.Message].Message.Label.Array["FILE_REGISTER_BTN"]
                                 </button>
-                                <input type="file" id="thumbnail-upload-input" style="display: none;" accept="image/*"
+                                <input type="file" id="thmbnl-upload-input" style="display: none;" accept="image/*"
                                     onchange="uploadThumbnail(this)">
                             </div>
                         </div>
@@ -94,18 +94,18 @@
                     <!-- 섹션 2: 내용 작성 -->
                     <div class="gi-form-section">
                         <h3 class="gi-form-section-title">
-                            [Page.Message].Message.Label.Array["SYS_BBS_BOARD.SECTION.CONTENT"]</h3>
+                            [Page.Message].Message.Label.Array["SYS_BBS_BRD.SECTION.CONTENT"]</h3>
                         <div class="gi-editor-wrapper">
                             <div id="editor-container"></div>
                         </div>
                         <input type="hidden" data-field="content" id="board_content" name="content" />
-                        <input type="hidden" data-field="thumbnail" id="board_thumbnail" name="thumbnail" />
+                        <input type="hidden" data-field="thmbnl" id="board_thmbnl" name="thmbnl" />
                     </div>
 
                     <!-- 섹션 3: 첨부 파일 -->
                     <div id="file-section-container" class="gi-form-section gi-hidden">
                         <h3 class="gi-form-section-title">
-                            [Page.Message].Message.Label.Array["SYS_BBS_BOARD.SECTION.FILE"]</h3>
+                            [Page.Message].Message.Label.Array["SYS_BBS_BRD.SECTION.FILE"]</h3>
                         <div id="file-attachment-section" data-file-card data-input-id="board_file_uuid"
                             data-folder-name="bbs_attachments1" data-api-path="/fms/common/file/sysFileDetail"
                             data-read-only="false">
@@ -147,7 +147,7 @@
         await checkBbsConfiguration();
         // 2. 페이지 헤더/타이틀 설정
         if (mode === 'modify') {
-            $("#write-page-title").text(Message.Label.Array["SYS_BBS_BOARD.TITLE_UPDATE"]);
+            $("#write-page-title").text(Message.Label.Array["SYS_BBS_BRD.TITLE_UPDATE"]);
             $("#bbs-save-btn-text").text(Message.Label.Array["UPDATE_BTN"]);
         }
 
@@ -199,10 +199,10 @@
             var response = await axios.post("/fms/common/file/sysFileDetail/find", { file_uuid: fileUuid });
             if (response.status === 200 && response.data.length > 0) {
                 var file = response.data[0];
-                $("#thumbnail_preview_name").val(file.file_name);
+                $("#thmbnl_preview_name").val(file.file_nm);
                 const imageUrl = `/fms/fileManager/download?fileId=${encodeURIComponent(file.file_id)}`;
-                $("#thumbnail-preview-img").attr("src", imageUrl);
-                $("#thumbnail-preview-area").removeClass("gi-hidden");
+                $("#thmbnl-preview-img").attr("src", imageUrl);
+                $("#thmbnl-preview-area").removeClass("gi-hidden");
                 commonTag.inputTagReset($(".gi-input"));
             }
         } catch (e) {
@@ -224,7 +224,7 @@
 
                 // 갤러리 게시판인 경우 썸네일 섹션 표시
                 if (bbsInfo.bbs_type === 'GALLERY') {
-                    $("#thumbnail-section-container").removeClass("gi-hidden");
+                    $("#thmbnl-section-container").removeClass("gi-hidden");
                 }
             }
         } catch (e) {
@@ -246,7 +246,7 @@
 
         const formData = new FormData();
         formData.append('files', file);
-        formData.append('folder_name', 'bbs_thumbnails');
+        formData.append('folder_name', 'bbs_thmbnls');
 
         // 기존 썸네일 UUID가 있어도, 썸네일은 단일 파일이므로 새로 업로드하고 UUID를 교체하는 방식이 단순함.
         // 혹은 같은 그룹으로 묶고 싶다면 UUID 사용. 여기서는 독립적으로 관리.
@@ -259,19 +259,19 @@
             if (uploadResponse.status === 200 && uploadResponse.data.length > 0) {
                 const fileInfo = uploadResponse.data[0];
 
-                // 파일 등록 (SYS_FILE_DETAIL)
+                // 파일 등록 (SYS_FILE_DTL)
                 const registerResponse = await axios.post('/fms/common/file/sysFileDetail/register', uploadResponse.data);
 
                 if (registerResponse.status === 200) {
                     // UI 업데이트
-                    $("#thumbnail_preview_name").val(fileInfo.file_name);
+                    $("#thmbnl_preview_name").val(fileInfo.file_nm);
                     const imageUrl = `/fms/fileManager/download?fileId=${encodeURIComponent(fileInfo.file_id)}`;
-                    $("#thumbnail-preview-img").attr("src", imageUrl);
-                    $("#thumbnail-preview-area").removeClass("gi-hidden");
+                    $("#thmbnl-preview-img").attr("src", imageUrl);
+                    $("#thmbnl-preview-area").removeClass("gi-hidden");
 
                     // Hidden Input 설정 (DB 저장용)
-                    $("#board_thumbnail").val(fileInfo.file_uuid);
-                    formUtil.toast(Message.Label.Array["SYS_BBS_BOARD.COMPLETE.THUMBNAIL_UPLOAD"]);
+                    $("#board_thmbnl").val(fileInfo.file_uuid);
+                    formUtil.toast(Message.Label.Array["SYS_BBS_BRD.COMPLETE.THMBNL_UPLOAD"]);
                 }
             }
         } catch (error) {
@@ -290,18 +290,18 @@
      * @title 파일 렌더링 훅 (썸네일 버튼 추가)
      */
     fileUtil.onRenderFileItem = function (file) {
-        const extension = (file.file_extension || '').toLowerCase();
+        const extension = (file.file_ext || '').toLowerCase();
         const isImage = ['jpg', 'jpeg', 'png', 'gif', 'svg'].includes(extension);
 
         if (!isImage) return '';
 
-        const currentThumbnailUuid = $("#board_thumbnail").val();
+        const currentThumbnailUuid = $("#board_thmbnl").val();
         const isActive = currentThumbnailUuid === file.file_uuid;
-        const btnText = isActive ? Message.Label.Array["SYS_BBS_BOARD.THUMBNAIL.ACTIVE"] : Message.Label.Array["SYS_BBS_BOARD.THUMBNAIL.SET"];
+        const btnText = isActive ? Message.Label.Array["SYS_BBS_BRD.THMBNL.ACTIVE"] : Message.Label.Array["SYS_BBS_BRD.THMBNL.SET"];
         const activeClass = isActive ? 'active' : '';
 
         return `
-            <button type="button" class="gi-thumbnail-btn ${activeClass}" 
+            <button type="button" class="gi-thmbnl-btn ${activeClass}" 
                 data-file-uuid="${file.file_uuid}" 
                 onclick="setAsThumbnail(this, '${file.file_uuid}')">
                 ${btnText}
@@ -316,12 +316,12 @@
         const $btn = $(btn);
 
         // 시각적 상태 업데이트
-        $(".gi-thumbnail-btn").removeClass("active").text(Message.Label.Array["SYS_BBS_BOARD.THUMBNAIL.SET"]);
-        $btn.addClass("active").text(Message.Label.Array["SYS_BBS_BOARD.THUMBNAIL.ACTIVE"]);
+        $(".gi-thmbnl-btn").removeClass("active").text(Message.Label.Array["SYS_BBS_BRD.THMBNL.SET"]);
+        $btn.addClass("active").text(Message.Label.Array["SYS_BBS_BRD.THMBNL.ACTIVE"]);
 
         // 값 바인딩
-        $("#board_thumbnail").val(uuid);
-        formUtil.toast(Message.Label.Array["SYS_BBS_BOARD.COMPLETE.THUMBNAIL_SET"]);
+        $("#board_thmbnl").val(uuid);
+        formUtil.toast(Message.Label.Array["SYS_BBS_BRD.COMPLETE.THMBNL_SET"]);
     };
 
     /**
@@ -347,7 +347,7 @@
 
             // 이미지가 아닌 경우 체크
             if (!/^image\//.test(file.type)) {
-                formUtil.toast(Message.Label.Array["SYS_BBS_BOARD.CHECK.IMAGE_ONLY"], "warn");
+                formUtil.toast(Message.Label.Array["SYS_BBS_BRD.CHECK.IMAGE_ONLY"], "warn");
                 return;
             }
 
@@ -374,7 +374,7 @@
                     // 만약 기존 UUID가 있었다면, 서버 로직에 따라 동일하게 유지되었을 것임.
                     // 만약 없었다면 새로 생성된 UUID를 사용.
 
-                    // 2. 파일 정보 등록 (SYS_FILE_DETAIL)
+                    // 2. 파일 정보 등록 (SYS_FILE_DTL)
                     // FileUtils.js의 로직에 따르면 업로드 후 register를 호출해야 파일이 정식 등록됨
                     const registerResponse = await axios.post('/fms/common/file/sysFileDetail/register', fileList);
 
@@ -395,7 +395,7 @@
                 if (error.response && error.response.status === 413) {
                     formUtil.toast(Message.Label.Array["FAIL.UPLOAD.SIZE_EXCEEDED"], "error");
                 } else {
-                    formUtil.toast(Message.Label.Array["SYS_BBS_BOARD.FAIL.IMAGE_UPLOAD"], "error");
+                    formUtil.toast(Message.Label.Array["SYS_BBS_BRD.FAIL.IMAGE_UPLOAD"], "error");
                 }
             }
 
@@ -410,16 +410,16 @@
             if (response.status === 200 && response.data.length > 0) {
                 let data = response.data[0];
                 $("#board_title").val(data.title);
-                $("#board_writer").val(data.writer_name);
+                $("#board_writer").val(data.wrtr_nm);
                 $("#board_file_uuid").val(data.file_uuid).trigger('change');
 
                 // 썸네일 복원
-                if (data.thumbnail) {
-                    $("#board_thumbnail").val(data.thumbnail);
+                if (data.thmbnl) {
+                    $("#board_thmbnl").val(data.thmbnl);
                     // 썸네일 이미지 정보를 가져오기 위해 FMS 호출 필요, 하지만 UUID만으로는 파일명/ID를 바로 알기 어려울 수 있음.
                     // 간단히 미리보기만 복원하려면 UUID로 다운로드 URL을 구성하거나, 추가 조회가 필요함.
                     // 여기서는 썸네일 UUID를 통해 파일 상세 정보를 조회하여 미리보기를 설정하는 로직을 추가.
-                    restoreThumbnail(data.thumbnail);
+                    restoreThumbnail(data.thmbnl);
                 }
 
                 commonTag.inputTagReset($(".gi-input"));
@@ -443,12 +443,12 @@
     }
 
     function saveBoard() {
-        if (!formUtil.validationCheck("bbsBoardWriteForm", "SYS_BBS_BOARD.CHECK.")) return;
+        if (!formUtil.validationCheck("bbsBoardWriteForm", "SYS_BBS_BRD.CHECK.")) return;
 
         // 에디터 내용 추출
         let content = quill.root.innerHTML;
         if (quill.getText().trim().length === 0) {
-            formUtil.toast(Message.Label.Array["SYS_BBS_BOARD.CHECK.CONTENT"], "warn");
+            formUtil.toast(Message.Label.Array["SYS_BBS_BRD.CHECK.CONTENT"], "warn");
             return;
         }
 
@@ -459,9 +459,9 @@
             bbs_id: targetBbsId,
             title: $("#board_title").val(),
             content: content,
-            writer_name: $("#board_writer").val(),
+            wrtr_nm: $("#board_writer").val(),
             file_uuid: $("#board_file_uuid").val(),
-            thumbnail: $("#board_thumbnail").val()
+            thmbnl: $("#board_thmbnl").val()
         };
 
         if (isUpdate) param.board_id = boardId;

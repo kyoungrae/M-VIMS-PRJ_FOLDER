@@ -5,7 +5,7 @@ package com.vims.common.group;
 
 import com.system.common.base.AbstractCommonService;
 import com.system.common.exception.CustomException;
-import com.vims.common.usergroup.SysUserGroup;
+
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.MessageSource;
 import org.springframework.context.i18n.LocaleContextHolder;
@@ -13,7 +13,6 @@ import org.springframework.dao.DuplicateKeyException;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -43,14 +42,14 @@ public class SysDeptGroupService extends AbstractCommonService<SysDeptGroup> {
     }
 
     protected List<SysDeptGroup> findNotExistsSysAccsGroupMenu(SysDeptGroup request) throws Exception {
-        return sysDeptGroupMapper.SELECT_NOT_EXISTS_SYS_ACCS_GROUP_MENU(request);
+        return sysDeptGroupMapper.SELECT_NOT_EXISTS_SYS_ACS_GRP_MENU(request);
     }
 
     @Override
     protected int removeImpl(SysDeptGroup request) throws Exception {
         List<SysDeptGroup> list = null;
         try {
-            var sysDeptGroup = SysDeptGroup.builder().top_group_id(request.getGroup_id()).build();
+            var sysDeptGroup = SysDeptGroup.builder().top_grp_id(request.getGrp_id()).build();
             list = sysDeptGroupMapper.SELECT(sysDeptGroup);
             if (list.isEmpty()) {
                 return sysDeptGroupMapper.DELETE(request);

@@ -32,9 +32,9 @@
 
                         <div class="gi-flex gi-grid-gap-20px">
                             <div class="gi-input-container" style="flex: 1;">
-                                <label for="user_name" class="gi-input-label" data-focus-label="true"
+                                <label for="user_nm" class="gi-input-label" data-focus-label="true"
                                     data-required="true">[Page.Message].Message.Label.Array["SYS_USER.MYINFO.MY_NAME"]</label>
-                                <input data-field="user_name" id="user_name" name="user_name" class="gi-input"
+                                <input data-field="user_nm" id="user_nm" name="user_nm" class="gi-input"
                                     data-required="true" autocomplete="off" />
                             </div>
                             <div class="gi-input-container" style="flex: 1;">
@@ -63,7 +63,7 @@
                         <div class="gi-flex gi-grid-gap-10px">
                             <div class="gi-input-container" style="flex: 4;">
                                 <label for="address" class="gi-input-label"
-                                    data-focus-label="true">[Page.Message].Message.Label.Array["SYS_USER.MYINFO.MY_ADDRESS"]</label>
+                                    data-focus-label="true">[Page.Message].Message.Label.Array["SYS_USER.MYINFO.MY_ADDR"]</label>
                                 <input data-field="address" id="address" name="address" class="gi-input"
                                     autocomplete="off" data-disabled />
                             </div>
@@ -72,14 +72,14 @@
                         </div>
 
                         <div class="gi-input-container">
-                            <label for="address_detail" class="gi-input-label"
-                                data-focus-label="true">[Page.Message].Message.Label.Array["SYS_USER.MYINFO.MY_ADDRESS_DETAIL"]</label>
-                            <input data-field="address_detail" id="address_detail" name="address_detail"
+                            <label for="addr_dtl" class="gi-input-label"
+                                data-focus-label="true">[Page.Message].Message.Label.Array["SYS_USER.MYINFO.MY_ADDR_DTL"]</label>
+                            <input data-field="addr_dtl" id="addr_dtl" name="addr_dtl"
                                 class="gi-input" autocomplete="off" />
                         </div>
 
                         <div class="gi-hidden">
-                            <input data-field="postal_code" id="postal_code" name="postal_code" class="gi-input"
+                            <input data-field="post_cd" id="post_cd" name="post_cd" class="gi-input"
                                 autocomplete="off" />
                         </div>
                     </div>
@@ -89,15 +89,15 @@
                         <div class="gi-flex gi-flex-column gi-grid-gap-20px">
                             <div class="gi-flex gi-grid-gap-20px">
                                 <div class="gi-input-container" style="flex: 1;">
-                                    <label for="office_name" class="gi-input-label"
-                                        data-focus-label="true">[Page.Message].Message.Label.Array["SYS_USER.MYINFO.MY_OFFICE_NAME"]</label>
-                                    <input data-field="office_name" id="office_name" name="office_name" class="gi-input"
+                                    <label for="offc_nm" class="gi-input-label"
+                                        data-focus-label="true">[Page.Message].Message.Label.Array["SYS_USER.MYINFO.MY_OFFC_NM"]</label>
+                                    <input data-field="offc_nm" id="offc_nm" name="offc_nm" class="gi-input"
                                         autocomplete="off" data-disabled />
                                 </div>
                                 <div class="gi-input-container" style="flex: 1;">
-                                    <label for="office_code" class="gi-input-label"
-                                        data-focus-label="true">[Page.Message].Message.Label.Array["SYS_USER.MYINFO.MY_OFFICE_CODE"]</label>
-                                    <input data-field="office_code" id="office_code" name="office_code" class="gi-input"
+                                    <label for="offc_cd" class="gi-input-label"
+                                        data-focus-label="true">[Page.Message].Message.Label.Array["SYS_USER.MYINFO.MY_OFFC_CD"]</label>
+                                    <input data-field="offc_cd" id="offc_cd" name="offc_cd" class="gi-input"
                                         autocomplete="off" data-disabled />
                                 </div>
                             </div>
@@ -111,15 +111,15 @@
                         <h2 class="gi-title-section">관리 정보</h2>
                         <div class="gi-flex gi-grid-gap-20px">
                             <div class="gi-input-container" style="flex: 1;">
-                                <label for="system_create_date" class="gi-input-label"
+                                <label for="sys_crt_dt" class="gi-input-label"
                                     data-focus-label="true">[Page.Message].Message.Label.Array["SYS_USER.MYINFO.MY_CREATE_DATE"]</label>
-                                <input data-field="system_create_date" id="system_create_date" name="system_create_date"
+                                <input data-field="sys_crt_dt" id="sys_crt_dt" name="sys_crt_dt"
                                     class="gi-input" autocomplete="off" data-disabled />
                             </div>
                             <div class="gi-input-container" style="flex: 1;">
-                                <label for="system_update_date" class="gi-input-label"
+                                <label for="sys_upd_dt" class="gi-input-label"
                                     data-focus-label="true">[Page.Message].Message.Label.Array["SYS_USER.MYINFO.MY_LAST_UPDATE_DATE"]</label>
-                                <input data-field="system_update_date" id="system_update_date" name="system_update_date"
+                                <input data-field="sys_upd_dt" id="sys_upd_dt" name="sys_upd_dt"
                                     class="gi-input" autocomplete="off" data-disabled />
                             </div>
                         </div>
@@ -141,7 +141,7 @@
     <div class="gi-popup-body"
         style="width: 350px !important; height: auto !important; min-height: 300px; padding:10px;">
         <div class="gi-popup-header">
-            <span>[Page.Message].Message.Label.Array["SYS_USER.MYINFO.MY_PASSWORD_CHANGE"]</span>
+            <span>[Page.Message].Message.Label.Array["SYS_USER.MYINFO.MY_PWD_CHANGE"]</span>
         </div>
         <div class="password-policy-section gi-row-90 gi-flex gi-flex-wrap" style="color:red; font-size:12px;"></div>
         <div class="gi-popup-contents">
@@ -150,22 +150,22 @@
                 <div id="update-area_popup" class="gi-padding-left-right-20px">
                     <div class="gi-flex gi-flex-column gi-grid-gap-16px">
                         <div class="gi-input-container">
-                            <label for="popup_before_password" class="gi-input-label" data-focus-label="true"
-                                data-required="true">[Page.Message].Message.Label.Array["SYS_USER.MYINFO.MY_BEFORE_PASSWORD"]</label>
-                            <input type="password" data-field="popup_before_password" id="popup_before_password"
-                                name="popup_before_password" class="gi-input" data-required="true" autocomplete="off" />
+                            <label for="popup_before_pwd" class="gi-input-label" data-focus-label="true"
+                                data-required="true">[Page.Message].Message.Label.Array["SYS_USER.MYINFO.MY_BEFORE_PWD"]</label>
+                            <input type="password" data-field="popup_before_pwd" id="popup_before_pwd"
+                                name="popup_before_pwd" class="gi-input" data-required="true" autocomplete="off" />
                         </div>
                         <div class="gi-input-container">
-                            <label for="popup_new_password" class="gi-input-label" data-focus-label="true"
-                                data-required="true">[Page.Message].Message.Label.Array["SYS_USER.MYINFO.MY_AFTER_PASSWORD"]</label>
-                            <input type="password" data-field="popup_new_password" id="popup_new_password"
-                                name="popup_new_password" class="gi-input" data-required="true" autocomplete="off" />
+                            <label for="popup_new_pwd" class="gi-input-label" data-focus-label="true"
+                                data-required="true">[Page.Message].Message.Label.Array["SYS_USER.MYINFO.MY_AFTER_PWD"]</label>
+                            <input type="password" data-field="popup_new_pwd" id="popup_new_pwd"
+                                name="popup_new_pwd" class="gi-input" data-required="true" autocomplete="off" />
                         </div>
                         <div class="gi-input-container">
-                            <label for="popup_new_password_confirm" class="gi-input-label" data-focus-label="true"
-                                data-required="true">[Page.Message].Message.Label.Array["SYS_USER.MYINFO.MY_AFTER_PASSWORD_CONFIRM"]</label>
-                            <input type="password" data-field="popup_new_password_confirm"
-                                id="popup_new_password_confirm" name="popup_new_password_confirm" class="gi-input"
+                            <label for="popup_new_pwd_confirm" class="gi-input-label" data-focus-label="true"
+                                data-required="true">[Page.Message].Message.Label.Array["SYS_USER.MYINFO.MY_AFTER_PWD_CONFIRM"]</label>
+                            <input type="password" data-field="popup_new_pwd_confirm"
+                                id="popup_new_pwd_confirm" name="popup_new_pwd_confirm" class="gi-input"
                                 data-required="true" autocomplete="off" />
                         </div>
                     </div>
@@ -216,8 +216,8 @@
         function bindUserGroup(userGroups) {
             let userGroupHtml = '';
             userGroups.forEach((group) => {
-                if (formUtil.checkEmptyValue(group.group_name)) {
-                    userGroupHtml += "<span class='gi-tag-gray'>" + group.group_name + "</span>";
+                if (formUtil.checkEmptyValue(group.grp_nm)) {
+                    userGroupHtml += "<span class='gi-tag-gray'>" + group.grp_nm + "</span>";
                 }
             });
 
@@ -275,11 +275,11 @@
             let url = "/cms/common/sysUser/update";
             let param = {
                 id: data.id,
-                user_name: data.user_name,
+                user_nm: data.user_nm,
                 tel: data.tel,
-                address: data.address,
-                address_detail: data.address_detail,
-                postal_code: data.postal_code,
+                address: data.addr,
+                addr_dtl: data.addr_dtl,
+                post_cd: data.post_cd,
             };
             axios.post(url, param).then(response => {
                 let status = response.status;
@@ -309,25 +309,25 @@
 
         function changePopupUpdateClickEventHandler() {
             let data = dataBinding.getData("sysUserPasswordChange");
-            const beforePassword = data.popup_before_password;
-            const newPassword = data.popup_new_password;
-            const newPasswordConfirm = data.popup_new_password_confirm;
+            const beforePassword = data.popup_before_pwd;
+            const newPassword = data.popup_new_pwd;
+            const newPasswordConfirm = data.popup_new_pwd_confirm;
 
             if (!beforePassword || !newPassword || !newPasswordConfirm) {
                 console.log(1)
-                const message = Message.Label.Array["SYS_USER.CHECK.PASSWORD"];
+                const message = Message.Label.Array["SYS_USER.CHECK.PWD"];
                 formUtil.alertPopup(message);
                 return false;
             }
             if (newPassword !== newPasswordConfirm) {
                 console.log(2)
-                const message = Message.Label.Array["SYS_USER.MYINFO.CHECK_PASSWORD_DOUBLE_CHECK"]
+                const message = Message.Label.Array["SYS_USER.MYINFO.CHECK_PWD_DOUBLE_CHECK"]
                 formUtil.alertPopup(message);
                 return false;
             }
             if (beforePassword === newPassword) {
                 console.log(3)
-                const message = Message.Label.Array["FAIL.SAME.PASSWORD"];
+                const message = Message.Label.Array["FAIL.SAME.PWD"];
                 formUtil.alertPopup(message);
                 return false;
             }
@@ -343,7 +343,7 @@
     function changePassword(cont) {
         const url = "/cms/common/sysUser/changePassword";
         const param = {
-            before_password: cont.beforePassword,
+            before_pwd: cont.beforePassword,
             password: cont.newPassword,
             email: JwtUtils.getUserEmailFromJWT()
         };
@@ -362,7 +362,7 @@
         return new Promise((resolve, reject) => {
             let url = "/cms/common/sysSiteConfig/find";
             let param = {
-                config_group_id: "PASSWORD_POLICY",
+                cfg_grp_id: "PWD_POLICY",
                 use_yn: "1"
             }
             axios.post(url, param).then(response => {
@@ -384,7 +384,7 @@
     function setPasswordPolicyInPopupSection(cont) {
         let contents = '';
         cont.map((item, i) => {
-            contents += '<div class="gi-row-50"><span class="test">[' + (i + 1) + ']' + item.description + " : " + item.config_value + '</span></div>'
+            contents += '<div class="gi-row-50"><span class="test">[' + (i + 1) + ']' + item.description + " : " + item.cfg_val + '</span></div>'
         })
         $(".password-policy-section").html(contents);
     }
@@ -425,7 +425,7 @@
     //             if (formUtil.checkEmptyValue(response.data)) {
     //                 let data = response.data[0];
     //                 let filePath = data.file_path;
-    //                 let fileId = data.file_id + "." + data.file_extension;
+    //                 let fileId = data.file_id + "." + data.file_ext;
     //                 let cont = {
     //                     path: filePath,
     //                     file_id: fileId

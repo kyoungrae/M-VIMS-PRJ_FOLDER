@@ -55,13 +55,13 @@ public class QueryTypeInterceptor implements Interceptor {
         // 2. 자동 감사 필드 주입 (Insert/Update/Merge)
         if (commandType == org.apache.ibatis.mapping.SqlCommandType.INSERT) {
             Date systemDateTime = DateUtil.getServerTimeTypeDate();
-            modifyFieldDate(parameterObject, "system_create_date", systemDateTime);
-            modifyFieldDate(parameterObject, "system_login_date", systemDateTime);
-            modifyFieldDate(parameterObject, "system_update_date", systemDateTime);
+            modifyFieldDate(parameterObject, "sys_crt_dt", systemDateTime);
+            modifyFieldDate(parameterObject, "sys_login_dt", systemDateTime);
+            modifyFieldDate(parameterObject, "sys_upd_dt", systemDateTime);
 
             if (userEmail != null) {
-                modifyField(parameterObject, "system_create_userid", userEmail);
-                modifyField(parameterObject, "system_update_userid", userEmail);
+                modifyField(parameterObject, "sys_crt_usr_id", userEmail);
+                modifyField(parameterObject, "sys_upd_usr_id", userEmail);
             }
         } else if (commandType == org.apache.ibatis.mapping.SqlCommandType.UPDATE) {
             Date systemDateTime = DateUtil.getServerTimeTypeDate();
@@ -89,8 +89,8 @@ public class QueryTypeInterceptor implements Interceptor {
     }
 
     private void updateAuditFields(Object obj, String userEmail, Date systemDateTime) {
-        modifyField(obj, "system_update_userid", userEmail);
-        modifyFieldDate(obj, "system_update_date", systemDateTime);
+        modifyField(obj, "sys_upd_usr_id", userEmail);
+        modifyFieldDate(obj, "sys_upd_dt", systemDateTime);
     }
 
     private void applyTransformations(Object obj) throws Exception {

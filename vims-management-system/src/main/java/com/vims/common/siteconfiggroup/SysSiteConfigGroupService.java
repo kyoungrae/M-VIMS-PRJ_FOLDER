@@ -61,7 +61,7 @@ public class SysSiteConfigGroupService extends AbstractCommonService<SysSiteConf
     protected int removeImpl(SysSiteConfigGroup request) {
         List<SysSiteConfig> list = null;
         try {
-            var isExitParam = SysSiteConfig.builder().config_group_id(request.getConfig_group_id()).build();
+            var isExitParam = SysSiteConfig.builder().cfg_grp_id(request.getCfg_grp_id()).build();
             list = sysSiteConfigMapper.SELECT(isExitParam);
             if (list.isEmpty()) {
                 return sysSiteConfigGroupMapper.DELETE(request);

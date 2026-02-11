@@ -20,7 +20,7 @@ import java.util.Arrays;
 @AllArgsConstructor
 @NoArgsConstructor
 @SuperBuilder
-@Table(name = "SYS_FILE_DETAIL")
+@Table(name = "SYS_FILE_DTL")
 public class SysFileDetail extends Common {
 
     @Transient
@@ -44,24 +44,24 @@ public class SysFileDetail extends Common {
 
     /***
      * <pre>
-     *  file_name : 파일이름
+     *  file_nm : 파일이름
      * </pre>
      */
-    private String file_name;
+    private String file_nm;
 
     /***
      * <pre>
-     *  file_size : 파일크기
+     *  file_sz : 파일크기
      * </pre>
      */
-    private String file_size;
+    private String file_sz;
 
     /***
      * <pre>
-     *  file_extension : 파일확장자
+     *  file_ext : 파일확장자
      * </pre>
      */
-    private String file_extension;
+    private String file_ext;
 
     /***
      * <pre>
@@ -72,42 +72,42 @@ public class SysFileDetail extends Common {
 
     /***
      * <pre>
-     *  system_create_date : 작성일
+     *  sys_crt_dt : 작성일
      * </pre>
      */
-    private Date system_create_date;
-    private Date _system_create_date;
+    private Date sys_crt_dt;
+    private Date _sys_crt_dt;
 
     /***
      * <pre>
-     *  system_create_userid : 작성자 아이디
+     *  sys_crt_usr_id : 작성자 아이디
      * </pre>
      */
-    private String system_create_userid;
-    private String _system_create_userid;
+    private String sys_crt_usr_id;
+    private String _sys_crt_usr_id;
 
     /***
      * <pre>
-     *  system_update_date : 수정일자
+     *  sys_upd_dt : 수정일자
      * </pre>
      */
-    private Date system_update_date;
-    private Date _system_update_date;
+    private Date sys_upd_dt;
+    private Date _sys_upd_dt;
 
     /***
      * <pre>
-     *  system_update_userid : 수정자 아이디
+     *  sys_upd_usr_id : 수정자 아이디
      * </pre>
      */
-    private String system_update_userid;
-    private String _system_update_userid;
+    private String sys_upd_usr_id;
+    private String _sys_upd_usr_id;
 
     /***
      * <pre>
-     *  menu_code : 메뉴코드
+     *  menu_cd : 메뉴코드
      * </pre>
      */
-    private String menu_code;
+    private String menu_cd;
 
     /***
      * <pre>
@@ -127,27 +127,27 @@ public class SysFileDetail extends Common {
 
     /***
      * <pre>
-     *  file_name : 파일이름
+     *  file_nm : 파일이름
      * </pre>
      */
     @Transient
-    private String _file_name;
+    private String _file_nm;
 
     /***
      * <pre>
-     *  file_size : 파일크기
+     *  file_sz : 파일크기
      * </pre>
      */
     @Transient
-    private String _file_size;
+    private String _file_sz;
 
     /***
      * <pre>
-     *  file_extension : 파일확장자
+     *  file_ext : 파일확장자
      * </pre>
      */
     @Transient
-    private String _file_extension;
+    private String _file_ext;
 
     /***
      * <pre>

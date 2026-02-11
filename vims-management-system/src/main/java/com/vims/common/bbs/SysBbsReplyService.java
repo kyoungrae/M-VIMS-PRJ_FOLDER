@@ -77,10 +77,10 @@ public class SysBbsReplyService extends AbstractCommonService<SysBbsReply> {
                     String currentUserEmail = user.getEmail();
 
                     // 관리자 권한이 있는 경우 삭제 허용 (선택 사항, 여기서는 작성자만 허용)
-                    // if (!currentUserEmail.equals(targetReply.getSystem_create_userid()) &&
+                    // if (!currentUserEmail.equals(targetReply.getSys_crt_usr_id()) &&
                     // !user.getRole().name().equals("ADMIN")) {
 
-                    if (!currentUserEmail.equals(targetReply.getSystem_create_userid())) {
+                    if (!currentUserEmail.equals(targetReply.getSys_crt_usr_id())) {
                         // 작성자가 아니면 삭제 불가 (0 반환)
                         return 0;
                     }

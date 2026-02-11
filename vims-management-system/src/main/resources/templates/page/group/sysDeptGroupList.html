@@ -6,7 +6,7 @@
 <article class="gi-article-content gi-col-95 gi-row-100">
     <section class="gi-col-100 gi-row-100">
         <header class="gi-flex gi-flex-center gi-col-10">
-            <h1 class="gi-page-title">[Page.Message].Message.Label.Array["SYS_DEPT_GROUP.TITLE_LIST"]</h1>
+            <h1 class="gi-page-title">[Page.Message].Message.Label.Array["SYS_DEPT_GRP.TITLE_LIST"]</h1>
         </header>
         <article class=" gi-col-90 gi-row-100">
 
@@ -14,7 +14,7 @@
                 <div class="gi-flex gi-flex-align-items-center gi-grid-gap-16px">
                     <div class="gi-input-container" style="flex: 1;">
                         <label for="searchDesc1" class="gi-input-label"
-                            data-focus-label="true">[Page.Message].Message.Label.Array["SYS_DEPT_GROUP.GROUP_NAME"]</label>
+                            data-focus-label="true">[Page.Message].Message.Label.Array["SYS_DEPT_GRP.GRP_NM"]</label>
                         <input class="gi-input" type="text" id="searchDesc1" name="searchDesc1" autocomplete="off" />
                     </div>
                     <div class="gi-flex gi-grid-gap-8px">
@@ -33,10 +33,10 @@
                     <div class="gi-flex gi-flex-justify-content-flex-end gi-grid-gap-8px gi-margin-top-12px">
                         <button id="insert_group-btn" class="gi-btn-blue"
                             gi-popup-open-id="gi-common_group_register-popup"
-                            type="button">[Page.Message].Message.Label.Array["SYS_DEPT_GROUP.TITLE_REGISTER"]</button>
+                            type="button">[Page.Message].Message.Label.Array["SYS_DEPT_GRP.TITLE_REGISTER"]</button>
                         <button id="insert_child_group-btn" class="gi-btn-blue gi-hidden"
                             gi-popup-open-id="gi-common_group_register-popup"
-                            type="button">[Page.Message].Message.Label.Array["SYS_DEPT_GROUP.TITLE_DEPTH_REGISTER"]</button>
+                            type="button">[Page.Message].Message.Label.Array["SYS_DEPT_GRP.TITLE_DEPTH_REGISTER"]</button>
                     </div>
                 </div>
 
@@ -46,7 +46,7 @@
                     <div class="gi-flex gi-flex-justify-content-flex-end gi-margin-top-12px">
                         <button id="insert_user_group-btn" class="gi-btn-blue gi-hidden"
                             gi-popup-open-id="gi-common_user_group_register-popup" type="button">
-                            [Page.Message].Message.Label.Array["SYS_USER_GROUP.REGISTER_GROUP_USER_BTN"]
+                            [Page.Message].Message.Label.Array["SYS_USER_GRP.REGISTER_GROUP_USER_BTN"]
                         </button>
                     </div>
                 </div>
@@ -59,39 +59,39 @@
 <article id="gi-common_group_register-popup" class="gi-popup" data-popup-open="false">
     <div class="gi-popup-body" style="width: 500px;">
         <div class="gi-popup-header">
-            <span>[Page.Message].Message.Label.Array["SYS_DEPT_GROUP.TITLE_REGISTER"]</span>
+            <span>[Page.Message].Message.Label.Array["SYS_DEPT_GRP.TITLE_REGISTER"]</span>
         </div>
         <div class="gi-popup-contents">
             <form id="sysDeptGroupRegister">
                 <div class="gi-flex gi-flex-column gi-grid-gap-16px">
                     <div class="gi-input-container">
-                        <label for="top_group_id" class="gi-input-label" data-focus-label="true"
-                            data-required="true">[Page.Message].Message.Label.Array["SYS_DEPT_GROUP.TOP_GROUP_ID"]</label>
-                        <input data-disabled data-field="top_group_id" id="top_group_id" name="top_group_id"
+                        <label for="top_grp_id" class="gi-input-label" data-focus-label="true"
+                            data-required="true">[Page.Message].Message.Label.Array["SYS_DEPT_GRP.TOP_GRP_ID"]</label>
+                        <input data-disabled data-field="top_grp_id" id="top_grp_id" name="top_grp_id"
                             class="gi-input" data-required="true" autocomplete="off" />
                     </div>
                     <div class="gi-input-container">
-                        <label for="group_id" class="gi-input-label" data-focus-label="true"
-                            data-required="true">[Page.Message].Message.Label.Array["SYS_DEPT_GROUP.GROUP_ID"]</label>
-                        <input data-field="group_id" id="group_id" name="group_id" class="gi-input" data-required="true"
+                        <label for="grp_id" class="gi-input-label" data-focus-label="true"
+                            data-required="true">[Page.Message].Message.Label.Array["SYS_DEPT_GRP.GRP_ID"]</label>
+                        <input data-field="grp_id" id="grp_id" name="grp_id" class="gi-input" data-required="true"
                             autocomplete="off" />
                     </div>
                     <div class="gi-input-container">
-                        <label for="group_name" class="gi-input-label" data-focus-label="true"
-                            data-required="true">[Page.Message].Message.Label.Array["SYS_DEPT_GROUP.GROUP_NAME"]</label>
-                        <input data-field="group_name" id="group_name" name="group_name" class="gi-input"
+                        <label for="grp_nm" class="gi-input-label" data-focus-label="true"
+                            data-required="true">[Page.Message].Message.Label.Array["SYS_DEPT_GRP.GRP_NM"]</label>
+                        <input data-field="grp_nm" id="grp_nm" name="grp_nm" class="gi-input"
                             data-required="true" autocomplete="off" />
                     </div>
                     <div class="gi-flex gi-grid-gap-10px">
                         <div class="gi-input-container" style="flex: 1;">
-                            <label for="group_level" class="gi-input-label" data-focus-label="true"
-                                data-required="true">[Page.Message].Message.Label.Array["SYS_DEPT_GROUP.GROUP_LEVEL"]</label>
-                            <input data-disabled data-field="group_level" id="group_level" name="group_level"
+                            <label for="grp_lvl" class="gi-input-label" data-focus-label="true"
+                                data-required="true">[Page.Message].Message.Label.Array["SYS_DEPT_GRP.GRP_LVL"]</label>
+                            <input data-disabled data-field="grp_lvl" id="grp_lvl" name="grp_lvl"
                                 class="gi-input" data-required="true" autocomplete="off" />
                         </div>
                         <div class="gi-input-container" style="flex: 1;">
                             <label for="use_yn" class="gi-input-label" data-focus-label="true"
-                                data-required="true">[Page.Message].Message.Label.Array["SYS_DEPT_GROUP.USE_YN"]</label>
+                                data-required="true">[Page.Message].Message.Label.Array["SYS_DEPT_GRP.USE_YN"]</label>
                             <input gi-selectbox data-selectbox-field="USE_YN" data-field="use_yn" id="use_yn"
                                 name="use_yn" class="gi-input" data-required="true" autocomplete="off" />
                         </div>
@@ -110,26 +110,26 @@
 <article id="gi-common_group_update-popup" class="gi-popup" data-popup-open="false">
     <div class="gi-popup-body" style="width: 500px;">
         <div class="gi-popup-header">
-            <span>[Page.Message].Message.Label.Array["SYS_DEPT_GROUP.TITLE_MODIFY"]</span>
+            <span>[Page.Message].Message.Label.Array["SYS_DEPT_GRP.TITLE_MODIFY"]</span>
         </div>
         <div class="gi-popup-contents">
             <form id="sysDeptGroupUpdate">
                 <div class="gi-flex gi-flex-column gi-grid-gap-16px">
                     <div class="gi-input-container">
-                        <label for="group_id-update" class="gi-input-label" data-focus-label="true"
-                            data-required="true">[Page.Message].Message.Label.Array["SYS_DEPT_GROUP.GROUP_ID"]</label>
-                        <input data-disabled data-field="group_id" id="group_id-update" name="group_id" class="gi-input"
+                        <label for="grp_id-update" class="gi-input-label" data-focus-label="true"
+                            data-required="true">[Page.Message].Message.Label.Array["SYS_DEPT_GRP.GRP_ID"]</label>
+                        <input data-disabled data-field="grp_id" id="grp_id-update" name="grp_id" class="gi-input"
                             data-required="true" autocomplete="off" />
                     </div>
                     <div class="gi-input-container">
-                        <label for="group_name-update" class="gi-input-label" data-focus-label="true"
-                            data-required="true">[Page.Message].Message.Label.Array["SYS_DEPT_GROUP.GROUP_NAME"]</label>
-                        <input data-field="group_name" id="group_name-update" name="group_name" class="gi-input"
+                        <label for="grp_nm-update" class="gi-input-label" data-focus-label="true"
+                            data-required="true">[Page.Message].Message.Label.Array["SYS_DEPT_GRP.GRP_NM"]</label>
+                        <input data-field="grp_nm" id="grp_nm-update" name="grp_nm" class="gi-input"
                             data-required="true" autocomplete="off" />
                     </div>
                     <div class="gi-input-container">
                         <label for="update_use_yn" class="gi-input-label" data-focus-label="true"
-                            data-required="true">[Page.Message].Message.Label.Array["SYS_DEPT_GROUP.USE_YN"]</label>
+                            data-required="true">[Page.Message].Message.Label.Array["SYS_DEPT_GRP.USE_YN"]</label>
                         <input type="toggle" data-field="use_yn" id="update_use_yn" name="use_yn" class="gi-input"
                             data-required="true" autocomplete="off" />
                     </div>
@@ -147,20 +147,20 @@
 <article id="gi-common_user_group_register-popup" class="gi-popup" data-popup-open="false">
     <div class="gi-popup-body" style="width: 800px;">
         <div class="gi-popup-header">
-            <span>[Page.Message].Message.Label.Array["SYS_USER_GROUP.REGISTER_GROUP_USER_BTN"]</span>
+            <span>[Page.Message].Message.Label.Array["SYS_USER_GRP.REGISTER_GROUP_USER_BTN"]</span>
         </div>
         <div class="gi-popup-contents">
             <form id="sysUserGroupRegister">
                 <div class="gi-flex gi-flex-align-items-center gi-grid-gap-16px gi-margin-bottom-20px">
                     <div class="gi-input-container" style="flex: 1;">
                         <label for="user_id-search" class="gi-input-label"
-                            data-focus-label="true">[Page.Message].Message.Label.Array["SYS_USER_GROUP.USER_ID"]</label>
+                            data-focus-label="true">[Page.Message].Message.Label.Array["SYS_USER_GRP.USER_ID"]</label>
                         <input class="gi-input" type="text" id="user_id-search" name="user_id-search"
                             autocomplete="off" />
                     </div>
                     <button id="user_id-search-btn" class="gi-btn-blue" style="margin-top: auto;"
                         type="button">[Page.Message].Message.Label.Array["SEARCH_BTN"]</button>
-                    <div data-field="group_id" name="group_id" class="gi-hidden"></div>
+                    <div data-field="grp_id" name="grp_id" class="gi-hidden"></div>
                 </div>
                 <div id="gi-Grid3" class="gi-Grid" style="height: 400px;"></div>
             </form>
@@ -173,9 +173,9 @@
 <script type="text/javascript">
     var PRGMID = "sysDeptGroupList";	//page id
 
-    var SYS_DEPT_GROUP_REGISTER_PRGMID = "gi-common_group_register-popup";
-    var SYS_DEPT_GROUP_UPDATE_PRGMID = "gi-common_group_update-popup";
-    var SYS_USER_GROUP_REGISTER_PRGMID = "gi-common_user_group_register-popup";
+    var SYS_DEPT_GRP_REGISTER_PRGMID = "gi-common_group_register-popup";
+    var SYS_DEPT_GRP_UPDATE_PRGMID = "gi-common_group_update-popup";
+    var SYS_USER_GRP_REGISTER_PRGMID = "gi-common_user_group_register-popup";
     var groupId = null;
     init();
     function init() {
@@ -224,12 +224,12 @@
 
         //그룹등록 버튼
         $("#insert_group-btn").click(function () {
-            $("#group_level").val("0");
-            commonTag.inputTagReset($("#group_level"));
-            commonTag.inputTagReset($("#top_group_id"));
-            $("#top_group_id").val("-");
-            $("#top_group_id-layout").addClass("gi-hidden");
-            $("#top_group_id").attr("data-required", false);
+            $("#grp_lvl").val("0");
+            commonTag.inputTagReset($("#grp_lvl"));
+            commonTag.inputTagReset($("#top_grp_id"));
+            $("#top_grp_id").val("-");
+            $("#top_grp_id-layout").addClass("gi-hidden");
+            $("#top_grp_id").attr("data-required", false);
         });
         //그룹등록 팝업 등록 버튼
         $("#sysDeptGroupRegister-btn").off("click.").on("click.", function () {
@@ -238,7 +238,7 @@
 
         $("#user_id-search-btn").off("click").on("click", function () {
             let data = dataBinding.getData("sysUserGroupRegister");
-            findBySysUserList('', '', '', '', data.group_id);
+            findBySysUserList('', '', '', '', data.grp_id);
         })
 
     }
@@ -254,7 +254,7 @@
         };
         // 검색조건 설정 (추가해서 사용)
         let cont1 = $("#searchDesc1").val();
-        if (formUtil.checkEmptyValue(cont1)) param._group_name = cont1;
+        if (formUtil.checkEmptyValue(cont1)) param._grp_nm = cont1;
 
         axios.post(url, param).then(response => {
             let status = response.status;
@@ -265,25 +265,25 @@
                 let sysDeptGroup_menuGrid_header = {
                     title: "그룹아이디 목록",
                     list: [
-                        { HEADER: '[Page.Message].Message.Label.Array["SYS_DEPT_GROUP.GROUP_NAME"]', ID: "group_name", WIDTH: "25", TYPE: "text", FONT_SIZE: "12px", TEXT_ALIGN: "left", HIDDEN: false },
-                        { HEADER: '[Page.Message].Message.Label.Array["SYS_DEPT_GROUP.TOP_GROUP_ID"]', ID: "top_group_id", WIDTH: "20", TYPE: "text", FONT_SIZE: "12px", TEXT_ALIGN: "left", HIDDEN: false },
-                        { HEADER: '[Page.Message].Message.Label.Array["SYS_DEPT_GROUP.GROUP_ID"]', ID: "group_id", WIDTH: "20", TYPE: "text", FONT_SIZE: "12px", TEXT_ALIGN: "left", HIDDEN: false },
-                        { HEADER: '[Page.Message].Message.Label.Array["SYS_DEPT_GROUP.GROUP_LEVEL"]', ID: "group_level", WIDTH: "5", TYPE: "text", FONT_SIZE: "12px", TEXT_ALIGN: "center", HIDDEN: false },
-                        { HEADER: '[Page.Message].Message.Label.Array["SYS_DEPT_GROUP.USE_YN"]', ID: "use_yn", WIDTH: "10", TYPE: "text", FONT_SIZE: "12px", TEXT_ALIGN: "center", SYS_CODE_GROUP_ID: "USE_YN", HIDDEN: false },
+                        { HEADER: '[Page.Message].Message.Label.Array["SYS_DEPT_GRP.GRP_NM"]', ID: "grp_nm", WIDTH: "25", TYPE: "text", FONT_SIZE: "12px", TEXT_ALIGN: "left", HIDDEN: false },
+                        { HEADER: '[Page.Message].Message.Label.Array["SYS_DEPT_GRP.TOP_GRP_ID"]', ID: "top_grp_id", WIDTH: "20", TYPE: "text", FONT_SIZE: "12px", TEXT_ALIGN: "left", HIDDEN: false },
+                        { HEADER: '[Page.Message].Message.Label.Array["SYS_DEPT_GRP.GRP_ID"]', ID: "grp_id", WIDTH: "20", TYPE: "text", FONT_SIZE: "12px", TEXT_ALIGN: "left", HIDDEN: false },
+                        { HEADER: '[Page.Message].Message.Label.Array["SYS_DEPT_GRP.GRP_LVL"]', ID: "grp_lvl", WIDTH: "5", TYPE: "text", FONT_SIZE: "12px", TEXT_ALIGN: "center", HIDDEN: false },
+                        { HEADER: '[Page.Message].Message.Label.Array["SYS_DEPT_GRP.USE_YN"]', ID: "use_yn", WIDTH: "10", TYPE: "text", FONT_SIZE: "12px", TEXT_ALIGN: "center", SYS_CD_GRP_ID: "USE_YN", HIDDEN: false },
                         { HEADER: '[Page.Message].Message.Label.Array["UPDATE_BTN"]', ID: "update_btn", WIDTH: "10", TYPE: "button", FONT_SIZE: "12px", TEXT_ALIGN: "center", HIDDEN: false },
                         { HEADER: '[Page.Message].Message.Label.Array["DELETE_BTN"]', ID: "delete_btn", WIDTH: "10", TYPE: "button", FONT_SIZE: "12px", TEXT_ALIGN: "center", HIDDEN: false },
 
                         { HEADER: "No", ID: "no", WIDTH: "5", TYPE: "text", FONT_SIZE: "12px", TEXT_ALIGN: "center", HIDDEN: true },
-                        { HEADER: '[Page.Message].Message.Label.Array["SYS_DEPT_GROUP.SYSTEM_CREATE_DATE"]', ID: "system_create_date", WIDTH: "40", TYPE: "text", FONT_SIZE: "12px", TEXT_ALIGN: "center", HIDDEN: true },
-                        { HEADER: '[Page.Message].Message.Label.Array["SYS_DEPT_GROUP.SYSTEM_CREATE_USERID"]', ID: "system_create_userid", WIDTH: "40", TYPE: "text", FONT_SIZE: "12px", TEXT_ALIGN: "left", HIDDEN: true },
-                        { HEADER: '[Page.Message].Message.Label.Array["SYS_DEPT_GROUP.SYSTEM_UPDATE_DATE"]', ID: "system_update_date", WIDTH: "40", TYPE: "text", FONT_SIZE: "12px", TEXT_ALIGN: "center", HIDDEN: true },
-                        { HEADER: '[Page.Message].Message.Label.Array["SYS_DEPT_GROUP.SYSTEM_UPDATE_USERID"]', ID: "system_update_userid", WIDTH: "40", TYPE: "text", FONT_SIZE: "12px", TEXT_ALIGN: "center", HIDDEN: true }
+                        { HEADER: '[Page.Message].Message.Label.Array["SYS_DEPT_GRP.SYS_CRT_DT"]', ID: "sys_crt_dt", WIDTH: "40", TYPE: "text", FONT_SIZE: "12px", TEXT_ALIGN: "center", HIDDEN: true },
+                        { HEADER: '[Page.Message].Message.Label.Array["SYS_DEPT_GRP.SYS_CRT_USR_ID"]', ID: "sys_crt_usr_id", WIDTH: "40", TYPE: "text", FONT_SIZE: "12px", TEXT_ALIGN: "left", HIDDEN: true },
+                        { HEADER: '[Page.Message].Message.Label.Array["SYS_DEPT_GRP.SYS_UPD_DT"]', ID: "sys_upd_dt", WIDTH: "40", TYPE: "text", FONT_SIZE: "12px", TEXT_ALIGN: "center", HIDDEN: true },
+                        { HEADER: '[Page.Message].Message.Label.Array["SYS_DEPT_GRP.SYS_UPD_USR_ID"]', ID: "sys_upd_usr_id", WIDTH: "40", TYPE: "text", FONT_SIZE: "12px", TEXT_ALIGN: "center", HIDDEN: true }
                     ]
                 }
                 //그리드 생성 <div id="gi-Grid"></div>
                 let sysDeptGroup_menu_grid = formUtil.giGridHierarchy(sysDeptGroup_menuGrid_header, "", "", "gi-Grid1");
 
-                sysDeptGroup_menu_grid.HierarchyOption({ level_column: "group_level", parent_depth_column: "group_id", child_depth_column: "top_group_id" });
+                sysDeptGroup_menu_grid.HierarchyOption({ level_column: "grp_lvl", parent_depth_column: "grp_id", child_depth_column: "top_grp_id" });
                 //그리드 데이터 설정
                 sysDeptGroup_menu_grid.DataSet(data);
 
@@ -298,14 +298,14 @@
                     let insertUserGroupBtn = $("#insert_user_group-btn");
                     let insertChildGroupBtn = $("#insert_child_group-btn");
                     if (clickFlag) {
-                        groupId = rows.group_id;
+                        groupId = rows.grp_id;
                         findBySysUserGroupList();
                         //NOTE: 사용자 등록 버튼 활성화
                         insertUserGroupBtn.removeClass("gi-hidden");
                         insertUserGroupBtn.off("click.insertUserGroupBtnClickEventHandler")
                             .on("click.insertUserGroupBtnClickEventHandler", insertUserGroupBtnClickEventHandler);
 
-                        if (rows.group_level === "0") {
+                        if (rows.grp_lvl === "0") {
                             topLevelGroupRowsClickEventHandler(true);
                         } else {
                             topLevelGroupRowsClickEventHandler(false);
@@ -332,10 +332,10 @@
                         }
                     }
                     function insertChildGroupBtnClickEventHandler() {
-                        $("#top_group_id-layout").removeClass("gi-hidden");
-                        $("#group_level").val("1");
-                        $("#top_group_id").val(rows.group_id);
-                        $("#top_group_id").attr("data-required", true);
+                        $("#top_grp_id-layout").removeClass("gi-hidden");
+                        $("#grp_lvl").val("1");
+                        $("#top_grp_id").val(rows.grp_id);
+                        $("#top_grp_id").attr("data-required", true);
                         commonTag.inputTagReset($(".gi-input"));
                     }
                 }
@@ -366,7 +366,7 @@
         if (formUtil.checkEmptyValue(cont1)) param.searchDesc1 = cont1;
         if (formUtil.checkEmptyValue(cont2)) param.from_date = cont2;
         if (formUtil.checkEmptyValue(cont3)) param.to_date = cont3;
-        if (formUtil.checkEmptyValue(groupId)) param.group_id = groupId;
+        if (formUtil.checkEmptyValue(groupId)) param.grp_id = groupId;
 
         // 정렬조건추가 (기준id, 순서)
         if (formUtil.checkEmptyValue(sortId)) param.sort_id = sortId;
@@ -381,18 +381,18 @@
                     title: "사용자그룹목록",
                     list: [
                         { HEADER: "No", ID: "no", WIDTH: "5", TYPE: "text", FONT_SIZE: "12px", TEXT_ALIGN: "center", HIDDEN: false },
-                        { HEADER: '[Page.Message].Message.Label.Array["SYS_DEPT_GROUP.GROUP_ID"]', ID: "group_id", WIDTH: "20", TYPE: "text", FONT_SIZE: "12px", TEXT_ALIGN: "center", HIDDEN: false },
-                        { HEADER: '[Page.Message].Message.Label.Array["SYS_USER_GROUP.USER_EMAIL"]', ID: "user_email", WIDTH: "25", TYPE: "text", FONT_SIZE: "12px", TEXT_ALIGN: "center", HIDDEN: false },
-                        { HEADER: '[Page.Message].Message.Label.Array["SYS_USER_GROUP.USER_ID"]', ID: "user_id", WIDTH: "15", TYPE: "text", FONT_SIZE: "12px", TEXT_ALIGN: "center", HIDDEN: false },
-                        { HEADER: '[Page.Message].Message.Label.Array["SYS_USER.OFFICE_NAME"]', ID: "office_name", WIDTH: "25", TYPE: "text", FONT_SIZE: "12px", TEXT_ALIGN: "center", HIDDEN: false },
+                        { HEADER: '[Page.Message].Message.Label.Array["SYS_DEPT_GRP.GRP_ID"]', ID: "grp_id", WIDTH: "20", TYPE: "text", FONT_SIZE: "12px", TEXT_ALIGN: "center", HIDDEN: false },
+                        { HEADER: '[Page.Message].Message.Label.Array["SYS_USER_GRP.USER_EMAIL"]', ID: "user_email", WIDTH: "25", TYPE: "text", FONT_SIZE: "12px", TEXT_ALIGN: "center", HIDDEN: false },
+                        { HEADER: '[Page.Message].Message.Label.Array["SYS_USER_GRP.USER_ID"]', ID: "user_id", WIDTH: "15", TYPE: "text", FONT_SIZE: "12px", TEXT_ALIGN: "center", HIDDEN: false },
+                        { HEADER: '[Page.Message].Message.Label.Array["SYS_USER.OFFC_NM"]', ID: "offc_nm", WIDTH: "25", TYPE: "text", FONT_SIZE: "12px", TEXT_ALIGN: "center", HIDDEN: false },
                         { HEADER: '[Page.Message].Message.Label.Array["DELETE_BTN"]', ID: "userGroupDelete_btn", WIDTH: "10", TYPE: "button", FONT_SIZE: "12px", TEXT_ALIGN: "center", HIDDEN: false },
 
-                        { HEADER: '[Page.Message].Message.Label.Array["SYS_USER.OFFICE_CODE"]', ID: "office_code", WIDTH: "20", TYPE: "text", FONT_SIZE: "12px", TEXT_ALIGN: "center", HIDDEN: true },
+                        { HEADER: '[Page.Message].Message.Label.Array["SYS_USER.OFFC_CD"]', ID: "offc_cd", WIDTH: "20", TYPE: "text", FONT_SIZE: "12px", TEXT_ALIGN: "center", HIDDEN: true },
                         { HEADER: "ID", ID: "id", WIDTH: "40", TYPE: "text", FONT_SIZE: "12px", TEXT_ALIGN: "center", HIDDEN: true },
-                        { HEADER: '[Page.Message].Message.Label.Array["SYS_DEPT_GROUP.SYSTEM_CREATE_DATE"]', ID: "system_create_date", WIDTH: "40", TYPE: "text", FONT_SIZE: "12px", TEXT_ALIGN: "center", HIDDEN: true },
-                        { HEADER: '[Page.Message].Message.Label.Array["SYS_DEPT_GROUP.SYSTEM_CREATE_USERID"]', ID: "system_create_userid", WIDTH: "40", TYPE: "text", FONT_SIZE: "12px", TEXT_ALIGN: "center", HIDDEN: true },
-                        { HEADER: '[Page.Message].Message.Label.Array["SYS_DEPT_GROUP.SYSTEM_UPDATE_DATE"]', ID: "system_update_date", WIDTH: "40", TYPE: "text", FONT_SIZE: "12px", TEXT_ALIGN: "center", HIDDEN: true },
-                        { HEADER: '[Page.Message].Message.Label.Array["SYS_DEPT_GROUP.SYSTEM_UPDATE_USERID"]', ID: "system_update_userid", WIDTH: "40", TYPE: "text", FONT_SIZE: "12px", TEXT_ALIGN: "center", HIDDEN: true }
+                        { HEADER: '[Page.Message].Message.Label.Array["SYS_DEPT_GRP.SYS_CRT_DT"]', ID: "sys_crt_dt", WIDTH: "40", TYPE: "text", FONT_SIZE: "12px", TEXT_ALIGN: "center", HIDDEN: true },
+                        { HEADER: '[Page.Message].Message.Label.Array["SYS_DEPT_GRP.SYS_CRT_USR_ID"]', ID: "sys_crt_usr_id", WIDTH: "40", TYPE: "text", FONT_SIZE: "12px", TEXT_ALIGN: "center", HIDDEN: true },
+                        { HEADER: '[Page.Message].Message.Label.Array["SYS_DEPT_GRP.SYS_UPD_DT"]', ID: "sys_upd_dt", WIDTH: "40", TYPE: "text", FONT_SIZE: "12px", TEXT_ALIGN: "center", HIDDEN: true },
+                        { HEADER: '[Page.Message].Message.Label.Array["SYS_DEPT_GRP.SYS_UPD_USR_ID"]', ID: "sys_upd_usr_id", WIDTH: "40", TYPE: "text", FONT_SIZE: "12px", TEXT_ALIGN: "center", HIDDEN: true }
                     ]
                 }
                 //그리드 생성 <div id="gi-Grid"></div>
@@ -439,7 +439,7 @@
         if (formUtil.checkEmptyValue(cont1)) param.searchDesc1 = cont1;
         if (formUtil.checkEmptyValue(cont2)) param.from_date = cont2;
         if (formUtil.checkEmptyValue(cont3)) param.to_date = cont3;
-        if (formUtil.checkEmptyValue(groupId)) param.group_id = groupId;
+        if (formUtil.checkEmptyValue(groupId)) param.grp_id = groupId;
         if (formUtil.checkEmptyValue(cont4)) param.user_id = cont4;
 
         // 정렬조건추가 (기준id, 순서)
@@ -456,9 +456,9 @@
                     title: "사용자등록",
                     list: [
                         { HEADER: "No", ID: "no", WIDTH: "7", TYPE: "text", FONT_SIZE: "12px", TEXT_ALIGN: "center", HIDDEN: false },
-                        { HEADER: Message.Label.Array['SYS_USER_GROUP.USER_EMAIL'], ID: "user_email", WIDTH: "40", TYPE: "text", FONT_SIZE: "12px", TEXT_ALIGN: "center", HIDDEN: false },
+                        { HEADER: Message.Label.Array['SYS_USER_GRP.USER_EMAIL'], ID: "user_email", WIDTH: "40", TYPE: "text", FONT_SIZE: "12px", TEXT_ALIGN: "center", HIDDEN: false },
                         { HEADER: Message.Label.Array['SYS_USER.USER_ID'], ID: "user_id", WIDTH: "40", TYPE: "text", FONT_SIZE: "12px", TEXT_ALIGN: "center", HIDDEN: false },
-                        { HEADER: Message.Label.Array['SYS_USER.OFFICE_CODE'], ID: "office_code", WIDTH: "40", TYPE: "text", FONT_SIZE: "12px", TEXT_ALIGN: "center", HIDDEN: false },
+                        { HEADER: Message.Label.Array['SYS_USER.OFFC_CD'], ID: "offc_cd", WIDTH: "40", TYPE: "text", FONT_SIZE: "12px", TEXT_ALIGN: "center", HIDDEN: false },
                         { HEADER: Message.Label.Array['REGISTER_BTN'], ID: "register_btn", WIDTH: "15", TYPE: "button", FONT_SIZE: "12px", TEXT_ALIGN: "center", HIDDEN: false },
 
                         { HEADER: "ID", ID: "id", WIDTH: "15", TYPE: "text", FONT_SIZE: "12px", TEXT_ALIGN: "center", HIDDEN: true },
@@ -506,10 +506,10 @@
         let url = "/cms/common/sysUserGroup/register";
         let param = {
             id: data.id,
-            group_id: groupId,
+            grp_id: groupId,
             user_email: data.user_email,
             user_id: data.user_id,
-            office_code: data.office_code
+            offc_cd: data.offc_cd
         };
         axios.post(url, param).then(response => {
             let status = response.status;
@@ -525,10 +525,10 @@
     function registerSysDeptGroup(data) {
         let url = "/cms/common/sysDeptGroup/register";
         let param = {
-            group_id: data.group_id,
-            group_name: data.group_name,
-            group_level: data.group_level,
-            top_group_id: data.top_group_id,
+            grp_id: data.grp_id,
+            grp_nm: data.grp_nm,
+            grp_lvl: data.grp_lvl,
+            top_grp_id: data.top_grp_id,
             use_yn: data.use_yn
         };
         axios.post(url, param).then(response => {
@@ -547,19 +547,19 @@
         })
     }
     function updatePopupSysDeptGroup(data) {
-        $("#" + SYS_DEPT_GROUP_UPDATE_PRGMID).attr("data-popup-open", true);
+        $("#" + SYS_DEPT_GRP_UPDATE_PRGMID).attr("data-popup-open", true);
         dataBinding.setDataForm("sysDeptGroupUpdate", data);
         dataBinding.setDataSelectBox("update_use_yn", data.use_yn);
         $("#sysDeptGroupUpdate-btn").off("click.updateSysDeptGroup").on("click.updateSysDeptGroup", function () {
-            let param = dataBinding.getData(SYS_DEPT_GROUP_UPDATE_PRGMID);
+            let param = dataBinding.getData(SYS_DEPT_GRP_UPDATE_PRGMID);
             updateSysDeptGroup(param);
         })
     }
     function updateSysDeptGroup(data) {
         let url = "/cms/common/sysDeptGroup/update";
         let param = {
-            group_id: data.group_id,
-            group_name: data.group_name,
+            grp_id: data.grp_id,
+            grp_nm: data.grp_nm,
             use_yn: data.use_yn
         }
         axios.post(url, param).then(response => {
@@ -567,7 +567,7 @@
             if (status === 200) {
                 formUtil.toast(Message.Label.Array["COMPLETE.UPDATE"]);
                 fnReset();
-                popup.close(SYS_DEPT_GROUP_UPDATE_PRGMID);
+                popup.close(SYS_DEPT_GRP_UPDATE_PRGMID);
             }
         }).catch(error => {
             formUtil.alertPopup(error + "");
@@ -579,7 +579,7 @@
         if (flag) {
             let url = "/cms/common/sysDeptGroup/remove";
             let param = {
-                group_id: data.group_id
+                grp_id: data.grp_id
             };
             axios.post(url, param).then(response => {
                 let status = response.status;
@@ -591,18 +591,18 @@
                 formUtil.alertPopup(error.response.data);
             })
         } else {
-            formUtil.alertPopup(Message.Label.Array["SYS_DEPT_GROUP.CHECK.GROUP_USER_CONTAIN"]);
+            formUtil.alertPopup(Message.Label.Array["SYS_DEPT_GRP.CHECK.GROUP_USER_CONTAIN"]);
         }
     }
 
     function registerSysDeptGroupValidationCheck() {
-        return formUtil.validationCheck(SYS_DEPT_GROUP_REGISTER_PRGMID, "SYS_DEPT_GROUP.CHECK.");
+        return formUtil.validationCheck(SYS_DEPT_GRP_REGISTER_PRGMID, "SYS_DEPT_GRP.CHECK.");
     }
     async function findByExistSysUserGroup(data) {
         return new Promise(resolve => {
             let url = "/cms/common/sysUserGroup/find";
             let param = {
-                group_id: data.group_id
+                grp_id: data.grp_id
             };
             axios.post(url, param).then(response => {
                 let status = response.status;
@@ -622,7 +622,7 @@
         let url = "/cms/common/sysUserGroup/remove";
         let param = {
             id: data.id,
-            group_id: data.group_id,
+            grp_id: data.grp_id,
             user_email: data.user_email,
             user_id: data.user_id
         };

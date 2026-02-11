@@ -20,7 +20,7 @@ import java.util.Arrays;
 public class SysAccsLog extends Common {
     @Transient
     private String keys = Arrays
-            .toString(new String[] { "id", "user_id", "system_login_date", "device_type", "os_name" });
+            .toString(new String[] { "id", "user_id", "sys_login_dt", "dev_type", "os_nm" });
 
     @Id
     /***
@@ -46,45 +46,45 @@ public class SysAccsLog extends Common {
 
     /***
      * <pre>
-     *  system_login_date : 로그인 일시
+     *  sys_login_dt : 로그인 일시
      * </pre>
      */
-    private Date system_login_date;
+    private Date sys_login_dt;
 
     /***
      * <pre>
-     *  system_logout_date : 로그아웃 일시
+     *  sys_logout_dt : 로그아웃 일시
      * </pre>
      */
-    private Date system_logout_date;
+    private Date sys_logout_dt;
 
     /***
      * <pre>
-     *  ip_address : 접속 IP
+     *  ip_addr : 접속 IP
      * </pre>
      */
-    private String ip_address;
+    private String ip_addr;
 
     /***
      * <pre>
-     *  device_type : 기기 유형
+     *  dev_type : 기기 유형
      * </pre>
      */
-    private String device_type;
+    private String dev_type;
 
     /***
      * <pre>
-     *  os_name : 운영체제 (Windows, Android 등)
+     *  os_nm : 운영체제 (Windows, Android 등)
      * </pre>
      */
-    private String os_name;
+    private String os_nm;
 
     /***
      * <pre>
-     *  browser_name : 브라우저 (Chrome, Safari 등)
+     *  brwsr_nm : 브라우저 (Chrome, Safari 등)
      * </pre>
      */
-    private String browser_name;
+    private String brwsr_nm;
 
     /***
      * <pre>
@@ -112,50 +112,50 @@ public class SysAccsLog extends Common {
 
     /***
      * <pre>
-     *  system_login_date : 로그인 일시
+     *  sys_login_dt : 로그인 일시
      * </pre>
      */
     @Transient
-    private Date _system_login_date;
+    private Date _sys_login_dt;
 
     /***
      * <pre>
-     *  system_logout_date : 로그아웃 일시
+     *  sys_logout_dt : 로그아웃 일시
      * </pre>
      */
     @Transient
-    private Date _system_logout_date;
+    private Date _sys_logout_dt;
 
     /***
      * <pre>
-     *  ip_address : 접속 IP
+     *  ip_addr : 접속 IP
      * </pre>
      */
     @Transient
-    private String _ip_address;
+    private String _ip_addr;
 
     /***
      * <pre>
-     *  device_type : 기기 유형
+     *  dev_type : 기기 유형
      * </pre>
      */
     @Transient
-    private String _device_type;
+    private String _dev_type;
 
     /***
      * <pre>
-     *  os_name : 운영체제 (Windows, Android 등)
+     *  os_nm : 운영체제 (Windows, Android 등)
      * </pre>
      */
     @Transient
-    private String _os_name;
+    private String _os_nm;
 
     /***
      * <pre>
-     *  browser_name : 브라우저 (Chrome, Safari 등)
+     *  brwsr_nm : 브라우저 (Chrome, Safari 등)
      * </pre>
      */
     @Transient
-    private String _browser_name;
+    private String _brwsr_nm;
 
 }

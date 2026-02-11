@@ -23,19 +23,19 @@ public class SysBbsReply extends Common {
 
     @Id
     private String reply_id; // 댓글 ID (UUID)
-    private String board_id; // 게시물 ID (SYS_BBS_BOARD FK)
+    private String board_id; // 게시물 ID (SYS_BBS_BRD FK)
     private String parent_reply_id; // 부모 댓글 ID (대댓글용)
     private String content; // 댓글 내용
-    private String writer_name; // 작성자 이름
+    private String wrtr_nm; // 작성자 이름
 
-    private String system_create_userid;
-    private Date system_create_date;
-    private String system_update_userid;
-    private Date system_update_date;
+    private String sys_crt_usr_id;
+    private Date sys_crt_dt;
+    private String sys_upd_usr_id;
+    private Date sys_upd_dt;
 
     // 검색용 필드
     @Transient
     private String _content;
     @Transient
-    private String _writer_name;
+    private String _wrtr_nm;
 }

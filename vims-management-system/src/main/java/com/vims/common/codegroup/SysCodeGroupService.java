@@ -53,7 +53,7 @@ public class SysCodeGroupService extends AbstractCommonService<SysCodeGroup> {
     protected int removeImpl(SysCodeGroup request) {
         List<SysCode> list = null;
         try {
-            var sysCode = SysCode.builder().group_id(request.getGroup_id()).build();
+            var sysCode = SysCode.builder().grp_id(request.getGrp_id()).build();
             list = sysCodeMapper.SELECT(sysCode);
             if (list.isEmpty()) {
                 return sysCodeGroupMapper.DELETE(request);

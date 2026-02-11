@@ -5,7 +5,7 @@ import org.apache.ibatis.annotations.Mapper;
 
 @Mapper
 public interface SysBbsBoardMapper extends CommonMapper<SysBbsBoard> {
-    int INCREMENT_HIT_COUNT(SysBbsBoard request);
+    int INCREMENT_HIT_CNT(SysBbsBoard request);
 
     int SELECT_TOTAL_COUNT(SysBbsBoard request);
 }

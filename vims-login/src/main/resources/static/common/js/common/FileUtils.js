@@ -68,7 +68,7 @@ class file {
         // UI 설정
         if (isReadOnly) {
             $container.find('button[data-file-upload-btn]').remove();
-            $container.find('[data-file-info-text]').text(Message.Label.Array["SYS_BBS_BOARD.ATTACHED_FILE_INFO"] || "본문에 포함된 첨부 파일 목록입니다.");
+            $container.find('[data-file-info-text]').text(Message.Label.Array["SYS_BBS_BRD.ATTACHED_FILE_INFO"] || "본문에 포함된 첨부 파일 목록입니다.");
             $container.find('[data-file-empty-msg]').remove();
         } else {
             $container.find('[data-file-info-text]').text(Message.Label.Array["FILE_ATTACH_INFO"] || "첨부된 파일 목록을 아래에서 확인할 수 있습니다.");
@@ -128,7 +128,7 @@ class file {
     renderFileList(files, $listContainer) {
         let html = '<div class="gi-file-list-container">';
         files.forEach((file, index) => {
-            const extension = (file.file_extension || '').toLowerCase();
+            const extension = (file.file_ext || '').toLowerCase();
             let typeClass = "";
 
             if (['pdf', 'hwp', 'doc', 'docx'].includes(extension)) typeClass = "gi-file-type-doc";
@@ -141,14 +141,14 @@ class file {
                     <div class="gi-file-badge-no">${index + 1}</div>
                     <div class="gi-file-icon-box ${typeClass}">📄</div>
                     <div class="gi-file-info">
-                        <span class="gi-file-name" title="${file.file_name}">${file.file_name}</span>
+                        <span class="gi-file-name" title="${file.file_nm}">${file.file_nm}</span>
                         <div class="gi-file-meta">
-                            <span class="gi-file-size-tag">${formUtil.formatBytes(file.file_size)}</span>
+                            <span class="gi-file-size-tag">${formUtil.formatBytes(file.file_sz)}</span>
                             <span class="gi-file-ext-tag ${typeClass}" style="background: none;">${extension}</span>
                         </div>
                     </div>
                     <div class="gi-file-download-container">
-                        <button type="button" class="gi-file-download-btn" onclick="fileUtil.downloadFile('${file.file_id}', '${(file.file_name_with_ext || file.file_name).replace(/'/g, "\\'")}')">
+                        <button type="button" class="gi-file-download-btn" onclick="fileUtil.downloadFile('${file.file_id}', '${(file.file_nm_with_ext || file.file_nm).replace(/'/g, "\\'")}')">
                             <span>↓</span>
                         </button>
                     </div>
@@ -308,9 +308,9 @@ class createFileUploadHTML {
         this.DRAG_N_DROP_INPUT = "#fileElem";
         this.FILE_UPLOAD_LIST_HEADER = ".formUtil-fileUpload_list-contents";
         this.NO_WIDTH = "gi-row-10";
-        this.FILE_NAME_WIDTH = "gi-row-50";
-        this.FILE_SIZE_WIDTH = "gi-row-15";
-        this.FILE_EXTENSION_WIDTH = "gi-row-15";
+        this.FILE_NM_WIDTH = "gi-row-50";
+        this.FILE_SZ_WIDTH = "gi-row-15";
+        this.FILE_EXT_WIDTH = "gi-row-15";
         this.FILE_DELETE_BTN_WIDTH = "gi-row-10";
     }
     //CLASS :변수 초기화 파일 업로드 취소 버튼 이벤트 할당 및 변수 초기화
@@ -502,11 +502,11 @@ class createFileUploadHTML {
             if (that.TOTAL_FILE_LIST.length > 0) {
                 for (let i = 0; i < that.TOTAL_FILE_LIST.length; i++) {
                     let file = that.TOTAL_FILE_LIST[i];
-                    let fileNameWithExt = file.name || file.file_name || "";
+                    let fileNameWithExt = file.name || file.file_nm || "";
                     let lastDotIndex = fileNameWithExt.lastIndexOf('.');
                     let fileName = lastDotIndex !== -1 ? fileNameWithExt.substring(0, lastDotIndex) : fileNameWithExt;
-                    let fileExtension = file.file_extension || (lastDotIndex !== -1 ? fileNameWithExt.substring(lastDotIndex + 1).toLowerCase() : '');
-                    let fileSize = that.formatBytes(file.size || file.file_size || 0);
+                    let fileExtension = file.file_ext || (lastDotIndex !== -1 ? fileNameWithExt.substring(lastDotIndex + 1).toLowerCase() : '');
+                    let fileSize = that.formatBytes(file.size || file.file_sz || 0);
 
                     let typeClass = "";
                     if (['pdf', 'hwp', 'doc', 'docx'].includes(fileExtension)) typeClass = "gi-file-type-doc";
@@ -551,7 +551,7 @@ class createFileUploadHTML {
                 let fileExtension = lastDotIndex !== -1 ? fileNameWithExt.substring(lastDotIndex + 1).toLowerCase() : '';
                 let fileSize = that.formatBytes(file.size);
                 let fileDescription = file.file_description || "";
-                that.FILE_TEXT_LIST.push({ "file_name": fileName, "file_size": fileSize, "file_extension": fileExtension, "file_description": fileDescription })
+                that.FILE_TEXT_LIST.push({ "file_nm": fileName, "file_sz": fileSize, "file_ext": fileExtension, "file_description": fileDescription })
             });
 
             //NOTE : 최종 업로드 파일 리스트
@@ -578,7 +578,7 @@ class createFileUploadHTML {
             formUtil.popup("deleteFileBtn", fileNameWithExt + " 파일을 삭제 하시겠습니까?", remove);
             function remove() {
                 // 기존 파일인지 확인 (file_id가 있으면 기존 파일)
-                let targetFile = that.TOTAL_FILE_LIST.find(f => (f.file_name_with_ext || f.file_name || f.name) === fileNameWithExt);
+                let targetFile = that.TOTAL_FILE_LIST.find(f => (f.file_nm_with_ext || f.file_nm || f.name) === fileNameWithExt);
 
                 if (targetFile && targetFile.file_id) {
                     // 기존 파일이면 즉시 서버 삭제
@@ -751,7 +751,7 @@ class createFileUploadHTML {
 
         let html = '<div class="gi-file-list-container">';
         files.forEach((file, index) => {
-            const extension = (file.file_extension || '').toLowerCase();
+            const extension = (file.file_ext || '').toLowerCase();
             let typeClass = "";
 
             if (['pdf', 'hwp', 'doc', 'docx'].includes(extension)) typeClass = "gi-file-type-doc";
@@ -764,16 +764,16 @@ class createFileUploadHTML {
                     <div class="gi-file-badge-no">${index + 1}</div>
                     <div class="gi-file-icon-box ${typeClass}">📄</div>
                     <div class="gi-file-info">
-                        <span class="gi-file-name" title="${file.file_name}">${file.file_name}</span>
+                        <span class="gi-file-name" title="${file.file_nm}">${file.file_nm}</span>
                         <div class="gi-file-meta">
-                            <span class="gi-file-size-tag">${that.formatBytes(file.file_size)}</span>
+                            <span class="gi-file-size-tag">${that.formatBytes(file.file_sz)}</span>
                             <span class="gi-file-ext-tag ${typeClass}" style="background: none;">${extension}</span>
                         </div>
                     </div>
                     <div class="gi-flex gi-flex-align-items-center gi-margin-left-auto">
                         ${that.onRenderFileItem ? that.onRenderFileItem(file) : ''}
                         <div class="gi-file-download-container">
-                            <button type="button" class="gi-file-download-btn" onclick="fileUtil.downloadFile('${file.file_id}', '${(file.file_name_with_ext || file.file_name).replace(/'/g, "\\'")}')">
+                            <button type="button" class="gi-file-download-btn" onclick="fileUtil.downloadFile('${file.file_id}', '${(file.file_nm_with_ext || file.file_nm).replace(/'/g, "\\'")}')">
                                 <span>↓</span>
                             </button>
                         </div>
@@ -1040,11 +1040,11 @@ class CustomFileUploadDialog {
 
             return {
                 file: file,                    // File 객체
-                file_name: fileName,           // 파일명 (확장자 제외)
-                file_name_with_ext: file.name, // 파일명 (확장자 포함)
-                file_size: file.size,          // 바이트 단위
-                file_size_formatted: this.formatBytes(file.size), // 포맷된 크기
-                file_extension: extension,     // 확장자
+                file_nm: fileName,           // 파일명 (확장자 제외)
+                file_nm_with_ext: file.name, // 파일명 (확장자 포함)
+                file_sz: file.size,          // 바이트 단위
+                file_sz_formatted: this.formatBytes(file.size), // 포맷된 크기
+                file_ext: extension,     // 확장자
                 file_type: file.type,          // MIME 타입
                 last_modified: file.lastModified // 마지막 수정 시간
             };

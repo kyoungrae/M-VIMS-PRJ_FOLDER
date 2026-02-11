@@ -78,13 +78,13 @@
                 <div class="gi-flex gi-grid-gap-16px">
                     <div class="gi-span-container gi-flex-1">
                         <span class="gi-span-label"
-                            data-focus-label="true">[Page.Message].Message.Label.Array["SYS_USER.USER_NAME"]</span>
-                        <span data-field="user_name" class="gi-span" data-focus-span-text-align="default"></span>
+                            data-focus-label="true">[Page.Message].Message.Label.Array["SYS_USER.USER_NM"]</span>
+                        <span data-field="user_nm" class="gi-span" data-focus-span-text-align="default"></span>
                     </div>
                     <div class="gi-span-container gi-flex-1">
                         <span class="gi-span-label"
-                            data-focus-label="true">[Page.Message].Message.Label.Array["SYS_USER.OFFICE_CODE"]</span>
-                        <span data-field="office_code" class="gi-span" data-focus-span-text-align="default"></span>
+                            data-focus-label="true">[Page.Message].Message.Label.Array["SYS_USER.OFFC_CD"]</span>
+                        <span data-field="offc_cd" class="gi-span" data-focus-span-text-align="default"></span>
                     </div>
                 </div>
                 <div class="gi-span-container">
@@ -99,19 +99,19 @@
                 </div>
                 <div class="gi-span-container">
                     <span class="gi-span-label"
-                        data-focus-label="true">[Page.Message].Message.Label.Array["SYS_USER.ADDRESS"]</span>
+                        data-focus-label="true">[Page.Message].Message.Label.Array["SYS_USER.ADDR"]</span>
                     <span data-field="address" class="gi-span" data-focus-span-text-align="default"></span>
                 </div>
                 <div class="gi-flex gi-grid-gap-16px">
                     <div class="gi-span-container gi-flex-1">
                         <span class="gi-span-label"
-                            data-focus-label="true">[Page.Message].Message.Label.Array["SYS_USER.ADDRESS_DETAIL"]</span>
-                        <span data-field="address_detail" class="gi-span" data-focus-span-text-align="default"></span>
+                            data-focus-label="true">[Page.Message].Message.Label.Array["SYS_USER.ADDR_DTL"]</span>
+                        <span data-field="addr_dtl" class="gi-span" data-focus-span-text-align="default"></span>
                     </div>
                     <div class="gi-span-container gi-flex-1">
                         <span class="gi-span-label"
-                            data-focus-label="true">[Page.Message].Message.Label.Array["SYS_USER.POSTAL_CODE"]</span>
-                        <span data-field="postal_code" class="gi-span" data-focus-span-text-align="default"></span>
+                            data-focus-label="true">[Page.Message].Message.Label.Array["SYS_USER.POST_CD"]</span>
+                        <span data-field="post_cd" class="gi-span" data-focus-span-text-align="default"></span>
                     </div>
                 </div>
             </div>
@@ -139,9 +139,9 @@
                                 data-required="true" autocomplete="off" />
                         </div>
                         <div class="gi-input-container gi-flex-1">
-                            <label for="register_user_name" class="gi-input-label" data-focus-label="true"
-                                data-required="true">[Page.Message].Message.Label.Array["SYS_USER.USER_NAME"]</label>
-                            <input data-field="user_name" id="register_user_name" name="register_user_name"
+                            <label for="register_user_nm" class="gi-input-label" data-focus-label="true"
+                                data-required="true">[Page.Message].Message.Label.Array["SYS_USER.USER_NM"]</label>
+                            <input data-field="user_nm" id="register_user_nm" name="register_user_nm"
                                 class="gi-input" data-required="true" autocomplete="off" />
                         </div>
                     </div>
@@ -153,25 +153,25 @@
                     </div>
                     <div class="gi-flex gi-grid-gap-16px">
                         <div class="gi-input-container gi-flex-1">
-                            <label for="register_password" class="gi-input-label" data-focus-label="true"
-                                data-required="true">[Page.Message].Message.Label.Array["SYS_USER.PASSWORD"]</label>
-                            <input type="password" data-field="password" id="register_password" name="register_password"
+                            <label for="register_pwd" class="gi-input-label" data-focus-label="true"
+                                data-required="true">[Page.Message].Message.Label.Array["SYS_USER.PWD"]</label>
+                            <input type="password" data-field="password" id="register_pwd" name="register_pwd"
                                 class="gi-input" data-required="true" autocomplete="off" />
                         </div>
                         <div class="gi-input-container gi-flex-1">
-                            <label for="register_password_confirm" class="gi-input-label" data-focus-label="true"
-                                data-required="true">[Page.Message].Message.Label.Array["SYS_USER.PASSWORD_CONFIRM"]</label>
-                            <input type="password" data-field="password_confirm" id="register_password_confirm"
-                                name="register_password_confirm" class="gi-input" data-required="true"
+                            <label for="register_pwd_confirm" class="gi-input-label" data-focus-label="true"
+                                data-required="true">[Page.Message].Message.Label.Array["SYS_USER.PWD_CONFIRM"]</label>
+                            <input type="password" data-field="password_confirm" id="register_pwd_confirm"
+                                name="register_pwd_confirm" class="gi-input" data-required="true"
                                 autocomplete="off" />
                         </div>
                     </div>
                     <div class="gi-flex gi-grid-gap-16px">
                         <div class="gi-input-container gi-flex-1">
-                            <label for="register_office_code" class="gi-input-label" data-focus-label="true"
-                                data-required="true">[Page.Message].Message.Label.Array["SYS_USER.OFFICE_CODE"]</label>
-                            <input gi-selectbox data-selectbox-field="OFFICE_CODE" data-field="office_code"
-                                id="register_office_code" name="register_office_code" class="gi-input"
+                            <label for="register_offc_cd" class="gi-input-label" data-focus-label="true"
+                                data-required="true">[Page.Message].Message.Label.Array["SYS_USER.OFFC_CD"]</label>
+                            <input gi-selectbox data-selectbox-field="OFFC_CD" data-field="offc_cd"
+                                id="register_offc_cd" name="register_offc_cd" class="gi-input"
                                 data-required="true" autocomplete="off" />
                         </div>
                         <div class="gi-input-container gi-flex-1">
@@ -188,23 +188,23 @@
                             data-required="true" autocomplete="off" />
                     </div>
                     <div class="gi-input-container">
-                        <label for="register_address" class="gi-input-label" data-focus-label="true"
-                            data-required="false">[Page.Message].Message.Label.Array["SYS_USER.ADDRESS"]</label>
-                        <input data-field="address" id="register_address" name="register_address" class="gi-input"
+                        <label for="register_addr" class="gi-input-label" data-focus-label="true"
+                            data-required="false">[Page.Message].Message.Label.Array["SYS_USER.ADDR"]</label>
+                        <input data-field="address" id="register_addr" name="register_addr" class="gi-input"
                             data-required="false" autocomplete="off" />
                     </div>
                     <div class="gi-flex gi-grid-gap-16px">
                         <div class="gi-input-container gi-flex-1">
-                            <label for="register_address_detail" class="gi-input-label" data-focus-label="true"
-                                data-required="false">[Page.Message].Message.Label.Array["SYS_USER.ADDRESS_DETAIL"]</label>
-                            <input data-field="address_detail" id="register_address_detail"
-                                name="register_address_detail" class="gi-input" data-required="false"
+                            <label for="register_addr_dtl" class="gi-input-label" data-focus-label="true"
+                                data-required="false">[Page.Message].Message.Label.Array["SYS_USER.ADDR_DTL"]</label>
+                            <input data-field="addr_dtl" id="register_addr_dtl"
+                                name="register_addr_dtl" class="gi-input" data-required="false"
                                 autocomplete="off" />
                         </div>
                         <div class="gi-input-container gi-flex-1">
-                            <label for="register_postal_code" class="gi-input-label" data-focus-label="true"
-                                data-required="false">[Page.Message].Message.Label.Array["SYS_USER.POSTAL_CODE"]</label>
-                            <input data-field="postal_code" id="register_postal_code" name="register_postal_code"
+                            <label for="register_post_cd" class="gi-input-label" data-focus-label="true"
+                                data-required="false">[Page.Message].Message.Label.Array["SYS_USER.POST_CD"]</label>
+                            <input data-field="post_cd" id="register_post_cd" name="register_post_cd"
                                 class="gi-input" data-required="false" autocomplete="off" />
                         </div>
                     </div>
@@ -244,30 +244,30 @@
                     </div>
                     <div class="gi-flex gi-grid-gap-16px">
                         <div class="gi-input-container gi-flex-1">
-                            <label for="update_password" class="gi-input-label" data-focus-label="true"
-                                data-required="false">[Page.Message].Message.Label.Array["SYS_USER.PASSWORD"]</label>
-                            <input type="password" data-field="password" id="update_password" name="update_password"
+                            <label for="update_pwd" class="gi-input-label" data-focus-label="true"
+                                data-required="false">[Page.Message].Message.Label.Array["SYS_USER.PWD"]</label>
+                            <input type="password" data-field="password" id="update_pwd" name="update_pwd"
                                 class="gi-input" data-required="false" autocomplete="off" />
                         </div>
                         <div class="gi-input-container gi-flex-1">
-                            <label for="update_password_confirm" class="gi-input-label" data-focus-label="true"
-                                data-required="false">[Page.Message].Message.Label.Array["SYS_USER.PASSWORD_CONFIRM"]</label>
-                            <input type="password" data-field="password_confirm" id="update_password_confirm"
-                                name="update_password_confirm" class="gi-input" data-required="false"
+                            <label for="update_pwd_confirm" class="gi-input-label" data-focus-label="true"
+                                data-required="false">[Page.Message].Message.Label.Array["SYS_USER.PWD_CONFIRM"]</label>
+                            <input type="password" data-field="password_confirm" id="update_pwd_confirm"
+                                name="update_pwd_confirm" class="gi-input" data-required="false"
                                 autocomplete="off" />
                         </div>
                     </div>
                     <div class="gi-flex gi-grid-gap-16px">
                         <div class="gi-input-container gi-flex-1">
-                            <label for="update_user_name" class="gi-input-label" data-focus-label="true"
-                                data-required="false">[Page.Message].Message.Label.Array["SYS_USER.USER_NAME"]</label>
-                            <input data-field="user_name" id="update_user_name" name="update_user_name" class="gi-input"
+                            <label for="update_user_nm" class="gi-input-label" data-focus-label="true"
+                                data-required="false">[Page.Message].Message.Label.Array["SYS_USER.USER_NM"]</label>
+                            <input data-field="user_nm" id="update_user_nm" name="update_user_nm" class="gi-input"
                                 data-required="false" autocomplete="off" />
                         </div>
                         <div class="gi-input-container gi-flex-1">
-                            <label for="update_office_code" class="gi-input-label" data-focus-label="true"
-                                data-required="false">[Page.Message].Message.Label.Array["SYS_USER.OFFICE_CODE"]</label>
-                            <input data-field="office_code" id="update_office_code" name="update_office_code"
+                            <label for="update_offc_cd" class="gi-input-label" data-focus-label="true"
+                                data-required="false">[Page.Message].Message.Label.Array["SYS_USER.OFFC_CD"]</label>
+                            <input data-field="offc_cd" id="update_offc_cd" name="update_offc_cd"
                                 class="gi-input" data-required="false" autocomplete="off" />
                         </div>
                     </div>
@@ -284,22 +284,22 @@
                             data-required="false" autocomplete="off" />
                     </div>
                     <div class="gi-input-container">
-                        <label for="update_address" class="gi-input-label" data-focus-label="true"
-                            data-required="false">[Page.Message].Message.Label.Array["SYS_USER.ADDRESS"]</label>
-                        <input data-field="address" id="update_address" name="update_address" class="gi-input"
+                        <label for="update_addr" class="gi-input-label" data-focus-label="true"
+                            data-required="false">[Page.Message].Message.Label.Array["SYS_USER.ADDR"]</label>
+                        <input data-field="address" id="update_addr" name="update_addr" class="gi-input"
                             data-required="false" autocomplete="off" />
                     </div>
                     <div class="gi-flex gi-grid-gap-16px">
                         <div class="gi-input-container gi-flex-1">
-                            <label for="update_address_detail" class="gi-input-label" data-focus-label="true"
-                                data-required="false">[Page.Message].Message.Label.Array["SYS_USER.ADDRESS_DETAIL"]</label>
-                            <input data-field="address_detail" id="update_address_detail" name="update_address_detail"
+                            <label for="update_addr_dtl" class="gi-input-label" data-focus-label="true"
+                                data-required="false">[Page.Message].Message.Label.Array["SYS_USER.ADDR_DTL"]</label>
+                            <input data-field="addr_dtl" id="update_addr_dtl" name="update_addr_dtl"
                                 class="gi-input" data-required="false" autocomplete="off" />
                         </div>
                         <div class="gi-input-container gi-flex-1">
-                            <label for="update_postal_code" class="gi-input-label" data-focus-label="true"
-                                data-required="false">[Page.Message].Message.Label.Array["SYS_USER.POSTAL_CODE"]</label>
-                            <input data-field="postal_code" id="update_postal_code" name="update_postal_code"
+                            <label for="update_post_cd" class="gi-input-label" data-focus-label="true"
+                                data-required="false">[Page.Message].Message.Label.Array["SYS_USER.POST_CD"]</label>
+                            <input data-field="post_cd" id="update_post_cd" name="update_post_cd"
                                 class="gi-input" data-required="false" autocomplete="off" />
                         </div>
                     </div>
@@ -365,7 +365,7 @@
         });
 
         $("#insert-btn").off("click.insertBtnClickEventHandler").on("click.insertBtnClickEventHandler", function () {
-            input.setSelectOption("#register_office_code", "/cms/common/sysOffice/find", { code: "office_code", name: "office_name" });
+            input.setSelectOption("#register_offc_cd", "/cms/common/sysOffice/find", { code: "offc_cd", name: "offc_nm" });
         });
         //추가버튼 클릭 이벤트
         $(POPUP_REGISTER_BTN).off("click.popupRegisterBtnClickEventHandler")
@@ -413,25 +413,25 @@
                         { HEADER: 'No', ID: 'no', WIDTH: '7', TYPE: 'text', FONT_SIZE: '12px', TEXT_ALIGN: 'center', HIDDEN: false },
                         { HEADER: '[Page.Message].Message.Label.Array["SYS_USER.ID"]', ID: 'id', WIDTH: '40', TYPE: 'text', FONT_SIZE: '12px', TEXT_ALIGN: 'center', HIDDEN: false },
                         { HEADER: '[Page.Message].Message.Label.Array["SYS_USER.EMAIL"]', ID: 'email', WIDTH: '40', TYPE: 'text', FONT_SIZE: '12px', TEXT_ALIGN: 'center', HIDDEN: false },
-                        { HEADER: '[Page.Message].Message.Label.Array["SYS_USER.PASSWORD"]', ID: 'password', WIDTH: '40', TYPE: 'password', FONT_SIZE: '12px', TEXT_ALIGN: 'center', HIDDEN: false },
+                        { HEADER: '[Page.Message].Message.Label.Array["SYS_USER.PWD"]', ID: 'password', WIDTH: '40', TYPE: 'password', FONT_SIZE: '12px', TEXT_ALIGN: 'center', HIDDEN: false },
                         { HEADER: '[Page.Message].Message.Label.Array["SYS_USER.ROLE"]', ID: 'role', WIDTH: '40', TYPE: 'text', FONT_SIZE: '12px', TEXT_ALIGN: 'center', HIDDEN: false },
                         { HEADER: '[Page.Message].Message.Label.Array["SYS_USER.USER_ID"]', ID: 'user_id', WIDTH: '40', TYPE: 'text', FONT_SIZE: '12px', TEXT_ALIGN: 'center', HIDDEN: false },
-                        { HEADER: '[Page.Message].Message.Label.Array["SYS_USER.OFFICE_CODE"]', ID: 'office_code', WIDTH: '40', TYPE: 'text', FONT_SIZE: '12px', TEXT_ALIGN: 'center', HIDDEN: false },
-                        { HEADER: '[Page.Message].Message.Label.Array["SYS_USER.OFFICE_NAME"]', ID: 'office_name', WIDTH: '40', TYPE: 'text', FONT_SIZE: '12px', TEXT_ALIGN: 'center', HIDDEN: false },
-                        { HEADER: '[Page.Message].Message.Label.Array["SYS_USER.SYSTEM_CREATE_USERID"]', ID: 'system_create_userid', WIDTH: '40', TYPE: 'text', FONT_SIZE: '12px', TEXT_ALIGN: 'center', HIDDEN: true },
-                        { HEADER: '[Page.Message].Message.Label.Array["SYS_USER.SYSTEM_CREATE_DATE"]', ID: 'system_create_date', WIDTH: '40', TYPE: 'text', FONT_SIZE: '12px', TEXT_ALIGN: 'center', HIDDEN: true },
-                        { HEADER: '[Page.Message].Message.Label.Array["SYS_USER.SYSTEM_UPDATE_USERID"]', ID: 'system_update_userid', WIDTH: '40', TYPE: 'text', FONT_SIZE: '12px', TEXT_ALIGN: 'center', HIDDEN: true },
-                        { HEADER: '[Page.Message].Message.Label.Array["SYS_USER.SYSTEM_UPDATE_DATE"]', ID: 'system_update_date', WIDTH: '40', TYPE: 'text', FONT_SIZE: '12px', TEXT_ALIGN: 'center', HIDDEN: true },
-                        { HEADER: '[Page.Message].Message.Label.Array["SYS_USER.USER_NAME"]', ID: 'user_name', WIDTH: '40', TYPE: 'text', FONT_SIZE: '12px', TEXT_ALIGN: 'center', HIDDEN: false },
+                        { HEADER: '[Page.Message].Message.Label.Array["SYS_USER.OFFC_CD"]', ID: 'offc_cd', WIDTH: '40', TYPE: 'text', FONT_SIZE: '12px', TEXT_ALIGN: 'center', HIDDEN: false },
+                        { HEADER: '[Page.Message].Message.Label.Array["SYS_USER.OFFC_NM"]', ID: 'offc_nm', WIDTH: '40', TYPE: 'text', FONT_SIZE: '12px', TEXT_ALIGN: 'center', HIDDEN: false },
+                        { HEADER: '[Page.Message].Message.Label.Array["SYS_USER.SYS_CRT_USR_ID"]', ID: 'sys_crt_usr_id', WIDTH: '40', TYPE: 'text', FONT_SIZE: '12px', TEXT_ALIGN: 'center', HIDDEN: true },
+                        { HEADER: '[Page.Message].Message.Label.Array["SYS_USER.SYS_CRT_DT"]', ID: 'sys_crt_dt', WIDTH: '40', TYPE: 'text', FONT_SIZE: '12px', TEXT_ALIGN: 'center', HIDDEN: true },
+                        { HEADER: '[Page.Message].Message.Label.Array["SYS_USER.SYS_UPD_USR_ID"]', ID: 'sys_upd_usr_id', WIDTH: '40', TYPE: 'text', FONT_SIZE: '12px', TEXT_ALIGN: 'center', HIDDEN: true },
+                        { HEADER: '[Page.Message].Message.Label.Array["SYS_USER.SYS_UPD_DT"]', ID: 'sys_upd_dt', WIDTH: '40', TYPE: 'text', FONT_SIZE: '12px', TEXT_ALIGN: 'center', HIDDEN: true },
+                        { HEADER: '[Page.Message].Message.Label.Array["SYS_USER.USER_NM"]', ID: 'user_nm', WIDTH: '40', TYPE: 'text', FONT_SIZE: '12px', TEXT_ALIGN: 'center', HIDDEN: false },
                         { HEADER: '[Page.Message].Message.Label.Array["SYS_USER.TEL"]', ID: 'tel', WIDTH: '40', TYPE: 'text', FONT_SIZE: '12px', TEXT_ALIGN: 'center', HIDDEN: false },
-                        { HEADER: '[Page.Message].Message.Label.Array["SYS_USER.ADDRESS"]', ID: 'address', WIDTH: '40', TYPE: 'text', FONT_SIZE: '12px', TEXT_ALIGN: 'center', HIDDEN: true },
-                        { HEADER: '[Page.Message].Message.Label.Array["SYS_USER.ADDRESS_DETAIL"]', ID: 'address_detail', WIDTH: '40', TYPE: 'text', FONT_SIZE: '12px', TEXT_ALIGN: 'center', HIDDEN: true },
-                        { HEADER: '[Page.Message].Message.Label.Array["SYS_USER.POSTAL_CODE"]', ID: 'postal_code', WIDTH: '40', TYPE: 'text', FONT_SIZE: '12px', TEXT_ALIGN: 'center', HIDDEN: true },
+                        { HEADER: '[Page.Message].Message.Label.Array["SYS_USER.ADDR"]', ID: 'address', WIDTH: '40', TYPE: 'text', FONT_SIZE: '12px', TEXT_ALIGN: 'center', HIDDEN: true },
+                        { HEADER: '[Page.Message].Message.Label.Array["SYS_USER.ADDR_DTL"]', ID: 'addr_dtl', WIDTH: '40', TYPE: 'text', FONT_SIZE: '12px', TEXT_ALIGN: 'center', HIDDEN: true },
+                        { HEADER: '[Page.Message].Message.Label.Array["SYS_USER.POST_CD"]', ID: 'post_cd', WIDTH: '40', TYPE: 'text', FONT_SIZE: '12px', TEXT_ALIGN: 'center', HIDDEN: true },
                         { HEADER: '[Page.Message].Message.Label.Array["SYS_USER.UUID"]', ID: 'uuid', WIDTH: '40', TYPE: 'text', FONT_SIZE: '12px', TEXT_ALIGN: 'center', HIDDEN: true },
                         { HEADER: '[Page.Message].Message.Label.Array["DETAIL_BTN"]', ID: 'detail_btn', WIDTH: '15', TYPE: 'button', FONT_SIZE: '12px', TEXT_ALIGN: 'center', HIDDEN: false },
                         { HEADER: '[Page.Message].Message.Label.Array["UPDATE_BTN"]', ID: 'update_btn', WIDTH: '15', TYPE: 'button', FONT_SIZE: '12px', TEXT_ALIGN: 'center', HIDDEN: false },
                         { HEADER: '[Page.Message].Message.Label.Array["SIDE_BTN"]', ID: 'sideGridOpen_btn', WIDTH: '15', TYPE: 'button', FONT_SIZE: '12px', TEXT_ALIGN: 'center', HIDDEN: true },
-                        { HEADER: '[Page.Message].Message.Label.Array["RESET_PASSWORD_BTN"]', ID: 'reset_pw_btn', WIDTH: '40', TYPE: 'button', FONT_SIZE: '12px', TEXT_ALIGN: 'center', HIDDEN: false },
+                        { HEADER: '[Page.Message].Message.Label.Array["RESET_PWD_BTN"]', ID: 'reset_pw_btn', WIDTH: '40', TYPE: 'button', FONT_SIZE: '12px', TEXT_ALIGN: 'center', HIDDEN: false },
                         { HEADER: '[Page.Message].Message.Label.Array["DELETE_BTN"]', ID: 'delete_btn', WIDTH: '15', TYPE: 'button', FONT_SIZE: '12px', TEXT_ALIGN: 'center', HIDDEN: false },
                         { HEADER: 'checkbox', ID: 'checkbox', WIDTH: '25', TYPE: 'checkbox', FONT_SIZE: '12px', TEXT_ALIGN: 'center', HIDDEN: true }
                     ]
@@ -509,7 +509,7 @@
     //FUN : 비밀번호 초기화 호출
     function sysUserResetPwPopupOpen(cont) {
         const btnId = "confirm_pw_reset_btn";
-        const message = Message.Label.Array["CONFIRM.RESET_PASSWORD"];
+        const message = Message.Label.Array["CONFIRM.RESET_PWD"];
         const funcParam = cont;
 
         formUtil.popup(btnId, message, updateUserPw, funcParam);
@@ -522,15 +522,15 @@
 
     //FUN : 수정팝업 호출
     function sysUserUpdatePopupOpen(cont) {
-        input.setSelectOption("#update_office_code", "/cms/common/sysOffice/find", { code: "office_code", name: "office_name" });
+        input.setSelectOption("#update_offc_cd", "/cms/common/sysOffice/find", { code: "offc_cd", name: "offc_nm" });
         input.setSelectOptionCom("#update_role", "USER_ROLE");
         //console.log(cont);
         dataBinding.setDataForm(UPDATE_POPUP_ID, cont);
 
 
         // 비밀번호 필드는 보안상 비워둠
-        $("#update_password").val("");
-        $("#update_password_confirm").val("");
+        $("#update_pwd").val("");
+        $("#update_pwd_confirm").val("");
 
         new AfterLoadDataEvent();
 
@@ -552,14 +552,14 @@
             user_id: cont.user_id,
             email: cont.email,
             role: cont.role,
-            user_name: cont.user_name,
-            password: cont.password,
+            user_nm: cont.user_nm,
+            password: cont.pwd,
             password_confirm: cont.password_confirm,
-            office_code: cont.office_code,
+            offc_cd: cont.offc_cd,
             tel: cont.tel,
-            address: cont.address,
-            address_detail: cont.address_detail,
-            postal_code: cont.postal_code,
+            address: cont.addr,
+            addr_dtl: cont.addr_dtl,
+            post_cd: cont.post_cd,
         }
         axios.post(url, param)
             .then(response => {
@@ -580,14 +580,14 @@
             user_id: cont.user_id,
             email: cont.email,
             role: cont.role,
-            user_name: cont.user_name,
-            password: cont.password,
+            user_nm: cont.user_nm,
+            password: cont.pwd,
             password_confirm: cont.password_confirm,
-            office_code: cont.office_code,
+            offc_cd: cont.offc_cd,
             tel: cont.tel,
-            address: cont.address,
-            address_detail: cont.address_detail,
-            postal_code: cont.postal_code,
+            address: cont.addr,
+            addr_dtl: cont.addr_dtl,
+            post_cd: cont.post_cd,
         }
         axios.post(url, param)
             .then(response => {

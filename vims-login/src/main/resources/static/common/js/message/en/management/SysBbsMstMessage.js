@@ -17,17 +17,17 @@ Message.Label.Array["SYS_BBS_MST.INFO"] = "Board master basic information";
 Message.Label.Array["SYS_BBS_MST.CHECK.BBS_ID"] = "Please enter board unique code";
 Message.Label.Array["SYS_BBS_MST.CHECK.BBS_NM"] = "Please enter board name";
 Message.Label.Array["SYS_BBS_MST.CHECK.BBS_TYPE"] = "Please enter board type";
-Message.Label.Array["SYS_BBS_MST.CHECK.SYSTEM_CREATE_USERID"] = "Please enter system creator ID";
-Message.Label.Array["SYS_BBS_MST.CHECK.SYSTEM_CREATE_DATE"] = "Please enter system registration time";
-Message.Label.Array["SYS_BBS_MST.CHECK.SYSTEM_UPDATE_USERID"] = "Please enter system modifier ID";
-Message.Label.Array["SYS_BBS_MST.CHECK.SYSTEM_UPDATE_DATE"] = "Please enter system modification time";
+Message.Label.Array["SYS_BBS_MST.CHECK.SYS_CRT_USR_ID"] = "Please enter system creator ID";
+Message.Label.Array["SYS_BBS_MST.CHECK.SYS_CRT_DT"] = "Please enter system registration time";
+Message.Label.Array["SYS_BBS_MST.CHECK.SYS_UPD_USR_ID"] = "Please enter system modifier ID";
+Message.Label.Array["SYS_BBS_MST.CHECK.SYS_UPD_DT"] = "Please enter system modification time";
 
 
 Message.Label.Array["SYS_BBS_MST.BBS_ID"] = "Board Unique Code";
 Message.Label.Array["SYS_BBS_MST.BBS_MST_ID"] = "Board Master ID";
 Message.Label.Array["SYS_BBS_MST.BBS_NM"] = "Board Name";
 Message.Label.Array["SYS_BBS_MST.BBS_TYPE"] = "Board Type";
-Message.Label.Array["SYS_BBS_MST.SYSTEM_CREATE_USERID"] = "System Creator ID";
-Message.Label.Array["SYS_BBS_MST.SYSTEM_CREATE_DATE"] = "System Registration Time";
-Message.Label.Array["SYS_BBS_MST.SYSTEM_UPDATE_USERID"] = "System Modifier ID";
-Message.Label.Array["SYS_BBS_MST.SYSTEM_UPDATE_DATE"] = "System Modification Time";
+Message.Label.Array["SYS_BBS_MST.SYS_CRT_USR_ID"] = "System Creator ID";
+Message.Label.Array["SYS_BBS_MST.SYS_CRT_DT"] = "System Registration Time";
+Message.Label.Array["SYS_BBS_MST.SYS_UPD_USR_ID"] = "System Modifier ID";
+Message.Label.Array["SYS_BBS_MST.SYS_UPD_DT"] = "System Modification Time";

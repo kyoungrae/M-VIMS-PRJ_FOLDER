@@ -378,11 +378,11 @@ import javax.persistence.Table;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "SYS_DEPT_GROUP") // DB 테이블 매핑
+@Table(name = "SYS_DEPT_GRP") // DB 테이블 매핑
 public class SysDeptGroup {
     @Id
-    private String group_id;
-    private String group_name;
+    private String grp_id;
+    private String grp_nm;
     // ... 추가 필드 정의
 }</code></pre>
             </div>
@@ -410,7 +410,7 @@ public interface SysDeptGroupMapper {
                 <pre><code class="language-xml">&lt;!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "..."&gt;
 &lt;mapper namespace="com.vims.common.group.SysDeptGroupMapper"&gt;
     &lt;select id="SELECT" resultType="com.vims.common.group.SysDeptGroup"&gt;
-        SELECT * FROM SYS_DEPT_GROUP
+        SELECT * FROM SYS_DEPT_GRP
         WHERE 1=1
         &lt;!-- 동적 쿼리 작성 --&gt;
     &lt;/select&gt;

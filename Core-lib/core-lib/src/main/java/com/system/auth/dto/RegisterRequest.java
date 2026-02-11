@@ -15,5 +15,5 @@ import lombok.experimental.SuperBuilder;
 public class RegisterRequest extends AuthUser {
     private String user_id;
     private String email;
-    private String password;
+    private String pwd;
 }

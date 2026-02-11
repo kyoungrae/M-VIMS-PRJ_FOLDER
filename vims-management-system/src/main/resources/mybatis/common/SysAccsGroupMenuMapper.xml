@@ -17,30 +17,30 @@
     <select id="SELECT_PAGE" resultType="com.vims.common.accessgroupmenu.SysAccsGroupMenu">
         SELECT * FROM (
             SELECT
-                row_number() over (ORDER BY system_create_date DESC )AS no,
+                row_number() over (ORDER BY sys_crt_dt DESC )AS no,
                 
-                menu_code, 
-                access_rights_group_id, 
-                system_create_date, 
-                system_create_userid, 
-                system_update_date, 
-                system_update_userid 
-            FROM SYS_ACCS_GROUP_MENU
+                menu_cd, 
+                acs_rts_grp_id, 
+                sys_crt_dt, 
+                sys_crt_usr_id, 
+                sys_upd_dt, 
+                sys_upd_usr_id 
+            FROM SYS_ACS_GRP_MENU
             <where>
                 
-                <if test="menu_code != null and menu_code != ''">AND menu_code = #{menu_code}</if>
-                <if test="access_rights_group_id != null and access_rights_group_id != ''">AND access_rights_group_id = #{access_rights_group_id}</if>
-                <if test="system_create_date != null">AND system_create_date = #{system_create_date}</if>
-                <if test="system_create_userid != null and system_create_userid != ''">AND system_create_userid = #{system_create_userid}</if>
-                <if test="system_update_date != null">AND system_update_date = #{system_update_date}</if>
-                <if test="system_update_userid != null and system_update_userid != ''">AND system_update_userid = #{system_update_userid}</if>
+                <if test="menu_cd != null and menu_cd != ''">AND menu_cd = #{menu_cd}</if>
+                <if test="acs_rts_grp_id != null and acs_rts_grp_id != ''">AND acs_rts_grp_id = #{acs_rts_grp_id}</if>
+                <if test="sys_crt_dt != null">AND sys_crt_dt = #{sys_crt_dt}</if>
+                <if test="sys_crt_usr_id != null and sys_crt_usr_id != ''">AND sys_crt_usr_id = #{sys_crt_usr_id}</if>
+                <if test="sys_upd_dt != null">AND sys_upd_dt = #{sys_upd_dt}</if>
+                <if test="sys_upd_usr_id != null and sys_upd_usr_id != ''">AND sys_upd_usr_id = #{sys_upd_usr_id}</if>
                 
-                <if test="_menu_code != null and _menu_code != ''">AND menu_code LIKE CONCAT('%', #{_menu_code}, '%')</if>
-                <if test="_access_rights_group_id != null and _access_rights_group_id != ''">AND access_rights_group_id LIKE CONCAT('%', #{_access_rights_group_id}, '%')</if>
-                <if test="_system_create_date != null and _system_create_date != ''">AND system_create_date LIKE CONCAT('%', #{_system_create_date}, '%')</if>
-                <if test="_system_create_userid != null and _system_create_userid != ''">AND system_create_userid LIKE CONCAT('%', #{_system_create_userid}, '%')</if>
-                <if test="_system_update_date != null and _system_update_date != ''">AND system_update_date LIKE CONCAT('%', #{_system_update_date}, '%')</if>
-                <if test="_system_update_userid != null and _system_update_userid != ''">AND system_update_userid LIKE CONCAT('%', #{_system_update_userid}, '%')</if>
+                <if test="_menu_cd != null and _menu_cd != ''">AND menu_cd LIKE CONCAT('%', #{_menu_cd}, '%')</if>
+                <if test="_acs_rts_grp_id != null and _acs_rts_grp_id != ''">AND acs_rts_grp_id LIKE CONCAT('%', #{_acs_rts_grp_id}, '%')</if>
+                <if test="_sys_crt_dt != null and _sys_crt_dt != ''">AND sys_crt_dt LIKE CONCAT('%', #{_sys_crt_dt}, '%')</if>
+                <if test="_sys_crt_usr_id != null and _sys_crt_usr_id != ''">AND sys_crt_usr_id LIKE CONCAT('%', #{_sys_crt_usr_id}, '%')</if>
+                <if test="_sys_upd_dt != null and _sys_upd_dt != ''">AND sys_upd_dt LIKE CONCAT('%', #{_sys_upd_dt}, '%')</if>
+                <if test="_sys_upd_usr_id != null and _sys_upd_usr_id != ''">AND sys_upd_usr_id LIKE CONCAT('%', #{_sys_upd_usr_id}, '%')</if>
             </where>
         ) AS sub
         <include refid="sortFilter"/>
@@ -48,103 +48,103 @@
     </select>
 
     <select id="SELECT_PAGING_TOTAL_NUMBER" resultType="int">
-        SELECT CEIL(COUNT(*) / #{row_range}) FROM SYS_ACCS_GROUP_MENU
+        SELECT CEIL(COUNT(*) / #{row_range}) FROM SYS_ACS_GRP_MENU
         <where>
             
-            <if test="menu_code != null and menu_code != ''">AND menu_code = #{menu_code}</if>
-            <if test="access_rights_group_id != null and access_rights_group_id != ''">AND access_rights_group_id = #{access_rights_group_id}</if>
-            <if test="system_create_date != null">AND system_create_date = #{system_create_date}</if>
-            <if test="system_create_userid != null and system_create_userid != ''">AND system_create_userid = #{system_create_userid}</if>
-            <if test="system_update_date != null">AND system_update_date = #{system_update_date}</if>
-            <if test="system_update_userid != null and system_update_userid != ''">AND system_update_userid = #{system_update_userid}</if>
+            <if test="menu_cd != null and menu_cd != ''">AND menu_cd = #{menu_cd}</if>
+            <if test="acs_rts_grp_id != null and acs_rts_grp_id != ''">AND acs_rts_grp_id = #{acs_rts_grp_id}</if>
+            <if test="sys_crt_dt != null">AND sys_crt_dt = #{sys_crt_dt}</if>
+            <if test="sys_crt_usr_id != null and sys_crt_usr_id != ''">AND sys_crt_usr_id = #{sys_crt_usr_id}</if>
+            <if test="sys_upd_dt != null">AND sys_upd_dt = #{sys_upd_dt}</if>
+            <if test="sys_upd_usr_id != null and sys_upd_usr_id != ''">AND sys_upd_usr_id = #{sys_upd_usr_id}</if>
             
-            <if test="_menu_code != null and _menu_code != ''">AND menu_code LIKE CONCAT('%', #{_menu_code}, '%')</if>
-            <if test="_access_rights_group_id != null and _access_rights_group_id != ''">AND access_rights_group_id LIKE CONCAT('%', #{_access_rights_group_id}, '%')</if>
-            <if test="_system_create_date != null and _system_create_date != ''">AND system_create_date LIKE CONCAT('%', #{_system_create_date}, '%')</if>
-            <if test="_system_create_userid != null and _system_create_userid != ''">AND system_create_userid LIKE CONCAT('%', #{_system_create_userid}, '%')</if>
-            <if test="_system_update_date != null and _system_update_date != ''">AND system_update_date LIKE CONCAT('%', #{_system_update_date}, '%')</if>
-            <if test="_system_update_userid != null and _system_update_userid != ''">AND system_update_userid LIKE CONCAT('%', #{_system_update_userid}, '%')</if>
+            <if test="_menu_cd != null and _menu_cd != ''">AND menu_cd LIKE CONCAT('%', #{_menu_cd}, '%')</if>
+            <if test="_acs_rts_grp_id != null and _acs_rts_grp_id != ''">AND acs_rts_grp_id LIKE CONCAT('%', #{_acs_rts_grp_id}, '%')</if>
+            <if test="_sys_crt_dt != null and _sys_crt_dt != ''">AND sys_crt_dt LIKE CONCAT('%', #{_sys_crt_dt}, '%')</if>
+            <if test="_sys_crt_usr_id != null and _sys_crt_usr_id != ''">AND sys_crt_usr_id LIKE CONCAT('%', #{_sys_crt_usr_id}, '%')</if>
+            <if test="_sys_upd_dt != null and _sys_upd_dt != ''">AND sys_upd_dt LIKE CONCAT('%', #{_sys_upd_dt}, '%')</if>
+            <if test="_sys_upd_usr_id != null and _sys_upd_usr_id != ''">AND sys_upd_usr_id LIKE CONCAT('%', #{_sys_upd_usr_id}, '%')</if>
         </where>
     </select>
 
     <select id="SELECT" resultType="com.vims.common.accessgroupmenu.SysAccsGroupMenu">
         SELECT
             
-            menu_code,
-            access_rights_group_id,
-            system_create_date,
-            system_create_userid,
-            system_update_date,
-            system_update_userid
-        FROM SYS_ACCS_GROUP_MENU
+            menu_cd,
+            acs_rts_grp_id,
+            sys_crt_dt,
+            sys_crt_usr_id,
+            sys_upd_dt,
+            sys_upd_usr_id
+        FROM SYS_ACS_GRP_MENU
         <where>
             
-            <if test="menu_code != null and menu_code != ''">AND menu_code = #{menu_code}</if>
-            <if test="access_rights_group_id != null and access_rights_group_id != ''">AND access_rights_group_id = #{access_rights_group_id}</if>
-            <if test="system_create_date != null">AND system_create_date = #{system_create_date}</if>
-            <if test="system_create_userid != null and system_create_userid != ''">AND system_create_userid = #{system_create_userid}</if>
-            <if test="system_update_date != null">AND system_update_date = #{system_update_date}</if>
-            <if test="system_update_userid != null and system_update_userid != ''">AND system_update_userid = #{system_update_userid}</if>
+            <if test="menu_cd != null and menu_cd != ''">AND menu_cd = #{menu_cd}</if>
+            <if test="acs_rts_grp_id != null and acs_rts_grp_id != ''">AND acs_rts_grp_id = #{acs_rts_grp_id}</if>
+            <if test="sys_crt_dt != null">AND sys_crt_dt = #{sys_crt_dt}</if>
+            <if test="sys_crt_usr_id != null and sys_crt_usr_id != ''">AND sys_crt_usr_id = #{sys_crt_usr_id}</if>
+            <if test="sys_upd_dt != null">AND sys_upd_dt = #{sys_upd_dt}</if>
+            <if test="sys_upd_usr_id != null and sys_upd_usr_id != ''">AND sys_upd_usr_id = #{sys_upd_usr_id}</if>
             
-            <if test="_menu_code != null and _menu_code != ''">AND menu_code LIKE CONCAT('%', #{_menu_code}, '%')</if>
-            <if test="_access_rights_group_id != null and _access_rights_group_id != ''">AND access_rights_group_id LIKE CONCAT('%', #{_access_rights_group_id}, '%')</if>
-            <if test="_system_create_date != null and _system_create_date != ''">AND system_create_date LIKE CONCAT('%', #{_system_create_date}, '%')</if>
-            <if test="_system_create_userid != null and _system_create_userid != ''">AND system_create_userid LIKE CONCAT('%', #{_system_create_userid}, '%')</if>
-            <if test="_system_update_date != null and _system_update_date != ''">AND system_update_date LIKE CONCAT('%', #{_system_update_date}, '%')</if>
-            <if test="_system_update_userid != null and _system_update_userid != ''">AND system_update_userid LIKE CONCAT('%', #{_system_update_userid}, '%')</if>
+            <if test="_menu_cd != null and _menu_cd != ''">AND menu_cd LIKE CONCAT('%', #{_menu_cd}, '%')</if>
+            <if test="_acs_rts_grp_id != null and _acs_rts_grp_id != ''">AND acs_rts_grp_id LIKE CONCAT('%', #{_acs_rts_grp_id}, '%')</if>
+            <if test="_sys_crt_dt != null and _sys_crt_dt != ''">AND sys_crt_dt LIKE CONCAT('%', #{_sys_crt_dt}, '%')</if>
+            <if test="_sys_crt_usr_id != null and _sys_crt_usr_id != ''">AND sys_crt_usr_id LIKE CONCAT('%', #{_sys_crt_usr_id}, '%')</if>
+            <if test="_sys_upd_dt != null and _sys_upd_dt != ''">AND sys_upd_dt LIKE CONCAT('%', #{_sys_upd_dt}, '%')</if>
+            <if test="_sys_upd_usr_id != null and _sys_upd_usr_id != ''">AND sys_upd_usr_id LIKE CONCAT('%', #{_sys_upd_usr_id}, '%')</if>
         </where>
     </select>
 
     <insert id="INSERT">
-        INSERT INTO SYS_ACCS_GROUP_MENU(
+        INSERT INTO SYS_ACS_GRP_MENU(
             
-             menu_code 
-            , access_rights_group_id 
+             menu_cd 
+            , acs_rts_grp_id 
             
-            <if test="system_create_date != null">, system_create_date</if>
-            <if test="system_create_userid != null">, system_create_userid</if>
-            <if test="system_update_date != null">, system_update_date</if>
-            <if test="system_update_userid != null">, system_update_userid</if>
+            <if test="sys_crt_dt != null">, sys_crt_dt</if>
+            <if test="sys_crt_usr_id != null">, sys_crt_usr_id</if>
+            <if test="sys_upd_dt != null">, sys_upd_dt</if>
+            <if test="sys_upd_usr_id != null">, sys_upd_usr_id</if>
         )
         VALUES(
             
-             #{menu_code}
-            , #{access_rights_group_id}
+             #{menu_cd}
+            , #{acs_rts_grp_id}
             
-            <if test="system_create_date != null">, #{system_create_date}</if>
-            <if test="system_create_userid != null">, #{system_create_userid}</if>
-            <if test="system_update_date != null">, #{system_update_date}</if>
-            <if test="system_update_userid != null">, #{system_update_userid}</if>
+            <if test="sys_crt_dt != null">, #{sys_crt_dt}</if>
+            <if test="sys_crt_usr_id != null">, #{sys_crt_usr_id}</if>
+            <if test="sys_upd_dt != null">, #{sys_upd_dt}</if>
+            <if test="sys_upd_usr_id != null">, #{sys_upd_usr_id}</if>
         )
     </insert>
 
     <delete id="DELETE">
-        DELETE FROM SYS_ACCS_GROUP_MENU
+        DELETE FROM SYS_ACS_GRP_MENU
         <where>
             
-             menu_code = #{menu_code}
-            AND access_rights_group_id = #{access_rights_group_id}
+             menu_cd = #{menu_cd}
+            AND acs_rts_grp_id = #{acs_rts_grp_id}
             
-            <if test="system_create_date != null">AND system_create_date = #{system_create_date}</if>
-            <if test="system_create_userid != null">AND system_create_userid = #{system_create_userid}</if>
-            <if test="system_update_date != null">AND system_update_date = #{system_update_date}</if>
-            <if test="system_update_userid != null">AND system_update_userid = #{system_update_userid}</if>
+            <if test="sys_crt_dt != null">AND sys_crt_dt = #{sys_crt_dt}</if>
+            <if test="sys_crt_usr_id != null">AND sys_crt_usr_id = #{sys_crt_usr_id}</if>
+            <if test="sys_upd_dt != null">AND sys_upd_dt = #{sys_upd_dt}</if>
+            <if test="sys_upd_usr_id != null">AND sys_upd_usr_id = #{sys_upd_usr_id}</if>
         </where>
     </delete>
 
     <update id="UPDATE">
-        UPDATE SYS_ACCS_GROUP_MENU
+        UPDATE SYS_ACS_GRP_MENU
         <set>
             
-            <if test="system_create_date != null">,system_create_date = #{system_create_date}</if>
-            <if test="system_create_userid != null">,system_create_userid = #{system_create_userid}</if>
-            <if test="system_update_date != null">,system_update_date = #{system_update_date}</if>
-            <if test="system_update_userid != null">,system_update_userid = #{system_update_userid}</if>
+            <if test="sys_crt_dt != null">,sys_crt_dt = #{sys_crt_dt}</if>
+            <if test="sys_crt_usr_id != null">,sys_crt_usr_id = #{sys_crt_usr_id}</if>
+            <if test="sys_upd_dt != null">,sys_upd_dt = #{sys_upd_dt}</if>
+            <if test="sys_upd_usr_id != null">,sys_upd_usr_id = #{sys_upd_usr_id}</if>
         </set>
         <where>
             
-             menu_code = #{menu_code}
-            AND access_rights_group_id = #{access_rights_group_id}
+             menu_cd = #{menu_cd}
+            AND acs_rts_grp_id = #{acs_rts_grp_id}
         </where>
     </update>
 </mapper>

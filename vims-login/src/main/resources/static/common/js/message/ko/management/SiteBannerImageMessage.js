@@ -10,10 +10,10 @@ Message.Label.Array["SITE_BANNER_IMAGE.COMPLETE.REORDER"] = "손서 변경 완�
 Message.Label.Array["SITE_BANNER_IMAGE.CHECK.UUID"] = "공통파일UUID(을)를 입력해 주세요";
 Message.Label.Array["SITE_BANNER_IMAGE.CHECK.BANNER_IMAGE_NUMBER"] = "순번(을)를 입력해 주세요";
 Message.Label.Array["SITE_BANNER_IMAGE.CHECK.USE_YN"] = "사용여부(을)를 입력해 주세요";
-Message.Label.Array["SITE_BANNER_IMAGE.CHECK.SYSTEM_CREATE_DATE"] = "작성일자(을)를 입력해 주세요";
-Message.Label.Array["SITE_BANNER_IMAGE.CHECK.SYSTEM_CREATE_USERID"] = "작성자ID(을)를 입력해 주세요";
-Message.Label.Array["SITE_BANNER_IMAGE.CHECK.SYSTEM_UPDATE_DATE"] = "수정일자(을)를 입력해 주세요";
-Message.Label.Array["SITE_BANNER_IMAGE.CHECK.SYSTEM_UPDATE_USERID"] = "수정자ID(을)를 입력해 주세요";
+Message.Label.Array["SITE_BANNER_IMAGE.CHECK.SYS_CRT_DT"] = "작성일자(을)를 입력해 주세요";
+Message.Label.Array["SITE_BANNER_IMAGE.CHECK.SYS_CRT_USR_ID"] = "작성자ID(을)를 입력해 주세요";
+Message.Label.Array["SITE_BANNER_IMAGE.CHECK.SYS_UPD_DT"] = "수정일자(을)를 입력해 주세요";
+Message.Label.Array["SITE_BANNER_IMAGE.CHECK.SYS_UPD_USR_ID"] = "수정자ID(을)를 입력해 주세요";
 
 Message.Label.Array["SITE_BANNER_IMAGE.CHECK.BANNER_ROTATE_INTERVAL_SEC"] = "배너 넘김 시간(을)를 입력해 주세요";
 
@@ -21,7 +21,7 @@ Message.Label.Array["SITE_BANNER_IMAGE.CHECK.BANNER_ROTATE_INTERVAL_SEC"] = "배
 Message.Label.Array["SITE_BANNER_IMAGE.UUID"] = "공통파일UUID";
 Message.Label.Array["SITE_BANNER_IMAGE.BANNER_IMAGE_NUMBER"] = "순번";
 Message.Label.Array["SITE_BANNER_IMAGE.USE_YN"] = "사용여부";
-Message.Label.Array["SITE_BANNER_IMAGE.SYSTEM_CREATE_DATE"] = "작성일자";
-Message.Label.Array["SITE_BANNER_IMAGE.SYSTEM_CREATE_USERID"] = "작성자ID";
-Message.Label.Array["SITE_BANNER_IMAGE.SYSTEM_UPDATE_DATE"] = "수정일자";
-Message.Label.Array["SITE_BANNER_IMAGE.SYSTEM_UPDATE_USERID"] = "수정자ID";
+Message.Label.Array["SITE_BANNER_IMAGE.SYS_CRT_DT"] = "작성일자";
+Message.Label.Array["SITE_BANNER_IMAGE.SYS_CRT_USR_ID"] = "작성자ID";
+Message.Label.Array["SITE_BANNER_IMAGE.SYS_UPD_DT"] = "수정일자";
+Message.Label.Array["SITE_BANNER_IMAGE.SYS_UPD_USR_ID"] = "수정자ID";

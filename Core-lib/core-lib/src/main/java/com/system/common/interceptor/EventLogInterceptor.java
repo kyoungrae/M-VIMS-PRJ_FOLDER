@@ -23,7 +23,7 @@ import java.util.concurrent.Executors;
 
 /**
  * CRUD 감사 로그 인터셉터
- * INSERT, UPDATE, DELETE 수행 시 SYS_EVENT_LOG 테이블에 로그를 남깁니다.
+ * INSERT, UPDATE, DELETE 수행 시 SYS_EVT_LOG 테이블에 로그를 남깁니다.
  */
 @Component
 @Intercepts({
@@ -110,7 +110,7 @@ public class EventLogInterceptor implements Interceptor {
                 queryParam.put(idFieldName, targetId);
             }
 
-            logger.debug("EventLog: Attempting select for before_data. Mapper: {}, QueryParam: {}", selectMapperId,
+            logger.debug("EventLog: Attempting select for bfr_data. Mapper: {}, QueryParam: {}", selectMapperId,
                     queryParam);
 
             java.util.List<Object> list = executor.query(selectMs, queryParam,
@@ -118,7 +118,7 @@ public class EventLogInterceptor implements Interceptor {
 
             if (list != null && !list.isEmpty()) {
                 String captured = objectMapper.writeValueAsString(list.get(0));
-                logger.debug("EventLog: Successfully captured before_data from {}. Length: {}", selectMapperId,
+                logger.debug("EventLog: Successfully captured bfr_data from {}. Length: {}", selectMapperId,
                         captured.length());
                 return captured;
             } else {
@@ -261,18 +261,18 @@ public class EventLogInterceptor implements Interceptor {
                 logData.put("user_id", userEmail);
                 logData.put("email", userEmail);
                 logData.put("role", userRoles);
-                logData.put("action_type", actionType);
-                logData.put("target_table", targetTable);
-                logData.put("target_id", targetId);
-                logData.put("ip_address", ipAddress);
-                logData.put("before_data", beforeData);
+                logData.put("act_type", actionType);
+                logData.put("tgt_tbl", targetTable);
+                logData.put("tgt_id", targetId);
+                logData.put("ip_addr", ipAddress);
+                logData.put("bfr_data", beforeData);
 
                 try {
                     if (parameter != null) {
-                        logData.put("after_data", objectMapper.writeValueAsString(parameter));
+                        logData.put("aft_data", objectMapper.writeValueAsString(parameter));
                     }
                 } catch (Exception e) {
-                    logData.put("after_data", parameter != null ? parameter.toString() : "");
+                    logData.put("aft_data", parameter != null ? parameter.toString() : "");
                 }
 
                 sqlSession.insert("com.system.common.eventlog.SysEventLogMapper.INSERT", logData);

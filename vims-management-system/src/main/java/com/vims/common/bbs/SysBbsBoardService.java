@@ -56,7 +56,7 @@ public class SysBbsBoardService extends AbstractCommonService<SysBbsBoard> {
     @Override
     protected List<SysBbsBoard> findImpl(SysBbsBoard request) throws Exception {
         if (request.getBoard_id() != null && !request.getBoard_id().isEmpty()) {
-            sysBbsBoardMapper.INCREMENT_HIT_COUNT(request);
+            sysBbsBoardMapper.INCREMENT_HIT_CNT(request);
         }
         return sysBbsBoardMapper.SELECT(request);
     }
@@ -81,11 +81,11 @@ public class SysBbsBoardService extends AbstractCommonService<SysBbsBoard> {
             }
 
             // 3. 썸네일이 존재하면 FMS를 통해 삭제 요청
-            String thumbnailUuid = board.getThumbnail();
-            if (thumbnailUuid != null && !thumbnailUuid.isEmpty()) {
+            String thmbnlUuid = board.getThmbnl();
+            if (thmbnlUuid != null && !thmbnlUuid.isEmpty()) {
                 try {
                     java.util.Map<String, Object> thumbParam = new java.util.HashMap<>();
-                    thumbParam.put("file_uuid", thumbnailUuid);
+                    thumbParam.put("file_uuid", thmbnlUuid);
                     fmsClient.removeByFileUuid(thumbParam);
                 } catch (Exception e) {
                     e.printStackTrace();

@@ -119,7 +119,7 @@ Message.Label.Array["MYINFO.SECTION.VEHICLE"] = "Миний автомашин";
 Message.Label.Array["MYINFO.LABEL.NAME"] = "Нэр";
 Message.Label.Array["MYINFO.LABEL.GENDER"] = "Хүйс";
 Message.Label.Array["MYINFO.LABEL.PHONE"] = "Утасны дугаар";
-Message.Label.Array["MYINFO.LABEL.ADDRESS"] = "Хаяг";
+Message.Label.Array["MYINFO.LABEL.ADDR"] = "Хаяг";
 Message.Label.Array["MYINFO.LABEL.LAST_INSPECT"] = "Сүүлийн үзлэг";
 Message.Label.Array["MYINFO.LABEL.NEXT_INSPECT"] = "Дараагийн үзлэг";
 
@@ -127,8 +127,8 @@ Message.Label.Array["MYINFO.GENDER.MALE"] = "Эрэгтэй";
 Message.Label.Array["MYINFO.GENDER.FEMALE"] = "Эмэгтэй";
 
 Message.Label.Array["MYINFO.PLACEHOLDER.POSTCODE"] = "Зип код";
-Message.Label.Array["MYINFO.PLACEHOLDER.ADDRESS"] = "Хаяг";
-Message.Label.Array["MYINFO.PLACEHOLDER.ADDRESS_DETAIL"] = "Дэлгэрэнгүй хаяг оруулна уу";
+Message.Label.Array["MYINFO.PLACEHOLDER.ADDR"] = "Хаяг";
+Message.Label.Array["MYINFO.PLACEHOLDER.ADDR_DTL"] = "Дэлгэрэнгүй хаяг оруулна уу";
 
 Message.Label.Array["MYINFO.BTN.SEARCH"] = "Хайх";
 Message.Label.Array["MYINFO.BTN.SAVE"] = "Хадгалах";
@@ -136,7 +136,7 @@ Message.Label.Array["MYINFO.BTN.CANCEL"] = "Цуцлах";
 
 Message.Label.Array["MYINFO.STATUS.VALID"] = "Хүчинтэй";
 Message.Label.Array["MYINFO.STATUS.UPCOMING"] = "Удахгүй";
-Message.Label.Array["MYINFO.STATUS.EXPIRED"] = "Хугацаа дууссан";
+Message.Label.Array["MYINFO.STATUS.EXP"] = "Хугацаа дууссан";
 
 Message.Label.Array["MYINFO.MSG.NO_VEHICLE"] = "Бүртгэлтэй автомашин байхгүй байна.";
 Message.Label.Array["MYINFO.MSG.CONFIRM_CANCEL"] = "Өөрчлөлтийг цуцлах уу?";
@@ -288,7 +288,7 @@ Message.Label.Array["INSRNC.LABEL.PERIOD"] = "Даатгалын хугацаа"
 Message.Label.Array["INSRNC.LABEL.TYPE"] = "Даатгалын төрөл";
 Message.Label.Array["INSRNC.LABEL.STATUS"] = "Төлөв";
 Message.Label.Array["INSRNC.STATUS.ACTIVE"] = "Хүчинтэй";
-Message.Label.Array["INSRNC.STATUS.EXPIRED"] = "Хугацаа дууссан";
+Message.Label.Array["INSRNC.STATUS.EXP"] = "Хугацаа дууссан";
 
 // Customs inquiry Page
 Message.Label.Array["CSTM.PAGE_TITLE"] = "Гаалийн мэдээлэл шалгах";

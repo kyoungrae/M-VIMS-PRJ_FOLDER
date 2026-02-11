@@ -9,7 +9,7 @@
                 ${sort_id} ${sort_order}
             </when>
             <otherwise>
-                system_create_date DESC
+                sys_crt_dt DESC
             </otherwise>
         </choose>
     </sql>
@@ -18,257 +18,257 @@
         SELECT
             row_number() over ()AS no,
             id,
-            group_id,
+            grp_id,
             user_email,
             user_id,
-            office_code,
-            (SELECT office_name FROM SYS_OFFICE WHERE office_code = SYS_USER_GROUP.office_code) AS office_name,
-            system_create_date,
-            system_create_userid,
-            system_update_date,
-            system_update_userid
-        FROM SYS_USER_GROUP
+            offc_cd,
+            (SELECT offc_nm FROM SYS_OFFC WHERE offc_cd = SYS_USER_GRP.offc_cd) AS offc_nm,
+            sys_crt_dt,
+            sys_crt_usr_id,
+            sys_upd_dt,
+            sys_upd_usr_id
+        FROM SYS_USER_GRP
         <where>
             <if test="id != null ">AND id=#{id}</if>
-            <if test="group_id != null and group_id != ''">AND group_id=#{group_id}</if>
+            <if test="grp_id != null and grp_id != ''">AND grp_id=#{grp_id}</if>
             <if test="user_email != null and user_email != ''">AND user_email=#{user_email}</if>
             <if test="user_id != null and user_id != ''">AND user_id=#{user_id}</if>
-            <if test="office_code != null and office_code != ''">AND office_code=#{office_code}</if>
-            <if test="system_create_date != null ">AND system_create_date=#{system_create_date}</if>
-            <if test="system_create_userid != null and system_create_userid != ''">AND system_create_userid=#{system_create_userid}</if>
-            <if test="system_update_date != null ">AND system_update_date=#{system_update_date}</if>
-            <if test="system_update_userid != null and system_update_userid != ''">AND system_update_userid=#{system_update_userid}</if>
+            <if test="offc_cd != null and offc_cd != ''">AND offc_cd=#{offc_cd}</if>
+            <if test="sys_crt_dt != null ">AND sys_crt_dt=#{sys_crt_dt}</if>
+            <if test="sys_crt_usr_id != null and sys_crt_usr_id != ''">AND sys_crt_usr_id=#{sys_crt_usr_id}</if>
+            <if test="sys_upd_dt != null ">AND sys_upd_dt=#{sys_upd_dt}</if>
+            <if test="sys_upd_usr_id != null and sys_upd_usr_id != ''">AND sys_upd_usr_id=#{sys_upd_usr_id}</if>
 
-            <if test="_group_id != null and _group_id != ''">AND group_id LIKE CONCAT('%', #{_group_id}, '%')</if>
+            <if test="_grp_id != null and _grp_id != ''">AND grp_id LIKE CONCAT('%', #{_grp_id}, '%')</if>
             <if test="_user_email != null and _user_email != ''">AND user_email LIKE CONCAT('%', #{_user_email}, '%')</if>
             <if test="_user_id != null and _user_id != ''">AND user_id LIKE CONCAT('%', #{_user_id}, '%')</if>
-            <if test="_office_code != null and _office_code != ''">AND office_code LIKE CONCAT('%', #{_office_code}, '%')</if>
-            <if test="_system_create_date != null and _system_create_date != ''">AND system_create_date LIKE CONCAT('%', #{_system_create_date}, '%')</if>
-            <if test="_system_create_userid != null and _system_create_userid != ''">AND system_create_userid LIKE CONCAT('%', #{_system_create_userid}, '%')</if>
-            <if test="_system_update_date != null and _system_update_date != ''">AND system_update_date LIKE CONCAT('%', #{_system_update_date}, '%')</if>
-            <if test="_system_update_userid != null and _system_update_userid != ''">AND system_update_userid LIKE CONCAT('%', #{_system_update_userid}, '%')</if>
+            <if test="_offc_cd != null and _offc_cd != ''">AND offc_cd LIKE CONCAT('%', #{_offc_cd}, '%')</if>
+            <if test="_sys_crt_dt != null and _sys_crt_dt != ''">AND sys_crt_dt LIKE CONCAT('%', #{_sys_crt_dt}, '%')</if>
+            <if test="_sys_crt_usr_id != null and _sys_crt_usr_id != ''">AND sys_crt_usr_id LIKE CONCAT('%', #{_sys_crt_usr_id}, '%')</if>
+            <if test="_sys_upd_dt != null and _sys_upd_dt != ''">AND sys_upd_dt LIKE CONCAT('%', #{_sys_upd_dt}, '%')</if>
+            <if test="_sys_upd_usr_id != null and _sys_upd_usr_id != ''">AND sys_upd_usr_id LIKE CONCAT('%', #{_sys_upd_usr_id}, '%')</if>
         </where>
         <include refid="sortFilter"/>
         LIMIT #{row_range} OFFSET #{offset}
     </select>
 
     <select id="SELECT_PAGING_TOTAL_NUMBER" resultType="int">
-        SELECT CEIL(COUNT(*)/#{row_range}) FROM SYS_USER_GROUP
+        SELECT CEIL(COUNT(*)/#{row_range}) FROM SYS_USER_GRP
         <where>
             <if test="id != null ">AND id=#{id}</if>
-            <if test="group_id != null and group_id != ''">AND group_id=#{group_id}</if>
+            <if test="grp_id != null and grp_id != ''">AND grp_id=#{grp_id}</if>
             <if test="user_email != null and user_email != ''">AND user_email=#{user_email}</if>
             <if test="user_id != null and user_id != ''">AND user_id=#{user_id}</if>
-            <if test="office_code != null and office_code != ''">AND office_code=#{office_code}</if>
-            <if test="system_create_date != null ">AND system_create_date=#{system_create_date}</if>
-            <if test="system_create_userid != null and system_create_userid != ''">AND system_create_userid=#{system_create_userid}</if>
-            <if test="system_update_date != null ">AND system_update_date=#{system_update_date}</if>
-            <if test="system_update_userid != null and system_update_userid != ''">AND system_update_userid=#{system_update_userid}</if>
+            <if test="offc_cd != null and offc_cd != ''">AND offc_cd=#{offc_cd}</if>
+            <if test="sys_crt_dt != null ">AND sys_crt_dt=#{sys_crt_dt}</if>
+            <if test="sys_crt_usr_id != null and sys_crt_usr_id != ''">AND sys_crt_usr_id=#{sys_crt_usr_id}</if>
+            <if test="sys_upd_dt != null ">AND sys_upd_dt=#{sys_upd_dt}</if>
+            <if test="sys_upd_usr_id != null and sys_upd_usr_id != ''">AND sys_upd_usr_id=#{sys_upd_usr_id}</if>
 
-            <if test="_group_id != null and _group_id != ''">AND group_id LIKE CONCAT('%', #{_group_id}, '%')</if>
+            <if test="_grp_id != null and _grp_id != ''">AND grp_id LIKE CONCAT('%', #{_grp_id}, '%')</if>
             <if test="_user_email != null and _user_email != ''">AND user_email LIKE CONCAT('%', #{_user_email}, '%')</if>
             <if test="_user_id != null and _user_id != ''">AND user_id LIKE CONCAT('%', #{_user_id}, '%')</if>
-            <if test="_office_code != null and _office_code != ''">AND office_code LIKE CONCAT('%', #{_office_code}, '%')</if>
-            <if test="_system_create_date != null and _system_create_date != ''">AND system_create_date LIKE CONCAT('%', #{_system_create_date}, '%')</if>
-            <if test="_system_create_userid != null and _system_create_userid != ''">AND system_create_userid LIKE CONCAT('%', #{_system_create_userid}, '%')</if>
-            <if test="_system_update_date != null and _system_update_date != ''">AND system_update_date LIKE CONCAT('%', #{_system_update_date}, '%')</if>
-            <if test="_system_update_userid != null and _system_update_userid != ''">AND system_update_userid LIKE CONCAT('%', #{_system_update_userid}, '%')</if>
+            <if test="_offc_cd != null and _offc_cd != ''">AND offc_cd LIKE CONCAT('%', #{_offc_cd}, '%')</if>
+            <if test="_sys_crt_dt != null and _sys_crt_dt != ''">AND sys_crt_dt LIKE CONCAT('%', #{_sys_crt_dt}, '%')</if>
+            <if test="_sys_crt_usr_id != null and _sys_crt_usr_id != ''">AND sys_crt_usr_id LIKE CONCAT('%', #{_sys_crt_usr_id}, '%')</if>
+            <if test="_sys_upd_dt != null and _sys_upd_dt != ''">AND sys_upd_dt LIKE CONCAT('%', #{_sys_upd_dt}, '%')</if>
+            <if test="_sys_upd_usr_id != null and _sys_upd_usr_id != ''">AND sys_upd_usr_id LIKE CONCAT('%', #{_sys_upd_usr_id}, '%')</if>
         </where>
     </select>
 
     <select id="SELECT" resultType="com.vims.common.usergroup.SysUserGroup">
         SELECT
         id,
-        group_id,
-        (SELECT group_name FROM SYS_DEPT_GROUP b where b.group_id = a.group_id) as group_name,
-        (SELECT user_name FROM SYS_USER c where c.id = a.id) as user_name,
+        grp_id,
+        (SELECT grp_nm FROM SYS_DEPT_GRP b where b.grp_id = a.grp_id) as grp_nm,
+        (SELECT user_nm FROM SYS_USER c where c.id = a.id) as user_nm,
         user_email,
         user_id,
-        office_code,
-        system_create_date,
-        system_create_userid,
-        system_update_date,
-        system_update_userid
-        FROM SYS_USER_GROUP a
+        offc_cd,
+        sys_crt_dt,
+        sys_crt_usr_id,
+        sys_upd_dt,
+        sys_upd_usr_id
+        FROM SYS_USER_GRP a
         <where>
             <if test="id != null ">AND id=#{id}</if>
-            <if test="group_id != null and group_id != ''">AND group_id=#{group_id}</if>
+            <if test="grp_id != null and grp_id != ''">AND grp_id=#{grp_id}</if>
             <if test="user_email != null and user_email != ''">AND user_email=#{user_email}</if>
             <if test="user_id != null and user_id != ''">AND user_id=#{user_id}</if>
-            <if test="office_code != null and office_code != ''">AND office_code=#{office_code}</if>
-            <if test="system_create_date != null ">AND system_create_date=#{system_create_date}</if>
-            <if test="system_create_userid != null and system_create_userid != ''">AND system_create_userid=#{system_create_userid}</if>
-            <if test="system_update_date != null ">AND system_update_date=#{system_update_date}</if>
-            <if test="system_update_userid != null and system_update_userid != ''">AND system_update_userid=#{system_update_userid}</if>
+            <if test="offc_cd != null and offc_cd != ''">AND offc_cd=#{offc_cd}</if>
+            <if test="sys_crt_dt != null ">AND sys_crt_dt=#{sys_crt_dt}</if>
+            <if test="sys_crt_usr_id != null and sys_crt_usr_id != ''">AND sys_crt_usr_id=#{sys_crt_usr_id}</if>
+            <if test="sys_upd_dt != null ">AND sys_upd_dt=#{sys_upd_dt}</if>
+            <if test="sys_upd_usr_id != null and sys_upd_usr_id != ''">AND sys_upd_usr_id=#{sys_upd_usr_id}</if>
 
             <if test="_id != null and _id != ''">AND id LIKE CONCAT('%', #{_id}, '%')</if>
-            <if test="_group_id != null and _group_id != ''">AND group_id LIKE CONCAT('%', #{_group_id}, '%')</if>
+            <if test="_grp_id != null and _grp_id != ''">AND grp_id LIKE CONCAT('%', #{_grp_id}, '%')</if>
             <if test="_user_email != null and _user_email != ''">AND user_email LIKE CONCAT('%', #{_user_email}, '%')</if>
             <if test="_user_id != null and _user_id != ''">AND user_id LIKE CONCAT('%', #{_user_id}, '%')</if>
-            <if test="_office_code != null and _office_code != ''">AND office_code LIKE CONCAT('%', #{_office_code}, '%')</if>
-            <if test="_system_create_date != null and _system_create_date != ''">AND system_create_date LIKE CONCAT('%', #{_system_create_date}, '%')</if>
-            <if test="_system_create_userid != null and _system_create_userid != ''">AND system_create_userid LIKE CONCAT('%', #{_system_create_userid}, '%')</if>
-            <if test="_system_update_date != null and _system_update_date != ''">AND system_update_date LIKE CONCAT('%', #{_system_update_date}, '%')</if>
-            <if test="_system_update_userid != null and _system_update_userid != ''">AND system_update_userid LIKE CONCAT('%', #{_system_update_userid}, '%')</if>
+            <if test="_offc_cd != null and _offc_cd != ''">AND offc_cd LIKE CONCAT('%', #{_offc_cd}, '%')</if>
+            <if test="_sys_crt_dt != null and _sys_crt_dt != ''">AND sys_crt_dt LIKE CONCAT('%', #{_sys_crt_dt}, '%')</if>
+            <if test="_sys_crt_usr_id != null and _sys_crt_usr_id != ''">AND sys_crt_usr_id LIKE CONCAT('%', #{_sys_crt_usr_id}, '%')</if>
+            <if test="_sys_upd_dt != null and _sys_upd_dt != ''">AND sys_upd_dt LIKE CONCAT('%', #{_sys_upd_dt}, '%')</if>
+            <if test="_sys_upd_usr_id != null and _sys_upd_usr_id != ''">AND sys_upd_usr_id LIKE CONCAT('%', #{_sys_upd_usr_id}, '%')</if>
         </where>
     </select>
 
     <insert id="INSERT">
-        INSERT INTO SYS_USER_GROUP(
+        INSERT INTO SYS_USER_GRP(
         id
-        ,group_id
+        ,grp_id
         , user_email
         , user_id
-        , office_code
-        , system_create_date
-        , system_create_userid
-        <if test="system_update_date != null">, system_update_date</if>
-        <if test="system_update_userid != null">, system_update_userid</if>
+        , offc_cd
+        , sys_crt_dt
+        , sys_crt_usr_id
+        <if test="sys_upd_dt != null">, sys_upd_dt</if>
+        <if test="sys_upd_usr_id != null">, sys_upd_usr_id</if>
         )
         VALUES(
         #{id}
-        ,#{group_id}
+        ,#{grp_id}
         , #{user_email}
         , #{user_id}
-        , #{office_code}
+        , #{offc_cd}
         , NOW()
-        , #{system_create_userid}
-        <if test="system_update_date != null">, #{system_update_date}</if>
-        <if test="system_update_userid != null">, #{system_update_userid}</if>
+        , #{sys_crt_usr_id}
+        <if test="sys_upd_dt != null">, #{sys_upd_dt}</if>
+        <if test="sys_upd_usr_id != null">, #{sys_upd_usr_id}</if>
         )
     </insert>
 
     <delete id="DELETE">
-        DELETE FROM SYS_USER_GROUP
+        DELETE FROM SYS_USER_GRP
         <where>
             AND id = #{id}
-            AND group_id = #{group_id}
+            AND grp_id = #{grp_id}
             <if test="user_email != null">AND user_email = #{user_email}</if>
             <if test="user_id != null">AND user_id = #{user_id}</if>
-            <if test="office_code != null">AND office_code = #{office_code}</if>
-            <if test="system_create_date != null">AND system_create_date = #{system_create_date}</if>
-            <if test="system_create_userid != null">AND system_create_userid = #{system_create_userid}</if>
-            <if test="system_update_date != null">AND system_update_date = #{system_update_date}</if>
-            <if test="system_update_userid != null">AND system_update_userid = #{system_update_userid}</if>
+            <if test="offc_cd != null">AND offc_cd = #{offc_cd}</if>
+            <if test="sys_crt_dt != null">AND sys_crt_dt = #{sys_crt_dt}</if>
+            <if test="sys_crt_usr_id != null">AND sys_crt_usr_id = #{sys_crt_usr_id}</if>
+            <if test="sys_upd_dt != null">AND sys_upd_dt = #{sys_upd_dt}</if>
+            <if test="sys_upd_usr_id != null">AND sys_upd_usr_id = #{sys_upd_usr_id}</if>
         </where>
     </delete>
 
     <update id="UPDATE">
-        UPDATE SYS_USER_GROUP
+        UPDATE SYS_USER_GRP
         <set>
             <if test="user_email != null">user_email = #{user_email},</if>
             <if test="user_id != null">user_id=#{user_id},</if>
-            <if test="office_code != null">office_code=#{office_code},</if>
-            <if test="system_create_date != null">system_create_date=#{system_create_date},</if>
-            <if test="system_create_userid != null">system_create_userid=#{system_create_userid},</if>
-            <if test="system_update_date != null">system_update_date=#{system_update_date},</if>
-            <if test="system_update_userid != null">system_update_userid=#{system_update_userid},</if>
+            <if test="offc_cd != null">offc_cd=#{offc_cd},</if>
+            <if test="sys_crt_dt != null">sys_crt_dt=#{sys_crt_dt},</if>
+            <if test="sys_crt_usr_id != null">sys_crt_usr_id=#{sys_crt_usr_id},</if>
+            <if test="sys_upd_dt != null">sys_upd_dt=#{sys_upd_dt},</if>
+            <if test="sys_upd_usr_id != null">sys_upd_usr_id=#{sys_upd_usr_id},</if>
         </set>
         <where>
             id = #{id}
-            AND group_id = #{group_id}
+            AND grp_id = #{grp_id}
         </where>
     </update>
 
     <update id="INSERT_OR_UPDATE">
-        INSERT INTO SYS_USER_GROUP (
+        INSERT INTO SYS_USER_GRP (
         id,
-        group_id,
+        grp_id,
         user_email,
         user_id,
-        office_code,
-        system_create_date,
-        system_create_userid,
-        system_update_date,
-        system_update_userid
+        offc_cd,
+        sys_crt_dt,
+        sys_crt_usr_id,
+        sys_upd_dt,
+        sys_upd_usr_id
         ) VALUES (
         #{id},
-        #{group_id},
+        #{grp_id},
         #{user_email},
         #{user_id},
-        #{office_code},
+        #{offc_cd},
         NOW(),
-        #{system_create_userid},
-        <if test="system_update_date != null">#{system_update_date},</if>
-        <if test="system_update_date == null">NULL,</if>
-        <if test="system_update_userid != null">#{system_update_userid}</if>
-        <if test="system_update_userid == null">NULL</if>
+        #{sys_crt_usr_id},
+        <if test="sys_upd_dt != null">#{sys_upd_dt},</if>
+        <if test="sys_upd_dt == null">NULL,</if>
+        <if test="sys_upd_usr_id != null">#{sys_upd_usr_id}</if>
+        <if test="sys_upd_usr_id == null">NULL</if>
         )
         ON DUPLICATE KEY UPDATE
         user_email = VALUES(user_email),
         user_id = VALUES(user_id),
-        office_code = VALUES(office_code),
-        system_update_date = NOW(),
-        system_update_userid = VALUES(system_update_userid)
+        offc_cd = VALUES(offc_cd),
+        sys_upd_dt = NOW(),
+        sys_upd_usr_id = VALUES(sys_upd_usr_id)
     </update>
 
-    <select id="SELECT_BY_GROUP_ID_LIST" resultType="com.vims.common.usergroup.SysUserGroup">
+    <select id="SELECT_BY_GRP_ID_LIST" resultType="com.vims.common.usergroup.SysUserGroup">
         SELECT
         id,
-        group_id,
-        (SELECT group_name FROM SYS_DEPT_GROUP b where b.group_id = a.group_id) as group_name,
-        (SELECT user_name FROM SYS_USER c where c.id = a.id) as user_name,
+        grp_id,
+        (SELECT grp_nm FROM SYS_DEPT_GRP b where b.grp_id = a.grp_id) as grp_nm,
+        (SELECT user_nm FROM SYS_USER c where c.id = a.id) as user_nm,
         user_email,
         user_id,
-        office_code,
-        system_create_date,
-        system_create_userid,
-        system_update_date,
-        system_update_userid
-        FROM SYS_USER_GROUP a
-        WHERE group_id IN
+        offc_cd,
+        sys_crt_dt,
+        sys_crt_usr_id,
+        sys_upd_dt,
+        sys_upd_usr_id
+        FROM SYS_USER_GRP a
+        WHERE grp_id IN
         <foreach collection="targetGroups" item="group"  index="index" open="(" separator="," close=")">
             #{group}
         </foreach>
     </select>
 
-    <select id="SELECT_JOIN_SYS_USER_GROUP_PAGE" resultType="com.vims.common.usergroup.SysUserGroup">
+    <select id="SELECT_JOIN_SYS_USER_GRP_PAGE" resultType="com.vims.common.usergroup.SysUserGroup">
         SELECT
         row_number() over ()AS no,
         a.id,
         a.email AS user_email,
         a.user_id,
-        a.office_code,
-        (SELECT office_name FROM SYS_OFFICE WHERE office_code = a.office_code) AS office_name
+        a.offc_cd,
+        (SELECT offc_nm FROM SYS_OFFC WHERE offc_cd = a.offc_cd) AS offc_nm
         FROM SYS_USER a
         <where>
             NOT EXISTS (
             SELECT 1
-            FROM SYS_USER_GROUP b
+            FROM SYS_USER_GRP b
             WHERE a.user_id = b.user_id
-            AND b.group_id = #{group_id}
+            AND b.grp_id = #{grp_id}
             )
             <if test="id != null ">AND a.id=#{id}</if>
             <if test="user_email != null and user_email != ''">AND a.email=#{user_email}</if>
             <if test="user_id != null and user_id != ''">AND a.user_id=#{user_id}</if>
-            <if test="office_code != null and office_code != ''">AND a.office_code=#{office_code}</if>
+            <if test="offc_cd != null and offc_cd != ''">AND a.offc_cd=#{offc_cd}</if>
 
             <if test="_id != null and _id != ''">AND a.id LIKE CONCAT('%', #{_id}, '%')</if>
             <if test="_user_email != null and _user_email != ''">AND a.email LIKE CONCAT('%', #{_user_email}, '%')</if>
             <if test="_user_id != null and _user_id != ''">AND a.user_id LIKE CONCAT('%', #{_user_id}, '%')</if>
-            <if test="_office_code != null and _office_code != ''">AND a.office_code LIKE CONCAT('%', #{_office_code}, '%')</if>
+            <if test="_offc_cd != null and _offc_cd != ''">AND a.offc_cd LIKE CONCAT('%', #{_offc_cd}, '%')</if>
         </where>
         LIMIT #{row_range} OFFSET #{offset}
     </select>
 
-    <select id="SELECT_JOIN_SYS_USER_GROUP_PAGING_TOTAL_NUMBER" resultType="int">
+    <select id="SELECT_JOIN_SYS_USER_GRP_PAGING_TOTAL_NUMBER" resultType="int">
         SELECT CEIL(COUNT(*)/#{row_range}) FROM SYS_USER a
         <where>
             NOT EXISTS (
             SELECT 1
-            FROM SYS_USER_GROUP b
+            FROM SYS_USER_GRP b
             WHERE a.user_id = b.user_id
-            AND b.group_id = #{group_id}
+            AND b.grp_id = #{grp_id}
             )
             <if test="id != null ">AND a.id=#{id}</if>
             <if test="user_email != null and user_email != ''">AND a.email=#{user_email}</if>
             <if test="user_id != null and user_id != ''">AND a.user_id=#{user_id}</if>
-            <if test="office_code != null and office_code != ''">AND a.office_code=#{office_code}</if>
+            <if test="offc_cd != null and offc_cd != ''">AND a.offc_cd=#{offc_cd}</if>
 
             <if test="_id != null and _id != ''">AND a.id LIKE CONCAT('%', #{_id}, '%')</if>
             <if test="_user_email != null and _user_email != ''">AND a.email LIKE CONCAT('%', #{_user_email}, '%')</if>
             <if test="_user_id != null and _user_id != ''">AND a.user_id LIKE CONCAT('%', #{_user_id}, '%')</if>
-            <if test="_office_code != null and _office_code != ''">AND a.office_code LIKE CONCAT('%', #{_office_code}, '%')</if>
+            <if test="_offc_cd != null and _offc_cd != ''">AND a.offc_cd LIKE CONCAT('%', #{_offc_cd}, '%')</if>
         </where>
     </select>
 

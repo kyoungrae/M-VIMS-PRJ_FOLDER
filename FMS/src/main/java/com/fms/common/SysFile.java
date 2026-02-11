@@ -43,31 +43,31 @@ public class SysFile extends Common {
     private Integer temp_yn;
     /***
      * <pre>
-     *  system_create_date : 작성일
+     *  sys_crt_dt : 작성일
      * </pre>
      */
-    private Date system_create_date;
+    private Date sys_crt_dt;
 
     /***
      * <pre>
-     *  system_create_userid : 작성자 아이디
+     *  sys_crt_usr_id : 작성자 아이디
      * </pre>
      */
-    private String system_create_userid;
+    private String sys_crt_usr_id;
 
     /***
      * <pre>
-     *  system_update_date : 수정일자
+     *  sys_upd_dt : 수정일자
      * </pre>
      */
-    private Date system_update_date;
+    private Date sys_upd_dt;
 
     /***
      * <pre>
-     *  system_update_userid : 수정자 아이디
+     *  sys_upd_usr_id : 수정자 아이디
      * </pre>
      */
-    private String system_update_userid;
+    private String sys_upd_usr_id;
 
     /***
      * <pre>
@@ -79,34 +79,34 @@ public class SysFile extends Common {
 
     /***
      * <pre>
-     *  system_create_date : 작성일
+     *  sys_crt_dt : 작성일
      * </pre>
      */
     @Transient
-    private Date _system_create_date;
+    private Date _sys_crt_dt;
 
     /***
      * <pre>
-     *  system_create_userid : 작성자 아이디
+     *  sys_crt_usr_id : 작성자 아이디
      * </pre>
      */
     @Transient
-    private String _system_create_userid;
+    private String _sys_crt_usr_id;
 
     /***
      * <pre>
-     *  system_update_date : 수정일자
+     *  sys_upd_dt : 수정일자
      * </pre>
      */
     @Transient
-    private Date _system_update_date;
+    private Date _sys_upd_dt;
 
     /***
      * <pre>
-     *  system_update_userid : 수정자 아이디
+     *  sys_upd_usr_id : 수정자 아이디
      * </pre>
      */
     @Transient
-    private String _system_update_userid;
+    private String _sys_upd_usr_id;
 
 }

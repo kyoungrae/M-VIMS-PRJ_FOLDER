@@ -29,7 +29,7 @@ public class TokenService {
     }
 
     public int deleteExpiredTokens(Integer userId) {
-        return tokenMapper.DELETE_EXPIRED_TOKEN_BY_USER_ID(userId);
+        return tokenMapper.DELETE_EXP_TOKEN_BY_USER_ID(userId);
     }
 
     public int revokeAllUserTokens(Integer userId) {

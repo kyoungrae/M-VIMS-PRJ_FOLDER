@@ -9,10 +9,10 @@ Message.Label.Array["SITE_SENT_MAIL_MANAGEMENT.CHECK.LATEST_SENT_DATE"] = "Pleas
 Message.Label.Array["SITE_SENT_MAIL_MANAGEMENT.CHECK.LATEST_FROM_EMAIL"] = "Please enter sender email address";
 Message.Label.Array["SITE_SENT_MAIL_MANAGEMENT.CHECK.LATEST_TO_EMAIL"] = "Please enter receiver email address";
 Message.Label.Array["SITE_SENT_MAIL_MANAGEMENT.CHECK.FAILURE_REASON_CODE"] = "Please enter failure reason code";
-Message.Label.Array["SITE_SENT_MAIL_MANAGEMENT.CHECK.SYSTEM_CREATE_USERID"] = "Please enter creator ID";
-Message.Label.Array["SITE_SENT_MAIL_MANAGEMENT.CHECK.SYSTEM_CREATE_DATE"] = "Please enter creation date";
-Message.Label.Array["SITE_SENT_MAIL_MANAGEMENT.CHECK.SYSTEM_UPDATE_USERID"] = "Please enter modifier ID";
-Message.Label.Array["SITE_SENT_MAIL_MANAGEMENT.CHECK.SYSTEM_UPDATE_DATE"] = "Please enter modification date";
+Message.Label.Array["SITE_SENT_MAIL_MANAGEMENT.CHECK.SYS_CRT_USR_ID"] = "Please enter creator ID";
+Message.Label.Array["SITE_SENT_MAIL_MANAGEMENT.CHECK.SYS_CRT_DT"] = "Please enter creation date";
+Message.Label.Array["SITE_SENT_MAIL_MANAGEMENT.CHECK.SYS_UPD_USR_ID"] = "Please enter modifier ID";
+Message.Label.Array["SITE_SENT_MAIL_MANAGEMENT.CHECK.SYS_UPD_DT"] = "Please enter modification date";
 
 
 Message.Label.Array["SITE_SENT_MAIL_MANAGEMENT.MAIL_ID"] = "Mail ID (SEQ)";
@@ -22,7 +22,7 @@ Message.Label.Array["SITE_SENT_MAIL_MANAGEMENT.LATEST_SENT_DATE"] = "Sent Date";
 Message.Label.Array["SITE_SENT_MAIL_MANAGEMENT.LATEST_FROM_EMAIL"] = "Sender Email";
 Message.Label.Array["SITE_SENT_MAIL_MANAGEMENT.LATEST_TO_EMAIL"] = "Receiver Email";
 Message.Label.Array["SITE_SENT_MAIL_MANAGEMENT.FAILURE_REASON_CODE"] = "Failure Reason Code";
-Message.Label.Array["SITE_SENT_MAIL_MANAGEMENT.SYSTEM_CREATE_USERID"] = "Creator ID";
-Message.Label.Array["SITE_SENT_MAIL_MANAGEMENT.SYSTEM_CREATE_DATE"] = "Creation Date";
-Message.Label.Array["SITE_SENT_MAIL_MANAGEMENT.SYSTEM_UPDATE_USERID"] = "Modifier ID";
-Message.Label.Array["SITE_SENT_MAIL_MANAGEMENT.SYSTEM_UPDATE_DATE"] = "Modification Date";
+Message.Label.Array["SITE_SENT_MAIL_MANAGEMENT.SYS_CRT_USR_ID"] = "Creator ID";
+Message.Label.Array["SITE_SENT_MAIL_MANAGEMENT.SYS_CRT_DT"] = "Creation Date";
+Message.Label.Array["SITE_SENT_MAIL_MANAGEMENT.SYS_UPD_USR_ID"] = "Modifier ID";
+Message.Label.Array["SITE_SENT_MAIL_MANAGEMENT.SYS_UPD_DT"] = "Modification Date";

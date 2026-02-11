@@ -98,7 +98,7 @@
             const userGroups = response.data || [];
             const managerList = managers.split(",");
 
-            isWritePermission = userGroups.some(ug => managerList.includes(ug.group_id));
+            isWritePermission = userGroups.some(ug => managerList.includes(ug.grp_id));
 
             if (isWritePermission) {
                 writeBtn.show();
@@ -161,9 +161,9 @@
                         { HEADER: 'No', ID: 'no', WIDTH: '10', TYPE: 'text', TEXT_ALIGN: 'center' },
                         { HEADER: Message.Label.Array["SYS_LAYOUT.PRIORITY"], ID: 'priority', WIDTH: '10', FONT_SIZE: '12px', TYPE: 'text', TEXT_ALIGN: 'center', HIDDEN: true },
                         { HEADER: Message.Label.Array["SYS_LAYOUT.TITLE"], ID: 'title', WIDTH: replyEnabled ? '50' : '60', FONT_SIZE: '12px', TYPE: 'text', TEXT_ALIGN: 'left' },
-                        { HEADER: Message.Label.Array["SYS_BBS_REPLY.REPLY_COUNT"], ID: 'reply_count', WIDTH: '10', FONT_SIZE: '12px', TYPE: 'text', TEXT_ALIGN: 'center', HIDDEN: !replyEnabled },
-                        { HEADER: Message.Label.Array["SYS_LAYOUT.HIT_COUNT"], ID: 'hit_count', WIDTH: '10', FONT_SIZE: '12px', TYPE: 'text', TEXT_ALIGN: 'center' },
-                        { HEADER: Message.Label.Array["SYS_LAYOUT.CREATE_DATE"], ID: 'system_create_date', WIDTH: '15', FONT_SIZE: '12px', TYPE: 'date', TEXT_ALIGN: 'center' }
+                        { HEADER: Message.Label.Array["SYS_BBS_RPLY.REPLY_COUNT"], ID: 'reply_count', WIDTH: '10', FONT_SIZE: '12px', TYPE: 'text', TEXT_ALIGN: 'center', HIDDEN: !replyEnabled },
+                        { HEADER: Message.Label.Array["SYS_LAYOUT.HIT_CNT"], ID: 'hit_cnt', WIDTH: '10', FONT_SIZE: '12px', TYPE: 'text', TEXT_ALIGN: 'center' },
+                        { HEADER: Message.Label.Array["SYS_LAYOUT.CREATE_DATE"], ID: 'sys_crt_dt', WIDTH: '15', FONT_SIZE: '12px', TYPE: 'date', TEXT_ALIGN: 'center' }
                     ]
                 };
 

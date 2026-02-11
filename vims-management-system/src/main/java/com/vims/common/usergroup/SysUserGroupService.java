@@ -86,7 +86,7 @@ public class SysUserGroupService extends AbstractCommonService<SysUserGroup> {
 
     protected List<SysUserGroup> selectJoinSysUserGroupPage(SysUserGroup request) throws Exception {
         try {
-            return sysUserGroupMapper.SELECT_JOIN_SYS_USER_GROUP_PAGE(request);
+            return sysUserGroupMapper.SELECT_JOIN_SYS_USER_GRP_PAGE(request);
         } catch (Exception e) {
             e.printStackTrace();
             ;
@@ -95,7 +95,7 @@ public class SysUserGroupService extends AbstractCommonService<SysUserGroup> {
     }
 
     protected int selectJoinSysUserGroupPagingTotalNumber(SysUserGroup request) throws Exception {
-        return sysUserGroupMapper.SELECT_JOIN_SYS_USER_GROUP_PAGING_TOTAL_NUMBER(request);
+        return sysUserGroupMapper.SELECT_JOIN_SYS_USER_GRP_PAGING_TOTAL_NUMBER(request);
     }
 
     @Override

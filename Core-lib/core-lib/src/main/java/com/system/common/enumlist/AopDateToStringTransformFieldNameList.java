@@ -6,9 +6,9 @@ public enum AopDateToStringTransformFieldNameList {
     @DateToString
     receipt_date,
     @DateToString
-    system_create_date,
+    sys_crt_dt,
     @DateToString
-    system_update_date,
+    sys_upd_dt,
     @DateToString
     issuance_date,
     @DateToString
