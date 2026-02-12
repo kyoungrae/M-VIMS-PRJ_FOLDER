@@ -23,8 +23,8 @@ spring:
         time-zone: Asia/Seoul
     datasource:
         # MariaDB JDBC URL - Podman 컨테이너 환경
-        url: jdbc:mariadb://host.containers.internal:3306/MVIMS
-        username: mvims
+        url: jdbc:mariadb://host.containers.internal:3306/NEW_MVIMS
+        username: mvims2
         password: 1234
         driver-class-name: org.mariadb.jdbc.Driver
 

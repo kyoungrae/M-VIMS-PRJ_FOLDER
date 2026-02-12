@@ -185,7 +185,7 @@
         menu_icon,
         url,
         use_yn,
-        (SELECT cd_nm FROM SYS_CODE WHERE grp_id = 'use_yn' AND cd_id = SYS_MENU.use_yn ) as use_yn_name,
+        (SELECT cd_nm FROM SYS_CD WHERE grp_id = 'use_yn' AND cd_id = SYS_MENU.use_yn ) as use_yn_name,
         menu_seq,
         sys_crt_usr_id,
         sys_upd_usr_id,
@@ -196,7 +196,7 @@
             1=1
             <if test="menu_cd != null and menu_cd != '' ">AND menu_cd = #{menu_cd}</if>
             <if test="menu_nm_kr != null and menu_nm_kr != '' ">AND menu_nm_kr = #{menu_nm_kr}</if>
-            <if test="menu_nm_en != null and menu_nm_en != '' ">AND menu_name = #{menu_nm_en}</if>
+            <if test="menu_nm_en != null and menu_nm_en != '' ">AND menu_nm_en = #{menu_nm_en}</if>
             <if test="menu_nm_mn != null and menu_nm_mn != '' ">AND menu_nm_mn = #{menu_nm_mn}</if>
             <if test="menu_no != null and menu_no != '' ">AND menu_no = #{menu_no}</if>
             <if test="menu_lvl != null and menu_lvl != '' ">AND menu_lvl = #{menu_lvl}</if>

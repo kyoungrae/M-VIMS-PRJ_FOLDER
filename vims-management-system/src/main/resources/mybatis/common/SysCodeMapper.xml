@@ -26,7 +26,7 @@
             sys_crt_usr_id, 
             sys_upd_dt, 
             sys_upd_usr_id 
-        FROM SYS_CODE
+        FROM SYS_CD
         <where>
             
             <if test="cd_id != null and cd_id != ''">AND cd_id = #{cd_id}</if>
@@ -54,7 +54,7 @@
     </select>
 
     <select id="SELECT_PAGING_TOTAL_NUMBER" resultType="int">
-        SELECT CEIL(COUNT(*) / #{row_range}) FROM SYS_CODE
+        SELECT CEIL(COUNT(*) / #{row_range}) FROM SYS_CD
         <where>
             
             <if test="cd_id != null and cd_id != ''">AND cd_id = #{cd_id}</if>
@@ -91,7 +91,7 @@
             sys_crt_usr_id,
             sys_upd_dt,
             sys_upd_usr_id
-        FROM SYS_CODE
+        FROM SYS_CD
         <where>
 
             <if test="cd_id != null and cd_id != ''">AND cd_id = #{cd_id}</if>
@@ -117,7 +117,7 @@
     </select>
 
     <insert id="INSERT">
-        INSERT INTO SYS_CODE(
+        INSERT INTO SYS_CD(
             
              cd_id 
             , grp_id 
@@ -146,7 +146,7 @@
     </insert>
 
     <delete id="DELETE">
-        DELETE FROM SYS_CODE
+        DELETE FROM SYS_CD
         <where>
             
              cd_id = #{cd_id}
@@ -163,7 +163,7 @@
     </delete>
 
     <update id="UPDATE">
-        UPDATE SYS_CODE
+        UPDATE SYS_CD
         <set>
             
             <if test="cd_nm != null">,cd_nm = #{cd_nm}</if>

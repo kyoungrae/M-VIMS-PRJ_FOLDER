@@ -436,7 +436,7 @@
         };
         // 검색조건 설정 (추가해서 사용)
         let cont1 = $("#menu_name").val();
-        if (formUtil.checkEmptyValue(cont1)) param.menu_name = cont1;
+        if (formUtil.checkEmptyValue(cont1)) param._menu_nm_kr = cont1;
         // 정렬조건추가 (기준id, 순서)
         param.sort_id = "menu_lvl, menu_no";
         param.sort_order = "ASC";

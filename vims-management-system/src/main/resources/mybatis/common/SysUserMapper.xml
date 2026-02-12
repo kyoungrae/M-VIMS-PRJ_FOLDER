@@ -81,7 +81,7 @@
             
             <if test="id != null">AND id = #{id}</if>
             <if test="email != null and email != ''">AND email = #{email}</if>
-            <if test="pwd != null and password != ''">AND pwd = #{pwd}</if>
+            <if test="pwd != null and pwd != ''">AND pwd = #{pwd}</if>
             <if test="role != null and role != ''">AND role = #{role}</if>
             <if test="user_id != null and user_id != ''">AND user_id = #{user_id}</if>
             <if test="offc_cd != null and offc_cd != ''">AND offc_cd = #{offc_cd}</if>
@@ -91,14 +91,14 @@
             <if test="sys_upd_dt != null">AND sys_upd_dt = #{sys_upd_dt}</if>
             <if test="user_nm != null and user_nm != ''">AND user_nm = #{user_nm}</if>
             <if test="tel != null and tel != ''">AND tel = #{tel}</if>
-            <if test="addr != null and address != ''">AND addr = #{addr}</if>
+            <if test="_addr != null and _addr != ''">AND addr = #{addr}</if>
             <if test="addr_dtl != null and addr_dtl != ''">AND addr_dtl = #{addr_dtl}</if>
             <if test="post_cd != null and post_cd != ''">AND post_cd = #{post_cd}</if>
             <if test="uuid != null and uuid != ''">AND uuid = #{uuid}</if>
             
             <if test="_id != null and _id != ''">AND id LIKE CONCAT('%', #{_id}, '%')</if>
             <if test="_email != null and _email != ''">AND email LIKE CONCAT('%', #{_email}, '%')</if>
-            <if test="_pwd != null and _pwd != ''">AND password LIKE CONCAT('%', #{_pwd}, '%')</if>
+            <if test="_pwd != null and _pwd != ''">AND pwd LIKE CONCAT('%', #{_pwd}, '%')</if>
             <if test="_role != null and _role != ''">AND role LIKE CONCAT('%', #{_role}, '%')</if>
             <if test="_user_id != null and _user_id != ''">AND user_id LIKE CONCAT('%', #{_user_id}, '%')</if>
             <if test="_offc_cd != null and _offc_cd != ''">AND offc_cd LIKE CONCAT('%', #{_offc_cd}, '%')</if>
@@ -108,7 +108,7 @@
             <if test="_sys_upd_dt != null and _sys_upd_dt != ''">AND sys_upd_dt LIKE CONCAT('%', #{_sys_upd_dt}, '%')</if>
             <if test="_user_nm != null and _user_nm != ''">AND user_nm LIKE CONCAT('%', #{_user_nm}, '%')</if>
             <if test="_tel != null and _tel != ''">AND tel LIKE CONCAT('%', #{_tel}, '%')</if>
-            <if test="_addr != null and _addr != ''">AND address LIKE CONCAT('%', #{_addr}, '%')</if>
+            <if test="_addr != null and _addr != ''">AND addr LIKE CONCAT('%', #{_addr}, '%')</if>
             <if test="_addr_dtl != null and _addr_dtl != ''">AND addr_dtl LIKE CONCAT('%', #{_addr_dtl}, '%')</if>
             <if test="_post_cd != null and _post_cd != ''">AND post_cd LIKE CONCAT('%', #{_post_cd}, '%')</if>
             <if test="_uuid != null and _uuid != ''">AND uuid LIKE CONCAT('%', #{_uuid}, '%')</if>
@@ -140,7 +140,7 @@
             
             <if test="id != null">AND id = #{id}</if>
             <if test="email != null and email != ''">AND email = #{email}</if>
-            <if test="pwd != null and password != ''">AND pwd = #{pwd}</if>
+            <if test="pwd != null and pwd != ''">AND pwd = #{pwd}</if>
             <if test="role != null and role != ''">AND role = #{role}</if>
             <if test="user_id != null and user_id != ''">AND user_id = #{user_id}</if>
             <if test="offc_cd != null and offc_cd != ''">AND offc_cd = #{offc_cd}</if>
@@ -150,7 +150,7 @@
             <if test="sys_upd_dt != null">AND sys_upd_dt = #{sys_upd_dt}</if>
             <if test="user_nm != null and user_nm != ''">AND user_nm = #{user_nm}</if>
             <if test="tel != null and tel != ''">AND tel = #{tel}</if>
-            <if test="addr != null and address != ''">AND addr = #{addr}</if>
+            <if test="addr != null and addr != ''">AND addr = #{addr}</if>
             <if test="addr_dtl != null and addr_dtl != ''">AND addr_dtl = #{addr_dtl}</if>
             <if test="post_cd != null and post_cd != ''">AND post_cd = #{post_cd}</if>
             <if test="uuid != null and uuid != ''">AND uuid = #{uuid}</if>
@@ -246,7 +246,7 @@
             <if test="sys_upd_dt != null ">,sys_upd_dt = #{sys_upd_dt}</if>
             <if test="user_nm != null and user_nm != '' ">,user_nm = #{user_nm}</if>
             <if test="tel != null and tel != '' ">,tel = #{tel}</if>
-            <if test="addr != null and address != '' ">,addr = #{addr}</if>
+            <if test="addr != null and addr != '' ">,addr = #{addr}</if>
             <if test="addr_dtl != null and addr_dtl != '' ">,addr_dtl = #{addr_dtl}</if>
             <if test="post_cd != null and post_cd != '' ">,post_cd = #{post_cd}</if>
             <if test="uuid != null and uuid != '' ">,uuid = #{uuid}</if>
