@@ -9,7 +9,7 @@
         where email = #{email}
     </select>
     <select id="SELECT_NEXT_TOKEN_ID" resultType="int">
-        SELECT nextval('TOKEN_SEQ')
+        SELECT nextval('SYS_TOKEN_SEQ')
     </select>
     <insert id="INSERT_USER_INFO" parameterType="com.system.auth.authuser.AuthUser">
         INSERT INTO SYS_USER (
